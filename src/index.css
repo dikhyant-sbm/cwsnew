@@ -136,9 +136,9 @@
     --destructive: 0 91% 71%;        /* #F87171 */
     --destructive-foreground: 0 0% 98%;
 
-    /* Spec borders: default rgba(148,163,184,0.28) ≈ HSL(215 20% 65%) */
-    --border: 215 20% 65%;
-    --input: 215 20% 65%;
+    /* Solid equivalent of rgba(148,163,184,0.28) over #05070D — visible but subtle */
+    --border: 220 22% 18%;
+    --input: 220 25% 24%;
     --ring: 222 100% 68%;
 
     --grid-line: 215 20% 30%;

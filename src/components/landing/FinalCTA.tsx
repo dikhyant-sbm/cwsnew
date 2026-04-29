@@ -11,10 +11,13 @@ export const FinalCTA = () => (
       <div className="text-center reveal-on-scroll">
         <p className="eyebrow">The corrective-action partner</p>
         <h2 className="display text-4xl sm:text-6xl mt-4">
-          Become easier to find, cite, compare, and choose.
+          Find out where your visibility is breaking down.
         </h2>
         <p className="mt-6 text-body max-w-2xl mx-auto">
-          Close the gap between what you publish and what Google, AI systems, trusted sources, and buyers actually recognize.
+          Your company may already have strong expertise, useful content, and real authority. The
+          question is whether Google, AI systems, and buyers can clearly recognize it. CiteWorks
+          Studio helps growth-minded companies close the gap between what they publish and what
+          modern search systems actually retrieve, cite, and recommend.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow px-7 h-14">

@@ -13,7 +13,7 @@
     --background: 220 30% 98.5%;
     --foreground: 222 35% 11%;
 
-    --card: 0 0% 100%;
+    --card: 220 28% 96%;
     --card-foreground: 222 35% 11%;
 
     --popover: 0 0% 100%;
@@ -52,8 +52,8 @@
 
     /* Surface tokens used by utilities (theme-aware) */
     --surface-card-from: 0 0% 100%;
-    --surface-card-to: 220 30% 98%;
-    --surface-card-border: 220 16% 88%;
+    --surface-card-to: 220 30% 97%;
+    --surface-card-border: 220 18% 90%;
     --hairline-top: 0 0% 100%;
     --hairline-edge: 222 75% 36%;
 

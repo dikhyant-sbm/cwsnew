@@ -1,5 +1,6 @@
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
+import { StickyAuditCTA } from "./StickyAuditCTA";
 import { ReactNode, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
@@ -21,12 +22,22 @@ export const PageShell = ({ children }: { children: ReactNode }) => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <ScrollToTop />
+
+      {/* a11y: skip directly to main content */}
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-full focus:bg-primary focus:text-primary-foreground focus:font-mono focus:text-[11px] focus:tracking-widest"
+      >
+        Skip to content
+      </a>
+
       <Nav />
       {/* key forces page-enter animation on route change */}
       <main id="main" key={pathname} className="page-enter">
         {children}
       </main>
       <Footer />
+      <StickyAuditCTA />
     </div>
   );
 };

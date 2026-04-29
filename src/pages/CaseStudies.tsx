@@ -471,7 +471,13 @@ const CaseStudies = () => {
             Find out where your visibility is breaking down.
           </h2>
           <p className="mt-6 text-body text-lg max-w-2xl mx-auto">
-            The strongest case studies start with a clear diagnosis. CiteWorks Studio helps growth-minded companies identify where they are losing visibility — then we build the corrective-action plan.
+            The strongest case studies start with a clear diagnosis.
+          </p>
+          <p className="mt-4 text-body text-lg max-w-2xl mx-auto">
+            CiteWorks Studio helps growth-minded companies identify where they are losing visibility across Google, AI answers, citation sources, competitor positioning, technical SEO, content structure, and source-layer authority.
+          </p>
+          <p className="mt-4 text-body text-lg max-w-2xl mx-auto">
+            Then we build the corrective-action plan.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">

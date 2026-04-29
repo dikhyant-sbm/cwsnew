@@ -135,7 +135,7 @@ const CaseStudies = () => {
           </h1>
           <div className="mt-10 max-w-3xl space-y-5 text-lg text-body">
             <p>CiteWorks Studio helps growth-minded companies improve how they are found, cited, compared, and recommended across modern search environments.</p>
-            <p>These case studies show how visibility improves when companies strengthen more than rankings — across GEO, citation architecture, AI search visibility, technical SEO, content strategy, and source-layer authority.</p>
+            <p>These case studies show how visibility improves when companies strengthen more than rankings. The work often includes GEO, citation architecture, AI search visibility, technical SEO, content strategy, source-layer authority, and public evidence across the places buyers and AI systems use to make sense of a market.</p>
           </div>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">

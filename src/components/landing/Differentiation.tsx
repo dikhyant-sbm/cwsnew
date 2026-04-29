@@ -8,10 +8,13 @@ export const Differentiation = () => (
         <span className="text-gradient">real authority</span> and machine-recognized authority.
       </h2>
       <p className="mt-8 text-lg text-body max-w-3xl mx-auto leading-relaxed">
-        Most growth-minded companies have real expertise, useful content, and genuine customer
-        value. The question is whether Google, AI systems, third-party sources, and buyers can
-        clearly recognize it. CiteWorks Studio identifies that gap — and builds the corrective-action
-        plan to close it.
+        Many companies are more credible than the search results suggest. They have better
+        expertise, better products, better service, better insight, and better proof — but search
+        engines and AI systems do not automatically understand that. Machine systems rely on
+        patterns: content structure, entity clarity, semantic relationships, citations, source
+        authority, third-party evidence, and repeated associations across the web. CiteWorks
+        Studio improves those patterns so your company becomes easier for machines to understand
+        and easier for buyers to trust.
       </p>
     </div>
   </section>

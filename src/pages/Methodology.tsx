@@ -4,6 +4,7 @@ import { TrustPledges } from "@/components/landing/TrustPledges";
 import { BestFit } from "@/components/landing/BestFit";
 import { VisibilityLayers } from "@/components/landing/VisibilityLayers";
 import { VisibilityLoop } from "@/components/landing/VisibilityLoop";
+import { MethodologyTimeline } from "@/components/landing/MethodologyTimeline";
 import { SectionNav } from "@/components/landing/SectionNav";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -194,18 +195,8 @@ const Methodology = () => {
               body="Every engagement is shaped by your market, category, competition, and the specific gaps we find. The core methodology follows a consistent eight-step process."
               align="left"
             />
-            <div className="mt-12 grid md:grid-cols-2 gap-6">
-              {steps.map((s) => (
-                <div key={s.n} className="card-premium p-8 hover:border-primary/40 transition-colors">
-                  <div className="flex items-center justify-between">
-                    <p className="font-mono text-xs text-primary">{s.n}</p>
-                    <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Output</p>
-                  </div>
-                  <h3 className="display text-2xl mt-3">{s.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{s.desc}</p>
-                  <p className="mt-5 pt-4 border-t border-border text-sm text-foreground/85">{s.out}</p>
-                </div>
-              ))}
+            <div className="mt-12">
+              <MethodologyTimeline steps={steps} />
             </div>
           </section>
 

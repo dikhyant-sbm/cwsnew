@@ -1,6 +1,7 @@
 import { Nav } from "@/components/landing/Nav";
 import { Footer } from "@/components/landing/Footer";
 import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
+import { ResultsChart } from "@/components/landing/ResultsChart";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
@@ -217,22 +218,7 @@ const CaseStudies = () => {
           <p className="text-foreground/70 max-w-2xl mb-12">
             Each case uses its own measurement framework, category context, and timeframe. Read these as published case-study outcomes, not a universal benchmark.
           </p>
-          <div className="border border-border rounded-2xl overflow-hidden">
-            <div className="hidden md:grid grid-cols-12 bg-card/50 px-6 py-4 font-mono text-[11px] tracking-wider text-muted-foreground">
-              <div className="col-span-2">CATEGORY</div>
-              <div className="col-span-4">AI VISIBILITY MOVEMENT</div>
-              <div className="col-span-3">SEARCH VISIBILITY MOVEMENT</div>
-              <div className="col-span-3">SOURCE-LAYER MOVEMENT</div>
-            </div>
-            {results.map((r, i) => (
-              <div key={i} className="grid md:grid-cols-12 gap-3 px-6 py-6 border-t border-border text-sm">
-                <div className="md:col-span-2 font-semibold text-foreground">{r.cat}</div>
-                <div className="md:col-span-4 text-foreground/80">{r.ai}</div>
-                <div className="md:col-span-3 text-foreground/70">{r.search}</div>
-                <div className="md:col-span-3 text-foreground/70">{r.source}</div>
-              </div>
-            ))}
-          </div>
+          <ResultsChart results={results} />
           <p className="mt-6 text-xs text-muted-foreground max-w-3xl font-mono">
             Source note: published outcomes from the CiteWorks cross-case synthesis. Cases use different surfaces, timeframes, and metric types and should be compared descriptively rather than blended into a single benchmark.
           </p>

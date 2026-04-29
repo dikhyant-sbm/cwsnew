@@ -4,6 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Check, Lock } from "lucide-react";
 import { useEffect } from "react";
+import { PartnershipSelector } from "@/components/landing/PartnershipSelector";
 
 const fits = [
   { title: "SEO Agencies", desc: "For agencies that already offer SEO but need stronger GEO, AI search visibility, citation architecture, and source-layer strategy." },
@@ -193,14 +194,8 @@ const AgencyPartners = () => {
       <section className="py-28 border-t border-border/40">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading eyebrow="Partnership models" title="Flexible engagement, clear scope." align="left" />
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
-            {models.map((m) => (
-              <div key={m.n} className="card-premium p-8 hover:border-primary/40 transition-colors">
-                <p className="font-mono text-xs text-primary">{m.n}</p>
-                <h3 className="display text-xl mt-3">{m.title}</h3>
-                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{m.desc}</p>
-              </div>
-            ))}
+          <div className="mt-12">
+            <PartnershipSelector models={models} />
           </div>
         </div>
       </section>

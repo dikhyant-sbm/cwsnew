@@ -20,6 +20,7 @@ import { Blog } from "@/components/landing/Blog";
 import { FAQ } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
+import { DashboardWalkthrough } from "@/components/landing/DashboardWalkthrough";
 import { TrustPledges } from "@/components/landing/TrustPledges";
 import { BestFit } from "@/components/landing/BestFit";
 import { useEffect } from "react";
@@ -53,11 +54,7 @@ const Index = () => {
       <VisibilityLoop />
       <Features />
       <Outcomes />
-      <section className="relative py-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <DashboardShowcase dashboard="executive-report" size="lg" showCaption className="reveal-on-scroll" />
-        </div>
-      </section>
+      <DashboardWalkthrough />
       <UseCases />
       <AuditCTA />
       <SeoVsCiteworks />

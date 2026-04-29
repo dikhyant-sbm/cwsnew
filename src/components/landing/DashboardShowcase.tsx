@@ -26,6 +26,8 @@ type Props = {
   /** Visual size — `lg` for hero, `md` for in-section, `sm` for inline. */
   size?: "sm" | "md" | "lg";
   showCaption?: boolean;
+  /** When true, image loads eagerly with high fetch priority (use only for first paint). */
+  priority?: boolean;
   className?: string;
 } & Omit<ImgHTMLAttributes<HTMLImageElement>, "src" | "alt">;
 
@@ -40,6 +42,7 @@ export const DashboardShowcase = ({
   dashboard,
   size = "lg",
   showCaption = false,
+  priority = false,
   className = "",
   ...imgProps
 }: Props) => {
@@ -54,10 +57,13 @@ export const DashboardShowcase = ({
         <img
           src={d.src}
           alt={`${d.label} — CiteWorks Studio dashboard mockup. ${d.caption}`}
-          loading="lazy"
+          loading={priority ? "eager" : "lazy"}
           decoding="async"
+          // @ts-expect-error fetchpriority is valid HTML, not yet in React types in all setups
+          fetchpriority={priority ? "high" : "low"}
           width={1024}
           height={1024}
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
           className="block w-full h-auto"
           {...imgProps}
         />

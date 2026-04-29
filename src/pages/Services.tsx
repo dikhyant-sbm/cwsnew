@@ -164,7 +164,7 @@ const services = [
     n: "08",
     title: "Content Strategy, Production & Refreshes",
     def: "Content strategy improves the pages and assets that help your company rank, get retrieved, answer buyer questions, and support authority across search and AI environments.",
-    body: "We create content based on what the market is rewarding — every recommendation tied back to a visibility gap: a keyword gap, prompt gap, citation gap, entity gap, topical gap, or conversion gap.",
+    body: "We create content based on what the market is rewarding, not based on a generic publishing calendar. That may include service pages, comparison pages, category education pages, case studies, FAQs, glossary pages, articles, content refreshes, social posts, video scripts, discussion-led assets, and source-supporting content. Every content recommendation is tied back to a visibility gap: a keyword gap, prompt gap, citation gap, entity gap, topical gap, or conversion gap.",
     includes: [
       "Website content strategy",
       "Service page copy",

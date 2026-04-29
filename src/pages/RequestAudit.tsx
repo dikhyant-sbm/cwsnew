@@ -212,9 +212,9 @@ const RequestAudit = () => {
               { n: "03", t: "We deliver the audit", d: "An executive-ready Visibility Audit with a prioritized corrective-action roadmap." },
             ].map((s) => (
               <li key={s.n} className="card-premium p-5">
-                <p className="font-mono text-[10px] tracking-[0.22em] text-primary">{s.n}</p>
+                <p className="font-mono text-[12px] tracking-[0.16em] text-primary">{s.n}</p>
                 <p className="display text-base mt-2">{s.t}</p>
-                <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{s.d}</p>
+                <p className="text-xs text-body mt-2 leading-relaxed">{s.d}</p>
               </li>
             ))}
           </ol>
@@ -237,7 +237,7 @@ const RequestAudit = () => {
               <h2 className="display text-3xl sm:text-4xl mt-4 leading-tight">
                 Thanks — your audit request is in.
               </h2>
-              <p className="mt-5 text-foreground/70 leading-relaxed max-w-xl mx-auto">
+              <p className="mt-5 text-body leading-relaxed max-w-xl mx-auto">
                 A senior strategist will personally review your submission and respond within
                 <span className="text-foreground"> one business day</span> with next steps,
                 scoping questions, or a scheduling link for a 30-minute fit call.
@@ -249,23 +249,23 @@ const RequestAudit = () => {
                   { n: "03", t: "Audit kickoff", d: "Typically within 1–2 weeks." },
                 ].map((s) => (
                   <div key={s.n} className="card-premium p-4">
-                    <p className="font-mono text-[10px] tracking-[0.22em] text-primary">{s.n}</p>
+                    <p className="font-mono text-[12px] tracking-[0.16em] text-primary">{s.n}</p>
                     <p className="display text-sm mt-2">{s.t}</p>
-                    <p className="text-xs text-muted-foreground mt-1">{s.d}</p>
+                    <p className="text-xs text-body mt-1">{s.d}</p>
                   </div>
                 ))}
               </div>
               <div className="mt-10 flex flex-wrap justify-center gap-3">
-                <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/15 hover:bg-foreground/5 px-6 h-11">
+                <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-foreground/30 hover:bg-foreground/5 px-6 h-12">
                   <Link to="/methodology">EXPLORE THE METHODOLOGY</Link>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/15 hover:bg-foreground/5 px-6 h-11">
+                <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-foreground/30 hover:bg-foreground/5 px-6 h-12">
                   <Link to="/case-studies">SEE CASE STUDIES</Link>
                 </Button>
                 <button
                   type="button"
                   onClick={resetForm}
-                  className="rounded-full font-mono text-[11px] tracking-[0.22em] text-muted-foreground hover:text-foreground px-4 h-11 transition-colors"
+                  className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] text-body hover:text-foreground px-4 h-11 transition-colors"
                 >
                   SUBMIT ANOTHER
                 </button>
@@ -276,7 +276,7 @@ const RequestAudit = () => {
             <div>
               <p className="eyebrow">Audit request</p>
               <h2 className="display text-2xl sm:text-3xl mt-3">Tell us what you want to improve.</h2>
-              <p className="text-sm text-muted-foreground mt-3">
+              <p className="text-sm text-body mt-3">
                 Complete the form and a senior strategist will review whether a Visibility Audit is the right starting point. White-label and confidential delivery available for agency partners.
               </p>
             </div>
@@ -370,14 +370,14 @@ const RequestAudit = () => {
               type="submit"
               disabled={submitting}
               aria-busy={submitting}
-              className="w-full group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)] disabled:opacity-70"
+              className="w-full group rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)] disabled:opacity-70"
             >
               {submitting ? "SUBMITTING…" : (
                 <>REQUEST VISIBILITY AUDIT <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></>
               )}
             </Button>
 
-            <p className="text-xs text-muted-foreground text-center">
+            <p className="text-xs text-body text-center">
               We review every request manually. No automated follow-ups. Reply within one business day. CiteWorks Studio is best suited for companies and agency partners ready to improve search visibility across Google, AI answers, and trusted source environments.
             </p>
           </form>
@@ -388,14 +388,14 @@ const RequestAudit = () => {
             <a href="mailto:hello@citeworksstudio.com" className="flex items-center gap-3 rounded-xl border border-border bg-card/30 p-4 hover:border-primary/40 transition-colors">
               <Mail className="w-4 h-4 text-primary" />
               <div>
-                <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground">EMAIL</p>
+                <p className="font-mono text-[12px] tracking-[0.16em] text-body">EMAIL</p>
                 <p className="text-sm text-foreground/85">hello@citeworksstudio.com</p>
               </div>
             </a>
             <div className="flex items-center gap-3 rounded-xl border border-border bg-card/30 p-4">
               <MessageCircle className="w-4 h-4 text-primary" />
               <div>
-                <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground">RESPONSE</p>
+                <p className="font-mono text-[12px] tracking-[0.16em] text-body">RESPONSE</p>
                 <p className="text-sm text-foreground/85">Within one business day</p>
               </div>
             </div>
@@ -422,7 +422,7 @@ const RequestAudit = () => {
           <h2 className="display text-3xl sm:text-5xl mt-5 leading-tight">
             Strategy without diagnosis is guesswork.
           </h2>
-          <p className="mt-6 text-foreground/70 text-lg leading-relaxed">
+          <p className="mt-6 text-body text-lg leading-relaxed">
             Most companies don't need another templated content calendar or generic SEO checklist.
             They need to know exactly where buyers, Google, and AI systems are losing recognition
             of their authority. The Visibility Audit shows you that — before any execution work
@@ -461,7 +461,7 @@ const RequestAudit = () => {
             ].map((d) => (
               <div key={d.t} className="card-premium p-7">
                 <h3 className="display text-lg text-primary">{d.t}</h3>
-                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{d.d}</p>
+                <p className="text-sm text-body mt-3 leading-relaxed">{d.d}</p>
               </div>
             ))}
           </div>
@@ -475,9 +475,9 @@ const RequestAudit = () => {
           <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {outcomes.map((o, i) => (
               <div key={i} className="border border-border rounded-2xl p-7 bg-background">
-                <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-3">0{i + 1}</p>
+                <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-3">0{i + 1}</p>
                 <h3 className="display text-2xl text-gradient">{o.t}</h3>
-                <p className="text-sm text-foreground/70 mt-3 leading-relaxed">{o.d}</p>
+                <p className="text-sm text-body mt-3 leading-relaxed">{o.d}</p>
               </div>
             ))}
           </div>
@@ -500,7 +500,7 @@ const RequestAudit = () => {
               <div key={n} className="card-premium p-6">
                 <p className="font-mono text-xs text-primary">{n}</p>
                 <h3 className="display text-lg mt-2">{t}</h3>
-                <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{d}</p>
+                <p className="text-sm text-body mt-2 leading-relaxed">{d}</p>
               </div>
             ))}
           </div>
@@ -513,7 +513,7 @@ const RequestAudit = () => {
           <SectionHeading eyebrow="Fit" title="Who the Visibility Audit is built for." align="left" />
           <div className="mt-12 grid md:grid-cols-2 gap-6">
             <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-5">BEST FIT</p>
+              <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-5">BEST FIT</p>
               <ul className="space-y-3">
                 {bestFit.map((f) => (
                   <li key={f} className="flex gap-3 text-sm text-foreground/85">
@@ -524,11 +524,11 @@ const RequestAudit = () => {
               </ul>
             </div>
             <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground mb-5">NOT THE BEST FIT</p>
+              <p className="font-mono text-[12px] tracking-[0.16em] text-body mb-5">NOT THE BEST FIT</p>
               <ul className="space-y-3">
                 {notFit.map((f) => (
-                  <li key={f} className="flex gap-3 text-sm text-foreground/65">
-                    <span className="text-muted-foreground mt-0.5">—</span>
+                  <li key={f} className="flex gap-3 text-sm text-muted-fg">
+                    <span className="text-body mt-0.5">—</span>
                     <span>{f}</span>
                   </li>
                 ))}
@@ -545,7 +545,7 @@ const RequestAudit = () => {
           <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             {problems.map((p, i) => (
               <div key={i} className="border border-border rounded-xl p-5 bg-background flex gap-3 items-start">
-                <span className="font-mono text-[10px] text-primary mt-1">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-mono text-[12px] text-primary mt-1">{String(i + 1).padStart(2, "0")}</span>
                 <p className="text-sm text-foreground/85">{p}</p>
               </div>
             ))}
@@ -560,9 +560,9 @@ const RequestAudit = () => {
           <div className="mt-12 grid md:grid-cols-3 gap-4">
             {afterAudit.map((a) => (
               <div key={a.n} className="border border-border rounded-2xl p-7 bg-card/30">
-                <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-3">PATH / {a.n}</p>
+                <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-3">PATH / {a.n}</p>
                 <h3 className="display text-xl mb-3">{a.t}</h3>
-                <p className="text-sm text-foreground/70 leading-relaxed">{a.d}</p>
+                <p className="text-sm text-body leading-relaxed">{a.d}</p>
               </div>
             ))}
           </div>
@@ -576,8 +576,8 @@ const RequestAudit = () => {
           <div className="mt-12 card-premium/30 overflow-hidden">
             {llmTable.map(([k, v], i) => (
               <div key={i} className={`grid grid-cols-12 px-6 py-5 text-sm gap-4 ${i < llmTable.length - 1 ? "border-b border-border" : ""}`}>
-                <div className="col-span-4 font-mono text-[11px] tracking-[0.18em] uppercase text-primary">{k}</div>
-                <div className="col-span-8 text-foreground/80">{v}</div>
+                <div className="col-span-4 font-mono text-[13px] font-semibold tracking-[0.14em] uppercase text-primary">{k}</div>
+                <div className="col-span-8 text-body">{v}</div>
               </div>
             ))}
           </div>
@@ -594,7 +594,7 @@ const RequestAudit = () => {
                 <AccordionTrigger className="text-left text-lg font-medium hover:text-primary hover:no-underline py-6">
                   {f.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                <AccordionContent className="text-body leading-relaxed pb-6">
                   {f.a}
                 </AccordionContent>
               </AccordionItem>
@@ -607,14 +607,14 @@ const RequestAudit = () => {
       <section className="py-32 border-t border-border/40 text-center grid-bg">
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="display text-4xl sm:text-6xl">Find out what's limiting your visibility.</h2>
-          <p className="mt-6 text-foreground/70 text-lg">
+          <p className="mt-6 text-body text-lg">
             Submit the form above. We review every request manually and reply within one business day.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button asChild className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
+            <Button asChild className="group rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-14 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
               <a href="#audit-form"><ArrowUpRight className="w-3.5 h-3.5 mr-1.5 rotate-180" /> BACK TO FORM</a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/15 hover:bg-foreground/5 px-7 h-12">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-foreground/30 hover:bg-foreground/5 px-7 h-14">
               <Link to="/methodology">SEE THE METHODOLOGY</Link>
             </Button>
           </div>

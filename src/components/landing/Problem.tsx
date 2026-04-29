@@ -18,14 +18,14 @@ export const Problem = () => (
         <p className="eyebrow">The buyer journey changed</p>
         <h2 className="display text-4xl sm:text-6xl mt-5 leading-[1.05]">
           Buyers no longer move through{" "}
-          <span className="text-foreground/40">one search result.</span>
+          <span className="text-tertiary">one search result.</span>
         </h2>
-        <p className="mt-7 text-lg text-foreground/70 leading-relaxed">
+        <p className="mt-7 text-lg text-body leading-relaxed">
           A single high-consideration buyer may search Google, ask ChatGPT, scan AI Overviews,
           compare brands in Perplexity, watch YouTube reviews, read Reddit threads, check review
           sites, visit comparison pages, and then return to your website before making a decision.
         </p>
-        <p className="mt-5 text-lg text-foreground/70 leading-relaxed">
+        <p className="mt-5 text-lg text-body leading-relaxed">
           That means your company needs more than rankings. It needs clear entity signals, useful
           content, credible sources, technical structure, third-party support, and stronger
           retrieval alignment — across every surface buyers actually use.

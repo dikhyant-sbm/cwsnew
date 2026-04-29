@@ -72,7 +72,7 @@ export const DashboardShowcase = ({
       </div>
 
       {showCaption && (
-        <figcaption className="mt-4 text-center font-mono text-[10px] tracking-[0.22em] uppercase text-foreground/45">
+        <figcaption className="mt-4 text-center font-mono text-[12px] tracking-[0.16em] uppercase text-tertiary">
           {d.label}
         </figcaption>
       )}

@@ -18,11 +18,11 @@ export const Outcomes = () => (
       <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
         {outcomes.map((o, i) => (
           <div key={i} className="bg-background p-8 hover:bg-card/50 transition-colors">
-            <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-5">
+            <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-5">
               0{i + 1} / OUTCOME
             </p>
             <h3 className="display text-2xl text-gradient">{o.metric}</h3>
-            <p className="mt-4 text-sm text-foreground/65 leading-relaxed">{o.desc}</p>
+            <p className="mt-4 text-sm text-muted-fg leading-relaxed">{o.desc}</p>
           </div>
         ))}
       </div>

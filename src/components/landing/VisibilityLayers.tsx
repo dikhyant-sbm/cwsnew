@@ -48,7 +48,7 @@ export const VisibilityLayers = ({
             <h2 className="display text-4xl sm:text-5xl mt-4">
               Search. AI retrieval. Public sources.
             </h2>
-            <p className="mt-5 text-muted-foreground leading-relaxed">
+            <p className="mt-5 text-body leading-relaxed">
               Modern visibility is no longer one channel. CiteWorks Studio improves all three layers
               that decide whether your company is found, cited, and recommended.
             </p>
@@ -78,20 +78,20 @@ export const VisibilityLayers = ({
                         <Icon className="w-5 h-5 text-primary" aria-hidden="true" />
                       </div>
                       <div>
-                        <p className="font-mono text-[10px] tracking-[0.22em] text-primary">
+                        <p className="font-mono text-[12px] tracking-[0.16em] text-primary">
                           LAYER / {l.n}
                         </p>
                         <h3 className="display text-xl sm:text-2xl mt-1">{l.label}</h3>
                       </div>
                     </div>
-                    <p className="sm:col-span-4 text-sm text-muted-foreground leading-relaxed">
+                    <p className="sm:col-span-4 text-sm text-body leading-relaxed">
                       {l.sub}
                     </p>
                     <ul className="sm:col-span-3 flex flex-wrap gap-1.5 sm:justify-end">
                       {l.items.map((it) => (
                         <li
                           key={it}
-                          className="text-[11px] font-mono tracking-wide px-2.5 py-1 rounded-full bg-card border border-border text-foreground/75"
+                          className="text-[13px] font-mono tracking-wide px-2.5 py-1 rounded-full bg-card border border-border text-body"
                         >
                           {it}
                         </li>
@@ -103,7 +103,7 @@ export const VisibilityLayers = ({
             })}
           </div>
           {/* Connector hint */}
-          <p className="mt-6 text-center font-mono text-[10px] tracking-[0.22em] text-muted-foreground">
+          <p className="mt-6 text-center font-mono text-[12px] tracking-[0.16em] text-body">
             ALL THREE LAYERS COMPOUND — A WEAKNESS IN ONE LIMITS THE OTHERS
           </p>
         </div>

@@ -48,7 +48,7 @@ export const SectionNav = ({
 
   return (
     <nav aria-label="On this page" className={`${baseClass} ${className}`}>
-      <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground mb-4">
+      <p className="font-mono text-[12px] tracking-[0.16em] text-body mb-4">
         ON THIS PAGE
       </p>
       <ul className="space-y-1.5 border-l border-border">
@@ -62,7 +62,7 @@ export const SectionNav = ({
                 className={`block pl-4 -ml-px py-1.5 text-xs font-mono tracking-wide border-l transition-colors max-w-[180px] truncate ${
                   isActive
                     ? "text-foreground border-primary"
-                    : "text-muted-foreground border-transparent hover:text-foreground"
+                    : "text-body border-transparent hover:text-foreground"
                 }`}
               >
                 {i.label}

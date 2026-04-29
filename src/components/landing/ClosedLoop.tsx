@@ -23,7 +23,7 @@ export const ThreeLayers = () => (
       <h2 className="display text-4xl sm:text-6xl text-center mt-4 max-w-3xl mx-auto">
         Three layers of modern visibility.
       </h2>
-      <p className="text-center text-muted-foreground mt-6 max-w-2xl mx-auto">
+      <p className="text-center text-body mt-6 max-w-2xl mx-auto">
         Modern search visibility is no longer one channel. It is an ecosystem. CiteWorks Studio helps you improve every layer of it.
       </p>
 
@@ -32,7 +32,7 @@ export const ThreeLayers = () => (
           <div key={l.n} className="card-premium p-8 hover:border-primary/40 transition-colors">
             <p className="font-mono text-xs text-primary">{l.n}</p>
             <h3 className="display text-2xl mt-3">{l.title}</h3>
-            <p className="text-sm text-muted-foreground mt-4 leading-relaxed">{l.desc}</p>
+            <p className="text-sm text-body mt-4 leading-relaxed">{l.desc}</p>
           </div>
         ))}
       </div>

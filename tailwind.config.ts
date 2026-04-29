@@ -14,8 +14,22 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Geist', 'Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+      },
+      fontSize: {
+        // Readability-first scale. Sizes shifted up; default Tailwind 'sm/base' was too small.
+        'xs':   ['0.8125rem',  { lineHeight: '1.45', letterSpacing: '0.01em' }],   // 13px (was 12px)
+        'sm':   ['0.9375rem',  { lineHeight: '1.55' }],                             // 15px (was 14px)
+        'base': ['1.0625rem',  { lineHeight: '1.65' }],                             // 17px (was 16px)
+        'lg':   ['1.125rem',   { lineHeight: '1.67' }],                             // 18px
+        'xl':   ['1.1875rem',  { lineHeight: '1.62' }],                             // 19px
+        '2xl':  ['1.5rem',     { lineHeight: '1.36', letterSpacing: '-0.01em' }],   // 24px
+        '3xl':  ['1.875rem',   { lineHeight: '1.25', letterSpacing: '-0.02em' }],   // 30px
+        '4xl':  ['2.375rem',   { lineHeight: '1.15', letterSpacing: '-0.03em' }],   // 38px
+        '5xl':  ['3rem',       { lineHeight: '1.08', letterSpacing: '-0.035em' }],  // 48px
+        '6xl':  ['3.75rem',    { lineHeight: '1.04', letterSpacing: '-0.04em' }],   // 60px
+        '7xl':  ['4.5rem',     { lineHeight: '1.0',  letterSpacing: '-0.045em' }],  // 72px
       },
       colors: {
         border: "hsl(var(--border))",

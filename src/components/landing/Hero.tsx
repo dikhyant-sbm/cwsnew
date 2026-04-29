@@ -17,55 +17,53 @@ export const Hero = () => (
           <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 pulse-ring" />
           <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
         </span>
-        <span className="font-mono text-[10px] tracking-[0.22em] text-foreground/80 uppercase">
+        <span className="font-mono text-[12px] tracking-[0.16em] text-body uppercase">
           GEO · AI Search · Citation Architecture
         </span>
       </div>
 
-      <h1 className="reveal reveal-delay-1 display text-5xl sm:text-7xl md:text-[92px] leading-[0.95]">
+      <h1 className="reveal reveal-delay-1 display max-w-5xl mx-auto text-[clamp(2.625rem,7vw,5.75rem)] leading-[0.98]">
         Get found, cited, and recommended{" "}
         <span className="text-gradient">where modern buyers search.</span>
       </h1>
 
-      <p className="reveal reveal-delay-2 mt-8 mx-auto max-w-2xl text-base sm:text-lg text-foreground/70 leading-relaxed">
+      <p className="reveal reveal-delay-2 hero-lead mt-8 mx-auto text-center">
         CiteWorks Studio is the corrective-action partner for modern search visibility — across
         Google, AI answers, and the trusted source environments that shape buyer decisions.
       </p>
 
-      <div className="reveal reveal-delay-3 mt-10 flex flex-wrap justify-center gap-3">
-        <Button asChild className="group rounded-full font-mono text-xs tracking-widest bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
+      <div className="reveal reveal-delay-3 mt-12 flex flex-wrap justify-center gap-3">
+        <Button asChild className="group rounded-full font-sans text-[15px] font-bold tracking-[0.02em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-14 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
           <Link to="/request-audit">
-            REQUEST A VISIBILITY AUDIT
-            <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            Request a visibility audit
+            <ArrowUpRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </Button>
-        <Button asChild variant="outline" className="rounded-full font-mono text-xs tracking-widest border-foreground/15 hover:bg-foreground/5 hover:border-foreground/25 px-7 h-12 backdrop-blur">
-          <Link to="/methodology">SEE THE METHODOLOGY</Link>
+        <Button asChild variant="outline" className="rounded-full font-sans text-[15px] font-bold tracking-[0.02em] border-foreground/35 hover:border-foreground/50 px-7 h-14 backdrop-blur">
+          <Link to="/methodology">See the methodology</Link>
         </Button>
       </div>
 
-      <p className="reveal reveal-delay-4 mt-10 text-sm text-foreground/45 max-w-xl mx-auto font-mono">
+      <p className="reveal reveal-delay-4 meta mt-10 mx-auto max-w-xl">
         Built for companies where visibility, trust, and recommendation strength directly affect revenue.
       </p>
 
-      {/* Glass surfaces hint at product depth */}
-      <div className="reveal reveal-delay-4 mt-20 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
+      <div className="reveal reveal-delay-4 mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
         {[
           { k: "AI Overview lift", v: "112.5%" },
           { k: "ChatGPT mentions", v: "400%" },
           { k: "Top-10 keywords", v: "13,679" },
           { k: "Cited sources", v: "500+" },
         ].map((s, i) => (
-          <div key={i} className="glass rounded-xl p-4 text-left border-gradient">
-            <p className="font-mono text-[10px] tracking-widest text-foreground/50 mb-2">{s.k.toUpperCase()}</p>
-            <p className="display text-2xl text-gradient">{s.v}</p>
+          <div key={i} className="glass rounded-xl p-5 text-left border-gradient">
+            <p className="font-mono text-[13px] tracking-[0.14em] uppercase text-subtle mb-2 font-semibold">{s.k}</p>
+            <p className="display text-3xl text-gradient">{s.v}</p>
           </div>
         ))}
       </div>
 
-      {/* Scroll cue */}
-      <div className="mt-16 flex items-center justify-center gap-2 font-mono text-[10px] tracking-[0.3em] text-foreground/35">
-        <Sparkles className="w-3 h-3" />
+      <div className="mt-16 flex items-center justify-center gap-2 font-mono text-[13px] font-semibold tracking-[0.14em] text-tertiary">
+        <Sparkles className="w-3.5 h-3.5" />
         SCROLL TO EXPLORE
       </div>
     </div>

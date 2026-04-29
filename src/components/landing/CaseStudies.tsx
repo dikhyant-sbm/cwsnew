@@ -16,7 +16,7 @@ export const CaseStudies = () => (
       <h2 className="display text-4xl sm:text-6xl text-center mt-4 max-w-3xl mx-auto">
         We find the visibility gaps. Then we fix them.
       </h2>
-      <p className="text-center text-muted-foreground mt-6 max-w-2xl mx-auto">
+      <p className="text-center text-body mt-6 max-w-2xl mx-auto">
         Most companies do not need another disconnected tactic. They need to know why competitors are being found, cited, ranked, compared, and recommended ahead of them.
       </p>
 
@@ -25,7 +25,7 @@ export const CaseStudies = () => (
           <div key={s.n} className="card-premium p-6 hover:border-primary/40 transition-colors">
             <p className="font-mono text-xs text-primary">{s.n}</p>
             <h3 className="display text-lg mt-3">{s.title}</h3>
-            <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{s.desc}</p>
+            <p className="text-sm text-body mt-3 leading-relaxed">{s.desc}</p>
           </div>
         ))}
       </div>

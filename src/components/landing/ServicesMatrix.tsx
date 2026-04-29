@@ -55,10 +55,10 @@ export const ServicesMatrix = ({ services }: ServicesMatrixProps) => {
               role="tab"
               aria-selected={isActive}
               onClick={() => setActive(c)}
-              className={`px-4 py-2 rounded-full font-mono text-[11px] tracking-[0.18em] border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+              className={`px-4 py-2 rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
                 isActive
                   ? "bg-primary text-primary-foreground border-transparent"
-                  : "border-border text-foreground/70 hover:border-primary/40 hover:text-foreground"
+                  : "border-border text-body hover:border-primary/40 hover:text-foreground"
               }`}
             >
               {c.toUpperCase()} <span className={`ml-1.5 ${isActive ? "opacity-80" : "opacity-50"}`}>{count}</span>
@@ -67,7 +67,7 @@ export const ServicesMatrix = ({ services }: ServicesMatrixProps) => {
         })}
       </div>
 
-      <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground mb-5" aria-live="polite">
+      <p className="font-mono text-[12px] tracking-[0.16em] text-body mb-5" aria-live="polite">
         SHOWING {filtered.length} OF {services.length}
       </p>
 
@@ -85,32 +85,32 @@ export const ServicesMatrix = ({ services }: ServicesMatrixProps) => {
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="font-mono text-[10px] tracking-[0.2em] text-primary">{CATEGORY_MAP[s.n].toUpperCase()}</span>
-                    <span className="font-mono text-[10px] text-muted-foreground">/ {s.n}</span>
+                    <span className="font-mono text-[12px] tracking-[0.2em] text-primary">{CATEGORY_MAP[s.n].toUpperCase()}</span>
+                    <span className="font-mono text-[12px] text-body">/ {s.n}</span>
                   </div>
                   <h3 className="text-lg font-semibold leading-snug">{s.title}</h3>
                 </div>
               </div>
 
               {!isOpen && (
-                <p className="text-sm text-foreground/70 mt-4 leading-relaxed line-clamp-3 flex-1">{s.def}</p>
+                <p className="text-sm text-body mt-4 leading-relaxed line-clamp-3 flex-1">{s.def}</p>
               )}
 
               {isOpen && (
                 <div className="mt-5 grid lg:grid-cols-12 gap-6 animate-fade-in">
                   <div className="lg:col-span-7 space-y-4">
                     <p className="text-foreground/90">{s.def}</p>
-                    <p className="text-sm text-foreground/75">{s.body}</p>
+                    <p className="text-sm text-body">{s.body}</p>
                     <div className="rounded-xl border border-border bg-card/40 p-4">
-                      <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2">Outcome</p>
+                      <p className="font-mono text-[12px] uppercase tracking-widest text-body mb-2">Outcome</p>
                       <p className="text-sm text-foreground/90">{s.outcome}</p>
                     </div>
                   </div>
                   <div className="lg:col-span-5">
-                    <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">Includes</p>
+                    <p className="font-mono text-[12px] uppercase tracking-widest text-body mb-3">Includes</p>
                     <ul className="space-y-2">
                       {s.includes.map((it) => (
-                        <li key={it} className="flex gap-2 text-sm text-foreground/80">
+                        <li key={it} className="flex gap-2 text-sm text-body">
                           <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                           <span>{it}</span>
                         </li>
@@ -124,7 +124,7 @@ export const ServicesMatrix = ({ services }: ServicesMatrixProps) => {
                 onClick={() => setOpenId(isOpen ? null : s.n)}
                 aria-expanded={isOpen}
                 aria-controls={`service-${s.n}`}
-                className="mt-5 inline-flex items-center gap-1 font-mono text-[11px] tracking-[0.18em] text-primary hover:gap-2 transition-all w-fit"
+                className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary hover:gap-2 transition-all w-fit"
               >
                 {isOpen ? "COLLAPSE −" : "EXPAND DETAIL +"}
               </button>

@@ -13,7 +13,7 @@ export const AuditCTA = () => (
             <h2 className="display text-3xl sm:text-5xl mt-5 leading-[1.05]">
               Find out where your visibility is breaking down.
             </h2>
-            <p className="mt-5 text-foreground/70 text-lg max-w-2xl leading-relaxed">
+            <p className="mt-5 text-body text-lg max-w-2xl leading-relaxed">
               A focused diagnostic showing where your company is winning, losing, or missing
               visibility across Google, AI answers, citation sources, and competitor positioning —
               with a corrective-action roadmap.
@@ -22,7 +22,7 @@ export const AuditCTA = () => (
           <div className="lg:col-span-4 flex lg:justify-end">
             <Button
               asChild
-              className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]"
+              className="group rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-14 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]"
             >
               <Link to="/request-audit">
                 REQUEST A VISIBILITY AUDIT

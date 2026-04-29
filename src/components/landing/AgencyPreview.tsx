@@ -18,7 +18,7 @@ export const AgencyPreview = () => (
           <h2 className="display text-4xl sm:text-5xl mt-5 leading-[1.05]">
             Give clients GEO and AI search capability without building the backend in-house.
           </h2>
-          <p className="mt-6 text-foreground/70 text-lg leading-relaxed">
+          <p className="mt-6 text-body text-lg leading-relaxed">
             CiteWorks Studio supports white-label and collaborative delivery for agencies serving
             high-value clients. Strengthen pitches, expand SEO accounts into AI search, and retain
             clients with stronger strategy.
@@ -26,7 +26,7 @@ export const AgencyPreview = () => (
           <div className="mt-8 flex flex-wrap gap-3">
             <Button
               asChild
-              className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12"
+              className="group rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-14"
             >
               <Link to="/agency-partners">
                 EXPLORE AGENCY PARTNERSHIPS
@@ -38,7 +38,7 @@ export const AgencyPreview = () => (
 
         <div className="lg:col-span-6">
           <div className="glass border-gradient rounded-2xl p-8">
-            <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-5">
+            <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-5">
               PARTNER CAPABILITIES
             </p>
             <ul className="space-y-4">

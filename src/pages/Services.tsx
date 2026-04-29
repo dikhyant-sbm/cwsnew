@@ -311,19 +311,19 @@ const Services = () => {
           <h1 className="display text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight max-w-5xl">
             Search visibility services for Google, AI, and the sources that shape both.
           </h1>
-          <div className="mt-10 max-w-3xl space-y-5 text-lg text-foreground/75">
+          <div className="mt-10 max-w-3xl space-y-5 text-lg text-body">
             <p>CiteWorks Studio helps growth-minded companies become easier to find, cite, compare, and recommend across modern search environments.</p>
             <p>We combine GEO, AI search visibility, technical SEO, citation architecture, content strategy, source-layer authority, market intelligence, and execution into one coordinated system.</p>
           </div>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Button asChild className="rounded-full font-mono text-[11px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT</Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.18em] border-border">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-border">
               <Link to="/agency-partners">EXPLORE AGENCY PARTNERSHIPS</Link>
             </Button>
           </div>
-          <p className="mt-12 text-sm text-muted-foreground max-w-2xl font-mono">
+          <p className="mt-12 text-sm text-body max-w-2xl font-mono">
             Built for companies where search visibility, AI recommendations, trusted sources, and buyer confidence directly affect growth.
           </p>
         </div>
@@ -345,7 +345,7 @@ const Services = () => {
               Modern visibility is not one service. It is a connected system.
             </h2>
           </div>
-          <div className="lg:col-span-7 space-y-5 text-foreground/75 text-lg">
+          <div className="lg:col-span-7 space-y-5 text-body text-lg">
             <p>Most agencies still separate SEO, content, social, digital PR, technical optimization, and AI search into different conversations. CiteWorks Studio does not.</p>
             <p>A buyer may search Google, ask ChatGPT, scan AI Overviews, compare brands in Perplexity, watch YouTube, read Reddit, check review sites, and then return to your website before deciding.</p>
             <p>Your company needs more than rankings. It needs clear entity signals, useful content, credible sources, technical structure, third-party support, and stronger retrieval alignment.</p>
@@ -376,7 +376,7 @@ const Services = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border">
             {coreServices.map((s, i) => (
               <div key={i} className="bg-background p-6 flex items-start gap-4">
-                <span className="font-mono text-[11px] text-primary mt-1">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-mono text-[13px] text-primary mt-1">{String(i + 1).padStart(2, "0")}</span>
                 <p className="text-sm text-foreground/85">{s}</p>
               </div>
             ))}
@@ -402,15 +402,15 @@ const Services = () => {
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
             Start with the visibility gaps. Build from the evidence.
           </h2>
-          <p className="text-foreground/70 max-w-2xl mb-12">
+          <p className="text-body max-w-2xl mb-12">
             Most clients start with a Visibility Audit. From there, we build a corrective-action roadmap. Some clients continue into a monthly execution retainer; others use the findings to support internal teams or agency partners.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {engagementPaths.map((p, i) => (
               <div key={p.title} className="border border-border rounded-xl p-6 bg-background hover:border-primary/40 transition-colors">
-                <p className="font-mono text-[11px] text-primary mb-4">PATH / 0{i + 1}</p>
+                <p className="font-mono text-[13px] text-primary mb-4">PATH / 0{i + 1}</p>
                 <h3 className="text-xl font-semibold mb-3">{p.title}</h3>
-                <p className="text-sm text-foreground/70">{p.body}</p>
+                <p className="text-sm text-body">{p.body}</p>
               </div>
             ))}
           </div>
@@ -425,7 +425,7 @@ const Services = () => {
             What each service improves.
           </h2>
           <div className="border border-border rounded-2xl overflow-hidden">
-            <div className="hidden md:grid grid-cols-12 bg-card/50 px-6 py-4 font-mono text-[11px] tracking-wider text-muted-foreground">
+            <div className="hidden md:grid grid-cols-12 bg-card/50 px-6 py-4 font-mono text-[13px] tracking-wider text-body">
               <div className="col-span-3">SERVICE</div>
               <div className="col-span-4">WHAT IT IMPROVES</div>
               <div className="col-span-5">WHY IT MATTERS</div>
@@ -433,8 +433,8 @@ const Services = () => {
             {matrix.map(([a, b, c], i) => (
               <div key={i} className="grid md:grid-cols-12 gap-2 px-6 py-5 border-t border-border text-sm">
                 <div className="md:col-span-3 font-medium text-foreground">{a}</div>
-                <div className="md:col-span-4 text-foreground/75">{b}</div>
-                <div className="md:col-span-5 text-foreground/65">{c}</div>
+                <div className="md:col-span-4 text-body">{b}</div>
+                <div className="md:col-span-5 text-muted-fg">{c}</div>
               </div>
             ))}
           </div>
@@ -451,9 +451,9 @@ const Services = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {why.map((w, i) => (
               <div key={i} className="border border-border rounded-xl p-6 bg-background">
-                <p className="font-mono text-[11px] text-primary mb-3">{String(i + 1).padStart(2, "0")}</p>
+                <p className="font-mono text-[13px] text-primary mb-3">{String(i + 1).padStart(2, "0")}</p>
                 <h3 className="text-lg font-semibold mb-3">{w.h}</h3>
-                <p className="text-sm text-foreground/70">{w.b}</p>
+                <p className="text-sm text-body">{w.b}</p>
               </div>
             ))}
           </div>
@@ -469,7 +469,7 @@ const Services = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[11px] text-primary mb-4">BEST FIT</p>
+              <p className="font-mono text-[13px] text-primary mb-4">BEST FIT</p>
               <ul className="space-y-3">
                 {bestFit.map((f) => (
                   <li key={f} className="flex gap-3 text-sm text-foreground/85">
@@ -480,11 +480,11 @@ const Services = () => {
               </ul>
             </div>
             <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[11px] text-muted-foreground mb-4">NOT THE BEST FIT</p>
+              <p className="font-mono text-[13px] text-body mb-4">NOT THE BEST FIT</p>
               <ul className="space-y-3">
                 {notFit.map((f) => (
-                  <li key={f} className="flex gap-3 text-sm text-foreground/65">
-                    <span className="text-muted-foreground mt-0.5">—</span>
+                  <li key={f} className="flex gap-3 text-sm text-muted-fg">
+                    <span className="text-body mt-0.5">—</span>
                     <span>{f}</span>
                   </li>
                 ))}
@@ -505,7 +505,7 @@ const Services = () => {
             {faqs.map((f, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="border-border">
                 <AccordionTrigger className="text-left text-lg hover:no-underline">{f.q}</AccordionTrigger>
-                <AccordionContent className="text-foreground/70 text-base">{f.a}</AccordionContent>
+                <AccordionContent className="text-body text-base">{f.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -521,18 +521,18 @@ const Services = () => {
           <h2 className="display text-4xl md:text-6xl leading-tight tracking-tight max-w-4xl mx-auto">
             Find out what is limiting your visibility.
           </h2>
-          <p className="mt-6 text-foreground/75 text-lg max-w-2xl mx-auto">
+          <p className="mt-6 text-body text-lg max-w-2xl mx-auto">
             Your company may already have strong expertise, useful content, and real authority. The question is whether Google, AI systems, third-party sources, and buyers can clearly recognize it.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button asChild className="rounded-full font-mono text-[11px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow">
+            <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3 h-3 ml-1" /></Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.18em] border-border">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-border">
               <Link to="/methodology">EXPLORE THE METHODOLOGY</Link>
             </Button>
           </div>
-          <p className="mt-6 text-xs text-muted-foreground">
+          <p className="mt-6 text-xs text-body">
             No guaranteed rankings or AI recommendations. Evidence-led improvement, prioritized by revenue impact.
           </p>
         </div>

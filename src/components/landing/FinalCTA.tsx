@@ -13,14 +13,14 @@ export const FinalCTA = () => (
         <h2 className="display text-4xl sm:text-6xl mt-4">
           Become easier to find, cite, compare, and choose.
         </h2>
-        <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
+        <p className="mt-6 text-body max-w-2xl mx-auto">
           Close the gap between what you publish and what Google, AI systems, trusted sources, and buyers actually recognize.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <Button asChild className="rounded-full font-mono text-xs tracking-widest bg-primary text-primary-foreground hover:bg-primary/90 btn-glow px-7 h-12">
+          <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow px-7 h-14">
             <Link to="/request-audit">REQUEST A VISIBILITY AUDIT</Link>
           </Button>
-          <Button asChild variant="outline" className="rounded-full font-mono text-xs tracking-widest border-foreground/20 hover:bg-foreground/5 px-7 h-12">
+          <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-foreground/35 hover:bg-foreground/5 px-7 h-14">
             <Link to="/methodology">SEE THE METHODOLOGY</Link>
           </Button>
         </div>

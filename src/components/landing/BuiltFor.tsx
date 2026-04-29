@@ -29,7 +29,7 @@ export const BuiltFor = () => (
           <div key={it.n} className="border-t border-border pt-6">
             <p className="font-mono text-xs text-primary">{it.n}</p>
             <h3 className="display text-xl mt-4">{it.title}</h3>
-            <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{it.desc}</p>
+            <p className="text-sm text-body mt-3 leading-relaxed">{it.desc}</p>
           </div>
         ))}
       </div>

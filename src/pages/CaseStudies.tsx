@@ -131,19 +131,19 @@ const CaseStudies = () => {
           <h1 className="display text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight max-w-5xl">
             Proof across Google, AI answers, and the sources that shape buyer decisions.
           </h1>
-          <div className="mt-10 max-w-3xl space-y-5 text-lg text-foreground/75">
+          <div className="mt-10 max-w-3xl space-y-5 text-lg text-body">
             <p>CiteWorks Studio helps growth-minded companies improve how they are found, cited, compared, and recommended across modern search environments.</p>
             <p>These case studies show how visibility improves when companies strengthen more than rankings — across GEO, citation architecture, AI search visibility, technical SEO, content strategy, and source-layer authority.</p>
           </div>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Button asChild className="rounded-full font-mono text-[11px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">
               <a href="#featured">VIEW FEATURED SYNTHESIS</a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.18em] border-border">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-border">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT</Link>
             </Button>
           </div>
-          <p className="mt-12 text-sm text-muted-foreground max-w-2xl font-mono">
+          <p className="mt-12 text-sm text-body max-w-2xl font-mono">
             Anonymized case studies across high-consideration categories where search visibility, trust, comparison, and recommendation placement affect growth.
           </p>
         </div>
@@ -165,14 +165,14 @@ const CaseStudies = () => {
               These are not traffic stories. They are visibility-system stories.
             </h2>
           </div>
-          <div className="lg:col-span-7 space-y-5 text-foreground/75 text-lg">
+          <div className="lg:col-span-7 space-y-5 text-body text-lg">
             <p>Modern buyers do not move through one search result. They search Google, ask AI systems, read comparison pages, check reviews, watch videos, scan public discussions, and validate brands through trusted third-party sources before deciding.</p>
             <p>The strongest visibility programs measure whether a company becomes easier to find, easier to validate, easier to cite, and easier to recommend.</p>
             <div className="grid grid-cols-2 gap-2 pt-6 border-t border-border">
               {movement.map((m, i) => (
                 <div key={i} className="flex gap-3 items-start py-1">
-                  <span className="font-mono text-[10px] text-primary mt-1.5">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="text-sm text-foreground/80">{m}</span>
+                  <span className="font-mono text-[12px] text-primary mt-1.5">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-sm text-body">{m}</span>
                 </div>
               ))}
             </div>
@@ -187,21 +187,21 @@ const CaseStudies = () => {
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
             AI visibility growth across four high-consideration verticals.
           </h2>
-          <p className="text-foreground/70 max-w-3xl mb-12">
+          <p className="text-body max-w-3xl mb-12">
             A structured comparison of four published CiteWorks Studio engagements — tax relief, household appliance, crypto wallet, and pest control — showing how citation footprint, brand context, and high-intent public-source visibility can improve alongside Google and AI visibility.
           </p>
           <div className="border border-primary/30 bg-background rounded-2xl p-8 lg:p-12">
-            <p className="font-mono text-[11px] text-primary mb-4">FEATURED CASE</p>
+            <p className="font-mono text-[13px] text-primary mb-4">FEATURED CASE</p>
             <h3 className="text-2xl md:text-3xl font-semibold mb-4 leading-tight">
               Cross-Case Synthesis: AI Visibility Growth Across Four Verticals
             </h3>
             <div className="mt-6 border-t border-border pt-6">
-              <p className="font-mono text-[11px] text-muted-foreground mb-3">KEY TAKEAWAY</p>
+              <p className="font-mono text-[13px] text-body mb-3">KEY TAKEAWAY</p>
               <p className="text-foreground/85 text-lg leading-relaxed">
                 The pattern was not simply "rank higher and AI visibility follows." The stronger pattern: improve citation footprint, brand context, and high-intent presence across Google and public reference environments, and AI visibility can improve alongside traditional search.
               </p>
             </div>
-            <Button className="mt-8 rounded-full font-mono text-[11px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button className="mt-8 rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">
               READ THE SYNTHESIS <ArrowUpRight className="w-3 h-3 ml-1" />
             </Button>
           </div>
@@ -215,11 +215,11 @@ const CaseStudies = () => {
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
             Published outcomes across AI search and Google visibility.
           </h2>
-          <p className="text-foreground/70 max-w-2xl mb-12">
+          <p className="text-body max-w-2xl mb-12">
             Each case uses its own measurement framework, category context, and timeframe. Read these as published case-study outcomes, not a universal benchmark.
           </p>
           <ResultsChart results={results} />
-          <p className="mt-6 text-xs text-muted-foreground max-w-3xl font-mono">
+          <p className="mt-6 text-xs text-body max-w-3xl font-mono">
             Source note: published outcomes from the CiteWorks cross-case synthesis. Cases use different surfaces, timeframes, and metric types and should be compared descriptively rather than blended into a single benchmark.
           </p>
         </div>
@@ -232,7 +232,7 @@ const CaseStudies = () => {
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
             Explore the case studies.
           </h2>
-          <p className="text-foreground/70 max-w-2xl mb-10">
+          <p className="text-body max-w-2xl mb-10">
             The method changes by category, but the goal stays consistent: make the company easier to find, cite, compare, and recommend.
           </p>
 
@@ -248,10 +248,10 @@ const CaseStudies = () => {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => setFilter(f)}
-                  className={`px-4 py-2 rounded-full font-mono text-[11px] tracking-[0.18em] border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                  className={`px-4 py-2 rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
                     isActive
                       ? "bg-primary text-primary-foreground border-transparent"
-                      : "border-border text-foreground/70 hover:border-primary/40 hover:text-foreground"
+                      : "border-border text-body hover:border-primary/40 hover:text-foreground"
                   }`}
                 >
                   {f.toUpperCase()} <span className={`ml-1.5 ${isActive ? "opacity-80" : "opacity-50"}`}>{count}</span>
@@ -260,7 +260,7 @@ const CaseStudies = () => {
             })}
           </div>
 
-          <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground mb-6" aria-live="polite">
+          <p className="font-mono text-[12px] tracking-[0.16em] text-body mb-6" aria-live="polite">
             SHOWING {filteredCases.length} OF {cases.length}
           </p>
 
@@ -271,20 +271,20 @@ const CaseStudies = () => {
                 className="border border-border rounded-xl bg-background p-6 hover:border-primary/40 transition-colors group flex flex-col animate-fade-in"
                 style={{ animationDelay: `${i * 30}ms` }}
               >
-                <p className="font-mono text-[11px] text-primary mb-4">CASE / {c.n}</p>
+                <p className="font-mono text-[13px] text-primary mb-4">CASE / {c.n}</p>
                 <h3 className="text-lg font-semibold mb-3 leading-snug group-hover:text-primary transition-colors">
                   {c.title}
                 </h3>
-                <p className="text-sm text-foreground/70 mb-5 flex-grow">{c.desc}</p>
+                <p className="text-sm text-body mb-5 flex-grow">{c.desc}</p>
                 <div className="border-t border-border pt-4">
-                  <p className="font-mono text-[10px] text-muted-foreground mb-2">BEST FOR</p>
+                  <p className="font-mono text-[12px] text-body mb-2">BEST FOR</p>
                   <div className="flex flex-wrap gap-1.5">
                     {c.best.map((b) => (
-                      <span key={b} className="text-[11px] px-2 py-1 rounded-full bg-card border border-border text-foreground/75">{b}</span>
+                      <span key={b} className="text-[13px] px-2 py-1 rounded-full bg-card border border-border text-body">{b}</span>
                     ))}
                   </div>
                 </div>
-                <button className="mt-5 inline-flex items-center gap-1 font-mono text-[11px] tracking-[0.18em] text-primary hover:gap-2 transition-all">
+                <button className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary hover:gap-2 transition-all">
                   READ CASE STUDY <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
                 </button>
               </article>
@@ -292,7 +292,7 @@ const CaseStudies = () => {
           </div>
 
           {filteredCases.length === 0 && (
-            <div className="mt-10 text-center text-muted-foreground">
+            <div className="mt-10 text-center text-body">
               No case studies in this category yet. <button onClick={() => setFilter("All")} className="text-primary underline-offset-4 hover:underline">View all</button>.
             </div>
           )}
@@ -309,9 +309,9 @@ const CaseStudies = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {patterns.map((p) => (
               <div key={p.n} className="border border-border rounded-xl p-6 bg-card/30">
-                <p className="font-mono text-[11px] text-primary mb-3">PATTERN / {p.n}</p>
+                <p className="font-mono text-[13px] text-primary mb-3">PATTERN / {p.n}</p>
                 <h3 className="text-lg font-semibold mb-3 leading-snug">{p.h}</h3>
-                <p className="text-sm text-foreground/70">{p.b}</p>
+                <p className="text-sm text-body">{p.b}</p>
               </div>
             ))}
           </div>
@@ -328,18 +328,18 @@ const CaseStudies = () => {
             </h2>
           </div>
           <div className="lg:col-span-7">
-            <p className="text-foreground/75 text-lg mb-8">
+            <p className="text-body text-lg mb-8">
               CiteWorks Studio case studies are designed to show visibility movement across the search environments that influence buyers. Depending on category and engagement, measurement may include:
             </p>
             <div className="grid sm:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden border border-border">
               {measurement.map((m, i) => (
                 <div key={i} className="bg-background p-4 flex items-center gap-3">
-                  <span className="font-mono text-[10px] text-primary">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="font-mono text-[12px] text-primary">{String(i + 1).padStart(2, "0")}</span>
                   <span className="text-sm text-foreground/85">{m}</span>
                 </div>
               ))}
             </div>
-            <p className="mt-6 text-xs text-muted-foreground font-mono">
+            <p className="mt-6 text-xs text-body font-mono">
               Disclosure: published monetary values are directional estimates based on tracked keyword visibility and modeled paid-equivalent value. They are not exact revenue attribution.
             </p>
           </div>
@@ -353,7 +353,7 @@ const CaseStudies = () => {
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-8">
             Case studies should show more than "we got traffic."
           </h2>
-          <p className="text-foreground/75 text-lg max-w-3xl mb-10">
+          <p className="text-body text-lg max-w-3xl mb-10">
             Traffic alone does not explain whether a company is becoming easier to trust, compare, cite, or recommend. These case studies focus on the visibility signals that matter in modern search:
           </p>
           <div className="grid md:grid-cols-2 gap-3 max-w-4xl">
@@ -385,7 +385,7 @@ const CaseStudies = () => {
             {faqs.map((f, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="border-border">
                 <AccordionTrigger className="text-left text-lg hover:no-underline">{f.q}</AccordionTrigger>
-                <AccordionContent className="text-foreground/70 text-base">{f.a}</AccordionContent>
+                <AccordionContent className="text-body text-base">{f.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -398,14 +398,14 @@ const CaseStudies = () => {
           <h2 className="display text-4xl md:text-6xl leading-tight tracking-tight max-w-4xl mx-auto">
             Find out where your visibility is breaking down.
           </h2>
-          <p className="mt-6 text-foreground/75 text-lg max-w-2xl mx-auto">
+          <p className="mt-6 text-body text-lg max-w-2xl mx-auto">
             The strongest case studies start with a clear diagnosis. CiteWorks Studio helps growth-minded companies identify where they are losing visibility — then we build the corrective-action plan.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button asChild className="rounded-full font-mono text-[11px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3 h-3 ml-1" /></Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.18em] border-border">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-border">
               <Link to="/methodology">EXPLORE THE METHODOLOGY</Link>
             </Button>
           </div>

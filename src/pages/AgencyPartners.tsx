@@ -112,10 +112,10 @@ const AgencyPartners = () => {
         body="CiteWorks Studio supports white-label and collaborative delivery across GEO, AI search audits, citation architecture, technical SEO, content strategy, market intelligence, source-layer research, reporting, and ongoing corrective action."
         ctas={
           <>
-            <Button asChild className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
+            <Button asChild className="group rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-14 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
               <Link to="/request-audit">REQUEST A PARTNER STRATEGY CALL <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/15 hover:bg-foreground/5 px-7 h-12">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-foreground/30 hover:bg-foreground/5 px-7 h-14">
               <a href="#partner-services">SEE PARTNER SERVICES</a>
             </Button>
           </>
@@ -127,7 +127,7 @@ const AgencyPartners = () => {
         <div className="mx-auto max-w-4xl px-6 text-center">
           <p className="eyebrow">Positioning</p>
           <h2 className="display text-3xl sm:text-5xl mt-4">This is not generic SEO fulfillment.</h2>
-          <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
+          <p className="mt-6 text-body leading-relaxed text-lg">
             Many white-label SEO providers are built for volume: keyword lists, blog packages, link
             orders, dashboards, and templated reports. CiteWorks Studio is built for agencies that
             need deeper capability across traditional search, AI-generated answers, citation
@@ -140,7 +140,7 @@ const AgencyPartners = () => {
       <section className="py-20 border-t border-border/40">
         <div className="mx-auto max-w-5xl px-6">
           <div className="glass-strong rounded-2xl p-8 sm:p-10">
-            <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-4">ANSWER CAPSULE</p>
+            <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-4">ANSWER CAPSULE</p>
             <p className="text-foreground/90 text-lg leading-relaxed">
               CiteWorks Studio is a specialist GEO, AI search visibility, and citation architecture
               backend for agencies. We support white-label audits, embedding-level GEO, technical
@@ -159,7 +159,7 @@ const AgencyPartners = () => {
             {fits.map((f) => (
               <div key={f.title} className="card-premium p-8 hover:border-primary/40 transition-colors">
                 <h3 className="display text-xl">{f.title}</h3>
-                <p className="text-sm text-muted-foreground mt-4 leading-relaxed">{f.desc}</p>
+                <p className="text-sm text-body mt-4 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -179,9 +179,9 @@ const AgencyPartners = () => {
               <article key={s.title} className="card-premium p-8 hover:border-primary/40 transition-colors">
                 <p className="font-mono text-xs text-primary">{String(i + 1).padStart(2, "0")}</p>
                 <h3 className="display text-2xl mt-3">{s.title}</h3>
-                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{s.desc}</p>
+                <p className="text-sm text-body mt-3 leading-relaxed">{s.desc}</p>
                 <div className="mt-5 pt-4 border-t border-border">
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-primary">Agency value</p>
+                  <p className="font-mono text-[12px] uppercase tracking-widest text-primary">Agency value</p>
                   <p className="text-sm text-foreground/85 mt-2">{s.value}</p>
                 </div>
               </article>
@@ -207,9 +207,9 @@ const AgencyPartners = () => {
           <div className="mt-12 grid md:grid-cols-2 gap-4">
             {why.map((w, i) => (
               <div key={i} className="border border-border rounded-2xl p-7 bg-background">
-                <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-3">{String(i + 1).padStart(2, "0")}</p>
+                <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-3">{String(i + 1).padStart(2, "0")}</p>
                 <h3 className="display text-xl mb-3">{w.h}</h3>
-                <p className="text-sm text-foreground/70 leading-relaxed">{w.b}</p>
+                <p className="text-sm text-body leading-relaxed">{w.b}</p>
               </div>
             ))}
           </div>
@@ -247,7 +247,7 @@ const AgencyPartners = () => {
             align="left"
           />
           <div className="mt-12 card-premium/30 overflow-hidden">
-            <div className="grid grid-cols-12 font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground bg-card/60 px-6 py-4 border-b border-border">
+            <div className="grid grid-cols-12 font-mono text-[12px] tracking-[0.16em] uppercase text-body bg-card/60 px-6 py-4 border-b border-border">
               <div className="col-span-3">Service</div>
               <div className="col-span-4">Focus</div>
               <div className="col-span-5 text-primary">Deliverable</div>
@@ -255,7 +255,7 @@ const AgencyPartners = () => {
             {llmTable.map(([s, f, o], i) => (
               <div key={i} className={`grid grid-cols-12 px-6 py-5 text-sm gap-4 ${i < llmTable.length - 1 ? "border-b border-border" : ""}`}>
                 <div className="col-span-3 font-medium text-foreground/95">{s}</div>
-                <div className="col-span-4 text-foreground/70">{f}</div>
+                <div className="col-span-4 text-body">{f}</div>
                 <div className="col-span-5 text-foreground/85">{o}</div>
               </div>
             ))}
@@ -269,7 +269,7 @@ const AgencyPartners = () => {
           <div>
             <p className="eyebrow">Sales enablement</p>
             <h2 className="display text-4xl mt-5 leading-tight">Help your team sell modern search visibility.</h2>
-            <p className="mt-5 text-foreground/70 leading-relaxed">
+            <p className="mt-5 text-body leading-relaxed">
               We support partner sales conversations with positioning, frameworks, and decks built
               for executive buyers — so your agency can confidently quote SEO, GEO, AI search, and
               citation architecture engagements.
@@ -294,7 +294,7 @@ const AgencyPartners = () => {
           <h2 className="display text-3xl sm:text-5xl mt-5 leading-tight">
             White-label by default. Confidential by design.
           </h2>
-          <p className="mt-6 text-foreground/70 text-lg leading-relaxed">
+          <p className="mt-6 text-body text-lg leading-relaxed">
             Partner engagements are covered by mutual NDA by default. Deliverables can be
             unbranded or matched to your agency's standards. We never disclose client identities,
             account histories, or engagement scopes to outside parties.
@@ -308,7 +308,7 @@ const AgencyPartners = () => {
           <SectionHeading eyebrow="Fit" title="Who agency partnerships are built for." align="left" />
           <div className="mt-12 grid md:grid-cols-2 gap-6">
             <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-5">BEST FIT</p>
+              <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-5">BEST FIT</p>
               <ul className="space-y-3">
                 {bestFit.map((f) => (
                   <li key={f} className="flex gap-3 text-sm text-foreground/85">
@@ -319,11 +319,11 @@ const AgencyPartners = () => {
               </ul>
             </div>
             <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground mb-5">NOT THE BEST FIT</p>
+              <p className="font-mono text-[12px] tracking-[0.16em] text-body mb-5">NOT THE BEST FIT</p>
               <ul className="space-y-3">
                 {notFit.map((f) => (
-                  <li key={f} className="flex gap-3 text-sm text-foreground/65">
-                    <span className="text-muted-foreground mt-0.5">—</span>
+                  <li key={f} className="flex gap-3 text-sm text-muted-fg">
+                    <span className="text-body mt-0.5">—</span>
                     <span>{f}</span>
                   </li>
                 ))}
@@ -340,9 +340,9 @@ const AgencyPartners = () => {
           <div className="mt-12 grid md:grid-cols-2 gap-4">
             {useCases.map((u, i) => (
               <div key={i} className="border border-border rounded-2xl p-7 bg-card/30">
-                <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-3">USE CASE / 0{i + 1}</p>
+                <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-3">USE CASE / 0{i + 1}</p>
                 <h3 className="display text-xl mb-3">{u.t}</h3>
-                <p className="text-sm text-foreground/70 leading-relaxed">{u.d}</p>
+                <p className="text-sm text-body leading-relaxed">{u.d}</p>
               </div>
             ))}
           </div>
@@ -358,7 +358,7 @@ const AgencyPartners = () => {
                 <AccordionTrigger className="text-left text-lg font-medium hover:text-primary hover:no-underline py-6">
                   {f.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                <AccordionContent className="text-body leading-relaxed pb-6">
                   {f.a}
                 </AccordionContent>
               </AccordionItem>
@@ -370,15 +370,15 @@ const AgencyPartners = () => {
       <section className="py-32 border-t border-border/40 text-center grid-bg">
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="display text-4xl sm:text-6xl">Give your agency a stronger modern search backend.</h2>
-          <p className="mt-6 text-foreground/70 text-lg">
+          <p className="mt-6 text-body text-lg">
             Start with a partner strategy call. We'll map where CiteWorks Studio can support your
             current service offering, sales conversations, or specific client opportunities.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button asChild className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
+            <Button asChild className="group rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-14 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
               <Link to="/request-audit">REQUEST A PARTNER STRATEGY CALL <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/15 hover:bg-foreground/5 px-7 h-12">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-foreground/30 hover:bg-foreground/5 px-7 h-14">
               <Link to="/services">EXPLORE SERVICES</Link>
             </Button>
           </div>

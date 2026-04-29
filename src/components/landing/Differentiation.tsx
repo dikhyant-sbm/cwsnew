@@ -7,7 +7,7 @@ export const Differentiation = () => (
         We close the gap between{" "}
         <span className="text-gradient">real authority</span> and machine-recognized authority.
       </h2>
-      <p className="mt-8 text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+      <p className="mt-8 text-lg text-body max-w-3xl mx-auto leading-relaxed">
         Most growth-minded companies have real expertise, useful content, and genuine customer
         value. The question is whether Google, AI systems, third-party sources, and buyers can
         clearly recognize it. CiteWorks Studio identifies that gap — and builds the corrective-action

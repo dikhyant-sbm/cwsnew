@@ -6,7 +6,7 @@ export const ProductShot = () => (
       <div className="reveal-on-scroll">
         <DashboardShowcase dashboard="ai-visibility" size="lg" priority className="float-y-slow" />
       </div>
-      <p className="mt-8 text-center font-mono text-[10px] tracking-[0.22em] uppercase text-foreground/45">
+      <p className="mt-8 text-center font-mono text-[12px] tracking-[0.16em] uppercase text-tertiary">
         AI Visibility Overview · CiteWorks Studio
       </p>
     </div>

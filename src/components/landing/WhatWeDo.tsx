@@ -14,12 +14,12 @@ export const WhatWeDo = () => (
           </h2>
           <Link
             to="/services"
-            className="mt-8 inline-flex items-center gap-1.5 font-mono text-[11px] tracking-[0.22em] text-primary hover:gap-2.5 transition-all"
+            className="mt-8 inline-flex items-center gap-1.5 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary hover:gap-2.5 transition-all"
           >
             EXPLORE SERVICES <ArrowUpRight className="size-3" />
           </Link>
         </div>
-        <div className="lg:col-span-7 space-y-5 text-foreground/75 text-lg leading-relaxed">
+        <div className="lg:col-span-7 space-y-5 text-body text-lg leading-relaxed">
           <p>
             CiteWorks Studio helps growth-minded companies improve how they appear across Google,
             ChatGPT, Gemini, Perplexity, Google AI Overviews, Copilot, organic search results,

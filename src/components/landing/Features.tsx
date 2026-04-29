@@ -54,7 +54,7 @@ export const Features = () => (
         <h2 className="display text-4xl sm:text-6xl mt-4">
           We close the gap between real authority and machine-recognized authority.
         </h2>
-        <p className="text-muted-foreground mt-6 leading-relaxed">
+        <p className="text-body mt-6 leading-relaxed">
           Machine systems rely on patterns. CiteWorks Studio improves those patterns so your company becomes easier for machines to understand and easier for buyers to trust.
         </p>
       </div>
@@ -72,15 +72,15 @@ export const Features = () => (
                 <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 border border-primary/20">
                   <Icon className="size-4 text-primary" strokeWidth={1.5} />
                 </div>
-                <span className="font-mono text-[10px] tracking-[0.2em] text-foreground/40">
+                <span className="font-mono text-[12px] tracking-[0.2em] text-tertiary">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
               <h3 className="display text-2xl mt-6">{f.title}</h3>
-              <p className="text-sm text-muted-foreground mt-3 leading-relaxed flex-1">{f.desc}</p>
+              <p className="text-sm text-body mt-3 leading-relaxed flex-1">{f.desc}</p>
               <Link
                 to="/methodology"
-                className="mt-6 inline-flex items-center gap-1 font-mono text-xs tracking-widest text-primary hover:gap-2 transition-all w-fit"
+                className="mt-6 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary hover:gap-2 transition-all w-fit"
               >
                 LEARN MORE <ArrowRight className="size-3" />
               </Link>

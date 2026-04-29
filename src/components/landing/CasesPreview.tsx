@@ -37,7 +37,7 @@ export const CasesPreview = () => (
           <h2 className="display text-4xl sm:text-5xl mt-5 leading-[1.05]">
             Visibility movement across high-consideration verticals.
           </h2>
-          <p className="mt-5 text-foreground/70 text-lg leading-relaxed">
+          <p className="mt-5 text-body text-lg leading-relaxed">
             Anonymized case studies showing what changes when companies strengthen more than
             rankings — across Google, AI answers, and the trusted source environments that shape
             buyer decisions.
@@ -45,7 +45,7 @@ export const CasesPreview = () => (
         </div>
         <Link
           to="/case-studies"
-          className="inline-flex items-center gap-1.5 font-mono text-[11px] tracking-[0.22em] text-primary hover:gap-2.5 transition-all"
+          className="inline-flex items-center gap-1.5 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary hover:gap-2.5 transition-all"
         >
           VIEW ALL CASE STUDIES <ArrowUpRight className="size-3" />
         </Link>
@@ -57,18 +57,18 @@ export const CasesPreview = () => (
             key={i}
             className="group relative card-premium p-7 hover:border-primary/40 transition-all overflow-hidden"
           >
-            <p className="font-mono text-[10px] tracking-[0.22em] text-foreground/50 uppercase mb-6">
+            <p className="font-mono text-[12px] tracking-[0.16em] text-subtle uppercase mb-6">
               {c.cat}
             </p>
             <p className="display text-5xl text-gradient leading-none">{c.metric}</p>
             <p className="text-sm text-foreground/85 mt-3 font-medium">{c.label}</p>
-            <p className="text-xs text-foreground/55 mt-4 leading-relaxed border-t border-border pt-4">
+            <p className="text-xs text-subtle mt-4 leading-relaxed border-t border-border pt-4">
               {c.detail}
             </p>
           </article>
         ))}
       </div>
-      <p className="mt-6 text-xs text-muted-foreground font-mono max-w-3xl">
+      <p className="mt-6 text-xs text-body font-mono max-w-3xl">
         Source: CiteWorks cross-case synthesis. Cases use different surfaces, timeframes, and metric
         types; compared descriptively, not blended into a single benchmark.
       </p>

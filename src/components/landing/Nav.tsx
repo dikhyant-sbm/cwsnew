@@ -75,7 +75,7 @@ export const Nav = () => {
         <Logo />
 
         <nav
-          className="hidden lg:flex items-center font-mono text-[11px] tracking-[0.18em] text-foreground/85"
+          className="hidden lg:flex items-center font-mono text-[13px] font-semibold tracking-[0.14em] text-foreground/85"
           onMouseLeave={() => setOpenIdx(null)}
         >
           {groups.map((g, i) => {
@@ -119,7 +119,7 @@ export const Nav = () => {
                             <ArrowUpRight className="size-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-primary" />
                           </div>
                           {c.description && (
-                            <p className="font-sans text-xs tracking-normal text-muted-foreground mt-1">
+                            <p className="font-sans text-xs tracking-normal text-body mt-1">
                               {c.description}
                             </p>
                           )}
@@ -137,7 +137,7 @@ export const Nav = () => {
           <ThemeToggle />
           <Button
             asChild
-            className="group rounded-full font-mono text-[11px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow h-9 px-5"
+            className="group rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow h-9 px-5"
           >
             <Link to="/request-audit">
               REQUEST A VISIBILITY AUDIT

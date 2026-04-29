@@ -80,7 +80,7 @@ export const Features = () => (
               <p className="text-sm text-body mt-3 leading-relaxed flex-1">{f.desc}</p>
               <Link
                 to="/methodology"
-                className="mt-6 inline-flex items-center gap-1 font-mono text-xs tracking-widest text-primary hover:gap-2 transition-all w-fit"
+                className="mt-6 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary hover:gap-2 transition-all w-fit"
               >
                 LEARN MORE <ArrowRight className="size-3" />
               </Link>

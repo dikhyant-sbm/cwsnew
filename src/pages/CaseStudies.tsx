@@ -136,10 +136,10 @@ const CaseStudies = () => {
             <p>These case studies show how visibility improves when companies strengthen more than rankings — across GEO, citation architecture, AI search visibility, technical SEO, content strategy, and source-layer authority.</p>
           </div>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Button asChild className="rounded-full font-mono text-[13px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">
               <a href="#featured">VIEW FEATURED SYNTHESIS</a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] tracking-[0.18em] border-border">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-border">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT</Link>
             </Button>
           </div>
@@ -201,7 +201,7 @@ const CaseStudies = () => {
                 The pattern was not simply "rank higher and AI visibility follows." The stronger pattern: improve citation footprint, brand context, and high-intent presence across Google and public reference environments, and AI visibility can improve alongside traditional search.
               </p>
             </div>
-            <Button className="mt-8 rounded-full font-mono text-[13px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button className="mt-8 rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">
               READ THE SYNTHESIS <ArrowUpRight className="w-3 h-3 ml-1" />
             </Button>
           </div>
@@ -248,7 +248,7 @@ const CaseStudies = () => {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => setFilter(f)}
-                  className={`px-4 py-2 rounded-full font-mono text-[13px] tracking-[0.18em] border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                  className={`px-4 py-2 rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
                     isActive
                       ? "bg-primary text-primary-foreground border-transparent"
                       : "border-border text-body hover:border-primary/40 hover:text-foreground"
@@ -284,7 +284,7 @@ const CaseStudies = () => {
                     ))}
                   </div>
                 </div>
-                <button className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] tracking-[0.18em] text-primary hover:gap-2 transition-all">
+                <button className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary hover:gap-2 transition-all">
                   READ CASE STUDY <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
                 </button>
               </article>
@@ -402,10 +402,10 @@ const CaseStudies = () => {
             The strongest case studies start with a clear diagnosis. CiteWorks Studio helps growth-minded companies identify where they are losing visibility — then we build the corrective-action plan.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button asChild className="rounded-full font-mono text-[13px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3 h-3 ml-1" /></Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] tracking-[0.18em] border-border">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-border">
               <Link to="/methodology">EXPLORE THE METHODOLOGY</Link>
             </Button>
           </div>

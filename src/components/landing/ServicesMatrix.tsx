@@ -55,7 +55,7 @@ export const ServicesMatrix = ({ services }: ServicesMatrixProps) => {
               role="tab"
               aria-selected={isActive}
               onClick={() => setActive(c)}
-              className={`px-4 py-2 rounded-full font-mono text-[13px] tracking-[0.18em] border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+              className={`px-4 py-2 rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
                 isActive
                   ? "bg-primary text-primary-foreground border-transparent"
                   : "border-border text-body hover:border-primary/40 hover:text-foreground"
@@ -124,7 +124,7 @@ export const ServicesMatrix = ({ services }: ServicesMatrixProps) => {
                 onClick={() => setOpenId(isOpen ? null : s.n)}
                 aria-expanded={isOpen}
                 aria-controls={`service-${s.n}`}
-                className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] tracking-[0.18em] text-primary hover:gap-2 transition-all w-fit"
+                className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary hover:gap-2 transition-all w-fit"
               >
                 {isOpen ? "COLLAPSE −" : "EXPAND DETAIL +"}
               </button>

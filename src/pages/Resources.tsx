@@ -66,10 +66,10 @@ const Resources = () => {
         body="Guides, case studies, definitions, and strategy resources that explain how growth-minded companies can improve visibility across Google, AI answers, and the source environments that shape buyer decisions."
         ctas={
           <>
-            <Button asChild className="rounded-full font-mono text-xs tracking-widest bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12">
+            <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-14">
               <a href="#articles">BROWSE RESOURCES</a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-xs tracking-widest border-foreground/35 hover:bg-foreground/5 px-7 h-12">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-foreground/35 hover:bg-foreground/5 px-7 h-14">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT</Link>
             </Button>
           </>
@@ -137,7 +137,7 @@ const Resources = () => {
           </p>
           <form className="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <Input type="email" placeholder="Work email" className="h-12 rounded-full bg-card border-border" />
-            <Button className="rounded-full font-mono text-xs tracking-widest bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-6">
+            <Button className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-6">
               SUBSCRIBE
             </Button>
           </form>
@@ -198,10 +198,10 @@ const Resources = () => {
             Knowing where your own company is breaking down is more useful than another article about it.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button asChild className="rounded-full font-mono text-xs tracking-widest bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12">
+            <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-14">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT</Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-xs tracking-widest border-foreground/35 hover:bg-foreground/5 px-7 h-12">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-foreground/35 hover:bg-foreground/5 px-7 h-14">
               <Link to="/methodology">EXPLORE THE METHODOLOGY</Link>
             </Button>
           </div>

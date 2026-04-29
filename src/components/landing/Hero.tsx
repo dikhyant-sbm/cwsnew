@@ -62,7 +62,7 @@ export const Hero = () => (
         ))}
       </div>
 
-      <div className="mt-16 flex items-center justify-center gap-2 font-mono text-[13px] tracking-[0.18em] text-tertiary">
+      <div className="mt-16 flex items-center justify-center gap-2 font-mono text-[13px] font-semibold tracking-[0.14em] text-tertiary">
         <Sparkles className="w-3.5 h-3.5" />
         SCROLL TO EXPLORE
       </div>

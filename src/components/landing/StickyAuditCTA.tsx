@@ -37,7 +37,7 @@ export const StickyAuditCTA = () => {
       <div className="relative flex items-stretch glass-strong border-gradient rounded-full pl-1 pr-1 py-1 shadow-[0_20px_50px_-15px_hsl(0_0%_0%/0.6)]">
         <Link
           to="/request-audit"
-          className="group inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 btn-glow px-5 h-10 font-mono text-[13px] tracking-[0.18em]"
+          className="group inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 btn-glow px-5 h-10 font-mono text-[13px] font-semibold tracking-[0.14em]"
         >
           REQUEST A VISIBILITY AUDIT
           <ArrowUpRight className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

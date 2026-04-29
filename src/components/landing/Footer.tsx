@@ -62,7 +62,7 @@ export const Footer = () => (
         <div className="lg:col-span-4 flex flex-wrap lg:justify-end gap-3">
           <Button
             asChild
-            className="rounded-full font-mono text-[13px] tracking-[0.16em] bg-primary text-primary-foreground hover:bg-primary/90 px-6 h-11"
+            className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 px-6 h-12"
           >
             <Link to="/request-audit">
               REQUEST A VISIBILITY AUDIT{" "}
@@ -72,7 +72,7 @@ export const Footer = () => (
           <Button
             asChild
             variant="outline"
-            className="rounded-full font-mono text-[13px] tracking-[0.16em] border-foreground/30 hover:bg-foreground/5 px-6 h-11"
+            className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-foreground/30 hover:bg-foreground/5 px-6 h-12"
           >
             <Link to="/agency-partners">DISCUSS AGENCY PARTNERSHIP</Link>
           </Button>

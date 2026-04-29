@@ -17,10 +17,10 @@ export const FinalCTA = () => (
           Close the gap between what you publish and what Google, AI systems, trusted sources, and buyers actually recognize.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <Button asChild className="rounded-full font-mono text-xs tracking-widest bg-primary text-primary-foreground hover:bg-primary/90 btn-glow px-7 h-12">
+          <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow px-7 h-14">
             <Link to="/request-audit">REQUEST A VISIBILITY AUDIT</Link>
           </Button>
-          <Button asChild variant="outline" className="rounded-full font-mono text-xs tracking-widest border-foreground/35 hover:bg-foreground/5 px-7 h-12">
+          <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-foreground/35 hover:bg-foreground/5 px-7 h-14">
             <Link to="/methodology">SEE THE METHODOLOGY</Link>
           </Button>
         </div>

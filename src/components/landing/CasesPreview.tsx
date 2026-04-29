@@ -45,7 +45,7 @@ export const CasesPreview = () => (
         </div>
         <Link
           to="/case-studies"
-          className="inline-flex items-center gap-1.5 font-mono text-[13px] tracking-[0.16em] text-primary hover:gap-2.5 transition-all"
+          className="inline-flex items-center gap-1.5 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary hover:gap-2.5 transition-all"
         >
           VIEW ALL CASE STUDIES <ArrowUpRight className="size-3" />
         </Link>

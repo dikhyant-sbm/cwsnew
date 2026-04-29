@@ -256,16 +256,16 @@ const RequestAudit = () => {
                 ))}
               </div>
               <div className="mt-10 flex flex-wrap justify-center gap-3">
-                <Button asChild variant="outline" className="rounded-full font-mono text-[13px] tracking-[0.16em] border-foreground/30 hover:bg-foreground/5 px-6 h-11">
+                <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-foreground/30 hover:bg-foreground/5 px-6 h-12">
                   <Link to="/methodology">EXPLORE THE METHODOLOGY</Link>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full font-mono text-[13px] tracking-[0.16em] border-foreground/30 hover:bg-foreground/5 px-6 h-11">
+                <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-foreground/30 hover:bg-foreground/5 px-6 h-12">
                   <Link to="/case-studies">SEE CASE STUDIES</Link>
                 </Button>
                 <button
                   type="button"
                   onClick={resetForm}
-                  className="rounded-full font-mono text-[13px] tracking-[0.16em] text-body hover:text-foreground px-4 h-11 transition-colors"
+                  className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] text-body hover:text-foreground px-4 h-11 transition-colors"
                 >
                   SUBMIT ANOTHER
                 </button>
@@ -370,7 +370,7 @@ const RequestAudit = () => {
               type="submit"
               disabled={submitting}
               aria-busy={submitting}
-              className="w-full group rounded-full font-mono text-[13px] tracking-[0.16em] bg-primary text-primary-foreground hover:bg-primary/90 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)] disabled:opacity-70"
+              className="w-full group rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)] disabled:opacity-70"
             >
               {submitting ? "SUBMITTING…" : (
                 <>REQUEST VISIBILITY AUDIT <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></>
@@ -576,7 +576,7 @@ const RequestAudit = () => {
           <div className="mt-12 card-premium/30 overflow-hidden">
             {llmTable.map(([k, v], i) => (
               <div key={i} className={`grid grid-cols-12 px-6 py-5 text-sm gap-4 ${i < llmTable.length - 1 ? "border-b border-border" : ""}`}>
-                <div className="col-span-4 font-mono text-[13px] tracking-[0.18em] uppercase text-primary">{k}</div>
+                <div className="col-span-4 font-mono text-[13px] font-semibold tracking-[0.14em] uppercase text-primary">{k}</div>
                 <div className="col-span-8 text-body">{v}</div>
               </div>
             ))}
@@ -611,10 +611,10 @@ const RequestAudit = () => {
             Submit the form above. We review every request manually and reply within one business day.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button asChild className="group rounded-full font-mono text-[13px] tracking-[0.16em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
+            <Button asChild className="group rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-14 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
               <a href="#audit-form"><ArrowUpRight className="w-3.5 h-3.5 mr-1.5 rotate-180" /> BACK TO FORM</a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] tracking-[0.16em] border-foreground/30 hover:bg-foreground/5 px-7 h-12">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-foreground/30 hover:bg-foreground/5 px-7 h-14">
               <Link to="/methodology">SEE THE METHODOLOGY</Link>
             </Button>
           </div>

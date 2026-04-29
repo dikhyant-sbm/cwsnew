@@ -12,9 +12,11 @@ export type SectionNavItem = { id: string; label: string };
 export const SectionNav = ({
   items,
   className = "",
+  variant = "rail",
 }: {
   items: SectionNavItem[];
   className?: string;
+  variant?: "rail" | "floating";
 }) => {
   const [active, setActive] = useState<string>(items[0]?.id ?? "");
 

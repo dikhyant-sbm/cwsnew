@@ -240,18 +240,51 @@ const CaseStudies = () => {
       </section>
 
       {/* Case Study Grid */}
-      <section className="py-24 border-t border-border bg-card/30">
+      <section id="cases" className="py-24 border-t border-border bg-card/30 scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ The case studies</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
             Explore the case studies.
           </h2>
-          <p className="text-foreground/70 max-w-2xl mb-12">
+          <p className="text-foreground/70 max-w-2xl mb-10">
             The method changes by category, but the goal stays consistent: make the company easier to find, cite, compare, and recommend.
           </p>
+
+          {/* Filter chips */}
+          <div role="tablist" aria-label="Filter case studies" className="flex flex-wrap gap-2 mb-10">
+            {FILTERS.map((f) => {
+              const isActive = filter === f;
+              const count = f === "All" ? cases.length : cases.filter((c) => c.categories.includes(f)).length;
+              return (
+                <button
+                  key={f}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => setFilter(f)}
+                  className={`px-4 py-2 rounded-full font-mono text-[11px] tracking-[0.18em] border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                    isActive
+                      ? "bg-primary text-primary-foreground border-transparent"
+                      : "border-border text-foreground/70 hover:border-primary/40 hover:text-foreground"
+                  }`}
+                >
+                  {f.toUpperCase()} <span className={`ml-1.5 ${isActive ? "opacity-80" : "opacity-50"}`}>{count}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground mb-6" aria-live="polite">
+            SHOWING {filteredCases.length} OF {cases.length}
+          </p>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {cases.map((c) => (
-              <article key={c.n} className="border border-border rounded-xl bg-background p-6 hover:border-primary/40 transition-colors group flex flex-col">
+            {filteredCases.map((c, i) => (
+              <article
+                key={c.n + filter}
+                className="border border-border rounded-xl bg-background p-6 hover:border-primary/40 transition-colors group flex flex-col animate-fade-in"
+                style={{ animationDelay: `${i * 30}ms` }}
+              >
                 <p className="font-mono text-[11px] text-primary mb-4">CASE / {c.n}</p>
                 <h3 className="text-lg font-semibold mb-3 leading-snug group-hover:text-primary transition-colors">
                   {c.title}
@@ -266,11 +299,17 @@ const CaseStudies = () => {
                   </div>
                 </div>
                 <button className="mt-5 inline-flex items-center gap-1 font-mono text-[11px] tracking-[0.18em] text-primary hover:gap-2 transition-all">
-                  READ CASE STUDY <ArrowUpRight className="w-3 h-3" />
+                  READ CASE STUDY <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
                 </button>
               </article>
             ))}
           </div>
+
+          {filteredCases.length === 0 && (
+            <div className="mt-10 text-center text-muted-foreground">
+              No case studies in this category yet. <button onClick={() => setFilter("All")} className="text-primary underline-offset-4 hover:underline">View all</button>.
+            </div>
+          )}
         </div>
       </section>
 

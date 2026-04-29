@@ -1,6 +1,4 @@
 import { PageShell, PageHero, SectionHeading } from "@/components/landing/Shell";
-import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
-import { AuditPreview } from "@/components/landing/AuditPreview";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -27,21 +25,6 @@ const auditSchema = z.object({
   other: z.string().trim().max(2000).optional().or(z.literal("")),
 });
 
-const reviews = [
-  "Google search visibility",
-  "AI answer visibility",
-  "Prompt and keyword clusters",
-  "Competitor visibility",
-  "Citation sources",
-  "Content structure",
-  "Technical SEO",
-  "Schema and entity clarity",
-  "Source-layer authority",
-  "Recommendation placement",
-  "Cosine and retrieval gaps",
-  "Corrective-action priorities",
-];
-
 const improveOptions = [
   "Google search visibility",
   "AI answer visibility",
@@ -55,59 +38,210 @@ const improveOptions = [
   "Not sure yet",
 ];
 
-const outcomes = [
-  { t: "Clarity", d: "Know exactly where your visibility is breaking down — across Google, AI answers, and source environments." },
-  { t: "Priority", d: "A ranked corrective-action plan, not a 200-item checklist." },
-  { t: "Direction", d: "Strategic clarity for executives, marketing, content, technical, and authority work." },
-  { t: "Confidence", d: "Evidence-led decisions about where to invest budget and team capacity next." },
+const auditAreas = [
+  {
+    n: "01",
+    title: "Google Search Visibility",
+    items: [
+      "Organic rankings",
+      "High-intent keyword clusters",
+      "Search intent",
+      "Page-one competitors",
+      "Owned-page performance",
+      "Third-party pages ranking for your category",
+      "Comparison and review results",
+      "Content gaps",
+      "Search opportunity strength",
+    ],
+    why: "Google still shapes buyer discovery. If competitors, directories, review sites, or comparison pages dominate the search results, your company needs to know where and why.",
+  },
+  {
+    n: "02",
+    title: "AI Answer Visibility",
+    items: [
+      "AI-generated answers",
+      "ChatGPT-style responses",
+      "Gemini-style responses",
+      "Perplexity-style cited answers",
+      "Google AI Overviews",
+      "Copilot-style answers",
+      "Brand mentions",
+      "Recommendation placement",
+      "Competitor mentions",
+      "Prompt clusters",
+      "Cited sources",
+    ],
+    why: "Buyers increasingly ask AI systems for options, explanations, comparisons, and recommendations. The audit shows whether your company is being surfaced, ignored, cited, or out-positioned.",
+  },
+  {
+    n: "03",
+    title: "Citation Architecture",
+    items: [
+      "Third-party articles",
+      "Directories",
+      "Review platforms",
+      "Comparison pages",
+      "Industry sources",
+      "YouTube videos",
+      "Social profiles",
+      "Reddit and community discussions",
+      "Public mentions",
+      "Competitor source footprint",
+      "Citation gaps",
+    ],
+    why: "AI systems and buyers rarely rely on your website alone. Strong citation architecture helps validate your authority across the public sources that shape trust.",
+  },
+  {
+    n: "04",
+    title: "Technical SEO and Site Structure",
+    items: [
+      "Crawlability",
+      "Indexation",
+      "Site architecture",
+      "Internal linking",
+      "Schema",
+      "Metadata",
+      "Page structure",
+      "Content hierarchy",
+      "Core page quality",
+      "Conversion paths",
+      "Machine-readable context",
+    ],
+    why: "If your website is difficult to crawl, structure, or interpret, search engines and AI-influencing systems may not understand your company clearly enough.",
+  },
+  {
+    n: "05",
+    title: "Entity Clarity and Semantic Alignment",
+    items: [
+      "Brand entity clarity",
+      "Service and product entities",
+      "Category associations",
+      "Topic relationships",
+      "Terminology consistency",
+      "Internal linking signals",
+      "Structured content",
+      "Semantic gaps",
+      "Vector relevance",
+      "Cosine gaps",
+    ],
+    why: "Your company needs to be clearly associated with the right services, categories, problems, solutions, locations, and buyer questions. Weak semantic alignment can make your brand harder to retrieve or recommend.",
+  },
+  {
+    n: "06",
+    title: "Competitor Visibility",
+    items: [
+      "Competitor rankings",
+      "Competitor AI mentions",
+      "Competitor recommendation placement",
+      "Competitor cited sources",
+      "Competitor content structures",
+      "Competitor third-party mentions",
+      "Competitor category associations",
+      "Competitor source-layer authority",
+    ],
+    why: "Visibility is relative. The audit shows where competitors are stronger and which gaps are most important to close.",
+  },
+];
+
+const deliverables = [
+  { t: "Visibility Baseline", d: "A clear view of where your company currently appears across Google, AI answers, cited sources, and high-intent search environments." },
+  { t: "Competitor Gap Review", d: "A comparison of where competitors are outranking, out-cited, or out-recommended against your company." },
+  { t: "Prompt and Keyword Cluster Map", d: "A map of the buyer questions, search terms, and AI prompts that matter most in your category." },
+  { t: "Citation Source Review", d: "A review of the owned and third-party sources supporting or weakening your authority." },
+  { t: "Technical and Entity Clarity Findings", d: "A review of the structural, schema, content, and entity issues that may limit machine understanding." },
+  { t: "Retrieval and Cosine Gap Findings", d: "A review of where your company appears semantically distant from the sources, competitors, and category language AI systems already associate with your market." },
+  { t: "Corrective-Action Roadmap", d: "A prioritized plan showing what should be fixed, refreshed, created, clarified, cited, or supported next." },
+];
+
+const outcomeQuestions = [
+  "Why are competitors showing up ahead of us?",
+  "Why are we not appearing in AI answers?",
+  "Why are we mentioned but not recommended?",
+  "Which third-party sources are influencing our category?",
+  "Is our website clear enough for search engines and AI systems?",
+  "Do we have weak citation support?",
+  "Are we publishing the wrong content?",
+  "What should we fix first?",
+];
+
+const processSteps = [
+  ["01", "Submit your request", "Tell us about your company, website, competitors, and visibility concerns."],
+  ["02", "We review fit", "We review whether CiteWorks Studio is the right fit based on your category, goals, current visibility, and likely scope."],
+  ["03", "We define the audit scope", "If there is a fit, we confirm the focus areas: Google visibility, AI search visibility, citation architecture, technical SEO, content, competitors, or agency partner needs."],
+  ["04", "We run the audit", "CiteWorks Studio reviews your visibility across search, AI answers, sources, competitors, technical structure, content, and entity signals."],
+  ["05", "We deliver findings and priorities", "You receive a clear diagnosis and corrective-action roadmap."],
+  ["06", "We discuss next steps", "Some clients use the audit internally. Others continue with CiteWorks Studio for strategy, execution, content, technical SEO, citation architecture, or ongoing visibility improvement."],
 ];
 
 const bestFit = [
-  "Growth-minded companies losing qualified search visibility",
-  "High-consideration brands underrepresented in AI answers",
-  "Category challengers competing against incumbents",
+  "Growth-minded companies",
+  "High-consideration brands",
+  "Category challengers",
   "Established companies in competitive markets",
-  "Agencies needing white-label audits for high-value clients",
+  "Companies losing visibility to competitors",
+  "Companies underrepresented in AI answers",
+  "Companies with complex buyer journeys",
+  "Companies where trust and comparison shape buying decisions",
+  "Agencies serving higher-value clients",
 ];
 
 const notFit = [
   "Companies looking for cheap SEO tasks",
-  "Teams unwilling to improve their website or content",
-  "Businesses that want reporting but no corrective action",
-  "Buyers expecting same-week delivery",
+  "Businesses that only want isolated blog posts",
+  "Teams unwilling to improve their website, content, or source footprint",
+  "Companies that want reporting but no corrective action",
+  "Companies looking for guaranteed rankings or guaranteed AI recommendations",
 ];
 
 const problems = [
-  "Competitors keep showing up ahead in AI answers",
-  "Pages rank but don't get cited or recommended",
-  "Site has content but weak machine-recognized authority",
-  "Source footprint is thinner than competitors",
-  "Technical SEO is solid but AI visibility is weak",
-  "Brand is invisible on comparison and best-of pages",
+  { t: "Competitors appear in AI answers, but you do not.", d: "The audit identifies whether the issue is weak source support, unclear category association, missing content, poor citations, or stronger competitor signals." },
+  { t: "Your rankings exist, but they are not driving enough trust.", d: "The audit reviews whether your search presence is supported by comparison pages, reviews, citations, third-party mentions, and buyer validation sources." },
+  { t: "Your company is mentioned but not recommended.", d: "The audit looks at recommendation-stage prompts, answer framing, competitor positioning, and source evidence." },
+  { t: "Your website has content, but visibility is weak.", d: "The audit reviews content structure, topical coverage, internal linking, entity clarity, technical SEO, and semantic alignment." },
+  { t: "Your category is changing because of AI search.", d: "The audit maps how AI-generated answers are shaping discovery, comparison, and recommendation behavior in your market." },
+  { t: "Your agency client needs a stronger search visibility strategy.", d: "The audit can help agencies diagnose client opportunities across SEO, GEO, citation architecture, content, and source-layer authority." },
 ];
 
-const afterAudit = [
-  { n: "01", t: "Use the findings internally", d: "Take the corrective-action roadmap to your in-house team or current agency for execution." },
-  { n: "02", t: "Continue with strategy & roadmap", d: "Extend into a deeper strategy engagement covering SEO, GEO, content, citations, and authority." },
-  { n: "03", t: "Move into an execution retainer", d: "Ongoing monthly program turning findings into improvements across your website, content, and source environment." },
+const afterAuditItems = [
+  "Technical SEO improvements",
+  "Schema and entity clarity",
+  "Content strategy",
+  "Service page copy",
+  "Comparison pages",
+  "FAQ and glossary content",
+  "Content refreshes",
+  "Citation architecture",
+  "Source-layer authority",
+  "AI visibility improvement",
+  "Prompt and keyword cluster tracking",
+  "Social and video support",
+  "Ongoing reporting",
+  "Monthly execution retainers",
+  "Agency partner delivery",
 ];
 
 const llmTable = [
-  ["What it is", "A diagnostic of visibility across Google, AI answers, citations & source-layer authority"],
-  ["Who it's for", "Growth-minded companies, high-consideration brands, agencies"],
-  ["Inputs", "Company info, website, competitors, visibility concerns, support type"],
-  ["Process", "Submit → fit review → scope → audit → findings → next steps"],
-  ["Deliverables", "Visibility baseline, competitor gaps, prompt maps, technical findings, retrieval gaps, corrective-action roadmap"],
-  ["Timeframe", "Typically 2–4 weeks depending on scope"],
-  ["After the audit", "Use internally, extend into strategy, or continue with execution"],
+  ["Google visibility", "Rankings, keywords, SERPs, competitors", "Shows where qualified search demand is being won or lost"],
+  ["AI visibility", "AI answers, prompts, mentions, citations", "Shows whether your company is being retrieved or recommended"],
+  ["Citation architecture", "Third-party sources, reviews, directories, comparisons", "Shows whether public evidence supports your authority"],
+  ["Technical SEO", "Crawlability, indexation, schema, structure", "Helps machines access and understand your website"],
+  ["Entity clarity", "Brand, services, products, categories, topics", "Helps search engines and AI systems classify your company"],
+  ["Content structure", "Pages, headings, topical coverage, internal links", "Helps buyers and machines understand your expertise"],
+  ["Competitor gaps", "Rankings, AI mentions, sources, positioning", "Shows where competitors have stronger visibility signals"],
+  ["Corrective roadmap", "Prioritized next steps", "Turns findings into action"],
 ];
 
 const faqs = [
-  { q: "How long does a Visibility Audit take?", a: "Most audits take 2–4 weeks depending on category complexity, prompt-cluster scope, and the depth of source-layer analysis required." },
-  { q: "Do I need to commit to ongoing work?", a: "No. The audit is a standalone deliverable. Many clients use the findings internally or with their existing agency. Others continue with CiteWorks Studio for strategy or execution." },
-  { q: "Is the audit white-label friendly for agencies?", a: "Yes. Agency partners can request a white-label audit delivered under their own brand." },
-  { q: "What information do you need to start?", a: "Just the form below. Company, website, competitors, and a sense of what you're trying to improve. We'll confirm fit and define scope from there." },
-  { q: "How is my information used?", a: "Form submissions are reviewed manually and used only to evaluate engagement fit. We do not share or resell submitted information." },
+  { q: "What is a Visibility Audit?", a: "A Visibility Audit is a diagnostic review of how your company appears across Google, AI answers, citation sources, competitors, technical SEO, content structure, entity clarity, and trusted source environments." },
+  { q: "Is this an SEO audit?", a: "It includes SEO, but it is broader than a traditional SEO audit. The Visibility Audit also reviews AI search visibility, citation architecture, prompt clusters, competitor recommendations, source-layer authority, and semantic retrieval gaps." },
+  { q: "Does the audit include AI search visibility?", a: "Yes. The audit reviews how your company appears in AI-generated answers, AI Overviews, prompt responses, cited sources, competitor mentions, and recommendation-style outputs." },
+  { q: "What is citation architecture?", a: "Citation architecture is the structured improvement of the owned and third-party sources that support your company's authority. These sources may include website pages, articles, review sites, directories, comparison pages, videos, communities, and industry mentions." },
+  { q: "What is a cosine gap?", a: "A cosine gap is the semantic distance between how your company wants to be understood and how AI systems appear to compare your company against competitors, cited sources, and category-defining content." },
+  { q: "Do you execute after the audit?", a: "Yes. CiteWorks Studio can move from audit into ongoing corrective action across technical SEO, content, citation architecture, GEO, AI visibility, source-layer authority, reporting, and optimization." },
+  { q: "Who is the audit best for?", a: "The audit is best for growth-minded companies, high-consideration brands, category challengers, established companies in competitive markets, and agency partners that need stronger visibility across Google, AI answers, and trusted source environments." },
+  { q: "Do we need to be an enterprise company?", a: "No. CiteWorks Studio is not only for enterprise companies. The best fit is a company where visibility has meaningful business value and where improving Google, AI, and source-layer presence can support growth." },
+  { q: "Can agencies request an audit for a client?", a: "Yes. Agencies can request white-label or collaborative Visibility Audits for clients that need stronger SEO, GEO, AI search visibility, citation architecture, content strategy, or market intelligence." },
+  { q: "Will the audit guarantee rankings or AI recommendations?", a: "No. No agency can honestly guarantee rankings or AI recommendations. The audit identifies the gaps limiting visibility and provides a corrective-action roadmap for improving the signals that influence rankings, citations, retrieval, and recommendation strength." },
 ];
 
 const RequestAudit = () => {
@@ -122,7 +256,7 @@ const RequestAudit = () => {
   useEffect(() => {
     document.title = "Request a Visibility Audit | CiteWorks Studio";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Request a CiteWorks Studio Visibility Audit to identify where your company is losing visibility across Google, AI answers, citation sources, and competitor positioning.");
+    if (meta) meta.setAttribute("content", "Request a CiteWorks Studio Visibility Audit to identify where your company is losing visibility across Google, AI answers, citation sources, technical SEO, content structure, entity clarity, and competitor positioning.");
   }, []);
 
   const toggleImprove = (v: string) =>
@@ -154,7 +288,6 @@ const RequestAudit = () => {
       });
       setErrors(fieldErrors);
       toast({ title: "Please review the form", description: "A few fields need attention.", variant: "destructive" });
-      // Focus first error
       const firstKey = Object.keys(fieldErrors)[0];
       if (firstKey) {
         const el = document.querySelector<HTMLElement>(`[name="${firstKey}"]`);
@@ -167,7 +300,6 @@ const RequestAudit = () => {
     setErrors({});
     setSubmitting(true);
     try {
-      // Simulated submission — replace with real endpoint when wired to backend.
       await new Promise((r) => setTimeout(r, 600));
       setSubmitted(true);
       window.scrollTo({ top: document.getElementById("audit-form")?.offsetTop ?? 0, behavior: "smooth" });
@@ -189,40 +321,27 @@ const RequestAudit = () => {
       <PageHero
         eyebrow="Request a Visibility Audit"
         title="Find out where your visibility is breaking down."
-        body="A CiteWorks Studio Visibility Audit shows where your company stands across Google rankings, AI answers, citation sources, competitor positioning, technical SEO, content structure, entity clarity, and source-layer authority — then shows what needs to change next."
+        body="Your company may already have strong expertise, useful content, and real authority. The question is whether Google, AI systems, third-party sources, and buyers can clearly recognize it. A CiteWorks Studio Visibility Audit shows where your company stands across Google rankings, AI answers, citation sources, competitor positioning, technical SEO, content structure, entity clarity, and source-layer authority. Then we show what needs to change next."
+        ctas={
+          <>
+            <Button asChild className="group rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-14 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
+              <a href="#audit-form">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></a>
+            </Button>
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-foreground/30 hover:bg-foreground/5 px-7 h-14">
+              <a href="#what-included">SEE WHAT'S INCLUDED</a>
+            </Button>
+          </>
+        }
       />
 
-      {/* Dashboard: what an audit produces */}
-      <section className="relative py-12">
-        <div className="mx-auto max-w-7xl px-6 reveal-on-scroll">
-          <DashboardShowcase dashboard="executive-report" size="lg" showCaption />
-        </div>
-      </section>
-
-      {/* Premium audit output preview */}
-      <AuditPreview />
-
-      {/* What happens after you submit */}
-      <section className="py-8" aria-label="What happens after you submit">
-        <div className="mx-auto max-w-3xl px-6">
-          <ol className="grid sm:grid-cols-3 gap-3 text-left">
-            {[
-              { n: "01", t: "We review your request", d: "A senior strategist reviews fit and category context within one business day." },
-              { n: "02", t: "We schedule a scoping call", d: "30 minutes to align on goals, competitors, and the questions the audit should answer." },
-              { n: "03", t: "We deliver the audit", d: "An executive-ready Visibility Audit with a prioritized corrective-action roadmap." },
-            ].map((s) => (
-              <li key={s.n} className="card-premium p-5">
-                <p className="font-mono text-[13px] tracking-[0.16em] text-primary">{s.n}</p>
-                <p className="display text-base mt-2">{s.t}</p>
-                <p className="text-xs text-body mt-2 leading-relaxed">{s.d}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
+      <div className="mx-auto max-w-4xl px-6 -mt-8">
+        <p className="text-center text-sm text-body italic">
+          Built for growth-minded companies where search visibility, trust, comparison, and recommendation strength affect revenue.
+        </p>
+      </div>
 
       {/* Form FIRST */}
-      <section id="audit-form" className="py-12 scroll-mt-24">
+      <section id="audit-form" className="py-16 scroll-mt-24">
         <div className="mx-auto max-w-3xl px-6">
           {submitted ? (
             <div
@@ -242,19 +361,6 @@ const RequestAudit = () => {
                 <span className="text-foreground"> one business day</span> with next steps,
                 scoping questions, or a scheduling link for a 30-minute fit call.
               </p>
-              <div className="mt-8 grid sm:grid-cols-3 gap-3 text-left">
-                {[
-                  { n: "01", t: "Manual fit review", d: "Within one business day." },
-                  { n: "02", t: "Scoping call", d: "30 minutes, calendar link." },
-                  { n: "03", t: "Audit kickoff", d: "Typically within 1–2 weeks." },
-                ].map((s) => (
-                  <div key={s.n} className="card-premium p-4">
-                    <p className="font-mono text-[13px] tracking-[0.16em] text-primary">{s.n}</p>
-                    <p className="display text-sm mt-2">{s.t}</p>
-                    <p className="text-xs text-body mt-1">{s.d}</p>
-                  </div>
-                ))}
-              </div>
               <div className="mt-10 flex flex-wrap justify-center gap-3">
                 <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-foreground/30 hover:bg-foreground/5 px-6 h-12">
                   <Link to="/methodology">EXPLORE THE METHODOLOGY</Link>
@@ -277,7 +383,7 @@ const RequestAudit = () => {
               <p className="eyebrow">Audit request</p>
               <h2 className="display text-2xl sm:text-3xl mt-3">Tell us what you want to improve.</h2>
               <p className="text-sm text-body mt-3">
-                Complete the form and a senior strategist will review whether a Visibility Audit is the right starting point. White-label and confidential delivery available for agency partners.
+                Complete the form below and we'll review whether a Visibility Audit is the right starting point for your company or agency client.
               </p>
             </div>
 
@@ -337,17 +443,17 @@ const RequestAudit = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="concern">Biggest visibility concern right now?</Label>
+              <Label htmlFor="concern">What is your biggest visibility concern right now?</Label>
               <Textarea id="concern" name="concern" rows={4} maxLength={2000} />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="competitors">Specific competitors you care about?</Label>
+              <Label htmlFor="competitors">Are there specific competitors you care about?</Label>
               <Textarea id="competitors" name="competitors" rows={3} maxLength={1000} />
             </div>
 
             <div className="space-y-2">
-              <Label>Type of support needed *</Label>
+              <Label>What type of support are you looking for? *</Label>
               <Select value={support} onValueChange={setSupport}>
                 <SelectTrigger aria-invalid={!!errors.support}><SelectValue placeholder="Select one" /></SelectTrigger>
                 <SelectContent>
@@ -378,7 +484,7 @@ const RequestAudit = () => {
             </Button>
 
             <p className="text-xs text-body text-center">
-              We review every request manually. No automated follow-ups. Reply within one business day. CiteWorks Studio is best suited for companies and agency partners ready to improve search visibility across Google, AI answers, and trusted source environments.
+              We review every request manually. CiteWorks Studio is best suited for companies and agency partners ready to improve search visibility across Google, AI answers, and trusted source environments.
             </p>
           </form>
           )}
@@ -403,15 +509,39 @@ const RequestAudit = () => {
         </div>
       </section>
 
+      {/* === Written copy starts here, all below the form & contact === */}
+
       {/* What is a Visibility Audit */}
       <section className="py-24 border-t border-border/40">
         <div className="mx-auto max-w-4xl px-6">
           <SectionHeading
             eyebrow="What it is"
-            title="A diagnostic review of how your company appears across the full search environment."
-            body="The audit identifies where your company is visible, where it is missing, where competitors are stronger, and what should be fixed first to improve search visibility, AI visibility, citation support, and recommendation strength."
+            title="What is a Visibility Audit?"
             align="left"
           />
+          <div className="glass-strong rounded-2xl p-6 sm:p-8 mt-8">
+            <p className="font-mono text-[13px] tracking-[0.16em] text-primary mb-3">ANSWER CAPSULE</p>
+            <p className="text-body leading-relaxed">
+              A CiteWorks Studio Visibility Audit is a diagnostic review of how your company appears
+              across Google, AI answers, citation sources, competitors, technical SEO, content
+              structure, entity signals, and trusted source environments. The audit identifies where
+              your company is visible, where it is missing, where competitors are stronger, and what
+              should be fixed first to improve search visibility, AI visibility, citation support,
+              and recommendation strength.
+            </p>
+          </div>
+          <div className="mt-8 space-y-5 text-body text-lg leading-relaxed">
+            <p>
+              Most companies do not need more random content. They need to know why they are not
+              being found, cited, compared, or recommended often enough.
+            </p>
+            <p>
+              The Visibility Audit gives you that diagnosis. It shows whether your visibility
+              problem is coming from weak rankings, unclear content, missing citations, technical
+              SEO issues, poor entity clarity, weak source-layer authority, competitor dominance, or
+              AI retrieval gaps.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -420,45 +550,78 @@ const RequestAudit = () => {
         <div className="mx-auto max-w-4xl px-6">
           <p className="eyebrow">Why start with an audit</p>
           <h2 className="display text-3xl sm:text-5xl mt-5 leading-tight">
-            Strategy without diagnosis is guesswork.
+            Before you invest in more marketing, know what is actually limiting visibility.
           </h2>
           <p className="mt-6 text-body text-lg leading-relaxed">
-            Most companies don't need another templated content calendar or generic SEO checklist.
-            They need to know exactly where buyers, Google, and AI systems are losing recognition
-            of their authority. The Visibility Audit shows you that — before any execution work
-            begins.
+            Many companies invest in SEO, content, PR, social, or paid media without understanding
+            where the real visibility breakdown is happening.
+          </p>
+          <ul className="mt-6 space-y-3 text-body leading-relaxed">
+            {[
+              "Sometimes the website is technically weak.",
+              "Sometimes the content does not match how buyers search.",
+              "Sometimes AI systems understand the competitors better.",
+              "Sometimes the company has weak third-party source support.",
+              "Sometimes reviews, directories, comparison pages, Reddit threads, YouTube results, or industry sources are shaping the market more than the company realizes.",
+            ].map((p) => (
+              <li key={p} className="flex gap-3">
+                <span className="text-primary mt-1">·</span>
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-body text-lg leading-relaxed">
+            The audit helps separate assumptions from evidence.
+          </p>
+          <p className="mt-6 font-mono text-[13px] tracking-[0.14em] text-primary uppercase">
+            Once the gaps are clear, the corrective-action plan becomes much sharper.
           </p>
         </div>
       </section>
 
-      {/* What the audit reviews */}
-      <section className="py-20 border-t border-border/40">
-        <div className="mx-auto max-w-5xl px-6">
-          <SectionHeading eyebrow="The audit reviews" title="The full search environment." align="left" />
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {reviews.map((r) => (
-              <div key={r} className="rounded-xl border border-border/60 bg-card p-4 text-sm flex items-center gap-3">
-                <span className="text-primary font-mono text-xs">·</span>
-                {r}
-              </div>
+      {/* What the audit reviews — 6 areas */}
+      <section id="what-included" className="py-24 border-t border-border/40 scroll-mt-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <SectionHeading
+            eyebrow="What the audit reviews"
+            title="The Visibility Audit reviews the full search environment."
+            body="Modern visibility does not live in one place. CiteWorks Studio reviews the search, AI, and source environments that influence how buyers discover and evaluate companies."
+            align="left"
+          />
+          <div className="mt-12 grid md:grid-cols-2 gap-6">
+            {auditAreas.map((a) => (
+              <article key={a.n} className="card-premium p-7">
+                <p className="font-mono text-xs text-primary">{a.n}</p>
+                <h3 className="display text-2xl mt-2">{a.title}</h3>
+                <p className="font-mono text-[12px] tracking-[0.16em] uppercase text-body mt-5 mb-3">What we review</p>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                  {a.items.map((i) => (
+                    <li key={i} className="flex gap-2 text-sm text-body items-start">
+                      <Check className="w-3.5 h-3.5 text-primary mt-1 flex-shrink-0" />
+                      <span>{i}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-5 pt-4 border-t border-border">
+                  <p className="font-mono text-[12px] tracking-[0.16em] uppercase text-primary mb-2">Why it matters</p>
+                  <p className="text-sm text-body leading-relaxed">{a.why}</p>
+                </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
       {/* What you receive */}
-      <section className="py-20 border-t border-border/40">
-        <div className="mx-auto max-w-5xl px-6">
-          <SectionHeading eyebrow="What you receive" title="Deliverables from the Visibility Audit." align="left" />
+      <section className="py-24 border-t border-border/40 bg-card/30">
+        <div className="mx-auto max-w-6xl px-6">
+          <SectionHeading
+            eyebrow="What you receive"
+            title="What you get from the Visibility Audit."
+            align="left"
+          />
           <div className="mt-12 grid md:grid-cols-2 gap-6">
-            {[
-              { t: "Visibility Baseline", d: "Where your company currently appears across Google, AI answers, cited sources, and high-intent search environments." },
-              { t: "Competitor Gap Review", d: "Where competitors are outranking, out-cited, or out-recommended against your company." },
-              { t: "Prompt & Keyword Cluster Map", d: "The buyer questions, prompts, and keyword groups shaping your category." },
-              { t: "Technical & Content Findings", d: "Structural, schema, content, and entity issues that may limit machine understanding." },
-              { t: "Retrieval & Cosine Gap Findings", d: "Where your company is semantically distant from sources, competitors, and category language AI systems retrieve." },
-              { t: "Corrective-Action Roadmap", d: "A prioritized plan showing what should be fixed, refreshed, created, clarified, cited, or supported next." },
-            ].map((d) => (
+            {deliverables.map((d) => (
               <div key={d.t} className="card-premium p-7">
                 <h3 className="display text-lg text-primary">{d.t}</h3>
                 <p className="text-sm text-body mt-3 leading-relaxed">{d.d}</p>
@@ -469,35 +632,37 @@ const RequestAudit = () => {
       </section>
 
       {/* Audit outcomes */}
-      <section className="py-20 border-t border-border/40 bg-card/30">
-        <div className="mx-auto max-w-7xl px-6">
-          <SectionHeading eyebrow="Outcomes" title="What you walk away with." align="left" />
-          <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {outcomes.map((o, i) => (
-              <div key={i} className="border border-border rounded-2xl p-7 bg-background">
-                <p className="font-mono text-[13px] tracking-[0.16em] text-primary mb-3">0{i + 1}</p>
-                <h3 className="display text-2xl text-gradient">{o.t}</h3>
-                <p className="text-sm text-body mt-3 leading-relaxed">{o.d}</p>
-              </div>
+      <section className="py-24 border-t border-border/40">
+        <div className="mx-auto max-w-5xl px-6">
+          <SectionHeading
+            eyebrow="Outcomes"
+            title="The goal is clarity before execution."
+            body="The Visibility Audit helps answer the questions growth-minded companies are already asking:"
+            align="left"
+          />
+          <ul className="mt-10 grid sm:grid-cols-2 gap-3">
+            {outcomeQuestions.map((q) => (
+              <li key={q} className="border border-border rounded-xl p-4 bg-card/30 flex gap-3 items-start text-sm text-body">
+                <span className="text-primary mt-0.5">?</span>
+                <span>{q}</span>
+              </li>
             ))}
-          </div>
+          </ul>
+          <p className="mt-10 text-body text-lg leading-relaxed max-w-3xl">
+            By the end of the audit, you should have a clearer understanding of where visibility is
+            breaking down and what actions are most likely to improve search visibility, AI
+            visibility, citation strength, and buyer trust.
+          </p>
         </div>
       </section>
 
       {/* Process */}
-      <section className="py-20 border-t border-border/40">
-        <div className="mx-auto max-w-5xl px-6">
-          <SectionHeading eyebrow="Process" title="How a Visibility Audit works." align="left" />
+      <section className="py-24 border-t border-border/40 bg-card/30">
+        <div className="mx-auto max-w-6xl px-6">
+          <SectionHeading eyebrow="Process" title="How the Visibility Audit process works." align="left" />
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              ["01", "Submit your request", "Tell us about your company, website, competitors, and visibility concerns."],
-              ["02", "We review fit", "We confirm whether CiteWorks Studio is the right fit for your category, goals, and likely scope."],
-              ["03", "We define the audit scope", "Focus areas across Google visibility, AI search, citation architecture, technical SEO, and content."],
-              ["04", "We run the audit", "Visibility analysis across search, AI answers, sources, competitors, structure, and entity signals."],
-              ["05", "We deliver findings & priorities", "You receive a clear diagnosis and a corrective-action roadmap."],
-              ["06", "We discuss next steps", "Use the audit internally or continue with CiteWorks Studio for execution."],
-            ].map(([n, t, d]) => (
-              <div key={n} className="card-premium p-6">
+            {processSteps.map(([n, t, d]) => (
+              <div key={n} className="card-premium p-6 bg-background">
                 <p className="font-mono text-xs text-primary">{n}</p>
                 <h3 className="display text-lg mt-2">{t}</h3>
                 <p className="text-sm text-body mt-2 leading-relaxed">{d}</p>
@@ -510,7 +675,12 @@ const RequestAudit = () => {
       {/* Best fit / not best fit */}
       <section className="py-24 border-t border-border/40">
         <div className="mx-auto max-w-7xl px-6">
-          <SectionHeading eyebrow="Fit" title="Who the Visibility Audit is built for." align="left" />
+          <SectionHeading
+            eyebrow="Best fit"
+            title="Who should request a Visibility Audit?"
+            body="The Visibility Audit is best for companies where search visibility, AI recommendations, trusted sources, and buyer confidence matter to growth. You do not need to be an enterprise company. You do need to be ready to act on what the audit finds."
+            align="left"
+          />
           <div className="mt-12 grid md:grid-cols-2 gap-6">
             <div className="border border-border rounded-2xl p-8 bg-card/30">
               <p className="font-mono text-[13px] tracking-[0.16em] text-primary mb-5">BEST FIT</p>
@@ -540,14 +710,19 @@ const RequestAudit = () => {
 
       {/* Common visibility problems */}
       <section className="py-24 border-t border-border/40 bg-card/30">
-        <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading eyebrow="Common visibility problems" title="What we typically uncover." align="left" />
-          <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="mx-auto max-w-7xl px-6">
+          <SectionHeading
+            eyebrow="Common visibility problems"
+            title="Common reasons companies request an audit."
+            align="left"
+          />
+          <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {problems.map((p, i) => (
-              <div key={i} className="border border-border rounded-xl p-5 bg-background flex gap-3 items-start">
-                <span className="font-mono text-[13px] text-primary mt-1">{String(i + 1).padStart(2, "0")}</span>
-                <p className="text-sm text-body">{p}</p>
-              </div>
+              <article key={i} className="card-premium p-7 bg-background">
+                <p className="font-mono text-[13px] tracking-[0.16em] text-primary mb-3">PROBLEM / 0{i + 1}</p>
+                <h3 className="display text-lg mb-3">{p.t}</h3>
+                <p className="text-sm text-body leading-relaxed">{p.d}</p>
+              </article>
             ))}
           </div>
         </div>
@@ -555,29 +730,46 @@ const RequestAudit = () => {
 
       {/* What happens after the audit */}
       <section className="py-24 border-t border-border/40">
-        <div className="mx-auto max-w-7xl px-6">
-          <SectionHeading eyebrow="After the audit" title="Three ways forward." align="left" />
-          <div className="mt-12 grid md:grid-cols-3 gap-4">
-            {afterAudit.map((a) => (
-              <div key={a.n} className="border border-border rounded-2xl p-7 bg-card/30">
-                <p className="font-mono text-[13px] tracking-[0.16em] text-primary mb-3">PATH / {a.n}</p>
-                <h3 className="display text-xl mb-3">{a.t}</h3>
-                <p className="text-sm text-body leading-relaxed">{a.d}</p>
-              </div>
+        <div className="mx-auto max-w-6xl px-6">
+          <SectionHeading
+            eyebrow="After the audit"
+            title="The audit is the starting point, not the finish line."
+            body="A Visibility Audit gives you the diagnosis. The next step is corrective action. Depending on what the audit finds, CiteWorks Studio can help with:"
+            align="left"
+          />
+          <ul className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {afterAuditItems.map((a) => (
+              <li key={a} className="border border-border rounded-xl p-4 bg-card/30 flex gap-3 items-start text-sm text-body">
+                <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                <span>{a}</span>
+              </li>
             ))}
-          </div>
+          </ul>
+          <p className="mt-8 font-mono text-[13px] tracking-[0.14em] text-primary uppercase">
+            The work depends on the gap. That is why the audit comes first.
+          </p>
         </div>
       </section>
 
-      {/* LLM-readable summary */}
-      <section className="py-24 border-t border-border/40">
-        <div className="mx-auto max-w-5xl px-6">
-          <SectionHeading eyebrow="LLM-readable summary" title="Visibility Audit at a glance." align="left" />
-          <div className="mt-12 card-premium/30 overflow-hidden">
-            {llmTable.map(([k, v], i) => (
+      {/* LLM-readable summary table */}
+      <section className="py-24 border-t border-border/40 bg-card/30">
+        <div className="mx-auto max-w-6xl px-6">
+          <SectionHeading
+            eyebrow="LLM-readable summary"
+            title="Visibility Audit at a glance."
+            align="left"
+          />
+          <div className="mt-12 card-premium overflow-hidden bg-background">
+            <div className="grid grid-cols-12 font-mono text-[13px] tracking-[0.16em] uppercase text-body bg-card/60 px-6 py-4 border-b border-border">
+              <div className="col-span-3">Audit Area</div>
+              <div className="col-span-4">What It Reviews</div>
+              <div className="col-span-5 text-primary">Why It Matters</div>
+            </div>
+            {llmTable.map(([k, f, w], i) => (
               <div key={i} className={`grid grid-cols-12 px-6 py-5 text-sm gap-4 ${i < llmTable.length - 1 ? "border-b border-border" : ""}`}>
-                <div className="col-span-4 font-mono text-[13px] font-semibold tracking-[0.14em] uppercase text-primary">{k}</div>
-                <div className="col-span-8 text-body">{v}</div>
+                <div className="col-span-3 font-medium text-primary">{k}</div>
+                <div className="col-span-4 text-body">{f}</div>
+                <div className="col-span-5 text-body">{w}</div>
               </div>
             ))}
           </div>
@@ -585,7 +777,7 @@ const RequestAudit = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 border-t border-border/40 bg-card/30">
+      <section className="py-24 border-t border-border/40">
         <div className="mx-auto max-w-4xl px-6">
           <SectionHeading eyebrow="FAQ" title="Common questions about the Visibility Audit." align="left" />
           <Accordion type="single" collapsible className="mt-12">
@@ -606,16 +798,19 @@ const RequestAudit = () => {
       {/* Final CTA */}
       <section className="py-32 border-t border-border/40 text-center grid-bg">
         <div className="mx-auto max-w-3xl px-6">
-          <h2 className="display text-4xl sm:text-6xl">Find out what's limiting your visibility.</h2>
+          <h2 className="display text-4xl sm:text-6xl">Request your Visibility Audit.</h2>
           <p className="mt-6 text-body text-lg">
-            Submit the form above. We review every request manually and reply within one business day.
+            Find out where your company is being found, where it is being ignored, where competitors
+            are stronger, and what needs to change next. CiteWorks Studio helps growth-minded
+            companies close the gap between what they publish and what Google, AI systems, trusted
+            sources, and buyers actually recognize.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Button asChild className="group rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-14 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
-              <a href="#audit-form"><ArrowUpRight className="w-3.5 h-3.5 mr-1.5 rotate-180" /> BACK TO FORM</a>
+              <a href="#audit-form">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></a>
             </Button>
             <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-foreground/30 hover:bg-foreground/5 px-7 h-14">
-              <Link to="/methodology">SEE THE METHODOLOGY</Link>
+              <Link to="/methodology">EXPLORE THE METHODOLOGY</Link>
             </Button>
           </div>
         </div>

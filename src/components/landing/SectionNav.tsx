@@ -41,14 +41,13 @@ export const SectionNav = ({
     return () => obs.disconnect();
   }, [items]);
 
+  const baseClass =
+    variant === "floating"
+      ? "hidden xl:block fixed left-6 top-1/2 -translate-y-1/2 z-30 max-h-[70vh] overflow-auto pr-3"
+      : "hidden lg:block sticky top-24 self-start";
+
   return (
-    <nav
-      aria-label="On this page"
-      className={`hidden xl:block ${
-        className ||
-        "fixed left-6 top-1/2 -translate-y-1/2 z-30 max-h-[70vh] overflow-auto pr-3"
-      }`}
-    >
+    <nav aria-label="On this page" className={`${baseClass} ${className}`}>
       <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground mb-4">
         ON THIS PAGE
       </p>

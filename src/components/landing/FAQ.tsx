@@ -28,17 +28,23 @@ const faqs = [
 ];
 
 export const FAQ = () => (
-  <section className="py-28 border-t border-border/40">
+  <section className="py-32 border-t border-border/40">
     <div className="mx-auto max-w-4xl px-6">
-      <p className="eyebrow text-center">FAQ</p>
-      <h2 className="display text-4xl sm:text-6xl text-center mt-4">
-        Questions? We have the answers.
-      </h2>
+      <div className="reveal-on-scroll text-center">
+        <p className="eyebrow">FAQ</p>
+        <h2 className="display text-4xl sm:text-6xl mt-4">
+          Questions? We have the answers.
+        </h2>
+      </div>
 
-      <Accordion type="single" collapsible className="mt-16">
+      <Accordion type="single" collapsible className="mt-16 reveal-on-scroll">
         {faqs.map((f, i) => (
-          <AccordionItem key={i} value={`item-${i}`} className="border-border">
-            <AccordionTrigger className="text-left text-lg font-medium hover:text-primary hover:no-underline py-6">
+          <AccordionItem
+            key={i}
+            value={`item-${i}`}
+            className="border-border/60 group transition-colors hover:border-primary/30"
+          >
+            <AccordionTrigger className="text-left text-lg font-medium hover:text-primary hover:no-underline py-6 transition-colors">
               {f.q}
             </AccordionTrigger>
             <AccordionContent className="text-muted-foreground leading-relaxed pb-6">

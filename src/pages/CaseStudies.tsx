@@ -191,14 +191,20 @@ const CaseStudies = () => {
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
             AI visibility growth across four high-consideration verticals.
           </h2>
+          <p className="text-body max-w-3xl mb-4">
+            The featured synthesis compares four anonymized CiteWorks Studio engagements across tax relief, household appliance, crypto wallet, and pest control.
+          </p>
           <p className="text-body max-w-3xl mb-12">
-            A structured comparison of four published CiteWorks Studio engagements — tax relief, household appliance, crypto wallet, and pest control — showing how citation footprint, brand context, and high-intent public-source visibility can improve alongside Google and AI visibility.
+            The synthesis found that reported gains did not center on rankings alone. They centered on visibility across public sources that shape AI-generated answers, including community discussions, cited pages, third-party reference environments, and decision-stage comparison contexts.
           </p>
           <div className="border border-primary/30 bg-background rounded-2xl p-8 lg:p-12">
             <p className="font-mono text-[13px] text-primary mb-4">FEATURED CASE</p>
             <h3 className="text-2xl md:text-3xl font-semibold mb-4 leading-tight">
               Cross-Case Synthesis: AI Visibility Growth Across Four Verticals
             </h3>
+            <p className="text-body leading-relaxed">
+              A structured comparison of four published CiteWorks Studio case studies showing how citation footprint, brand context, and high-intent public-source visibility can improve alongside Google and AI visibility.
+            </p>
             <div className="mt-6 border-t border-border pt-6">
               <p className="font-mono text-[13px] text-body mb-3">KEY TAKEAWAY</p>
               <p className="text-body text-lg leading-relaxed">

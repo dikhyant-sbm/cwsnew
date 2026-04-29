@@ -510,11 +510,14 @@
       0 12px 30px -16px hsl(220 30% 25% / 0.18);
   }
   .dark .device-frame {
-    background: linear-gradient(180deg, hsl(220 14% 14%), hsl(220 14% 9%));
-    border: 1px solid hsl(220 14% 18%);
+    /* Slightly brighter frame so the (light-themed) dashboard PNGs feel intentionally elevated */
+    background: linear-gradient(180deg, hsl(220 25% 16%), hsl(220 25% 10%));
+    border: 1px solid hsl(220 22% 26%);
     box-shadow:
-      0 1px 0 hsl(0 0% 100% / 0.04) inset,
-      0 40px 80px -40px hsl(0 0% 0% / 0.7);
+      0 1px 0 hsl(0 0% 100% / 0.06) inset,
+      0 0 0 1px hsl(222 100% 68% / 0.06),
+      0 50px 90px -40px hsl(222 100% 50% / 0.18),
+      0 20px 50px -20px hsl(0 0% 0% / 0.7);
   }
   .device-frame > .device-screen {
     border-radius: 0.85rem;

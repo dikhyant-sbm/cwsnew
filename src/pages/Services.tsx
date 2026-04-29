@@ -301,6 +301,7 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
+      <SectionNav items={servicesNav} variant="floating" />
 
       {/* Hero */}
       <section className="relative pt-32 pb-24 grid-bg overflow-hidden">
@@ -335,8 +336,7 @@ const Services = () => {
       </section>
 
       {/* Intro */}
-      <section className="py-24 border-t border-border">
-        <div className="mx-auto max-w-[1400px] px-6 grid lg:grid-cols-12 gap-12">
+      <section id="intro" className="py-24 border-t border-border scroll-mt-24">
           <div className="lg:col-span-5">
             <p className="eyebrow mb-6">/ A connected system</p>
             <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight">

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { DASHBOARDS, type DashboardKey } from "./DashboardShowcase";
+import { useTheme } from "@/components/theme/ThemeProvider";
 
 type Step = {
   key: DashboardKey;

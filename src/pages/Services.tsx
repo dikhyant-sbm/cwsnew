@@ -4,11 +4,23 @@ import { StickyAuditCTA } from "@/components/landing/StickyAuditCTA";
 import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
 import { TrustPledges } from "@/components/landing/TrustPledges";
 import { BestFit } from "@/components/landing/BestFit";
+import { SectionNav } from "@/components/landing/SectionNav";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Check } from "lucide-react";
 import { useEffect } from "react";
+
+const servicesNav = [
+  { id: "intro", label: "Connected system" },
+  { id: "core", label: "Core services" },
+  { id: "detail", label: "Service detail" },
+  { id: "engagements", label: "Engagement paths" },
+  { id: "matrix", label: "Service matrix" },
+  { id: "why", label: "Why CiteWorks" },
+  { id: "fit", label: "Best fit" },
+  { id: "faq", label: "FAQ" },
+];
 
 const coreServices = [
   "GEO and AI search visibility strategy",

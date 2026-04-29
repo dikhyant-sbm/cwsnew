@@ -1,6 +1,7 @@
 import { PageShell } from "@/components/landing/Shell";
 import { Hero } from "@/components/landing/Hero";
 import { ProductShot } from "@/components/landing/ProductShot";
+import { TrustedBy } from "@/components/landing/TrustedBy";
 import { WhatWeDo } from "@/components/landing/WhatWeDo";
 import { Problem } from "@/components/landing/Problem";
 import { ThreeLayers } from "@/components/landing/ClosedLoop";
@@ -19,6 +20,8 @@ import { Blog } from "@/components/landing/Blog";
 import { FAQ } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
+import { TrustPledges } from "@/components/landing/TrustPledges";
+import { BestFit } from "@/components/landing/BestFit";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -35,6 +38,7 @@ const Index = () => {
     <PageShell>
       <Hero />
       <ProductShot />
+      <TrustedBy />
       <WhatWeDo />
       <Problem />
       <ThreeLayers />
@@ -61,8 +65,10 @@ const Index = () => {
       <UseCases />
       <AuditCTA />
       <SeoVsCiteworks />
+      <TrustPledges />
       <CasesPreview />
       <AgencyPreview />
+      <BestFit />
       <Models />
       <Blog />
       <FAQ />

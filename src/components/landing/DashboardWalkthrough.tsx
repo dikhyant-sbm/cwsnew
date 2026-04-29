@@ -61,6 +61,7 @@ const STEPS: Step[] = [
 export const DashboardWalkthrough = () => {
   const [active, setActive] = useState(0);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const reduce =

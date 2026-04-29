@@ -353,7 +353,7 @@ const RequestAudit = () => {
               { t: "Retrieval & Cosine Gap Findings", d: "Where your company is semantically distant from sources, competitors, and category language AI systems retrieve." },
               { t: "Corrective-Action Roadmap", d: "A prioritized plan showing what should be fixed, refreshed, created, clarified, cited, or supported next." },
             ].map((d) => (
-              <div key={d.t} className="rounded-2xl border border-border/60 bg-card p-7">
+              <div key={d.t} className="card-premium p-7">
                 <h3 className="display text-lg text-primary">{d.t}</h3>
                 <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{d.d}</p>
               </div>
@@ -391,7 +391,7 @@ const RequestAudit = () => {
               ["05", "We deliver findings & priorities", "You receive a clear diagnosis and a corrective-action roadmap."],
               ["06", "We discuss next steps", "Use the audit internally or continue with CiteWorks Studio for execution."],
             ].map(([n, t, d]) => (
-              <div key={n} className="rounded-2xl border border-border/60 bg-card p-6">
+              <div key={n} className="card-premium p-6">
                 <p className="font-mono text-xs text-primary">{n}</p>
                 <h3 className="display text-lg mt-2">{t}</h3>
                 <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{d}</p>
@@ -467,7 +467,7 @@ const RequestAudit = () => {
       <section className="py-24 border-t border-border/40">
         <div className="mx-auto max-w-5xl px-6">
           <SectionHeading eyebrow="LLM-readable summary" title="Visibility Audit at a glance." align="left" />
-          <div className="mt-12 rounded-2xl border border-border/60 bg-card/30 overflow-hidden">
+          <div className="mt-12 card-premium/30 overflow-hidden">
             {llmTable.map(([k, v], i) => (
               <div key={i} className={`grid grid-cols-12 px-6 py-5 text-sm gap-4 ${i < llmTable.length - 1 ? "border-b border-border" : ""}`}>
                 <div className="col-span-4 font-mono text-[11px] tracking-[0.18em] uppercase text-primary">{k}</div>

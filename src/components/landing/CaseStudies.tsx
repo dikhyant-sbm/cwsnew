@@ -22,7 +22,7 @@ export const CaseStudies = () => (
 
       <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {steps.map((s) => (
-          <div key={s.n} className="rounded-2xl border border-border/60 bg-card p-6 hover:border-primary/40 transition-colors">
+          <div key={s.n} className="card-premium p-6 hover:border-primary/40 transition-colors">
             <p className="font-mono text-xs text-primary">{s.n}</p>
             <h3 className="display text-lg mt-3">{s.title}</h3>
             <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{s.desc}</p>

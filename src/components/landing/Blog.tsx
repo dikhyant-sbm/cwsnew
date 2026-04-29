@@ -27,7 +27,7 @@ export const Blog = () => (
 
       <div className="mt-16 grid md:grid-cols-2 gap-6">
         {defs.map((d) => (
-          <div key={d.title} className="rounded-2xl border border-border/60 bg-card p-8 hover:border-primary/40 transition-colors">
+          <div key={d.title} className="card-premium p-8 hover:border-primary/40 transition-colors">
             <h3 className="display text-xl text-primary">{d.title}</h3>
             <p className="mt-4 text-muted-foreground leading-relaxed">{d.body}</p>
           </div>

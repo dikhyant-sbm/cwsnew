@@ -20,7 +20,7 @@ export const UseCases = () => (
 
       <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {fits.map((c) => (
-          <article key={c.title} className="group rounded-2xl border border-border/60 bg-card p-8 hover:border-primary/40 transition-colors">
+          <article key={c.title} className="group card-premium p-8 hover:border-primary/40 transition-colors">
             <h3 className="display text-xl">{c.title}</h3>
             <p className="text-sm text-muted-foreground mt-4 leading-relaxed">{c.desc}</p>
             <Link to="/request-audit" className="mt-5 inline-flex items-center gap-1 font-mono text-xs tracking-widest text-primary hover:gap-2 transition-all">

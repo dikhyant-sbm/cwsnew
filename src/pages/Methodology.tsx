@@ -153,7 +153,7 @@ const Methodology = () => {
           />
           <div className="mt-16 grid md:grid-cols-3 gap-6">
             {layers.map((l) => (
-              <div key={l.n} className="rounded-2xl border border-border/60 bg-card p-8 hover:border-primary/40 transition-colors">
+              <div key={l.n} className="card-premium p-8 hover:border-primary/40 transition-colors">
                 <p className="font-mono text-xs text-primary">{l.n}</p>
                 <h3 className="display text-2xl mt-3">{l.title}</h3>
                 <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{l.sub}</p>
@@ -179,7 +179,7 @@ const Methodology = () => {
           />
           <div className="mt-16 grid md:grid-cols-2 gap-6">
             {steps.map((s) => (
-              <div key={s.n} className="rounded-2xl border border-border/60 bg-card p-8 hover:border-primary/40 transition-colors">
+              <div key={s.n} className="card-premium p-8 hover:border-primary/40 transition-colors">
                 <div className="flex items-center justify-between">
                   <p className="font-mono text-xs text-primary">{s.n}</p>
                   <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Output</p>
@@ -202,7 +202,7 @@ const Methodology = () => {
             body="A structured reference for buyers, internal teams, and AI systems summarizing each step, focus, and output."
             align="left"
           />
-          <div className="mt-12 rounded-2xl border border-border/60 bg-card/30 overflow-hidden">
+          <div className="mt-12 card-premium/30 overflow-hidden">
             <div className="grid grid-cols-12 font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground bg-card/60 px-6 py-4 border-b border-border">
               <div className="col-span-4">Step</div>
               <div className="col-span-5">Focus</div>
@@ -226,7 +226,7 @@ const Methodology = () => {
             title="Traditional SEO process vs. CiteWorks Studio methodology"
             align="left"
           />
-          <div className="mt-12 rounded-2xl border border-border/60 bg-card overflow-hidden">
+          <div className="mt-12 card-premium overflow-hidden">
             <div className="grid grid-cols-2 font-mono text-[11px] uppercase tracking-widest text-primary border-b border-border">
               <div className="p-5">Traditional SEO Process</div>
               <div className="p-5 border-l border-border">CiteWorks Studio Methodology</div>

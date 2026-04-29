@@ -115,6 +115,8 @@ const RequestAudit = () => {
   const [describes, setDescribes] = useState("");
   const [support, setSupport] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     document.title = "Request a Visibility Audit | CiteWorks Studio";
@@ -125,8 +127,9 @@ const RequestAudit = () => {
   const toggleImprove = (v: string) =>
     setImproving((prev) => (prev.includes(v) ? prev.filter((p) => p !== v) : [...prev, v]));
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (submitting) return;
     const fd = new FormData(e.currentTarget);
     const payload = {
       name: String(fd.get("name") || ""),
@@ -150,18 +153,34 @@ const RequestAudit = () => {
       });
       setErrors(fieldErrors);
       toast({ title: "Please review the form", description: "A few fields need attention.", variant: "destructive" });
+      // Focus first error
+      const firstKey = Object.keys(fieldErrors)[0];
+      if (firstKey) {
+        const el = document.querySelector<HTMLElement>(`[name="${firstKey}"]`);
+        el?.focus();
+        el?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
       return;
     }
 
     setErrors({});
-    toast({
-      title: "Request received",
-      description: "We review every request manually and will get back to you within one business day.",
-    });
-    e.currentTarget.reset();
+    setSubmitting(true);
+    try {
+      // Simulated submission — replace with real endpoint when wired to backend.
+      await new Promise((r) => setTimeout(r, 600));
+      setSubmitted(true);
+      window.scrollTo({ top: document.getElementById("audit-form")?.offsetTop ?? 0, behavior: "smooth" });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const resetForm = () => {
+    setSubmitted(false);
     setImproving([]);
     setDescribes("");
     setSupport("");
+    setErrors({});
   };
 
   return (

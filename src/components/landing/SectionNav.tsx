@@ -42,7 +42,10 @@ export const SectionNav = ({
   return (
     <nav
       aria-label="On this page"
-      className={`hidden lg:block sticky top-24 self-start ${className}`}
+      className={`hidden xl:block ${
+        className ||
+        "fixed left-6 top-1/2 -translate-y-1/2 z-30 max-h-[70vh] overflow-auto pr-3"
+      }`}
     >
       <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground mb-4">
         ON THIS PAGE
@@ -55,7 +58,7 @@ export const SectionNav = ({
               <a
                 href={`#${i.id}`}
                 aria-current={isActive ? "true" : undefined}
-                className={`block pl-4 -ml-px py-1.5 text-sm border-l transition-colors ${
+                className={`block pl-4 -ml-px py-1.5 text-xs font-mono tracking-wide border-l transition-colors max-w-[180px] truncate ${
                   isActive
                     ? "text-foreground border-primary"
                     : "text-muted-foreground border-transparent hover:text-foreground"

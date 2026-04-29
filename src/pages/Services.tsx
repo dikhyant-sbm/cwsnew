@@ -5,6 +5,7 @@ import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
 import { TrustPledges } from "@/components/landing/TrustPledges";
 import { BestFit } from "@/components/landing/BestFit";
 import { SectionNav } from "@/components/landing/SectionNav";
+import { ServicesMatrix } from "@/components/landing/ServicesMatrix";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
@@ -390,35 +391,7 @@ const Services = () => {
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-16">
             Eleven services. One coordinated visibility system.
           </h2>
-          <div className="space-y-px bg-border rounded-2xl overflow-hidden border border-border">
-            {services.map((s) => (
-              <div key={s.n} className="bg-background p-8 lg:p-12 grid lg:grid-cols-12 gap-8">
-                <div className="lg:col-span-3">
-                  <p className="font-mono text-xs text-primary mb-3">SERVICE / {s.n}</p>
-                  <h3 className="text-2xl font-semibold leading-tight">{s.title}</h3>
-                </div>
-                <div className="lg:col-span-5 space-y-4 text-foreground/75">
-                  <p className="text-foreground/90">{s.def}</p>
-                  <p className="text-sm">{s.body}</p>
-                  <div className="pt-4 border-t border-border">
-                    <p className="font-mono text-[11px] text-muted-foreground mb-2">OUTCOME</p>
-                    <p className="text-sm text-foreground/85">{s.outcome}</p>
-                  </div>
-                </div>
-                <div className="lg:col-span-4">
-                  <p className="font-mono text-[11px] text-muted-foreground mb-3">INCLUDES</p>
-                  <ul className="space-y-2">
-                    {s.includes.map((i) => (
-                      <li key={i} className="flex gap-2 text-sm text-foreground/80">
-                        <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span>{i}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
+          <ServicesMatrix services={services} />
         </div>
       </section>
 

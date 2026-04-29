@@ -22,7 +22,7 @@ export const AuditCTA = () => (
           <div className="lg:col-span-4 flex lg:justify-end">
             <Button
               asChild
-              className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]"
+              className="group rounded-full font-mono text-[13px] tracking-[0.16em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]"
             >
               <Link to="/request-audit">
                 REQUEST A VISIBILITY AUDIT

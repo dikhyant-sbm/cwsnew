@@ -45,7 +45,7 @@ export const CasesPreview = () => (
         </div>
         <Link
           to="/case-studies"
-          className="inline-flex items-center gap-1.5 font-mono text-[11px] tracking-[0.22em] text-primary hover:gap-2.5 transition-all"
+          className="inline-flex items-center gap-1.5 font-mono text-[13px] tracking-[0.16em] text-primary hover:gap-2.5 transition-all"
         >
           VIEW ALL CASE STUDIES <ArrowUpRight className="size-3" />
         </Link>
@@ -57,7 +57,7 @@ export const CasesPreview = () => (
             key={i}
             className="group relative card-premium p-7 hover:border-primary/40 transition-all overflow-hidden"
           >
-            <p className="font-mono text-[10px] tracking-[0.22em] text-subtle uppercase mb-6">
+            <p className="font-mono text-[12px] tracking-[0.16em] text-subtle uppercase mb-6">
               {c.cat}
             </p>
             <p className="display text-5xl text-gradient leading-none">{c.metric}</p>

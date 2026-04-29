@@ -114,10 +114,10 @@ const Methodology = () => {
         body="Our methodology starts with evidence — Google rankings, AI answers, citation sources, competitor positioning, technical SEO, entity clarity, content structure, and source-layer authority. Then we build the corrective-action plan."
         ctas={
           <>
-            <Button asChild className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
+            <Button asChild className="group rounded-full font-mono text-[13px] tracking-[0.16em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/30 hover:bg-foreground/5 px-7 h-12">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] tracking-[0.16em] border-foreground/30 hover:bg-foreground/5 px-7 h-12">
               <Link to="/services">EXPLORE SERVICES</Link>
             </Button>
           </>
@@ -154,7 +154,7 @@ const Methodology = () => {
                   authority under one corrective-action diagnosis.
                 </p>
                 <div className="glass-strong rounded-2xl p-6 mt-8">
-                  <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-3">ANSWER CAPSULE</p>
+                  <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-3">ANSWER CAPSULE</p>
                   <p className="text-foreground/90">
                     CiteWorks Studio uses an audit-led, evidence-first methodology to identify where a
                     company is winning, losing, or missing visibility across Google, AI answers, and
@@ -208,7 +208,7 @@ const Methodology = () => {
               align="left"
             />
             <div className="mt-10 card-premium overflow-hidden">
-              <div className="grid grid-cols-12 font-mono text-[10px] tracking-[0.22em] uppercase text-body bg-card/60 px-6 py-4 border-b border-border">
+              <div className="grid grid-cols-12 font-mono text-[12px] tracking-[0.16em] uppercase text-body bg-card/60 px-6 py-4 border-b border-border">
                 <div className="col-span-4">Step</div>
                 <div className="col-span-5">Focus</div>
                 <div className="col-span-3 text-primary">Output</div>
@@ -230,7 +230,7 @@ const Methodology = () => {
               align="left"
             />
             <div className="mt-10 card-premium overflow-hidden">
-              <div className="grid grid-cols-2 font-mono text-[11px] uppercase tracking-widest text-primary border-b border-border">
+              <div className="grid grid-cols-2 font-mono text-[13px] uppercase tracking-widest text-primary border-b border-border">
                 <div className="p-5">Traditional SEO Process</div>
                 <div className="p-5 border-l border-border">CiteWorks Studio Methodology</div>
               </div>
@@ -251,7 +251,7 @@ const Methodology = () => {
             />
             <div className="mt-10 grid md:grid-cols-2 gap-6">
               <div className="border border-border rounded-2xl p-8 bg-card/30">
-                <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-5">BEST FIT</p>
+                <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-5">BEST FIT</p>
                 <ul className="space-y-3">
                   {bestFit.map((f) => (
                     <li key={f} className="flex gap-3 text-sm text-foreground/85">
@@ -262,7 +262,7 @@ const Methodology = () => {
                 </ul>
               </div>
               <div className="border border-border rounded-2xl p-8 bg-card/30">
-                <p className="font-mono text-[10px] tracking-[0.22em] text-body mb-5">NOT THE BEST FIT</p>
+                <p className="font-mono text-[12px] tracking-[0.16em] text-body mb-5">NOT THE BEST FIT</p>
                 <ul className="space-y-3">
                   {notFit.map((f) => (
                     <li key={f} className="flex gap-3 text-sm text-muted-fg">
@@ -291,7 +291,7 @@ const Methodology = () => {
                   </p>
                 </div>
                 <div className="lg:col-span-4 flex lg:justify-end">
-                  <Button asChild className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12">
+                  <Button asChild className="group rounded-full font-mono text-[13px] tracking-[0.16em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12">
                     <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" /></Link>
                   </Button>
                 </div>
@@ -332,10 +332,10 @@ const Methodology = () => {
             Google, AI answers, citation sources, and competitor positioning.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button asChild className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow px-7 h-12">
+            <Button asChild className="group rounded-full font-mono text-[13px] tracking-[0.16em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow px-7 h-12">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/30 hover:bg-foreground/5 px-7 h-12">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] tracking-[0.16em] border-foreground/30 hover:bg-foreground/5 px-7 h-12">
               <Link to="/case-studies">VIEW CASE STUDIES</Link>
             </Button>
           </div>

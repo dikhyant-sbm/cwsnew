@@ -94,7 +94,7 @@ export const VisibilityLoop = ({ compact = false }: { compact?: boolean }) => {
                       }`}
                     >
                       <div className="flex items-center justify-between">
-                        <span className="font-mono text-[10px] tracking-[0.22em] text-primary">
+                        <span className="font-mono text-[12px] tracking-[0.16em] text-primary">
                           {String(i + 1).padStart(2, "0")}
                         </span>
                         <Icon
@@ -114,7 +114,7 @@ export const VisibilityLoop = ({ compact = false }: { compact?: boolean }) => {
               })}
             </ol>
             {/* Loop indicator */}
-            <p className="mt-5 text-center font-mono text-[10px] tracking-[0.22em] text-body">
+            <p className="mt-5 text-center font-mono text-[12px] tracking-[0.16em] text-body">
               ↻ A CONTINUOUS LOOP — DIAGNOSE, EXECUTE, MEASURE
             </p>
           </div>
@@ -132,7 +132,7 @@ export const VisibilityLoop = ({ compact = false }: { compact?: boolean }) => {
                 <div className="w-9 h-9 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center">
                   <current.Icon className="w-4 h-4 text-primary" aria-hidden="true" />
                 </div>
-                <p className="font-mono text-[10px] tracking-[0.22em] text-primary">
+                <p className="font-mono text-[12px] tracking-[0.16em] text-primary">
                   STEP / {current.label.toUpperCase()}
                 </p>
               </div>
@@ -141,7 +141,7 @@ export const VisibilityLoop = ({ compact = false }: { compact?: boolean }) => {
               </h3>
               <p className="mt-4 text-body leading-relaxed">{current.body}</p>
               <div className="mt-6 pt-6 border-t border-border">
-                <p className="font-mono text-[10px] tracking-[0.22em] text-body">
+                <p className="font-mono text-[12px] tracking-[0.16em] text-body">
                   WHY IT MATTERS
                 </p>
                 <p className="text-sm text-body mt-2 leading-relaxed">

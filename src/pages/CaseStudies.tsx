@@ -136,10 +136,10 @@ const CaseStudies = () => {
             <p>These case studies show how visibility improves when companies strengthen more than rankings — across GEO, citation architecture, AI search visibility, technical SEO, content strategy, and source-layer authority.</p>
           </div>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Button asChild className="rounded-full font-mono text-[11px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button asChild className="rounded-full font-mono text-[13px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90">
               <a href="#featured">VIEW FEATURED SYNTHESIS</a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.18em] border-border">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] tracking-[0.18em] border-border">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT</Link>
             </Button>
           </div>
@@ -171,7 +171,7 @@ const CaseStudies = () => {
             <div className="grid grid-cols-2 gap-2 pt-6 border-t border-border">
               {movement.map((m, i) => (
                 <div key={i} className="flex gap-3 items-start py-1">
-                  <span className="font-mono text-[10px] text-primary mt-1.5">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="font-mono text-[12px] text-primary mt-1.5">{String(i + 1).padStart(2, "0")}</span>
                   <span className="text-sm text-body">{m}</span>
                 </div>
               ))}
@@ -191,17 +191,17 @@ const CaseStudies = () => {
             A structured comparison of four published CiteWorks Studio engagements — tax relief, household appliance, crypto wallet, and pest control — showing how citation footprint, brand context, and high-intent public-source visibility can improve alongside Google and AI visibility.
           </p>
           <div className="border border-primary/30 bg-background rounded-2xl p-8 lg:p-12">
-            <p className="font-mono text-[11px] text-primary mb-4">FEATURED CASE</p>
+            <p className="font-mono text-[13px] text-primary mb-4">FEATURED CASE</p>
             <h3 className="text-2xl md:text-3xl font-semibold mb-4 leading-tight">
               Cross-Case Synthesis: AI Visibility Growth Across Four Verticals
             </h3>
             <div className="mt-6 border-t border-border pt-6">
-              <p className="font-mono text-[11px] text-body mb-3">KEY TAKEAWAY</p>
+              <p className="font-mono text-[13px] text-body mb-3">KEY TAKEAWAY</p>
               <p className="text-foreground/85 text-lg leading-relaxed">
                 The pattern was not simply "rank higher and AI visibility follows." The stronger pattern: improve citation footprint, brand context, and high-intent presence across Google and public reference environments, and AI visibility can improve alongside traditional search.
               </p>
             </div>
-            <Button className="mt-8 rounded-full font-mono text-[11px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button className="mt-8 rounded-full font-mono text-[13px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90">
               READ THE SYNTHESIS <ArrowUpRight className="w-3 h-3 ml-1" />
             </Button>
           </div>
@@ -248,7 +248,7 @@ const CaseStudies = () => {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => setFilter(f)}
-                  className={`px-4 py-2 rounded-full font-mono text-[11px] tracking-[0.18em] border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                  className={`px-4 py-2 rounded-full font-mono text-[13px] tracking-[0.18em] border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
                     isActive
                       ? "bg-primary text-primary-foreground border-transparent"
                       : "border-border text-body hover:border-primary/40 hover:text-foreground"
@@ -260,7 +260,7 @@ const CaseStudies = () => {
             })}
           </div>
 
-          <p className="font-mono text-[10px] tracking-[0.22em] text-body mb-6" aria-live="polite">
+          <p className="font-mono text-[12px] tracking-[0.16em] text-body mb-6" aria-live="polite">
             SHOWING {filteredCases.length} OF {cases.length}
           </p>
 
@@ -271,20 +271,20 @@ const CaseStudies = () => {
                 className="border border-border rounded-xl bg-background p-6 hover:border-primary/40 transition-colors group flex flex-col animate-fade-in"
                 style={{ animationDelay: `${i * 30}ms` }}
               >
-                <p className="font-mono text-[11px] text-primary mb-4">CASE / {c.n}</p>
+                <p className="font-mono text-[13px] text-primary mb-4">CASE / {c.n}</p>
                 <h3 className="text-lg font-semibold mb-3 leading-snug group-hover:text-primary transition-colors">
                   {c.title}
                 </h3>
                 <p className="text-sm text-body mb-5 flex-grow">{c.desc}</p>
                 <div className="border-t border-border pt-4">
-                  <p className="font-mono text-[10px] text-body mb-2">BEST FOR</p>
+                  <p className="font-mono text-[12px] text-body mb-2">BEST FOR</p>
                   <div className="flex flex-wrap gap-1.5">
                     {c.best.map((b) => (
-                      <span key={b} className="text-[11px] px-2 py-1 rounded-full bg-card border border-border text-body">{b}</span>
+                      <span key={b} className="text-[13px] px-2 py-1 rounded-full bg-card border border-border text-body">{b}</span>
                     ))}
                   </div>
                 </div>
-                <button className="mt-5 inline-flex items-center gap-1 font-mono text-[11px] tracking-[0.18em] text-primary hover:gap-2 transition-all">
+                <button className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] tracking-[0.18em] text-primary hover:gap-2 transition-all">
                   READ CASE STUDY <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
                 </button>
               </article>
@@ -309,7 +309,7 @@ const CaseStudies = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {patterns.map((p) => (
               <div key={p.n} className="border border-border rounded-xl p-6 bg-card/30">
-                <p className="font-mono text-[11px] text-primary mb-3">PATTERN / {p.n}</p>
+                <p className="font-mono text-[13px] text-primary mb-3">PATTERN / {p.n}</p>
                 <h3 className="text-lg font-semibold mb-3 leading-snug">{p.h}</h3>
                 <p className="text-sm text-body">{p.b}</p>
               </div>
@@ -334,7 +334,7 @@ const CaseStudies = () => {
             <div className="grid sm:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden border border-border">
               {measurement.map((m, i) => (
                 <div key={i} className="bg-background p-4 flex items-center gap-3">
-                  <span className="font-mono text-[10px] text-primary">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="font-mono text-[12px] text-primary">{String(i + 1).padStart(2, "0")}</span>
                   <span className="text-sm text-foreground/85">{m}</span>
                 </div>
               ))}
@@ -402,10 +402,10 @@ const CaseStudies = () => {
             The strongest case studies start with a clear diagnosis. CiteWorks Studio helps growth-minded companies identify where they are losing visibility — then we build the corrective-action plan.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button asChild className="rounded-full font-mono text-[11px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button asChild className="rounded-full font-mono text-[13px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3 h-3 ml-1" /></Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.18em] border-border">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] tracking-[0.18em] border-border">
               <Link to="/methodology">EXPLORE THE METHODOLOGY</Link>
             </Button>
           </div>

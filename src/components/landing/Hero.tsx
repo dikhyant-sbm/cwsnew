@@ -17,7 +17,7 @@ export const Hero = () => (
           <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 pulse-ring" />
           <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
         </span>
-        <span className="font-mono text-[10px] tracking-[0.22em] text-body uppercase">
+        <span className="font-mono text-[12px] tracking-[0.16em] text-body uppercase">
           GEO · AI Search · Citation Architecture
         </span>
       </div>
@@ -57,14 +57,14 @@ export const Hero = () => (
           { k: "Cited sources", v: "500+" },
         ].map((s, i) => (
           <div key={i} className="glass rounded-xl p-4 text-left border-gradient">
-            <p className="font-mono text-[10px] tracking-widest text-subtle mb-2">{s.k.toUpperCase()}</p>
+            <p className="font-mono text-[12px] tracking-widest text-subtle mb-2">{s.k.toUpperCase()}</p>
             <p className="display text-2xl text-gradient">{s.v}</p>
           </div>
         ))}
       </div>
 
       {/* Scroll cue */}
-      <div className="mt-16 flex items-center justify-center gap-2 font-mono text-[10px] tracking-[0.3em] text-foreground/35">
+      <div className="mt-16 flex items-center justify-center gap-2 font-mono text-[12px] tracking-[0.3em] text-foreground/35">
         <Sparkles className="w-3 h-3" />
         SCROLL TO EXPLORE
       </div>

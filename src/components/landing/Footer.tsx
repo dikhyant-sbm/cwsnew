@@ -62,7 +62,7 @@ export const Footer = () => (
         <div className="lg:col-span-4 flex flex-wrap lg:justify-end gap-3">
           <Button
             asChild
-            className="rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-6 h-11"
+            className="rounded-full font-mono text-[13px] tracking-[0.16em] bg-primary text-primary-foreground hover:bg-primary/90 px-6 h-11"
           >
             <Link to="/request-audit">
               REQUEST A VISIBILITY AUDIT{" "}
@@ -72,7 +72,7 @@ export const Footer = () => (
           <Button
             asChild
             variant="outline"
-            className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/30 hover:bg-foreground/5 px-6 h-11"
+            className="rounded-full font-mono text-[13px] tracking-[0.16em] border-foreground/30 hover:bg-foreground/5 px-6 h-11"
           >
             <Link to="/agency-partners">DISCUSS AGENCY PARTNERSHIP</Link>
           </Button>
@@ -109,7 +109,7 @@ export const Footer = () => (
         >
           {cols.map((c) => (
             <div key={c.title}>
-              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary mb-4">
+              <p className="font-mono text-[13px] uppercase tracking-[0.18em] text-primary mb-4">
                 {c.title}
               </p>
               <ul className="space-y-3">
@@ -130,7 +130,7 @@ export const Footer = () => (
       </div>
 
       {/* Bottom bar */}
-      <div className="mt-16 pt-8 border-t border-border/40 flex flex-col sm:flex-row justify-between gap-4 text-[11px] text-body font-mono tracking-widest">
+      <div className="mt-16 pt-8 border-t border-border/40 flex flex-col sm:flex-row justify-between gap-4 text-[13px] text-body font-mono tracking-widest">
         <p>© 2026 CITEWORKS STUDIO. ALL RIGHTS RESERVED.</p>
         <div className="flex flex-wrap gap-6">
           <a

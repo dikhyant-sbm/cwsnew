@@ -212,7 +212,7 @@ const RequestAudit = () => {
               { n: "03", t: "We deliver the audit", d: "An executive-ready Visibility Audit with a prioritized corrective-action roadmap." },
             ].map((s) => (
               <li key={s.n} className="card-premium p-5">
-                <p className="font-mono text-[10px] tracking-[0.22em] text-primary">{s.n}</p>
+                <p className="font-mono text-[12px] tracking-[0.16em] text-primary">{s.n}</p>
                 <p className="display text-base mt-2">{s.t}</p>
                 <p className="text-xs text-body mt-2 leading-relaxed">{s.d}</p>
               </li>
@@ -249,23 +249,23 @@ const RequestAudit = () => {
                   { n: "03", t: "Audit kickoff", d: "Typically within 1–2 weeks." },
                 ].map((s) => (
                   <div key={s.n} className="card-premium p-4">
-                    <p className="font-mono text-[10px] tracking-[0.22em] text-primary">{s.n}</p>
+                    <p className="font-mono text-[12px] tracking-[0.16em] text-primary">{s.n}</p>
                     <p className="display text-sm mt-2">{s.t}</p>
                     <p className="text-xs text-body mt-1">{s.d}</p>
                   </div>
                 ))}
               </div>
               <div className="mt-10 flex flex-wrap justify-center gap-3">
-                <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/30 hover:bg-foreground/5 px-6 h-11">
+                <Button asChild variant="outline" className="rounded-full font-mono text-[13px] tracking-[0.16em] border-foreground/30 hover:bg-foreground/5 px-6 h-11">
                   <Link to="/methodology">EXPLORE THE METHODOLOGY</Link>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/30 hover:bg-foreground/5 px-6 h-11">
+                <Button asChild variant="outline" className="rounded-full font-mono text-[13px] tracking-[0.16em] border-foreground/30 hover:bg-foreground/5 px-6 h-11">
                   <Link to="/case-studies">SEE CASE STUDIES</Link>
                 </Button>
                 <button
                   type="button"
                   onClick={resetForm}
-                  className="rounded-full font-mono text-[11px] tracking-[0.22em] text-body hover:text-foreground px-4 h-11 transition-colors"
+                  className="rounded-full font-mono text-[13px] tracking-[0.16em] text-body hover:text-foreground px-4 h-11 transition-colors"
                 >
                   SUBMIT ANOTHER
                 </button>
@@ -370,7 +370,7 @@ const RequestAudit = () => {
               type="submit"
               disabled={submitting}
               aria-busy={submitting}
-              className="w-full group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)] disabled:opacity-70"
+              className="w-full group rounded-full font-mono text-[13px] tracking-[0.16em] bg-primary text-primary-foreground hover:bg-primary/90 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)] disabled:opacity-70"
             >
               {submitting ? "SUBMITTING…" : (
                 <>REQUEST VISIBILITY AUDIT <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></>
@@ -388,14 +388,14 @@ const RequestAudit = () => {
             <a href="mailto:hello@citeworksstudio.com" className="flex items-center gap-3 rounded-xl border border-border bg-card/30 p-4 hover:border-primary/40 transition-colors">
               <Mail className="w-4 h-4 text-primary" />
               <div>
-                <p className="font-mono text-[10px] tracking-[0.22em] text-body">EMAIL</p>
+                <p className="font-mono text-[12px] tracking-[0.16em] text-body">EMAIL</p>
                 <p className="text-sm text-foreground/85">hello@citeworksstudio.com</p>
               </div>
             </a>
             <div className="flex items-center gap-3 rounded-xl border border-border bg-card/30 p-4">
               <MessageCircle className="w-4 h-4 text-primary" />
               <div>
-                <p className="font-mono text-[10px] tracking-[0.22em] text-body">RESPONSE</p>
+                <p className="font-mono text-[12px] tracking-[0.16em] text-body">RESPONSE</p>
                 <p className="text-sm text-foreground/85">Within one business day</p>
               </div>
             </div>
@@ -475,7 +475,7 @@ const RequestAudit = () => {
           <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {outcomes.map((o, i) => (
               <div key={i} className="border border-border rounded-2xl p-7 bg-background">
-                <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-3">0{i + 1}</p>
+                <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-3">0{i + 1}</p>
                 <h3 className="display text-2xl text-gradient">{o.t}</h3>
                 <p className="text-sm text-body mt-3 leading-relaxed">{o.d}</p>
               </div>
@@ -513,7 +513,7 @@ const RequestAudit = () => {
           <SectionHeading eyebrow="Fit" title="Who the Visibility Audit is built for." align="left" />
           <div className="mt-12 grid md:grid-cols-2 gap-6">
             <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-5">BEST FIT</p>
+              <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-5">BEST FIT</p>
               <ul className="space-y-3">
                 {bestFit.map((f) => (
                   <li key={f} className="flex gap-3 text-sm text-foreground/85">
@@ -524,7 +524,7 @@ const RequestAudit = () => {
               </ul>
             </div>
             <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[10px] tracking-[0.22em] text-body mb-5">NOT THE BEST FIT</p>
+              <p className="font-mono text-[12px] tracking-[0.16em] text-body mb-5">NOT THE BEST FIT</p>
               <ul className="space-y-3">
                 {notFit.map((f) => (
                   <li key={f} className="flex gap-3 text-sm text-muted-fg">
@@ -545,7 +545,7 @@ const RequestAudit = () => {
           <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             {problems.map((p, i) => (
               <div key={i} className="border border-border rounded-xl p-5 bg-background flex gap-3 items-start">
-                <span className="font-mono text-[10px] text-primary mt-1">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-mono text-[12px] text-primary mt-1">{String(i + 1).padStart(2, "0")}</span>
                 <p className="text-sm text-foreground/85">{p}</p>
               </div>
             ))}
@@ -560,7 +560,7 @@ const RequestAudit = () => {
           <div className="mt-12 grid md:grid-cols-3 gap-4">
             {afterAudit.map((a) => (
               <div key={a.n} className="border border-border rounded-2xl p-7 bg-card/30">
-                <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-3">PATH / {a.n}</p>
+                <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-3">PATH / {a.n}</p>
                 <h3 className="display text-xl mb-3">{a.t}</h3>
                 <p className="text-sm text-body leading-relaxed">{a.d}</p>
               </div>
@@ -576,7 +576,7 @@ const RequestAudit = () => {
           <div className="mt-12 card-premium/30 overflow-hidden">
             {llmTable.map(([k, v], i) => (
               <div key={i} className={`grid grid-cols-12 px-6 py-5 text-sm gap-4 ${i < llmTable.length - 1 ? "border-b border-border" : ""}`}>
-                <div className="col-span-4 font-mono text-[11px] tracking-[0.18em] uppercase text-primary">{k}</div>
+                <div className="col-span-4 font-mono text-[13px] tracking-[0.18em] uppercase text-primary">{k}</div>
                 <div className="col-span-8 text-body">{v}</div>
               </div>
             ))}
@@ -611,10 +611,10 @@ const RequestAudit = () => {
             Submit the form above. We review every request manually and reply within one business day.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button asChild className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
+            <Button asChild className="group rounded-full font-mono text-[13px] tracking-[0.16em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
               <a href="#audit-form"><ArrowUpRight className="w-3.5 h-3.5 mr-1.5 rotate-180" /> BACK TO FORM</a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/30 hover:bg-foreground/5 px-7 h-12">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] tracking-[0.16em] border-foreground/30 hover:bg-foreground/5 px-7 h-12">
               <Link to="/methodology">SEE THE METHODOLOGY</Link>
             </Button>
           </div>

@@ -31,7 +31,7 @@ export const TrustedBy = () => (
             className="flex items-center gap-2 text-muted-fg hover:text-foreground transition-colors"
           >
             <Icon className="size-4" strokeWidth={1.5} aria-hidden />
-            <span className="font-mono text-[11px] tracking-[0.18em] uppercase">
+            <span className="font-mono text-[13px] tracking-[0.18em] uppercase">
               {label}
             </span>
           </li>

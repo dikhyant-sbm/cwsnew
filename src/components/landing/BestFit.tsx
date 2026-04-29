@@ -34,7 +34,7 @@ export const BestFit = () => (
         <div className="card-premium p-8 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-3 py-1">
             <Check className="size-3.5 text-primary" strokeWidth={2} />
-            <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-primary">
+            <span className="font-mono text-[12px] tracking-[0.16em] uppercase text-primary">
               Best fit
             </span>
           </div>
@@ -52,7 +52,7 @@ export const BestFit = () => (
         <div className="card-premium p-8 reveal-on-scroll" style={{ transitionDelay: "80ms" }}>
           <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 border border-border px-3 py-1">
             <Minus className="size-3.5 text-muted-fg" strokeWidth={2} />
-            <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted-fg">
+            <span className="font-mono text-[12px] tracking-[0.16em] uppercase text-muted-fg">
               Not the right fit
             </span>
           </div>

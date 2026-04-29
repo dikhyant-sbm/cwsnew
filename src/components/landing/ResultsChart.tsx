@@ -63,10 +63,10 @@ export const ResultsChart = ({ results }: ResultsChartProps) => {
     <div className="card-premium p-6 sm:p-8">
       <div className="flex items-baseline justify-between mb-8 flex-wrap gap-3">
         <div>
-          <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-2">VISUAL COMPARISON</p>
+          <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-2">VISUAL COMPARISON</p>
           <h3 className="display text-xl sm:text-2xl">Movement across four featured verticals.</h3>
         </div>
-        <p className="font-mono text-[10px] tracking-[0.18em] text-body">
+        <p className="font-mono text-[12px] tracking-[0.18em] text-body">
           Indicative scale per metric, normalized within each row.
         </p>
       </div>
@@ -93,7 +93,7 @@ export const ResultsChart = ({ results }: ResultsChartProps) => {
           <div key={g.key}>
             <div className="flex items-baseline justify-between mb-3">
               <p className="text-sm font-medium text-foreground">{g.label}</p>
-              <p className="font-mono text-[10px] tracking-wider text-body uppercase">{g.unit}</p>
+              <p className="font-mono text-[12px] tracking-wider text-body uppercase">{g.unit}</p>
             </div>
             <div className="space-y-2">
               {results.map((r, i) => {
@@ -113,7 +113,7 @@ export const ResultsChart = ({ results }: ResultsChartProps) => {
                           aria-label={`${r.cat}: ${g.format(v)}`}
                         />
                       ) : (
-                        <div className="h-full flex items-center px-3 text-[10px] font-mono text-body">
+                        <div className="h-full flex items-center px-3 text-[12px] font-mono text-body">
                           n/a
                         </div>
                       )}
@@ -133,7 +133,7 @@ export const ResultsChart = ({ results }: ResultsChartProps) => {
       <div className="mt-10 pt-6 border-t border-border grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {results.map((r) => (
           <div key={r.cat} className="rounded-xl border border-border bg-card/30 p-4">
-            <p className="font-mono text-[10px] tracking-[0.2em] text-primary mb-2">{r.cat.toUpperCase()}</p>
+            <p className="font-mono text-[12px] tracking-[0.2em] text-primary mb-2">{r.cat.toUpperCase()}</p>
             <p className="text-xs text-foreground/85 leading-relaxed mb-2">{r.ai}</p>
             <p className="text-xs text-muted-fg leading-relaxed mb-2">{r.search}</p>
             <p className="text-xs text-muted-fg leading-relaxed">{r.source}</p>

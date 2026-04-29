@@ -316,10 +316,10 @@ const Services = () => {
             <p>We combine GEO, AI search visibility, technical SEO, citation architecture, content strategy, source-layer authority, market intelligence, and execution into one coordinated system.</p>
           </div>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Button asChild className="rounded-full font-mono text-[11px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button asChild className="rounded-full font-mono text-[13px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT</Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.18em] border-border">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] tracking-[0.18em] border-border">
               <Link to="/agency-partners">EXPLORE AGENCY PARTNERSHIPS</Link>
             </Button>
           </div>
@@ -376,7 +376,7 @@ const Services = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border">
             {coreServices.map((s, i) => (
               <div key={i} className="bg-background p-6 flex items-start gap-4">
-                <span className="font-mono text-[11px] text-primary mt-1">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-mono text-[13px] text-primary mt-1">{String(i + 1).padStart(2, "0")}</span>
                 <p className="text-sm text-foreground/85">{s}</p>
               </div>
             ))}
@@ -408,7 +408,7 @@ const Services = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {engagementPaths.map((p, i) => (
               <div key={p.title} className="border border-border rounded-xl p-6 bg-background hover:border-primary/40 transition-colors">
-                <p className="font-mono text-[11px] text-primary mb-4">PATH / 0{i + 1}</p>
+                <p className="font-mono text-[13px] text-primary mb-4">PATH / 0{i + 1}</p>
                 <h3 className="text-xl font-semibold mb-3">{p.title}</h3>
                 <p className="text-sm text-body">{p.body}</p>
               </div>
@@ -425,7 +425,7 @@ const Services = () => {
             What each service improves.
           </h2>
           <div className="border border-border rounded-2xl overflow-hidden">
-            <div className="hidden md:grid grid-cols-12 bg-card/50 px-6 py-4 font-mono text-[11px] tracking-wider text-body">
+            <div className="hidden md:grid grid-cols-12 bg-card/50 px-6 py-4 font-mono text-[13px] tracking-wider text-body">
               <div className="col-span-3">SERVICE</div>
               <div className="col-span-4">WHAT IT IMPROVES</div>
               <div className="col-span-5">WHY IT MATTERS</div>
@@ -451,7 +451,7 @@ const Services = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {why.map((w, i) => (
               <div key={i} className="border border-border rounded-xl p-6 bg-background">
-                <p className="font-mono text-[11px] text-primary mb-3">{String(i + 1).padStart(2, "0")}</p>
+                <p className="font-mono text-[13px] text-primary mb-3">{String(i + 1).padStart(2, "0")}</p>
                 <h3 className="text-lg font-semibold mb-3">{w.h}</h3>
                 <p className="text-sm text-body">{w.b}</p>
               </div>
@@ -469,7 +469,7 @@ const Services = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[11px] text-primary mb-4">BEST FIT</p>
+              <p className="font-mono text-[13px] text-primary mb-4">BEST FIT</p>
               <ul className="space-y-3">
                 {bestFit.map((f) => (
                   <li key={f} className="flex gap-3 text-sm text-foreground/85">
@@ -480,7 +480,7 @@ const Services = () => {
               </ul>
             </div>
             <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[11px] text-body mb-4">NOT THE BEST FIT</p>
+              <p className="font-mono text-[13px] text-body mb-4">NOT THE BEST FIT</p>
               <ul className="space-y-3">
                 {notFit.map((f) => (
                   <li key={f} className="flex gap-3 text-sm text-muted-fg">
@@ -525,10 +525,10 @@ const Services = () => {
             Your company may already have strong expertise, useful content, and real authority. The question is whether Google, AI systems, third-party sources, and buyers can clearly recognize it.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button asChild className="rounded-full font-mono text-[11px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow">
+            <Button asChild className="rounded-full font-mono text-[13px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3 h-3 ml-1" /></Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.18em] border-border">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] tracking-[0.18em] border-border">
               <Link to="/methodology">EXPLORE THE METHODOLOGY</Link>
             </Button>
           </div>

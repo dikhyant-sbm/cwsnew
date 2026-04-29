@@ -23,7 +23,7 @@ export const SeoVsCiteworks = () => (
       </div>
 
       <div className="mt-12 card-premium/30 overflow-hidden">
-        <div className="grid grid-cols-12 font-mono text-[10px] tracking-[0.22em] uppercase text-body bg-card/60 px-6 py-4 border-b border-border">
+        <div className="grid grid-cols-12 font-mono text-[12px] tracking-[0.16em] uppercase text-body bg-card/60 px-6 py-4 border-b border-border">
           <div className="col-span-3">Dimension</div>
           <div className="col-span-4">Traditional SEO</div>
           <div className="col-span-5 text-primary">CiteWorks Studio</div>

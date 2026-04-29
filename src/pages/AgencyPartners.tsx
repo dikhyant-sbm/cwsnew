@@ -112,10 +112,10 @@ const AgencyPartners = () => {
         body="CiteWorks Studio supports white-label and collaborative delivery across GEO, AI search audits, citation architecture, technical SEO, content strategy, market intelligence, source-layer research, reporting, and ongoing corrective action."
         ctas={
           <>
-            <Button asChild className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
+            <Button asChild className="group rounded-full font-mono text-[13px] tracking-[0.16em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
               <Link to="/request-audit">REQUEST A PARTNER STRATEGY CALL <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/30 hover:bg-foreground/5 px-7 h-12">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] tracking-[0.16em] border-foreground/30 hover:bg-foreground/5 px-7 h-12">
               <a href="#partner-services">SEE PARTNER SERVICES</a>
             </Button>
           </>
@@ -140,7 +140,7 @@ const AgencyPartners = () => {
       <section className="py-20 border-t border-border/40">
         <div className="mx-auto max-w-5xl px-6">
           <div className="glass-strong rounded-2xl p-8 sm:p-10">
-            <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-4">ANSWER CAPSULE</p>
+            <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-4">ANSWER CAPSULE</p>
             <p className="text-foreground/90 text-lg leading-relaxed">
               CiteWorks Studio is a specialist GEO, AI search visibility, and citation architecture
               backend for agencies. We support white-label audits, embedding-level GEO, technical
@@ -181,7 +181,7 @@ const AgencyPartners = () => {
                 <h3 className="display text-2xl mt-3">{s.title}</h3>
                 <p className="text-sm text-body mt-3 leading-relaxed">{s.desc}</p>
                 <div className="mt-5 pt-4 border-t border-border">
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-primary">Agency value</p>
+                  <p className="font-mono text-[12px] uppercase tracking-widest text-primary">Agency value</p>
                   <p className="text-sm text-foreground/85 mt-2">{s.value}</p>
                 </div>
               </article>
@@ -207,7 +207,7 @@ const AgencyPartners = () => {
           <div className="mt-12 grid md:grid-cols-2 gap-4">
             {why.map((w, i) => (
               <div key={i} className="border border-border rounded-2xl p-7 bg-background">
-                <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-3">{String(i + 1).padStart(2, "0")}</p>
+                <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-3">{String(i + 1).padStart(2, "0")}</p>
                 <h3 className="display text-xl mb-3">{w.h}</h3>
                 <p className="text-sm text-body leading-relaxed">{w.b}</p>
               </div>
@@ -247,7 +247,7 @@ const AgencyPartners = () => {
             align="left"
           />
           <div className="mt-12 card-premium/30 overflow-hidden">
-            <div className="grid grid-cols-12 font-mono text-[10px] tracking-[0.22em] uppercase text-body bg-card/60 px-6 py-4 border-b border-border">
+            <div className="grid grid-cols-12 font-mono text-[12px] tracking-[0.16em] uppercase text-body bg-card/60 px-6 py-4 border-b border-border">
               <div className="col-span-3">Service</div>
               <div className="col-span-4">Focus</div>
               <div className="col-span-5 text-primary">Deliverable</div>
@@ -308,7 +308,7 @@ const AgencyPartners = () => {
           <SectionHeading eyebrow="Fit" title="Who agency partnerships are built for." align="left" />
           <div className="mt-12 grid md:grid-cols-2 gap-6">
             <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-5">BEST FIT</p>
+              <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-5">BEST FIT</p>
               <ul className="space-y-3">
                 {bestFit.map((f) => (
                   <li key={f} className="flex gap-3 text-sm text-foreground/85">
@@ -319,7 +319,7 @@ const AgencyPartners = () => {
               </ul>
             </div>
             <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[10px] tracking-[0.22em] text-body mb-5">NOT THE BEST FIT</p>
+              <p className="font-mono text-[12px] tracking-[0.16em] text-body mb-5">NOT THE BEST FIT</p>
               <ul className="space-y-3">
                 {notFit.map((f) => (
                   <li key={f} className="flex gap-3 text-sm text-muted-fg">
@@ -340,7 +340,7 @@ const AgencyPartners = () => {
           <div className="mt-12 grid md:grid-cols-2 gap-4">
             {useCases.map((u, i) => (
               <div key={i} className="border border-border rounded-2xl p-7 bg-card/30">
-                <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-3">USE CASE / 0{i + 1}</p>
+                <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-3">USE CASE / 0{i + 1}</p>
                 <h3 className="display text-xl mb-3">{u.t}</h3>
                 <p className="text-sm text-body leading-relaxed">{u.d}</p>
               </div>
@@ -375,10 +375,10 @@ const AgencyPartners = () => {
             current service offering, sales conversations, or specific client opportunities.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button asChild className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
+            <Button asChild className="group rounded-full font-mono text-[13px] tracking-[0.16em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
               <Link to="/request-audit">REQUEST A PARTNER STRATEGY CALL <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/30 hover:bg-foreground/5 px-7 h-12">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] tracking-[0.16em] border-foreground/30 hover:bg-foreground/5 px-7 h-12">
               <Link to="/services">EXPLORE SERVICES</Link>
             </Button>
           </div>

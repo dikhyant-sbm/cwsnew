@@ -26,7 +26,7 @@ export const PageShell = ({ children }: { children: ReactNode }) => {
       {/* a11y: skip directly to main content */}
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-full focus:bg-primary focus:text-primary-foreground focus:font-mono focus:text-[11px] focus:tracking-widest"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-full focus:bg-primary focus:text-primary-foreground focus:font-mono focus:text-[13px] focus:tracking-widest"
       >
         Skip to content
       </a>
@@ -87,7 +87,7 @@ export const PageHero = ({
           <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 pulse-ring" />
           <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary" />
         </span>
-        <span className="font-mono text-[10px] tracking-[0.22em] text-body uppercase">
+        <span className="font-mono text-[12px] tracking-[0.16em] text-body uppercase">
           / {eyebrow}
         </span>
       </div>

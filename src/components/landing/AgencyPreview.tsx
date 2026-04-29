@@ -3,10 +3,16 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, Check } from "lucide-react";
 
 const points = [
-  "White-label visibility audits & AI search audits",
-  "GEO strategy & embedding-level optimization",
-  "Citation architecture for high-value clients",
-  "Backend execution without hiring an in-house team",
+  "AI search visibility audits",
+  "GEO strategy",
+  "Citation architecture",
+  "Technical SEO review",
+  "Content briefs and production",
+  "AI market intelligence reports",
+  "Prompt and keyword cluster mapping",
+  "Source-layer research",
+  "White-label reporting",
+  "Ongoing execution support",
 ];
 
 export const AgencyPreview = () => (

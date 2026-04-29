@@ -534,12 +534,15 @@ const Services = () => {
           <p className="mt-6 text-body text-lg max-w-2xl mx-auto">
             Your company may already have strong expertise, useful content, and real authority. The question is whether Google, AI systems, third-party sources, and buyers can clearly recognize it.
           </p>
+          <p className="mt-4 text-body text-lg max-w-2xl mx-auto">
+            CiteWorks Studio helps growth-minded companies close the gap between what they publish and what modern search systems actually retrieve, cite, and recommend.
+          </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3 h-3 ml-1" /></Link>
             </Button>
             <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-border">
-              <Link to="/methodology">EXPLORE THE METHODOLOGY</Link>
+              <Link to="/agency-partners">EXPLORE AGENCY PARTNERSHIPS</Link>
             </Button>
           </div>
           <p className="mt-6 text-xs text-body">

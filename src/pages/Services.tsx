@@ -287,10 +287,13 @@ const notFit = [
 ];
 
 const faqs = [
-  { q: "What services does CiteWorks Studio offer?", a: "GEO, AI search visibility, SEO auditing, AI search auditing, technical SEO, schema, entity clarity, citation architecture, content strategy, AI market intelligence, social and video support, source-layer authority strategy, execution retainers, and white-label agency services." },
-  { q: "Are you an SEO agency or a GEO agency?", a: "We are both, but the better description is search visibility agency. We help companies improve visibility across Google, AI answers, and the sources that shape both." },
+  { q: "What services does CiteWorks Studio offer?", a: "CiteWorks Studio offers GEO, AI search visibility, SEO auditing, AI search auditing, technical SEO, schema, entity clarity, citation architecture, content strategy, AI market intelligence, social and video support, source-layer authority strategy, execution retainers, and white-label agency services." },
+  { q: "Are you an SEO agency or a GEO agency?", a: "CiteWorks Studio is both, but the better description is search visibility agency. We help companies improve visibility across Google, AI answers, and the sources that shape both." },
   { q: "Do your services replace traditional SEO?", a: "No. GEO and AI search visibility do not replace SEO. They build on it. Technical SEO, content quality, crawlability, schema, internal linking, authority signals, and third-party sources all matter in modern search." },
-  { q: "What is the difference between AI search auditing and AI market intelligence?", a: "AI search auditing looks at how your company appears in AI answers, prompts, citations, and recommendation-style results. AI market intelligence turns that into broader category insight: competitor movement, source influence, market framing, recoverability, and strategic priorities." },
+  { q: "What is the difference between AI search auditing and AI market intelligence?", a: "AI search auditing looks at how your company appears in AI answers, prompts, citations, and recommendation-style results. AI market intelligence turns that information into broader category insight: competitor movement, source influence, market framing, recoverability, and strategic priorities." },
+  { q: "What is citation architecture?", a: "Citation architecture is the structured improvement of the sources that support your company's authority. It includes owned content, third-party articles, review sites, directories, comparison pages, videos, communities, and industry mentions." },
+  { q: "Do you execute the recommendations?", a: "Yes. CiteWorks Studio can move from audit and strategy into ongoing corrective-action retainers covering technical SEO, content, citation architecture, AI visibility, source-layer support, and reporting." },
+  { q: "Do you work with agencies?", a: "Yes. CiteWorks Studio offers white-label and collaborative support for agencies that want to provide GEO, AI search visibility, SEO audits, citation architecture, content, reporting, and execution without building the full backend internally." },
   { q: "How do clients usually start?", a: "Most clients start with a Visibility Audit. The audit identifies where visibility is breaking down and what should be fixed first." },
 ];
 

@@ -278,12 +278,74 @@
   }
 
   .eyebrow {
-    @apply font-mono text-xs uppercase tracking-[0.22em] text-primary/90;
+    /* Bumped from text-xs (12px) to 13px and stronger color/weight for older readers */
+    @apply font-mono uppercase;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    color: hsl(var(--primary));
   }
+  .dark .eyebrow { color: hsl(var(--accent-blue)); }
 
   .display {
-    @apply font-sans font-medium tracking-tight;
-    letter-spacing: -0.03em;
+    @apply font-sans tracking-tight;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    color: hsl(var(--text-heading));
+  }
+
+  /* ===== Semantic text helpers — use these instead of foreground/40-70 ===== */
+  .text-body      { color: hsl(var(--text-body)); }
+  .text-heading   { color: hsl(var(--text-heading)); }
+  .text-muted-fg  { color: hsl(var(--text-muted)); }
+  .text-subtle    { color: hsl(var(--text-subtle)); }
+  .text-tertiary  { color: hsl(var(--text-tertiary)); }
+
+  /* Lead paragraph — large, readable section intro */
+  .lead {
+    font-size: 1.3125rem;     /* 21px */
+    line-height: 1.57;        /* ~33px */
+    font-weight: 450;
+    color: hsl(var(--text-body));
+    max-width: 52rem;          /* ~820px / 68-76ch */
+    letter-spacing: -0.005em;
+  }
+  @media (max-width: 767px) {
+    .lead { font-size: 1.1875rem; line-height: 1.58; } /* 19px / 30px */
+  }
+
+  /* Hero lead — bigger than .lead, used right under H1 */
+  .hero-lead {
+    font-size: 1.5rem;         /* 24px */
+    line-height: 1.42;          /* ~34px */
+    font-weight: 450;
+    color: hsl(var(--text-body));
+    max-width: 52rem;
+    letter-spacing: -0.012em;
+  }
+  @media (max-width: 767px) {
+    .hero-lead { font-size: 1.25rem; line-height: 1.5; } /* 20px / 30px */
+  }
+
+  /* Body copy variants used inside cards / sections */
+  .copy {
+    font-size: 1.125rem;       /* 18px */
+    line-height: 1.67;          /* 30px */
+    color: hsl(var(--text-body));
+    max-width: 47.5rem;         /* ~760px */
+  }
+  .copy-card {
+    font-size: 1.0625rem;      /* 17px */
+    line-height: 1.65;          /* 28px */
+    color: hsl(var(--text-body));
+  }
+  .meta {
+    font-size: 0.9375rem;      /* 15px */
+    line-height: 1.53;
+    font-weight: 500;
+    color: hsl(var(--text-tertiary));
+    letter-spacing: 0;
   }
 
   .glow-blue {

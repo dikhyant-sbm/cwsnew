@@ -33,14 +33,14 @@ export const CasesPreview = () => (
     <div className="mx-auto max-w-7xl px-6">
       <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
         <div className="max-w-2xl">
-          <p className="eyebrow">Proof</p>
+          <p className="eyebrow">Proof across Google and AI search</p>
           <h2 className="display text-4xl sm:text-5xl mt-5 leading-[1.05]">
-            Visibility movement across high-consideration verticals.
+            Measurable movement across high-consideration verticals.
           </h2>
           <p className="mt-5 text-body text-lg leading-relaxed">
-            Anonymized case studies showing what changes when companies strengthen more than
-            rankings — across Google, AI answers, and the trusted source environments that shape
-            buyer decisions.
+            CiteWorks Studio publishes case studies across high-consideration categories where
+            buyers compare carefully. Our cases focus on measurable movement across search rankings,
+            AI visibility, cited sources, recommendation placement, and category presence.
           </p>
         </div>
         <Link

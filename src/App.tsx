@@ -9,6 +9,8 @@ import Methodology from "./pages/Methodology.tsx";
 import AgencyPartners from "./pages/AgencyPartners.tsx";
 import Resources from "./pages/Resources.tsx";
 import RequestAudit from "./pages/RequestAudit.tsx";
+import Services from "./pages/Services.tsx";
+import CaseStudies from "./pages/CaseStudies.tsx";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +26,8 @@ const App = () => (
           <Route path="/agency-partners" element={<AgencyPartners />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/request-audit" element={<RequestAudit />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

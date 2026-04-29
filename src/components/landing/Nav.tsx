@@ -5,7 +5,8 @@ import { Menu } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 
 const links = [
-  { label: "SERVICES", to: "/#services" },
+  { label: "SERVICES", to: "/services" },
+  { label: "CASE STUDIES", to: "/case-studies" },
   { label: "METHODOLOGY", to: "/methodology" },
   { label: "AGENCY PARTNERS", to: "/agency-partners" },
   { label: "RESOURCES", to: "/resources" },

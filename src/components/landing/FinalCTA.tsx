@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import cube from "@/assets/cite-cube.jpg";
 
 export const FinalCTA = () => (
   <section className="relative py-32 overflow-hidden border-t border-border/40">
@@ -7,17 +9,25 @@ export const FinalCTA = () => (
 
     <div className="relative mx-auto max-w-4xl px-6 text-center">
       <img
-        src="https://higoodie.com/wp-content/uploads/2026/02/goodie-signet-3000px-scaled-unsmushed.webp"
-        alt="Goodie 3D logo"
+        src={cube}
+        alt="CiteWorks Studio mark"
         loading="lazy"
-        className="w-40 h-40 mx-auto"
+        width={1024}
+        height={1024}
+        className="w-40 h-40 mx-auto rounded-2xl object-cover"
       />
       <h2 className="display text-4xl sm:text-6xl mt-8">
-        Gain Your Edge in AI Discoverability
+        Become easier to find, cite, compare, and choose.
       </h2>
-      <div className="mt-10 flex justify-center">
-        <Button className="rounded-full font-mono text-xs tracking-widest bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12">
-          GET A DEMO
+      <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
+        Close the gap between what you publish and what Google, AI systems, trusted sources, and buyers actually recognize.
+      </p>
+      <div className="mt-10 flex flex-wrap justify-center gap-3">
+        <Button asChild className="rounded-full font-mono text-xs tracking-widest bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12">
+          <Link to="/request-audit">REQUEST A VISIBILITY AUDIT</Link>
+        </Button>
+        <Button asChild variant="outline" className="rounded-full font-mono text-xs tracking-widest border-foreground/20 hover:bg-foreground/5 px-7 h-12">
+          <Link to="/methodology">SEE THE METHODOLOGY</Link>
         </Button>
       </div>
     </div>

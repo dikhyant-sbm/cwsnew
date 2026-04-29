@@ -61,35 +61,54 @@ const STEPS: Step[] = [
 export const DashboardWalkthrough = () => {
   const [active, setActive] = useState(0);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const imageRef = useRef<HTMLDivElement | null>(null);
   const { theme } = useTheme();
 
   useEffect(() => {
     const reduce =
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      setActive(0);
+      return;
+    }
 
-    const io = new IntersectionObserver(
-      (entries) => {
-        // Pick the entry closest to viewport center
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (visible[0]) {
-          const idx = Number((visible[0].target as HTMLElement).dataset.idx);
-          if (!Number.isNaN(idx)) setActive(idx);
+    let raf = 0;
+    const compute = () => {
+      raf = 0;
+      // Activation line = top edge of the sticky image frame.
+      // A step stays active until the NEXT step's marker scrolls past this line.
+      const imgEl = imageRef.current;
+      if (!imgEl) return;
+      const lineY = imgEl.getBoundingClientRect().top;
+
+      let next = 0;
+      for (let i = 0; i < stepRefs.current.length; i++) {
+        const el = stepRefs.current[i];
+        if (!el) continue;
+        // A step is "reached" once its top has crossed above the activation line.
+        if (el.getBoundingClientRect().top <= lineY + 1) {
+          next = i;
+        } else {
+          break;
         }
-      },
-      {
-        // Activate when a step crosses the exact viewport center,
-        // matching the centered sticky image.
-        rootMargin: "-50% 0px -50% 0px",
-        threshold: 0,
       }
-    );
+      setActive(next);
+    };
 
-    stepRefs.current.forEach((el) => el && io.observe(el));
-    if (reduce) setActive(0);
-    return () => io.disconnect();
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(compute);
+    };
+
+    compute();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, []);
 
   const current = STEPS[active];
@@ -126,7 +145,7 @@ export const DashboardWalkthrough = () => {
                 {/* Ambient glow */}
                 <div className="absolute -inset-x-16 -inset-y-12 -z-10 rounded-[2.5rem] bg-[radial-gradient(60%_60%_at_50%_50%,hsl(var(--accent-blue)/0.20),transparent_70%)] blur-3xl" />
                 <div className="absolute -inset-x-24 -inset-y-16 -z-10 rounded-[2.5rem] bg-[radial-gradient(50%_50%_at_70%_50%,hsl(var(--accent-violet)/0.12),transparent_70%)] blur-3xl" />
-                <div className="device-frame lift">
+                <div ref={imageRef} className="device-frame lift">
                   <div className="device-screen relative aspect-[16/9] overflow-hidden">
                     {STEPS.map((s, i) => (
                       <img

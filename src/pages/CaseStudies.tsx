@@ -245,9 +245,10 @@ const CaseStudies = () => {
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
             Explore the case studies.
           </h2>
-          <p className="text-body max-w-2xl mb-10">
-            The method changes by category, but the goal stays consistent: make the company easier to find, cite, compare, and recommend.
-          </p>
+          <div className="max-w-3xl space-y-4 text-body mb-10">
+            <p>Each case study shows how visibility work changes by category. Some markets are trust-sensitive. Some are comparison-driven. Some are urgent-intent. Some depend heavily on public discussions, review environments, third-party sources, or AI-generated summaries.</p>
+            <p>The method changes by category, but the goal stays consistent: make the company easier to find, cite, compare, and recommend.</p>
+          </div>
 
           {/* Filter chips */}
           <div role="tablist" aria-label="Filter case studies" className="flex flex-wrap gap-2 mb-10">

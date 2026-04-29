@@ -72,7 +72,7 @@ export const Footer = () => (
           <Button
             asChild
             variant="outline"
-            className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/15 hover:bg-foreground/5 px-6 h-11"
+            className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/30 hover:bg-foreground/5 px-6 h-11"
           >
             <Link to="/agency-partners">DISCUSS AGENCY PARTNERSHIP</Link>
           </Button>
@@ -89,13 +89,13 @@ export const Footer = () => (
           <p className="mt-5 text-base text-foreground/85 leading-relaxed max-w-sm">
             Visibility across Google, AI answers, and the sources that shape buyer decisions.
           </p>
-          <p className="mt-5 text-sm text-muted-foreground leading-relaxed max-w-sm">
+          <p className="mt-5 text-sm text-body leading-relaxed max-w-sm">
             CiteWorks Studio is a GEO, AI search visibility, and citation architecture agency for
             growth-minded companies.
           </p>
           <a
             href="mailto:hello@citeworksstudio.com"
-            className="mt-6 inline-flex items-center gap-2 text-sm text-foreground/80 hover:text-foreground transition-colors"
+            className="mt-6 inline-flex items-center gap-2 text-sm text-body hover:text-foreground transition-colors"
           >
             <Mail className="w-4 h-4 text-primary" aria-hidden="true" />
             hello@citeworksstudio.com
@@ -117,7 +117,7 @@ export const Footer = () => (
                   <li key={l.label}>
                     <Link
                       to={l.to}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-sm text-body hover:text-foreground transition-colors"
                     >
                       {l.label}
                     </Link>
@@ -130,7 +130,7 @@ export const Footer = () => (
       </div>
 
       {/* Bottom bar */}
-      <div className="mt-16 pt-8 border-t border-border/40 flex flex-col sm:flex-row justify-between gap-4 text-[11px] text-muted-foreground font-mono tracking-widest">
+      <div className="mt-16 pt-8 border-t border-border/40 flex flex-col sm:flex-row justify-between gap-4 text-[11px] text-body font-mono tracking-widest">
         <p>© 2026 CITEWORKS STUDIO. ALL RIGHTS RESERVED.</p>
         <div className="flex flex-wrap gap-6">
           <a

@@ -41,7 +41,7 @@ export const TrustPledges = () => (
         <h2 className="display text-4xl sm:text-5xl mt-4">
           What you can expect from CiteWorks Studio.
         </h2>
-        <p className="mt-6 text-muted-foreground leading-relaxed">
+        <p className="mt-6 text-body leading-relaxed">
           Six commitments that define how we engage, deliver, and report — for executive teams and agency partners.
         </p>
       </div>
@@ -57,7 +57,7 @@ export const TrustPledges = () => (
               <Icon className="size-4 text-primary" strokeWidth={1.5} aria-hidden />
             </div>
             <h3 className="display text-lg mt-5">{title}</h3>
-            <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{body}</p>
+            <p className="text-sm text-body mt-3 leading-relaxed">{body}</p>
           </li>
         ))}
       </ul>

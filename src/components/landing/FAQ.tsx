@@ -47,7 +47,7 @@ export const FAQ = () => (
             <AccordionTrigger className="text-left text-lg font-medium hover:text-primary hover:no-underline py-6 transition-colors">
               {f.q}
             </AccordionTrigger>
-            <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+            <AccordionContent className="text-body leading-relaxed pb-6">
               {f.a}
             </AccordionContent>
           </AccordionItem>

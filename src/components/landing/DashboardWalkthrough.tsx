@@ -106,7 +106,7 @@ export const DashboardWalkthrough = () => {
           >
             One platform. Every layer of visibility.
           </h2>
-          <p className="mt-5 text-muted-foreground leading-relaxed">
+          <p className="mt-5 text-body leading-relaxed">
             Scroll to see how each dashboard works together — from diagnosis to
             execution to measurement.
           </p>
@@ -137,7 +137,7 @@ export const DashboardWalkthrough = () => {
                     ))}
                   </div>
                 </div>
-                <figcaption className="mt-4 flex items-center justify-between font-mono text-[10px] tracking-[0.22em] uppercase text-foreground/45">
+                <figcaption className="mt-4 flex items-center justify-between font-mono text-[10px] tracking-[0.22em] uppercase text-tertiary">
                   <span>{DASHBOARDS[current.key].label}</span>
                   <span aria-live="polite">
                     {String(active + 1).padStart(2, "0")} / {String(STEPS.length).padStart(2, "0")}
@@ -182,7 +182,7 @@ export const DashboardWalkthrough = () => {
                       className={`absolute left-0 top-10 sm:top-14 first:top-0 flex items-center justify-center w-8 h-8 rounded-full border transition-colors duration-300 ${
                         isActive
                           ? "bg-primary text-primary-foreground border-primary shadow-[0_0_0_4px_hsl(var(--primary)/0.12)]"
-                          : "bg-card text-muted-foreground border-border"
+                          : "bg-card text-body border-border"
                       }`}
                     >
                       <span className="font-mono text-[10px] tracking-widest">
@@ -192,21 +192,21 @@ export const DashboardWalkthrough = () => {
 
                     <p
                       className={`font-mono text-[10px] tracking-[0.22em] uppercase transition-colors ${
-                        isActive ? "text-primary" : "text-muted-foreground"
+                        isActive ? "text-primary" : "text-body"
                       }`}
                     >
                       Step {s.number}
                     </p>
                     <h3
                       className={`display text-2xl sm:text-3xl mt-3 leading-tight transition-colors ${
-                        isActive ? "text-foreground" : "text-foreground/55"
+                        isActive ? "text-foreground" : "text-subtle"
                       }`}
                     >
                       {s.title}
                     </h3>
                     <p
                       className={`mt-4 leading-relaxed transition-colors ${
-                        isActive ? "text-foreground/80" : "text-muted-foreground/80"
+                        isActive ? "text-body" : "text-body/80"
                       }`}
                     >
                       {s.body}

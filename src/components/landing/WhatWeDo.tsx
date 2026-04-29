@@ -19,7 +19,7 @@ export const WhatWeDo = () => (
             EXPLORE SERVICES <ArrowUpRight className="size-3" />
           </Link>
         </div>
-        <div className="lg:col-span-7 space-y-5 text-foreground/75 text-lg leading-relaxed">
+        <div className="lg:col-span-7 space-y-5 text-body text-lg leading-relaxed">
           <p>
             CiteWorks Studio helps growth-minded companies improve how they appear across Google,
             ChatGPT, Gemini, Perplexity, Google AI Overviews, Copilot, organic search results,

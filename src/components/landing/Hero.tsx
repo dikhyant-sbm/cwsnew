@@ -17,7 +17,7 @@ export const Hero = () => (
           <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 pulse-ring" />
           <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
         </span>
-        <span className="font-mono text-[10px] tracking-[0.22em] text-foreground/80 uppercase">
+        <span className="font-mono text-[10px] tracking-[0.22em] text-body uppercase">
           GEO · AI Search · Citation Architecture
         </span>
       </div>
@@ -27,7 +27,7 @@ export const Hero = () => (
         <span className="text-gradient">where modern buyers search.</span>
       </h1>
 
-      <p className="reveal reveal-delay-2 mt-8 mx-auto max-w-2xl text-base sm:text-lg text-foreground/70 leading-relaxed">
+      <p className="reveal reveal-delay-2 mt-8 mx-auto max-w-2xl text-base sm:text-lg text-body leading-relaxed">
         CiteWorks Studio is the corrective-action partner for modern search visibility — across
         Google, AI answers, and the trusted source environments that shape buyer decisions.
       </p>
@@ -39,12 +39,12 @@ export const Hero = () => (
             <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </Button>
-        <Button asChild variant="outline" className="rounded-full font-mono text-xs tracking-widest border-foreground/15 hover:bg-foreground/5 hover:border-foreground/25 px-7 h-12 backdrop-blur">
+        <Button asChild variant="outline" className="rounded-full font-mono text-xs tracking-widest border-foreground/30 hover:bg-foreground/5 hover:border-foreground/25 px-7 h-12 backdrop-blur">
           <Link to="/methodology">SEE THE METHODOLOGY</Link>
         </Button>
       </div>
 
-      <p className="reveal reveal-delay-4 mt-10 text-sm text-foreground/45 max-w-xl mx-auto font-mono">
+      <p className="reveal reveal-delay-4 mt-10 text-sm text-tertiary max-w-xl mx-auto font-mono">
         Built for companies where visibility, trust, and recommendation strength directly affect revenue.
       </p>
 
@@ -57,7 +57,7 @@ export const Hero = () => (
           { k: "Cited sources", v: "500+" },
         ].map((s, i) => (
           <div key={i} className="glass rounded-xl p-4 text-left border-gradient">
-            <p className="font-mono text-[10px] tracking-widest text-foreground/50 mb-2">{s.k.toUpperCase()}</p>
+            <p className="font-mono text-[10px] tracking-widest text-subtle mb-2">{s.k.toUpperCase()}</p>
             <p className="display text-2xl text-gradient">{s.v}</p>
           </div>
         ))}

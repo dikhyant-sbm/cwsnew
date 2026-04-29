@@ -56,7 +56,7 @@ export const MethodologyTimeline = ({ steps }: MethodologyTimelineProps) => {
                   className={`flex items-center justify-center w-7 h-7 rounded-full font-mono text-[10px] tracking-wider transition-colors ${
                     isActive
                       ? "bg-primary text-primary-foreground"
-                      : "bg-card border border-border text-muted-foreground group-hover:text-foreground"
+                      : "bg-card border border-border text-body group-hover:text-foreground"
                   }`}
                 >
                   {s.n}
@@ -65,7 +65,7 @@ export const MethodologyTimeline = ({ steps }: MethodologyTimelineProps) => {
                   <span aria-hidden className={`hidden sm:block h-px flex-1 ${isActive ? "bg-primary/40" : "bg-border"}`} />
                 )}
               </div>
-              <p className={`mt-2 text-xs font-medium leading-snug ${isActive ? "text-foreground" : "text-foreground/70"}`}>
+              <p className={`mt-2 text-xs font-medium leading-snug ${isActive ? "text-foreground" : "text-body"}`}>
                 {s.title}
               </p>
             </button>
@@ -85,20 +85,20 @@ export const MethodologyTimeline = ({ steps }: MethodologyTimelineProps) => {
           <h3 className="display text-2xl sm:text-3xl mt-3 leading-tight">{current.title}</h3>
         </div>
         <div className="lg:col-span-7 space-y-5">
-          <p className="text-foreground/80 leading-relaxed">{current.desc}</p>
+          <p className="text-body leading-relaxed">{current.desc}</p>
           <div className="rounded-xl border border-border bg-card/40 p-5">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2">Output</p>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-body mb-2">Output</p>
             <p className="text-sm text-foreground/90">{current.out}</p>
           </div>
           <div className="flex items-center gap-3 pt-2">
             <button
               onClick={() => setActive((active - 1 + steps.length) % steps.length)}
-              className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors"
+              className="font-mono text-[10px] tracking-[0.2em] text-body hover:text-foreground transition-colors"
               aria-label="Previous step"
             >
               ← PREV
             </button>
-            <span className="font-mono text-[10px] text-muted-foreground" aria-hidden>
+            <span className="font-mono text-[10px] text-body" aria-hidden>
               {active + 1} / {steps.length}
             </span>
             <button

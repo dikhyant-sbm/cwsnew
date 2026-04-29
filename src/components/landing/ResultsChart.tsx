@@ -66,7 +66,7 @@ export const ResultsChart = ({ results }: ResultsChartProps) => {
           <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-2">VISUAL COMPARISON</p>
           <h3 className="display text-xl sm:text-2xl">Movement across four featured verticals.</h3>
         </div>
-        <p className="font-mono text-[10px] tracking-[0.18em] text-muted-foreground">
+        <p className="font-mono text-[10px] tracking-[0.18em] text-body">
           Indicative scale per metric, normalized within each row.
         </p>
       </div>
@@ -93,7 +93,7 @@ export const ResultsChart = ({ results }: ResultsChartProps) => {
           <div key={g.key}>
             <div className="flex items-baseline justify-between mb-3">
               <p className="text-sm font-medium text-foreground">{g.label}</p>
-              <p className="font-mono text-[10px] tracking-wider text-muted-foreground uppercase">{g.unit}</p>
+              <p className="font-mono text-[10px] tracking-wider text-body uppercase">{g.unit}</p>
             </div>
             <div className="space-y-2">
               {results.map((r, i) => {
@@ -101,7 +101,7 @@ export const ResultsChart = ({ results }: ResultsChartProps) => {
                 const pct = v === null ? 0 : Math.max(6, (v / g.max) * 100);
                 return (
                   <div key={r.cat} className="grid grid-cols-12 items-center gap-3">
-                    <p className="col-span-3 sm:col-span-2 text-xs text-foreground/75 truncate">{r.cat}</p>
+                    <p className="col-span-3 sm:col-span-2 text-xs text-body truncate">{r.cat}</p>
                     <div className="col-span-7 sm:col-span-8 h-7 rounded-md bg-card/60 border border-border overflow-hidden relative">
                       {v !== null ? (
                         <div
@@ -113,7 +113,7 @@ export const ResultsChart = ({ results }: ResultsChartProps) => {
                           aria-label={`${r.cat}: ${g.format(v)}`}
                         />
                       ) : (
-                        <div className="h-full flex items-center px-3 text-[10px] font-mono text-muted-foreground">
+                        <div className="h-full flex items-center px-3 text-[10px] font-mono text-body">
                           n/a
                         </div>
                       )}
@@ -135,8 +135,8 @@ export const ResultsChart = ({ results }: ResultsChartProps) => {
           <div key={r.cat} className="rounded-xl border border-border bg-card/30 p-4">
             <p className="font-mono text-[10px] tracking-[0.2em] text-primary mb-2">{r.cat.toUpperCase()}</p>
             <p className="text-xs text-foreground/85 leading-relaxed mb-2">{r.ai}</p>
-            <p className="text-xs text-foreground/65 leading-relaxed mb-2">{r.search}</p>
-            <p className="text-xs text-foreground/65 leading-relaxed">{r.source}</p>
+            <p className="text-xs text-muted-fg leading-relaxed mb-2">{r.search}</p>
+            <p className="text-xs text-muted-fg leading-relaxed">{r.source}</p>
           </div>
         ))}
       </div>

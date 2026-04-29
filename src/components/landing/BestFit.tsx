@@ -25,7 +25,7 @@ export const BestFit = () => (
         <h2 className="display text-4xl sm:text-5xl mt-4">
           Is CiteWorks Studio the right partner for you?
         </h2>
-        <p className="mt-6 text-muted-foreground leading-relaxed">
+        <p className="mt-6 text-body leading-relaxed">
           We work best with companies and agencies that treat search visibility as an evidence-led system — not a tactical checklist.
         </p>
       </div>
@@ -51,16 +51,16 @@ export const BestFit = () => (
 
         <div className="card-premium p-8 reveal-on-scroll" style={{ transitionDelay: "80ms" }}>
           <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 border border-border px-3 py-1">
-            <Minus className="size-3.5 text-foreground/60" strokeWidth={2} />
-            <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-foreground/60">
+            <Minus className="size-3.5 text-muted-fg" strokeWidth={2} />
+            <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted-fg">
               Not the right fit
             </span>
           </div>
           <h3 className="display text-2xl mt-5">When we'll politely decline</h3>
           <ul className="mt-6 space-y-3">
             {notBestFit.map((b) => (
-              <li key={b} className="flex gap-3 text-sm text-muted-foreground">
-                <Minus className="size-4 text-foreground/40 mt-0.5 shrink-0" strokeWidth={1.75} />
+              <li key={b} className="flex gap-3 text-sm text-body">
+                <Minus className="size-4 text-tertiary mt-0.5 shrink-0" strokeWidth={1.75} />
                 <span>{b}</span>
               </li>
             ))}

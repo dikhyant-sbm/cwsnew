@@ -22,7 +22,7 @@ export const UseCases = () => (
         {fits.map((c) => (
           <article key={c.title} className="group card-premium p-8 hover:border-primary/40 transition-colors">
             <h3 className="display text-xl">{c.title}</h3>
-            <p className="text-sm text-muted-foreground mt-4 leading-relaxed">{c.desc}</p>
+            <p className="text-sm text-body mt-4 leading-relaxed">{c.desc}</p>
             <Link to="/request-audit" className="mt-5 inline-flex items-center gap-1 font-mono text-xs tracking-widest text-primary hover:gap-2 transition-all">
               REQUEST AN AUDIT <ArrowRight className="size-3" />
             </Link>

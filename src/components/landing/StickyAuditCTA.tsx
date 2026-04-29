@@ -49,7 +49,7 @@ export const StickyAuditCTA = () => {
             setDismissed(true);
           }}
           aria-label="Dismiss audit prompt"
-          className="ml-1 inline-flex items-center justify-center w-8 rounded-full text-foreground/60 hover:text-foreground hover:bg-foreground/5 transition-colors"
+          className="ml-1 inline-flex items-center justify-center w-8 rounded-full text-muted-fg hover:text-foreground hover:bg-foreground/5 transition-colors"
         >
           <X className="size-3.5" />
         </button>

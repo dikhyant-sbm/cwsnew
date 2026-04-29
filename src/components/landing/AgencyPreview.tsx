@@ -18,7 +18,7 @@ export const AgencyPreview = () => (
           <h2 className="display text-4xl sm:text-5xl mt-5 leading-[1.05]">
             Give clients GEO and AI search capability without building the backend in-house.
           </h2>
-          <p className="mt-6 text-foreground/70 text-lg leading-relaxed">
+          <p className="mt-6 text-body text-lg leading-relaxed">
             CiteWorks Studio supports white-label and collaborative delivery for agencies serving
             high-value clients. Strengthen pitches, expand SEO accounts into AI search, and retain
             clients with stronger strategy.

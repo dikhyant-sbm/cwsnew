@@ -28,7 +28,7 @@ export const TrustedBy = () => (
         {surfaces.map(({ icon: Icon, label }) => (
           <li
             key={label}
-            className="flex items-center gap-2 text-foreground/65 hover:text-foreground transition-colors"
+            className="flex items-center gap-2 text-muted-fg hover:text-foreground transition-colors"
           >
             <Icon className="size-4" strokeWidth={1.5} aria-hidden />
             <span className="font-mono text-[11px] tracking-[0.18em] uppercase">

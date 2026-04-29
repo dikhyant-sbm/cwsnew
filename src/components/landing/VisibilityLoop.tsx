@@ -62,7 +62,7 @@ export const VisibilityLoop = ({ compact = false }: { compact?: boolean }) => {
           <h2 id={`${reactId}-title`} className="display text-4xl sm:text-5xl mt-4">
             A connected, six-step visibility loop.
           </h2>
-          <p className="mt-5 text-muted-foreground leading-relaxed">
+          <p className="mt-5 text-body leading-relaxed">
             Hover or tap any step to see what happens. Each step feeds the next — and the loop never stops.
           </p>
         </div>
@@ -99,13 +99,13 @@ export const VisibilityLoop = ({ compact = false }: { compact?: boolean }) => {
                         </span>
                         <Icon
                           className={`w-4 h-4 transition-colors ${
-                            isActive ? "text-primary" : "text-muted-foreground"
+                            isActive ? "text-primary" : "text-body"
                           }`}
                           aria-hidden="true"
                         />
                       </div>
                       <p className="display text-base mt-3">{s.label}</p>
-                      <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed line-clamp-2">
+                      <p className="text-xs text-body mt-1.5 leading-relaxed line-clamp-2">
                         {s.title}
                       </p>
                     </button>
@@ -114,7 +114,7 @@ export const VisibilityLoop = ({ compact = false }: { compact?: boolean }) => {
               })}
             </ol>
             {/* Loop indicator */}
-            <p className="mt-5 text-center font-mono text-[10px] tracking-[0.22em] text-muted-foreground">
+            <p className="mt-5 text-center font-mono text-[10px] tracking-[0.22em] text-body">
               ↻ A CONTINUOUS LOOP — DIAGNOSE, EXECUTE, MEASURE
             </p>
           </div>
@@ -139,12 +139,12 @@ export const VisibilityLoop = ({ compact = false }: { compact?: boolean }) => {
               <h3 className="display text-2xl sm:text-3xl mt-5 leading-tight">
                 {current.title}
               </h3>
-              <p className="mt-4 text-foreground/75 leading-relaxed">{current.body}</p>
+              <p className="mt-4 text-body leading-relaxed">{current.body}</p>
               <div className="mt-6 pt-6 border-t border-border">
-                <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground">
+                <p className="font-mono text-[10px] tracking-[0.22em] text-body">
                   WHY IT MATTERS
                 </p>
-                <p className="text-sm text-foreground/80 mt-2 leading-relaxed">
+                <p className="text-sm text-body mt-2 leading-relaxed">
                   Each step closes a measurable gap. Together they make your company easier to
                   find, cite, compare, and recommend.
                 </p>

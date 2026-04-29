@@ -60,7 +60,7 @@ export const SectionHeading = ({
   <div className={align === "center" ? "text-center mx-auto max-w-3xl reveal-on-scroll" : "max-w-3xl reveal-on-scroll"}>
     {eyebrow && <p className={`eyebrow ${align === "center" ? "text-center" : ""}`}>{eyebrow}</p>}
     <h2 className="display text-4xl sm:text-5xl md:text-6xl mt-4">{title}</h2>
-    {body && <p className="mt-6 text-muted-foreground leading-relaxed">{body}</p>}
+    {body && <p className="mt-6 text-body leading-relaxed">{body}</p>}
   </div>
 );
 
@@ -87,7 +87,7 @@ export const PageHero = ({
           <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 pulse-ring" />
           <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary" />
         </span>
-        <span className="font-mono text-[10px] tracking-[0.22em] text-foreground/80 uppercase">
+        <span className="font-mono text-[10px] tracking-[0.22em] text-body uppercase">
           / {eyebrow}
         </span>
       </div>
@@ -95,7 +95,7 @@ export const PageHero = ({
         {title}
       </h1>
       {body && (
-        <p className="reveal reveal-delay-2 mt-8 mx-auto max-w-2xl text-base sm:text-lg text-foreground/70 leading-relaxed">
+        <p className="reveal reveal-delay-2 mt-8 mx-auto max-w-2xl text-base sm:text-lg text-body leading-relaxed">
           {body}
         </p>
       )}

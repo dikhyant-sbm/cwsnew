@@ -29,7 +29,7 @@ export const Blog = () => (
         {defs.map((d) => (
           <div key={d.title} className="card-premium p-8 hover:border-primary/40 transition-colors">
             <h3 className="display text-xl text-primary">{d.title}</h3>
-            <p className="mt-4 text-muted-foreground leading-relaxed">{d.body}</p>
+            <p className="mt-4 text-body leading-relaxed">{d.body}</p>
           </div>
         ))}
       </div>

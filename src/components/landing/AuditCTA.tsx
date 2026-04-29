@@ -13,7 +13,7 @@ export const AuditCTA = () => (
             <h2 className="display text-3xl sm:text-5xl mt-5 leading-[1.05]">
               Find out where your visibility is breaking down.
             </h2>
-            <p className="mt-5 text-foreground/70 text-lg max-w-2xl leading-relaxed">
+            <p className="mt-5 text-body text-lg max-w-2xl leading-relaxed">
               A focused diagnostic showing where your company is winning, losing, or missing
               visibility across Google, AI answers, citation sources, and competitor positioning —
               with a corrective-action roadmap.

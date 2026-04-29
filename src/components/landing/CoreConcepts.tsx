@@ -29,7 +29,7 @@ export const CoreConcepts = () => (
         <h2 className="display text-4xl sm:text-5xl mt-5 leading-[1.05]">
           The vocabulary of modern search visibility.
         </h2>
-        <p className="mt-6 text-lg text-foreground/70 leading-relaxed">
+        <p className="mt-6 text-lg text-body leading-relaxed">
           Advanced GEO, vector optimization, and cosine gap analysis only matter if they help your
           company become easier to find, cite, compare, and choose. Here is how we apply them.
         </p>
@@ -46,7 +46,7 @@ export const CoreConcepts = () => (
               <p className="font-mono text-xs text-primary mt-1.5">{c.n}</p>
               <div>
                 <h3 className="display text-2xl">{c.title}</h3>
-                <p className="text-foreground/65 mt-3 leading-relaxed">{c.desc}</p>
+                <p className="text-muted-fg mt-3 leading-relaxed">{c.desc}</p>
               </div>
             </div>
           </article>

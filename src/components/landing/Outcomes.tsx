@@ -22,7 +22,7 @@ export const Outcomes = () => (
               0{i + 1} / OUTCOME
             </p>
             <h3 className="display text-2xl text-gradient">{o.metric}</h3>
-            <p className="mt-4 text-sm text-foreground/65 leading-relaxed">{o.desc}</p>
+            <p className="mt-4 text-sm text-muted-fg leading-relaxed">{o.desc}</p>
           </div>
         ))}
       </div>

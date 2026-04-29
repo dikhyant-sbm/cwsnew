@@ -12,7 +12,7 @@ export const Models = () => (
         {surfaces.map((s) => (
           <span
             key={s}
-            className="px-4 py-2 rounded-full border border-border/70 bg-card/50 text-sm text-foreground/80 hover:border-primary/40 hover:text-foreground transition-colors"
+            className="px-4 py-2 rounded-full border border-border/70 bg-card/50 text-sm text-body hover:border-primary/40 hover:text-foreground transition-colors"
           >
             {s}
           </span>

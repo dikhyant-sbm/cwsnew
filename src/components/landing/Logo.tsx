@@ -8,7 +8,7 @@ export const Logo = ({ className = "" }: { className?: string }) => (
       <path d="M16 17V30" stroke="hsl(var(--primary))" strokeWidth="1.6" />
     </svg>
     <span className="text-base font-semibold tracking-tight text-foreground">
-      CiteWorks <span className="text-muted-foreground font-normal">Studio</span>
+      CiteWorks <span className="text-body font-normal">Studio</span>
     </span>
   </Link>
 );

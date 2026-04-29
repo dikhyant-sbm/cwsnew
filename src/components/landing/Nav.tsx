@@ -119,7 +119,7 @@ export const Nav = () => {
                             <ArrowUpRight className="size-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-primary" />
                           </div>
                           {c.description && (
-                            <p className="font-sans text-xs tracking-normal text-muted-foreground mt-1">
+                            <p className="font-sans text-xs tracking-normal text-body mt-1">
                               {c.description}
                             </p>
                           )}

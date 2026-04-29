@@ -117,7 +117,7 @@ const Methodology = () => {
             <Button asChild className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/15 hover:bg-foreground/5 px-7 h-12">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/30 hover:bg-foreground/5 px-7 h-12">
               <Link to="/services">EXPLORE SERVICES</Link>
             </Button>
           </>
@@ -147,7 +147,7 @@ const Methodology = () => {
                   A connected visibility system, not a checklist of tactics.
                 </h2>
               </div>
-              <div className="lg:col-span-7 space-y-5 text-foreground/75 text-lg leading-relaxed">
+              <div className="lg:col-span-7 space-y-5 text-body text-lg leading-relaxed">
                 <p>
                   The CiteWorks Studio methodology unifies SEO, GEO, AI search visibility, technical
                   SEO, entity clarity, citation architecture, content strategy, and source-layer
@@ -208,7 +208,7 @@ const Methodology = () => {
               align="left"
             />
             <div className="mt-10 card-premium overflow-hidden">
-              <div className="grid grid-cols-12 font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground bg-card/60 px-6 py-4 border-b border-border">
+              <div className="grid grid-cols-12 font-mono text-[10px] tracking-[0.22em] uppercase text-body bg-card/60 px-6 py-4 border-b border-border">
                 <div className="col-span-4">Step</div>
                 <div className="col-span-5">Focus</div>
                 <div className="col-span-3 text-primary">Output</div>
@@ -216,7 +216,7 @@ const Methodology = () => {
               {llmTable.map(([s, f, o], i) => (
                 <div key={i} className={`grid grid-cols-12 px-6 py-5 text-sm gap-4 ${i < llmTable.length - 1 ? "border-b border-border" : ""}`}>
                   <div className="col-span-4 font-medium text-foreground/95">{s}</div>
-                  <div className="col-span-5 text-foreground/70">{f}</div>
+                  <div className="col-span-5 text-body">{f}</div>
                   <div className="col-span-3 text-foreground/85">{o}</div>
                 </div>
               ))}
@@ -236,7 +236,7 @@ const Methodology = () => {
               </div>
               {compare.map(([a, b], i) => (
                 <div key={i} className={`grid grid-cols-2 ${i < compare.length - 1 ? "border-b border-border" : ""}`}>
-                  <div className="p-5 text-sm text-muted-foreground">{a}</div>
+                  <div className="p-5 text-sm text-body">{a}</div>
                   <div className="p-5 text-sm text-foreground/90 border-l border-border">{b}</div>
                 </div>
               ))}
@@ -262,11 +262,11 @@ const Methodology = () => {
                 </ul>
               </div>
               <div className="border border-border rounded-2xl p-8 bg-card/30">
-                <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground mb-5">NOT THE BEST FIT</p>
+                <p className="font-mono text-[10px] tracking-[0.22em] text-body mb-5">NOT THE BEST FIT</p>
                 <ul className="space-y-3">
                   {notFit.map((f) => (
-                    <li key={f} className="flex gap-3 text-sm text-foreground/65">
-                      <span className="text-muted-foreground mt-0.5" aria-hidden="true">—</span>
+                    <li key={f} className="flex gap-3 text-sm text-muted-fg">
+                      <span className="text-body mt-0.5" aria-hidden="true">—</span>
                       <span>{f}</span>
                     </li>
                   ))}
@@ -285,7 +285,7 @@ const Methodology = () => {
                   <h2 className="display text-3xl sm:text-4xl mt-5 leading-[1.05]">
                     Run the methodology against your own visibility.
                   </h2>
-                  <p className="mt-5 text-foreground/70 leading-relaxed">
+                  <p className="mt-5 text-body leading-relaxed">
                     A Visibility Audit applies the eight-step process to your category, website,
                     competitors, AI presence, citations, and source environment.
                   </p>
@@ -311,7 +311,7 @@ const Methodology = () => {
                   <AccordionTrigger className="text-left text-lg font-medium hover:text-primary hover:no-underline py-6">
                     {f.q}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                  <AccordionContent className="text-body leading-relaxed pb-6">
                     {f.a}
                   </AccordionContent>
                 </AccordionItem>
@@ -327,7 +327,7 @@ const Methodology = () => {
       <section className="py-32 border-t border-border/40 text-center grid-bg">
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="display text-4xl sm:text-6xl">Ready to see where visibility is breaking down?</h2>
-          <p className="mt-6 text-foreground/70 text-lg">
+          <p className="mt-6 text-body text-lg">
             Start with a Visibility Audit. We'll show you exactly where your company stands across
             Google, AI answers, citation sources, and competitor positioning.
           </p>
@@ -335,11 +335,11 @@ const Methodology = () => {
             <Button asChild className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow px-7 h-12">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/15 hover:bg-foreground/5 px-7 h-12">
+            <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/30 hover:bg-foreground/5 px-7 h-12">
               <Link to="/case-studies">VIEW CASE STUDIES</Link>
             </Button>
           </div>
-          <p className="mt-6 text-xs text-muted-foreground">
+          <p className="mt-6 text-xs text-body">
             Audit-led corrective action. No guaranteed rankings or AI placements — evidence-led improvement instead.
           </p>
         </div>

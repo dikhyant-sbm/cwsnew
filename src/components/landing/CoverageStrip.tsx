@@ -34,7 +34,7 @@ export const CoverageStrip = () => (
           {[...SURFACES, ...SURFACES].map((s, i) => (
             <span
               key={`${s}-${i}`}
-              className="px-4 py-2 rounded-full border border-border/70 bg-card text-sm text-foreground/80 whitespace-nowrap"
+              className="px-4 py-2 rounded-full border border-border/70 bg-card text-sm text-body whitespace-nowrap"
             >
               {s}
             </span>
@@ -47,7 +47,7 @@ export const CoverageStrip = () => (
         {SURFACES.map((s) => (
           <li
             key={s}
-            className="px-4 py-2 rounded-full border border-border/70 bg-card text-sm text-foreground/80"
+            className="px-4 py-2 rounded-full border border-border/70 bg-card text-sm text-body"
           >
             {s}
           </li>

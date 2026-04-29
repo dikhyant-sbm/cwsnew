@@ -29,7 +29,7 @@ export const ThreeLayers = () => (
 
       <div className="mt-16 grid md:grid-cols-3 gap-6">
         {layers.map((l) => (
-          <div key={l.n} className="rounded-2xl border border-border/60 bg-card p-8 hover:border-primary/40 transition-colors">
+          <div key={l.n} className="card-premium p-8 hover:border-primary/40 transition-colors">
             <p className="font-mono text-xs text-primary">{l.n}</p>
             <h3 className="display text-2xl mt-3">{l.title}</h3>
             <p className="text-sm text-muted-foreground mt-4 leading-relaxed">{l.desc}</p>

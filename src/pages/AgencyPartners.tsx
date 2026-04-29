@@ -156,7 +156,7 @@ const AgencyPartners = () => {
           <SectionHeading eyebrow="Best fit" title="Built for agencies that want to move beyond traditional SEO." align="left" />
           <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {fits.map((f) => (
-              <div key={f.title} className="rounded-2xl border border-border/60 bg-card p-8 hover:border-primary/40 transition-colors">
+              <div key={f.title} className="card-premium p-8 hover:border-primary/40 transition-colors">
                 <h3 className="display text-xl">{f.title}</h3>
                 <p className="text-sm text-muted-foreground mt-4 leading-relaxed">{f.desc}</p>
               </div>
@@ -175,7 +175,7 @@ const AgencyPartners = () => {
           />
           <div className="mt-16 grid md:grid-cols-2 gap-6">
             {services.map((s, i) => (
-              <article key={s.title} className="rounded-2xl border border-border/60 bg-card p-8 hover:border-primary/40 transition-colors">
+              <article key={s.title} className="card-premium p-8 hover:border-primary/40 transition-colors">
                 <p className="font-mono text-xs text-primary">{String(i + 1).padStart(2, "0")}</p>
                 <h3 className="display text-2xl mt-3">{s.title}</h3>
                 <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{s.desc}</p>
@@ -195,7 +195,7 @@ const AgencyPartners = () => {
           <SectionHeading eyebrow="Partnership models" title="Flexible engagement, clear scope." align="left" />
           <div className="mt-12 grid md:grid-cols-3 gap-6">
             {models.map((m) => (
-              <div key={m.n} className="rounded-2xl border border-border/60 bg-card p-8 hover:border-primary/40 transition-colors">
+              <div key={m.n} className="card-premium p-8 hover:border-primary/40 transition-colors">
                 <p className="font-mono text-xs text-primary">{m.n}</p>
                 <h3 className="display text-xl mt-3">{m.title}</h3>
                 <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{m.desc}</p>
@@ -251,7 +251,7 @@ const AgencyPartners = () => {
             title="Partner services at a glance."
             align="left"
           />
-          <div className="mt-12 rounded-2xl border border-border/60 bg-card/30 overflow-hidden">
+          <div className="mt-12 card-premium/30 overflow-hidden">
             <div className="grid grid-cols-12 font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground bg-card/60 px-6 py-4 border-b border-border">
               <div className="col-span-3">Service</div>
               <div className="col-span-4">Focus</div>

@@ -39,7 +39,7 @@ export const CoreConcepts = () => (
         {concepts.map((c) => (
           <article
             key={c.n}
-            className="group relative rounded-2xl border border-border/60 bg-card/40 p-8 hover:border-primary/40 transition-all overflow-hidden"
+            className="group relative card-premium/40 p-8 hover:border-primary/40 transition-all overflow-hidden"
           >
             <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             <div className="flex items-start gap-6">

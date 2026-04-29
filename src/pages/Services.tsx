@@ -60,7 +60,7 @@ const services = [
     n: "02",
     title: "AI Search Auditing & Recommendation Analysis",
     def: "AI search auditing measures how your company appears, disappears, gets cited, or loses recommendation placement in AI-generated answers and retrieval-based search environments.",
-    body: "We convert your highest-value keyword clusters into prompt clusters and analyze how AI systems respond — where your brand is present, absent, where competitors are favored, what sources are being cited, and what language is shaping the answers.",
+    body: "AI visibility is not just about being mentioned. What matters is whether your company appears when buyers ask high-intent questions: who to trust, what to compare, which provider to choose, what alternatives exist, and which brands are recommended for a specific need. We convert your highest-value keyword clusters into prompt clusters and analyze how AI systems respond. We look at where your brand is present, where it is absent, where competitors are favored, what sources are being cited, and what language is shaping the answers. This work helps identify whether your company is visible in AI search, whether it is being recommended, and what must change to improve retrieval and recommendation strength.",
     includes: [
       "Prompt cluster mapping",
       "AI answer visibility review",

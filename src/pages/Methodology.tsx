@@ -1,4 +1,5 @@
 import { PageShell, PageHero, SectionHeading } from "@/components/landing/Shell";
+import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";

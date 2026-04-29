@@ -1,4 +1,5 @@
 import { PageShell, PageHero, SectionHeading } from "@/components/landing/Shell";
+import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";

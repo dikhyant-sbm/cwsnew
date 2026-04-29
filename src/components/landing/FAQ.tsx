@@ -37,7 +37,7 @@ export const FAQ = () => (
       <div className="reveal-on-scroll text-center">
         <p className="eyebrow">FAQ</p>
         <h2 className="display text-4xl sm:text-6xl mt-4">
-          Questions? We have the answers.
+          Common questions about GEO, AI search visibility, and citation architecture.
         </h2>
       </div>
 

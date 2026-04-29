@@ -221,7 +221,7 @@ const services = [
     n: "11",
     title: "White-Label Search Visibility for Agencies",
     def: "White-label search visibility services help agencies offer GEO, AI search visibility, SEO auditing, citation architecture, content, and reporting without building the full backend in-house.",
-    body: "We can support audits, strategy, reporting, content, technical SEO, citation architecture, AI search analysis, and ongoing execution — quietly behind the scenes or alongside your team.",
+    body: "CiteWorks Studio partners with agencies that want stronger Google and AI search capability under their own brand. We can support audits, strategy, reporting, content, technical SEO, citation architecture, AI search analysis, and ongoing execution. Depending on the relationship, we can work quietly behind the scenes or alongside your team. This helps agencies strengthen pitches, support higher-value retainers, retain clients with stronger strategy, and expand existing SEO accounts into AI search and authority work.",
     includes: [
       "White-label SEO audits",
       "White-label AI search audits",

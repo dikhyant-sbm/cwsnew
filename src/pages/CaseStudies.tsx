@@ -100,6 +100,19 @@ const measurement = [
   "Prompt-cluster visibility", "Competitor visibility", "Estimated branded visibility value",
 ];
 
+const bestFit = [
+  "Growth-minded companies",
+  "High-consideration brands",
+  "Category challengers",
+  "Financial services companies",
+  "B2B SaaS companies",
+  "Ecommerce brands",
+  "Home service companies",
+  "Insurance and mortgage brands",
+  "Consumer apps",
+  "Agencies serving high-value clients",
+];
+
 const faqs = [
   { q: "Why are the case studies anonymized?", a: "Some CiteWorks Studio work is performed under white-label or confidential client arrangements. The public case studies preserve vertical-level detail, engagement type, and reported outcomes without disclosing client names." },
   { q: "What do these case studies measure?", a: "Google rankings, AI Overview mentions, ChatGPT brand mentions, AI Share of Voice, cited pages, source visibility, keyword coverage, average ranking position, competitor visibility, and estimated branded visibility value." },

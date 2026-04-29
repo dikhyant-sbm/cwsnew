@@ -447,7 +447,7 @@ const CaseStudies = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 border-t border-border bg-card/30">
+      <section className="py-24 border-t border-border">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ FAQ</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-12">

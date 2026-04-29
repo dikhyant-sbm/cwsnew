@@ -2,11 +2,26 @@ import { PageShell, PageHero, SectionHeading } from "@/components/landing/Shell"
 import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
 import { TrustPledges } from "@/components/landing/TrustPledges";
 import { BestFit } from "@/components/landing/BestFit";
+import { VisibilityLayers } from "@/components/landing/VisibilityLayers";
+import { VisibilityLoop } from "@/components/landing/VisibilityLoop";
+import { SectionNav } from "@/components/landing/SectionNav";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Check } from "lucide-react";
 import { useEffect } from "react";
+
+const methodologyNav = [
+  { id: "summary", label: "Summary" },
+  { id: "principle", label: "Core principle" },
+  { id: "layers", label: "Three layers" },
+  { id: "loop", label: "Visibility loop" },
+  { id: "process", label: "Process" },
+  { id: "table", label: "At a glance" },
+  { id: "comparison", label: "vs. Traditional SEO" },
+  { id: "fit", label: "Best fit" },
+  { id: "faq", label: "FAQ" },
+];
 
 const layers = [
   {

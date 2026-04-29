@@ -94,7 +94,7 @@ const services = [
     n: "04",
     title: "Technical SEO, Schema & On-Site Optimization",
     def: "Technical SEO improves how search engines and AI-influencing systems crawl, index, understand, and interpret your website.",
-    body: "We audit and improve the technical foundation of your website — crawlability, indexation, site architecture, internal linking, schema, page structure, content hierarchy, and on-page optimization. Classic SEO with a modern objective.",
+    body: "Before your company can improve how it is ranked, cited, and recommended, your owned site needs to send clear signals. We audit and improve the technical foundation of your website, including crawlability, indexation, site architecture, internal linking, schema, page structure, content hierarchy, and on-page optimization. This is classic SEO with a modern objective: make your website easier for Google, AI systems, and buyers to understand.",
     includes: [
       "Technical SEO audits",
       "Crawlability and indexation review",

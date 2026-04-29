@@ -44,13 +44,14 @@ export const VisibilityLayers = ({
       <div className="mx-auto max-w-7xl px-6">
         {variant === "full" && (
           <div className="text-center max-w-3xl mx-auto reveal-on-scroll">
-            <p className="eyebrow">The three visibility layers</p>
+            <p className="eyebrow">Three layers of modern visibility</p>
             <h2 className="display text-4xl sm:text-5xl mt-4">
-              Search. AI retrieval. Public sources.
+              Search. AI. Sources.
             </h2>
             <p className="mt-5 text-body leading-relaxed">
-              Modern visibility is no longer one channel. CiteWorks Studio improves all three layers
-              that decide whether your company is found, cited, and recommended.
+              Modern search visibility is no longer one channel. It is an ecosystem.
+              CiteWorks Studio helps you improve all three layers that decide whether your company
+              is found, cited, and recommended.
             </p>
           </div>
         )}

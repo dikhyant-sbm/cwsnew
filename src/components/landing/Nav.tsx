@@ -1,6 +1,6 @@
 import { Logo } from "./Logo";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { ArrowUpRight, Menu } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -151,17 +151,20 @@ export const Nav = () => {
           <SheetContent side="right" className="bg-background border-border">
             <div className="flex flex-col gap-1 mt-8 font-mono text-sm">
               {groups.map((g) => (
-                <Link
-                  key={g.label}
-                  to={g.to ?? "#"}
-                  className="py-3 border-b border-border/60 hover:text-primary transition-colors"
-                >
-                  {g.label}
-                </Link>
+                <SheetClose asChild key={g.label}>
+                  <Link
+                    to={g.to ?? "#"}
+                    className="py-3 border-b border-border/60 hover:text-primary transition-colors"
+                  >
+                    {g.label}
+                  </Link>
+                </SheetClose>
               ))}
-              <Button asChild className="rounded-full mt-6 bg-primary text-primary-foreground btn-glow">
-                <Link to="/request-audit">REQUEST A VISIBILITY AUDIT</Link>
-              </Button>
+              <SheetClose asChild>
+                <Button asChild className="rounded-full mt-6 bg-primary text-primary-foreground btn-glow">
+                  <Link to="/request-audit">REQUEST A VISIBILITY AUDIT</Link>
+                </Button>
+              </SheetClose>
             </div>
           </SheetContent>
         </Sheet>

@@ -43,7 +43,7 @@ const services = [
     n: "01",
     title: "SEO Auditing & Search Opportunity Mapping",
     def: "SEO auditing identifies where your company is winning, losing, or missing visibility across Google search results, high-intent keywords, competitor pages, and buyer research environments.",
-    body: "We identify the keyword clusters closest to revenue, benchmark your current rankings, and map where visibility is being won or lost across your category — including best-of pages, comparison articles, review sites, directories, and third-party publishers shaping buyer decisions.",
+    body: "This is where many engagements begin. We identify the keyword clusters closest to revenue, benchmark your current rankings, analyze who owns the search results, and map where visibility is being won or lost across your category. But we do not stop at your website. We also review the surrounding search environment: best-of pages, comparison articles, review sites, directories, informational content, third-party publishers, and non-competitor pages shaping buyer decisions. This gives you a clearer view of where your company stands inside the full Google decision layer.",
     includes: [
       "High-intent keyword cluster mapping",
       "SERP benchmarking",
@@ -60,7 +60,7 @@ const services = [
     n: "02",
     title: "AI Search Auditing & Recommendation Analysis",
     def: "AI search auditing measures how your company appears, disappears, gets cited, or loses recommendation placement in AI-generated answers and retrieval-based search environments.",
-    body: "We convert your highest-value keyword clusters into prompt clusters and analyze how AI systems respond — where your brand is present, absent, where competitors are favored, what sources are being cited, and what language is shaping the answers.",
+    body: "AI visibility is not just about being mentioned. What matters is whether your company appears when buyers ask high-intent questions: who to trust, what to compare, which provider to choose, what alternatives exist, and which brands are recommended for a specific need. We convert your highest-value keyword clusters into prompt clusters and analyze how AI systems respond. We look at where your brand is present, where it is absent, where competitors are favored, what sources are being cited, and what language is shaping the answers. This work helps identify whether your company is visible in AI search, whether it is being recommended, and what must change to improve retrieval and recommendation strength.",
     includes: [
       "Prompt cluster mapping",
       "AI answer visibility review",
@@ -77,7 +77,7 @@ const services = [
     n: "03",
     title: "Embedding-Level GEO & Cosine Gap Analysis",
     def: "Embedding-level GEO improves how AI systems understand your company, category, entities, services, and authority signals at the semantic retrieval level.",
-    body: "We compare your content, entities, source footprint, and topical structure against the patterns that appear to influence AI answers, then identify what needs to be clarified, expanded, restructured, cited, or reinforced.",
+    body: "Traditional SEO focuses heavily on keywords, rankings, pages, and links. Those still matter. But AI search also depends on how systems interpret meaning, relationships, source patterns, and topical relevance. CiteWorks Studio analyzes the semantic distance between your company and the sources, competitors, and category language AI systems already retrieve. This is where vector optimization and cosine gap analysis matter. We compare your content, entities, source footprint, and topical structure against the patterns that appear to influence AI answers. Then we identify what needs to be clarified, expanded, restructured, cited, or reinforced.",
     includes: [
       "Embedding-level GEO analysis",
       "Vector relevance review",
@@ -94,7 +94,7 @@ const services = [
     n: "04",
     title: "Technical SEO, Schema & On-Site Optimization",
     def: "Technical SEO improves how search engines and AI-influencing systems crawl, index, understand, and interpret your website.",
-    body: "We audit and improve the technical foundation of your website — crawlability, indexation, site architecture, internal linking, schema, page structure, content hierarchy, and on-page optimization. Classic SEO with a modern objective.",
+    body: "Before your company can improve how it is ranked, cited, and recommended, your owned site needs to send clear signals. We audit and improve the technical foundation of your website, including crawlability, indexation, site architecture, internal linking, schema, page structure, content hierarchy, and on-page optimization. This is classic SEO with a modern objective: make your website easier for Google, AI systems, and buyers to understand.",
     includes: [
       "Technical SEO audits",
       "Crawlability and indexation review",
@@ -112,7 +112,7 @@ const services = [
     n: "05",
     title: "Entity Clarity & Semantic Content Structure",
     def: "Entity clarity helps search engines and AI systems understand who your company is, what you offer, who you serve, where you operate, and how your expertise connects to your market.",
-    body: "We improve the way your company, services, products, locations, people, categories, and proof points are represented across your digital presence — reducing ambiguity and strengthening association with the topics and buyer questions that matter most.",
+    body: "AI systems do not understand your company the way a human sales prospect might. They rely on repeated signals, structured information, clear relationships, and consistent language across your website and the wider web. We improve the way your company, services, products, locations, people, categories, and proof points are represented across your digital presence. This helps reduce ambiguity and strengthens your association with the topics and buyer questions that matter most.",
     includes: [
       "Brand entity review",
       "Service and product entity mapping",
@@ -129,7 +129,7 @@ const services = [
     n: "06",
     title: "Citation Architecture & Authority Strategy",
     def: "Citation architecture is the structured improvement of the owned and third-party sources that support your company's authority.",
-    body: "We map the sources influencing your category, compare your source footprint against competitors, and identify where your authority needs stronger support across articles, review sites, directories, comparison pages, communities, YouTube, podcasts, and trusted brand mentions.",
+    body: "Search engines and AI systems do not rely on your website alone. They rely on the wider evidence layer around your company. That evidence layer may include third-party articles, review sites, directories, comparison pages, communities, YouTube videos, social profiles, podcasts, industry publications, and trusted brand mentions. We map the sources influencing your category, compare your source footprint against competitors, and identify where your authority needs stronger support. The goal is not random distribution. The goal is deliberate source architecture around the pages, platforms, and domains that shape search visibility, AI answers, and buyer confidence.",
     includes: [
       "Citation source mapping",
       "Third-party source review",
@@ -147,7 +147,7 @@ const services = [
     n: "07",
     title: "AI Market Research Intelligence",
     def: "AI market research intelligence shows how your category is being framed across search results, AI answers, competitors, cited sources, and buyer research environments.",
-    body: "Our reports show where your company appears, where competitors are gaining ground, which sources shape the category, which prompts and keywords matter most, and where the biggest recoverable opportunities exist.",
+    body: "Most reporting shows what already happened. We focus on what needs to change. Our AI market research reports show where your company appears, where competitors are gaining ground, which sources are shaping the category, which prompts and keywords matter most, and where the biggest recoverable opportunities exist. This gives leadership and marketing teams a clearer view of how the market is being interpreted by search engines, AI systems, and buyers.",
     includes: [
       "Competitive visibility analysis",
       "High-intent keyword and prompt prioritization",
@@ -164,7 +164,7 @@ const services = [
     n: "08",
     title: "Content Strategy, Production & Refreshes",
     def: "Content strategy improves the pages and assets that help your company rank, get retrieved, answer buyer questions, and support authority across search and AI environments.",
-    body: "We create content based on what the market is rewarding — every recommendation tied back to a visibility gap: a keyword gap, prompt gap, citation gap, entity gap, topical gap, or conversion gap.",
+    body: "We create content based on what the market is rewarding, not based on a generic publishing calendar. That may include service pages, comparison pages, category education pages, case studies, FAQs, glossary pages, articles, content refreshes, social posts, video scripts, discussion-led assets, and source-supporting content. Every content recommendation is tied back to a visibility gap: a keyword gap, prompt gap, citation gap, entity gap, topical gap, or conversion gap.",
     includes: [
       "Website content strategy",
       "Service page copy",
@@ -184,7 +184,7 @@ const services = [
     n: "09",
     title: "Social, Video & Discussion-Led Visibility",
     def: "Social, video, and discussion-led visibility strengthens the public evidence around your company across the platforms where buyers and AI-influencing sources gather context.",
-    body: "We help create and support assets that make your company more visible, understandable, and credible across the public sources that matter in your category.",
+    body: "Modern search does not stop at your website. Buyers look for proof across social platforms, video platforms, review environments, communities, and industry conversations. We help create and support assets that make your company more visible, understandable, and credible across those environments. This does not mean chasing every platform. It means identifying which public sources matter in your category and building the right support around them.",
     includes: [
       "Social content planning",
       "LinkedIn content support",
@@ -202,7 +202,7 @@ const services = [
     n: "10",
     title: "Ongoing Search Visibility Execution Retainers",
     def: "A search visibility retainer turns audit findings into ongoing corrective action across SEO, GEO, content, citations, technical improvements, and source-layer authority.",
-    body: "Once the audit and strategy are complete, we build a coordinated monthly program around the keyword clusters, prompt environments, technical gaps, source gaps, and content opportunities that matter most. We do not only report visibility problems — we help fix them.",
+    body: "Audits do not create growth by themselves. Execution does. Once the audit and strategy are complete, we build a coordinated monthly program around the keyword clusters, prompt environments, technical gaps, source gaps, and content opportunities that matter most. This is where CiteWorks Studio is different from tools and dashboards. We do not only report visibility problems. We help fix them.",
     includes: [
       "Monthly strategy leadership",
       "SEO optimization sprints",
@@ -221,7 +221,7 @@ const services = [
     n: "11",
     title: "White-Label Search Visibility for Agencies",
     def: "White-label search visibility services help agencies offer GEO, AI search visibility, SEO auditing, citation architecture, content, and reporting without building the full backend in-house.",
-    body: "We can support audits, strategy, reporting, content, technical SEO, citation architecture, AI search analysis, and ongoing execution — quietly behind the scenes or alongside your team.",
+    body: "CiteWorks Studio partners with agencies that want stronger Google and AI search capability under their own brand. We can support audits, strategy, reporting, content, technical SEO, citation architecture, AI search analysis, and ongoing execution. Depending on the relationship, we can work quietly behind the scenes or alongside your team. This helps agencies strengthen pitches, support higher-value retainers, retain clients with stronger strategy, and expand existing SEO accounts into AI search and authority work.",
     includes: [
       "White-label SEO audits",
       "White-label AI search audits",
@@ -287,16 +287,21 @@ const notFit = [
 ];
 
 const faqs = [
-  { q: "What services does CiteWorks Studio offer?", a: "GEO, AI search visibility, SEO auditing, AI search auditing, technical SEO, schema, entity clarity, citation architecture, content strategy, AI market intelligence, social and video support, source-layer authority strategy, execution retainers, and white-label agency services." },
-  { q: "Are you an SEO agency or a GEO agency?", a: "We are both, but the better description is search visibility agency. We help companies improve visibility across Google, AI answers, and the sources that shape both." },
+  { q: "What services does CiteWorks Studio offer?", a: "CiteWorks Studio offers GEO, AI search visibility, SEO auditing, AI search auditing, technical SEO, schema, entity clarity, citation architecture, content strategy, AI market intelligence, social and video support, source-layer authority strategy, execution retainers, and white-label agency services." },
+  { q: "Are you an SEO agency or a GEO agency?", a: "CiteWorks Studio is both, but the better description is search visibility agency. We help companies improve visibility across Google, AI answers, and the sources that shape both." },
   { q: "Do your services replace traditional SEO?", a: "No. GEO and AI search visibility do not replace SEO. They build on it. Technical SEO, content quality, crawlability, schema, internal linking, authority signals, and third-party sources all matter in modern search." },
-  { q: "What is the difference between AI search auditing and AI market intelligence?", a: "AI search auditing looks at how your company appears in AI answers, prompts, citations, and recommendation-style results. AI market intelligence turns that into broader category insight: competitor movement, source influence, market framing, recoverability, and strategic priorities." },
+  { q: "What is the difference between AI search auditing and AI market intelligence?", a: "AI search auditing looks at how your company appears in AI answers, prompts, citations, and recommendation-style results. AI market intelligence turns that information into broader category insight: competitor movement, source influence, market framing, recoverability, and strategic priorities." },
+  { q: "What is citation architecture?", a: "Citation architecture is the structured improvement of the sources that support your company's authority. It includes owned content, third-party articles, review sites, directories, comparison pages, videos, communities, and industry mentions." },
+  { q: "Do you execute the recommendations?", a: "Yes. CiteWorks Studio can move from audit and strategy into ongoing corrective-action retainers covering technical SEO, content, citation architecture, AI visibility, source-layer support, and reporting." },
+  { q: "Do you work with agencies?", a: "Yes. CiteWorks Studio offers white-label and collaborative support for agencies that want to provide GEO, AI search visibility, SEO audits, citation architecture, content, reporting, and execution without building the full backend internally." },
   { q: "How do clients usually start?", a: "Most clients start with a Visibility Audit. The audit identifies where visibility is breaking down and what should be fixed first." },
 ];
 
 const Services = () => {
   useEffect(() => {
-    document.title = "Services | CiteWorks Studio — GEO, AI Search & Citation Architecture";
+    document.title = "CiteWorks Studio Services | GEO, AI Search Visibility, SEO, and Citation Architecture";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "CiteWorks Studio helps growth-minded companies improve visibility across Google, AI answers, and trusted source environments through GEO, AI search audits, technical SEO, citation architecture, content strategy, market intelligence, and corrective-action retainers.");
   }, []);
 
   return (
@@ -314,6 +319,7 @@ const Services = () => {
           <div className="mt-10 max-w-3xl space-y-5 text-lg text-body">
             <p>CiteWorks Studio helps growth-minded companies become easier to find, cite, compare, and recommend across modern search environments.</p>
             <p>We combine GEO, AI search visibility, technical SEO, citation architecture, content strategy, source-layer authority, market intelligence, and execution into one coordinated system.</p>
+            <p>The goal is not just more traffic. The goal is stronger visibility in the places where buyers search, compare options, validate trust, and ask AI systems who to choose.</p>
           </div>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">
@@ -347,8 +353,9 @@ const Services = () => {
           </div>
           <div className="lg:col-span-7 space-y-5 text-body text-lg">
             <p>Most agencies still separate SEO, content, social, digital PR, technical optimization, and AI search into different conversations. CiteWorks Studio does not.</p>
-            <p>A buyer may search Google, ask ChatGPT, scan AI Overviews, compare brands in Perplexity, watch YouTube, read Reddit, check review sites, and then return to your website before deciding.</p>
-            <p>Your company needs more than rankings. It needs clear entity signals, useful content, credible sources, technical structure, third-party support, and stronger retrieval alignment.</p>
+            <p>Search now works across connected environments. A buyer may search Google, ask ChatGPT, scan AI Overviews, compare brands in Perplexity, watch YouTube, read Reddit, check review sites, visit comparison pages, and then return to your website before making a decision.</p>
+            <p>That means your company needs more than rankings. It needs clear entity signals, useful content, credible sources, technical structure, third-party support, and stronger retrieval alignment.</p>
+            <p>Our services are designed to answer four questions:</p>
             <div className="pt-6 border-t border-border space-y-3 text-base">
               {[
                 "Where are you losing high-intent visibility?",
@@ -370,9 +377,12 @@ const Services = () => {
       <section id="core" className="py-24 border-t border-border bg-card/30 scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ What CiteWorks Studio does</p>
-          <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-10">
+          <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
             A GEO, AI search visibility, and citation architecture agency for modern search.
           </h2>
+          <p className="text-body text-lg max-w-3xl mb-10">
+            CiteWorks Studio helps growth-minded companies improve how they appear across Google, ChatGPT, Gemini, Perplexity, Google AI Overviews, Copilot, organic search results, third-party sources, and buyer research environments.
+          </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border">
             {coreServices.map((s, i) => (
               <div key={i} className="bg-background p-6 flex items-start gap-4">
@@ -524,12 +534,15 @@ const Services = () => {
           <p className="mt-6 text-body text-lg max-w-2xl mx-auto">
             Your company may already have strong expertise, useful content, and real authority. The question is whether Google, AI systems, third-party sources, and buyers can clearly recognize it.
           </p>
+          <p className="mt-4 text-body text-lg max-w-2xl mx-auto">
+            CiteWorks Studio helps growth-minded companies close the gap between what they publish and what modern search systems actually retrieve, cite, and recommend.
+          </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3 h-3 ml-1" /></Link>
             </Button>
             <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-border">
-              <Link to="/methodology">EXPLORE THE METHODOLOGY</Link>
+              <Link to="/agency-partners">EXPLORE AGENCY PARTNERSHIPS</Link>
             </Button>
           </div>
           <p className="mt-6 text-xs text-body">

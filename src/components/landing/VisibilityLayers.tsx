@@ -105,7 +105,7 @@ export const VisibilityLayers = ({
           </div>
           {/* Connector hint */}
           <p className="mt-6 text-center font-mono text-[13px] tracking-[0.16em] text-body">
-            ALL THREE LAYERS COMPOUND — A WEAKNESS IN ONE LIMITS THE OTHERS
+            MODERN SEARCH VISIBILITY IS AN ECOSYSTEM — A WEAKNESS IN ONE LAYER LIMITS THE OTHERS
           </p>
         </div>
       </div>

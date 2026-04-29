@@ -30,8 +30,9 @@ export const CoreConcepts = () => (
           The vocabulary of modern search visibility.
         </h2>
         <p className="mt-6 text-lg text-body leading-relaxed">
-          Advanced GEO, vector optimization, and cosine gap analysis only matter if they help your
-          company become easier to find, cite, compare, and choose. Here is how we apply them.
+          Embedding-level GEO, vector optimization, cosine gap analysis, and citation architecture
+          are the foundation of how we improve the patterns machine systems rely on — so your
+          company becomes easier to find, cite, compare, and choose.
         </p>
       </div>
 

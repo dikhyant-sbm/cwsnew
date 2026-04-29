@@ -7,12 +7,14 @@ const cols = [
   {
     title: "Services",
     links: [
-      { label: "GEO & AI Search Visibility", to: "/services" },
+      { label: "GEO Services", to: "/services" },
+      { label: "AI Search Visibility", to: "/services" },
       { label: "Citation Architecture", to: "/services" },
-      { label: "Technical SEO & Schema", to: "/services" },
+      { label: "Technical SEO", to: "/services" },
       { label: "Content Strategy", to: "/services" },
-      { label: "AI Market Intelligence", to: "/services" },
-      { label: "Execution Retainers", to: "/services" },
+      { label: "Visibility Audits", to: "/request-audit" },
+      { label: "Agency Partners", to: "/agency-partners" },
+      { label: "Case Studies", to: "/case-studies" },
     ],
   },
   {
@@ -56,7 +58,7 @@ export const Footer = () => (
         <div className="lg:col-span-8">
           <p className="eyebrow">Ready when you are</p>
           <h3 className="display text-2xl sm:text-4xl mt-3 leading-tight">
-            See what's limiting your visibility — across Google, AI, and the source layer.
+            Find out where your visibility is breaking down — across Google, AI, and the source layer.
           </h3>
         </div>
         <div className="lg:col-span-4 flex flex-wrap lg:justify-end gap-3">
@@ -87,7 +89,8 @@ export const Footer = () => (
         <div className="lg:col-span-4">
           <Logo />
           <p className="mt-5 text-base text-body leading-relaxed max-w-sm">
-            Visibility across Google, AI answers, and the sources that shape buyer decisions.
+            CiteWorks Studio helps growth-minded companies improve visibility across Google, AI
+            answers, and the sources that shape buyer decisions.
           </p>
           <p className="mt-5 text-sm text-body leading-relaxed max-w-sm">
             CiteWorks Studio is a GEO, AI search visibility, and citation architecture agency for

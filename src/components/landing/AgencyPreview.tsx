@@ -3,10 +3,16 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, Check } from "lucide-react";
 
 const points = [
-  "White-label visibility audits & AI search audits",
-  "GEO strategy & embedding-level optimization",
-  "Citation architecture for high-value clients",
-  "Backend execution without hiring an in-house team",
+  "AI search visibility audits",
+  "GEO strategy",
+  "Citation architecture",
+  "Technical SEO review",
+  "Content briefs and production",
+  "AI market intelligence reports",
+  "Prompt and keyword cluster mapping",
+  "Source-layer research",
+  "White-label reporting",
+  "Ongoing execution support",
 ];
 
 export const AgencyPreview = () => (
@@ -16,12 +22,14 @@ export const AgencyPreview = () => (
         <div className="lg:col-span-6">
           <p className="eyebrow">Agency partners</p>
           <h2 className="display text-4xl sm:text-5xl mt-5 leading-[1.05]">
-            Give clients GEO and AI search capability without building the backend in-house.
+            GEO and AI search capability for agency partners.
           </h2>
           <p className="mt-6 text-body text-lg leading-relaxed">
-            CiteWorks Studio supports white-label and collaborative delivery for agencies serving
-            high-value clients. Strengthen pitches, expand SEO accounts into AI search, and retain
-            clients with stronger strategy.
+            CiteWorks Studio supports agencies that want to offer GEO, AI search visibility,
+            citation architecture, technical SEO, content execution, and AI market intelligence
+            without building the full backend in-house. We can work behind your brand or alongside
+            your team to help you support higher-value clients with a stronger modern search
+            offering.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button

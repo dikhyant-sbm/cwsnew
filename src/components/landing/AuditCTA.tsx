@@ -11,12 +11,14 @@ export const AuditCTA = () => (
           <div className="lg:col-span-8">
             <p className="eyebrow">Visibility Audit</p>
             <h2 className="display text-3xl sm:text-5xl mt-5 leading-[1.05]">
-              Find out where your visibility is breaking down.
+              Start with a Visibility Audit.
             </h2>
             <p className="mt-5 text-body text-lg max-w-2xl leading-relaxed">
-              A focused diagnostic showing where your company is winning, losing, or missing
-              visibility across Google, AI answers, citation sources, and competitor positioning —
-              with a corrective-action roadmap.
+              Before you invest in more content, more SEO, or more authority-building, find out
+              where your visibility is actually breaking down — across Google rankings, AI answers,
+              citation sources, competitor positioning, technical SEO, content structure, entity
+              clarity, and source authority. Then we turn the findings into a practical roadmap for
+              improving visibility, retrieval, and recommendation strength.
             </p>
           </div>
           <div className="lg:col-span-4 flex lg:justify-end">

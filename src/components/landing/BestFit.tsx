@@ -1,32 +1,32 @@
 import { Check, Minus } from "lucide-react";
 
 const bestFit = [
-  "High-consideration brands and complex categories",
-  "Companies where AI recommendations and source trust affect revenue",
-  "Category challengers and growth-minded teams",
-  "Established brands with declining or plateauing visibility",
-  "Agency partners needing white-label GEO and audit capacity",
-  "Executive teams that want diagnosis before execution",
+  "Growth-minded companies that want stronger visibility across Google, AI answers, and the source environments buyers use",
+  "High-consideration brands in categories where buyers research heavily and look for trusted recommendations",
+  "Category challengers competing for attention, trust, and recommendation strength against better-known competitors",
+  "Established companies entering more competitive markets that need clearer authority and source support",
+  "Agency partners that need GEO, AI search visibility, citation architecture, technical SEO, content, and reporting support behind the scenes",
 ];
 
 const notBestFit = [
-  "Companies looking for guaranteed rankings or AI placements",
-  "Pure low-cost SEO with no interest in source-layer authority",
-  "Teams that want execution without diagnosis",
-  "Spammy link-building or volume-only content programs",
-  "Categories where visibility, trust, and recommendation are not commercial drivers",
+  "Companies looking for cheap SEO tasks",
+  "Businesses that only want isolated blog posts",
+  "Teams unwilling to improve their website, content, or source footprint",
+  "Companies that want dashboards but not corrective action",
 ];
 
 export const BestFit = () => (
   <section className="py-24 border-t border-border/40">
     <div className="mx-auto max-w-7xl px-6">
       <div className="reveal-on-scroll text-center max-w-3xl mx-auto">
-        <p className="eyebrow">Qualification</p>
+        <p className="eyebrow">Who we help</p>
         <h2 className="display text-4xl sm:text-5xl mt-4">
-          Is CiteWorks Studio the right partner for you?
+          Built for growth-minded companies where visibility drives growth.
         </h2>
         <p className="mt-6 text-body leading-relaxed">
-          We work best with companies and agencies that treat search visibility as an evidence-led system — not a tactical checklist.
+          CiteWorks Studio is not only for enterprise companies. We work with companies that are
+          ready to invest in stronger visibility because search, trust, comparison, and
+          recommendation placement matter to their growth.
         </p>
       </div>
 

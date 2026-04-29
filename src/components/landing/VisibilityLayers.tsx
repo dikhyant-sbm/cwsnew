@@ -3,24 +3,24 @@ import { Search, Sparkles, Network } from "lucide-react";
 const LAYERS = [
   {
     n: "01",
-    label: "Search Layer",
-    sub: "Google + traditional organic search",
+    label: "Search Visibility",
+    sub: "How your website performs in Google, organic rankings, indexed pages, technical SEO, schema, and high-intent search results.",
     Icon: Search,
     items: ["Rankings", "Indexation", "Schema", "Technical SEO"],
     glowClass: "from-[hsl(var(--accent-blue)/0.35)]",
   },
   {
     n: "02",
-    label: "AI Retrieval Layer",
-    sub: "AI answers, summaries, recommendations",
+    label: "AI Visibility",
+    sub: "How your company appears in AI-generated answers, AI Overviews, LLM recommendations, prompt responses, citations, and comparison-style outputs.",
     Icon: Sparkles,
     items: ["AI Overviews", "ChatGPT", "Gemini", "Perplexity"],
     glowClass: "from-[hsl(var(--accent-violet)/0.35)]",
   },
   {
     n: "03",
-    label: "Source Layer",
-    sub: "Public evidence and trusted citations",
+    label: "Source Visibility",
+    sub: "How your company is represented across articles, directories, review platforms, Reddit, YouTube, social, industry sites, comparison pages, and trusted third-party mentions.",
     Icon: Network,
     items: ["Reviews", "Reddit", "YouTube", "Comparisons"],
     glowClass: "from-[hsl(var(--accent-cyan)/0.35)]",
@@ -44,13 +44,14 @@ export const VisibilityLayers = ({
       <div className="mx-auto max-w-7xl px-6">
         {variant === "full" && (
           <div className="text-center max-w-3xl mx-auto reveal-on-scroll">
-            <p className="eyebrow">The three visibility layers</p>
+            <p className="eyebrow">Three layers of modern visibility</p>
             <h2 className="display text-4xl sm:text-5xl mt-4">
-              Search. AI retrieval. Public sources.
+              Search. AI. Sources.
             </h2>
             <p className="mt-5 text-body leading-relaxed">
-              Modern visibility is no longer one channel. CiteWorks Studio improves all three layers
-              that decide whether your company is found, cited, and recommended.
+              Modern search visibility is no longer one channel. It is an ecosystem.
+              CiteWorks Studio helps you improve all three layers that decide whether your company
+              is found, cited, and recommended.
             </p>
           </div>
         )}
@@ -104,7 +105,7 @@ export const VisibilityLayers = ({
           </div>
           {/* Connector hint */}
           <p className="mt-6 text-center font-mono text-[13px] tracking-[0.16em] text-body">
-            ALL THREE LAYERS COMPOUND — A WEAKNESS IN ONE LIMITS THE OTHERS
+            MODERN SEARCH VISIBILITY IS AN ECOSYSTEM — A WEAKNESS IN ONE LAYER LIMITS THE OTHERS
           </p>
         </div>
       </div>

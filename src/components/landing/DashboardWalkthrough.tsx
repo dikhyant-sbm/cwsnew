@@ -80,9 +80,10 @@ export const DashboardWalkthrough = () => {
         }
       },
       {
-        // Activate when step crosses the middle band of viewport
-        rootMargin: "-40% 0px -40% 0px",
-        threshold: [0, 0.25, 0.5, 0.75, 1],
+        // Activate when a step crosses the exact viewport center,
+        // matching the centered sticky image.
+        rootMargin: "-50% 0px -50% 0px",
+        threshold: 0,
       }
     );
 

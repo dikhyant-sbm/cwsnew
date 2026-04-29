@@ -20,9 +20,9 @@ const getSystem = (): Theme =>
     : "light";
 
 const readStored = (): Stored => {
-  if (typeof window === "undefined") return "system";
+  if (typeof window === "undefined") return "light";
   const v = window.localStorage.getItem(STORAGE_KEY);
-  return v === "light" || v === "dark" || v === "system" ? v : "system";
+  return v === "light" || v === "dark" || v === "system" ? v : "light";
 };
 
 const applyClass = (t: Theme) => {

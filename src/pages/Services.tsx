@@ -77,7 +77,7 @@ const services = [
     n: "03",
     title: "Embedding-Level GEO & Cosine Gap Analysis",
     def: "Embedding-level GEO improves how AI systems understand your company, category, entities, services, and authority signals at the semantic retrieval level.",
-    body: "We compare your content, entities, source footprint, and topical structure against the patterns that appear to influence AI answers, then identify what needs to be clarified, expanded, restructured, cited, or reinforced.",
+    body: "Traditional SEO focuses heavily on keywords, rankings, pages, and links. Those still matter. But AI search also depends on how systems interpret meaning, relationships, source patterns, and topical relevance. CiteWorks Studio analyzes the semantic distance between your company and the sources, competitors, and category language AI systems already retrieve. This is where vector optimization and cosine gap analysis matter. We compare your content, entities, source footprint, and topical structure against the patterns that appear to influence AI answers. Then we identify what needs to be clarified, expanded, restructured, cited, or reinforced.",
     includes: [
       "Embedding-level GEO analysis",
       "Vector relevance review",

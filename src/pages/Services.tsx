@@ -1,5 +1,6 @@
 import { Nav } from "@/components/landing/Nav";
 import { Footer } from "@/components/landing/Footer";
+import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
@@ -308,6 +309,13 @@ const Services = () => {
           <p className="mt-12 text-sm text-muted-foreground max-w-2xl font-mono">
             Built for companies where search visibility, AI recommendations, trusted sources, and buyer confidence directly affect growth.
           </p>
+        </div>
+      </section>
+
+      {/* Dashboard: AI Visibility Overview */}
+      <section className="relative py-12">
+        <div className="mx-auto max-w-[1400px] px-6 reveal-on-scroll">
+          <DashboardShowcase dashboard="ai-visibility" size="lg" showCaption />
         </div>
       </section>
 

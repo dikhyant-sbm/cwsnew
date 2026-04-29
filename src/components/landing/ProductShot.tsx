@@ -1,16 +1,14 @@
-import dashboard from "@/assets/dashboard-hero.jpg";
+import { DashboardShowcase } from "./DashboardShowcase";
 
 export const ProductShot = () => (
-  <section className="relative py-20 overflow-hidden">
-    <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[60%] bg-primary/10 blur-[120px] mx-auto max-w-4xl rounded-full" />
-    <div className="relative mx-auto max-w-6xl px-6">
-      <img
-        src={dashboard}
-        alt="CiteWorks Studio visibility intelligence: brand entity graph showing AI citations and source connections"
-        width={1920}
-        height={1080}
-        className="w-full rounded-xl border border-border/60 shadow-2xl"
-      />
+  <section className="relative pb-32 pt-4 overflow-hidden">
+    <div className="relative mx-auto px-6">
+      <div className="reveal-on-scroll">
+        <DashboardShowcase dashboard="ai-visibility" size="lg" className="float-y-slow" />
+      </div>
+      <p className="mt-8 text-center font-mono text-[10px] tracking-[0.22em] uppercase text-foreground/45">
+        AI Visibility Overview · CiteWorks Studio
+      </p>
     </div>
   </section>
 );

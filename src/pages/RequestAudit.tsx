@@ -1,4 +1,5 @@
 import { PageShell, PageHero, SectionHeading } from "@/components/landing/Shell";
+import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -170,6 +171,13 @@ const RequestAudit = () => {
         title="Find out where your visibility is breaking down."
         body="A CiteWorks Studio Visibility Audit shows where your company stands across Google rankings, AI answers, citation sources, competitor positioning, technical SEO, content structure, entity clarity, and source-layer authority — then shows what needs to change next."
       />
+
+      {/* Dashboard: what an audit produces */}
+      <section className="relative py-12">
+        <div className="mx-auto max-w-7xl px-6 reveal-on-scroll">
+          <DashboardShowcase dashboard="executive-report" size="lg" showCaption />
+        </div>
+      </section>
 
       {/* Form FIRST */}
       <section className="py-12">

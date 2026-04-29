@@ -58,7 +58,7 @@ export const Footer = () => (
         <div className="lg:col-span-8">
           <p className="eyebrow">Ready when you are</p>
           <h3 className="display text-2xl sm:text-4xl mt-3 leading-tight">
-            See what's limiting your visibility — across Google, AI, and the source layer.
+            Find out where your visibility is breaking down — across Google, AI, and the source layer.
           </h3>
         </div>
         <div className="lg:col-span-4 flex flex-wrap lg:justify-end gap-3">

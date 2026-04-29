@@ -115,11 +115,13 @@ export const DashboardWalkthrough = () => {
           </p>
         </div>
 
-        {/* Scrollytelling grid — right column drives section height; left column sticks centered */}
-        <div className="mt-16 grid lg:grid-cols-12 gap-10 lg:gap-14 lg:items-start">
-          {/* LEFT — sticky, vertically centered image. Spans full height of steps column. */}
-          <div className="lg:col-span-8 lg:self-start">
-            <div className="lg:sticky lg:top-[10vh] lg:h-[80vh] lg:flex lg:items-center">
+        {/* Scrollytelling grid — right column drives section height; left column sticks centered.
+            NO `items-start` here — we want the left column to STRETCH to match the steps column,
+            giving the inner sticky element room to remain pinned through every step. */}
+        <div className="mt-16 grid lg:grid-cols-12 gap-10 lg:gap-14">
+          {/* LEFT — column stretches full grid-row height; inner div is sticky and centered. */}
+          <div className="lg:col-span-8">
+            <div className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:items-center lg:py-[6vh]">
               <figure className="relative w-full">
                 {/* Ambient glow */}
                 <div className="absolute -inset-x-16 -inset-y-12 -z-10 rounded-[2.5rem] bg-[radial-gradient(60%_60%_at_50%_50%,hsl(var(--accent-blue)/0.20),transparent_70%)] blur-3xl" />

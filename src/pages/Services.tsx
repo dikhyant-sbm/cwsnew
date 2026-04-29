@@ -299,7 +299,9 @@ const faqs = [
 
 const Services = () => {
   useEffect(() => {
-    document.title = "Services | CiteWorks Studio — GEO, AI Search & Citation Architecture";
+    document.title = "CiteWorks Studio Services | GEO, AI Search Visibility, SEO, and Citation Architecture";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "CiteWorks Studio helps growth-minded companies improve visibility across Google, AI answers, and trusted source environments through GEO, AI search audits, technical SEO, citation architecture, content strategy, market intelligence, and corrective-action retainers.");
   }, []);
 
   return (

@@ -319,6 +319,7 @@ const Services = () => {
           <div className="mt-10 max-w-3xl space-y-5 text-lg text-body">
             <p>CiteWorks Studio helps growth-minded companies become easier to find, cite, compare, and recommend across modern search environments.</p>
             <p>We combine GEO, AI search visibility, technical SEO, citation architecture, content strategy, source-layer authority, market intelligence, and execution into one coordinated system.</p>
+            <p>The goal is not just more traffic. The goal is stronger visibility in the places where buyers search, compare options, validate trust, and ask AI systems who to choose.</p>
           </div>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">

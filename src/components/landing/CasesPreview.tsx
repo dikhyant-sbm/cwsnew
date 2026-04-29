@@ -55,7 +55,7 @@ export const CasesPreview = () => (
         {cases.map((c, i) => (
           <article
             key={i}
-            className="group relative card-premium/40 p-7 hover:border-primary/40 transition-all overflow-hidden"
+            className="group relative card-premium p-7 hover:border-primary/40 transition-all overflow-hidden"
           >
             <p className="font-mono text-[10px] tracking-[0.22em] text-foreground/50 uppercase mb-6">
               {c.cat}

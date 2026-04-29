@@ -86,7 +86,7 @@ export const Footer = () => (
         {/* Brand column */}
         <div className="lg:col-span-4">
           <Logo />
-          <p className="mt-5 text-base text-foreground/85 leading-relaxed max-w-sm">
+          <p className="mt-5 text-base text-body leading-relaxed max-w-sm">
             Visibility across Google, AI answers, and the sources that shape buyer decisions.
           </p>
           <p className="mt-5 text-sm text-body leading-relaxed max-w-sm">

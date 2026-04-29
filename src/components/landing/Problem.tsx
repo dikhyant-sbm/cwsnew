@@ -39,7 +39,7 @@ export const Problem = () => (
             className="glass border-gradient rounded-xl p-5 flex flex-col items-start gap-3 hover:border-primary/30 transition-colors"
           >
             <s.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
-            <p className="text-sm text-foreground/85 font-medium">{s.label}</p>
+            <p className="text-sm text-body font-medium">{s.label}</p>
           </div>
         ))}
       </div>

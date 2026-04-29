@@ -154,8 +154,8 @@ const Methodology = () => {
                   authority under one corrective-action diagnosis.
                 </p>
                 <div className="glass-strong rounded-2xl p-6 mt-8">
-                  <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-3">ANSWER CAPSULE</p>
-                  <p className="text-foreground/90">
+                  <p className="font-mono text-[13px] tracking-[0.16em] text-primary mb-3">ANSWER CAPSULE</p>
+                  <p className="text-body">
                     CiteWorks Studio uses an audit-led, evidence-first methodology to identify where a
                     company is winning, losing, or missing visibility across Google, AI answers, and
                     trusted source environments — then builds a prioritized corrective-action roadmap
@@ -208,16 +208,16 @@ const Methodology = () => {
               align="left"
             />
             <div className="mt-10 card-premium overflow-hidden">
-              <div className="grid grid-cols-12 font-mono text-[12px] tracking-[0.16em] uppercase text-body bg-card/60 px-6 py-4 border-b border-border">
+              <div className="grid grid-cols-12 font-mono text-[13px] tracking-[0.16em] uppercase text-body bg-card/60 px-6 py-4 border-b border-border">
                 <div className="col-span-4">Step</div>
                 <div className="col-span-5">Focus</div>
                 <div className="col-span-3 text-primary">Output</div>
               </div>
               {llmTable.map(([s, f, o], i) => (
                 <div key={i} className={`grid grid-cols-12 px-6 py-5 text-sm gap-4 ${i < llmTable.length - 1 ? "border-b border-border" : ""}`}>
-                  <div className="col-span-4 font-medium text-foreground/95">{s}</div>
+                  <div className="col-span-4 font-medium text-primary">{s}</div>
                   <div className="col-span-5 text-body">{f}</div>
-                  <div className="col-span-3 text-foreground/85">{o}</div>
+                  <div className="col-span-3 text-body">{o}</div>
                 </div>
               ))}
             </div>
@@ -237,7 +237,7 @@ const Methodology = () => {
               {compare.map(([a, b], i) => (
                 <div key={i} className={`grid grid-cols-2 ${i < compare.length - 1 ? "border-b border-border" : ""}`}>
                   <div className="p-5 text-sm text-body">{a}</div>
-                  <div className="p-5 text-sm text-foreground/90 border-l border-border">{b}</div>
+                  <div className="p-5 text-sm text-body border-l border-border">{b}</div>
                 </div>
               ))}
             </div>
@@ -251,10 +251,10 @@ const Methodology = () => {
             />
             <div className="mt-10 grid md:grid-cols-2 gap-6">
               <div className="border border-border rounded-2xl p-8 bg-card/30">
-                <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-5">BEST FIT</p>
+                <p className="font-mono text-[13px] tracking-[0.16em] text-primary mb-5">BEST FIT</p>
                 <ul className="space-y-3">
                   {bestFit.map((f) => (
-                    <li key={f} className="flex gap-3 text-sm text-foreground/85">
+                    <li key={f} className="flex gap-3 text-sm text-body">
                       <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>{f}</span>
                     </li>
@@ -262,7 +262,7 @@ const Methodology = () => {
                 </ul>
               </div>
               <div className="border border-border rounded-2xl p-8 bg-card/30">
-                <p className="font-mono text-[12px] tracking-[0.16em] text-body mb-5">NOT THE BEST FIT</p>
+                <p className="font-mono text-[13px] tracking-[0.16em] text-body mb-5">NOT THE BEST FIT</p>
                 <ul className="space-y-3">
                   {notFit.map((f) => (
                     <li key={f} className="flex gap-3 text-sm text-muted-fg">

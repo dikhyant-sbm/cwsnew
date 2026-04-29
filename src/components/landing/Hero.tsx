@@ -17,7 +17,7 @@ export const Hero = () => (
           <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 pulse-ring" />
           <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
         </span>
-        <span className="font-mono text-[12px] tracking-[0.16em] text-body uppercase">
+        <span className="font-mono text-[13px] tracking-[0.16em] text-body uppercase">
           GEO · AI Search · Citation Architecture
         </span>
       </div>

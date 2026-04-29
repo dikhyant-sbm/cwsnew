@@ -48,7 +48,7 @@ export const SectionNav = ({
 
   return (
     <nav aria-label="On this page" className={`${baseClass} ${className}`}>
-      <p className="font-mono text-[12px] tracking-[0.16em] text-body mb-4">
+      <p className="font-mono text-[13px] tracking-[0.16em] text-body mb-4">
         ON THIS PAGE
       </p>
       <ul className="space-y-1.5 border-l border-border">

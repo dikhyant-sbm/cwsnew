@@ -75,7 +75,7 @@ export const Nav = () => {
         <Logo />
 
         <nav
-          className="hidden lg:flex items-center font-mono text-[13px] font-semibold tracking-[0.14em] text-foreground/85"
+          className="hidden lg:flex items-center font-mono text-[13px] font-semibold tracking-[0.14em] text-body"
           onMouseLeave={() => setOpenIdx(null)}
         >
           {groups.map((g, i) => {

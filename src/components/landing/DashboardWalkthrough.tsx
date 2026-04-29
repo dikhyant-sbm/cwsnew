@@ -137,7 +137,7 @@ export const DashboardWalkthrough = () => {
                     ))}
                   </div>
                 </div>
-                <figcaption className="mt-4 flex items-center justify-between font-mono text-[12px] tracking-[0.16em] uppercase text-tertiary">
+                <figcaption className="mt-4 flex items-center justify-between font-mono text-[13px] tracking-[0.16em] uppercase text-tertiary">
                   <span>{DASHBOARDS[current.key].label}</span>
                   <span aria-live="polite">
                     {String(active + 1).padStart(2, "0")} / {String(STEPS.length).padStart(2, "0")}
@@ -185,13 +185,13 @@ export const DashboardWalkthrough = () => {
                           : "bg-card text-body border-border"
                       }`}
                     >
-                      <span className="font-mono text-[12px] tracking-widest">
+                      <span className="font-mono text-[13px] tracking-widest">
                         {s.number}
                       </span>
                     </span>
 
                     <p
-                      className={`font-mono text-[12px] tracking-[0.16em] uppercase transition-colors ${
+                      className={`font-mono text-[13px] tracking-[0.16em] uppercase transition-colors ${
                         isActive ? "text-primary" : "text-body"
                       }`}
                     >

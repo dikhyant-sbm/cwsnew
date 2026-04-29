@@ -212,7 +212,7 @@ const RequestAudit = () => {
               { n: "03", t: "We deliver the audit", d: "An executive-ready Visibility Audit with a prioritized corrective-action roadmap." },
             ].map((s) => (
               <li key={s.n} className="card-premium p-5">
-                <p className="font-mono text-[12px] tracking-[0.16em] text-primary">{s.n}</p>
+                <p className="font-mono text-[13px] tracking-[0.16em] text-primary">{s.n}</p>
                 <p className="display text-base mt-2">{s.t}</p>
                 <p className="text-xs text-body mt-2 leading-relaxed">{s.d}</p>
               </li>
@@ -249,7 +249,7 @@ const RequestAudit = () => {
                   { n: "03", t: "Audit kickoff", d: "Typically within 1–2 weeks." },
                 ].map((s) => (
                   <div key={s.n} className="card-premium p-4">
-                    <p className="font-mono text-[12px] tracking-[0.16em] text-primary">{s.n}</p>
+                    <p className="font-mono text-[13px] tracking-[0.16em] text-primary">{s.n}</p>
                     <p className="display text-sm mt-2">{s.t}</p>
                     <p className="text-xs text-body mt-1">{s.d}</p>
                   </div>
@@ -388,15 +388,15 @@ const RequestAudit = () => {
             <a href="mailto:hello@citeworksstudio.com" className="flex items-center gap-3 rounded-xl border border-border bg-card/30 p-4 hover:border-primary/40 transition-colors">
               <Mail className="w-4 h-4 text-primary" />
               <div>
-                <p className="font-mono text-[12px] tracking-[0.16em] text-body">EMAIL</p>
-                <p className="text-sm text-foreground/85">hello@citeworksstudio.com</p>
+                <p className="font-mono text-[13px] tracking-[0.16em] text-body">EMAIL</p>
+                <p className="text-sm text-body">hello@citeworksstudio.com</p>
               </div>
             </a>
             <div className="flex items-center gap-3 rounded-xl border border-border bg-card/30 p-4">
               <MessageCircle className="w-4 h-4 text-primary" />
               <div>
-                <p className="font-mono text-[12px] tracking-[0.16em] text-body">RESPONSE</p>
-                <p className="text-sm text-foreground/85">Within one business day</p>
+                <p className="font-mono text-[13px] tracking-[0.16em] text-body">RESPONSE</p>
+                <p className="text-sm text-body">Within one business day</p>
               </div>
             </div>
           </div>
@@ -475,7 +475,7 @@ const RequestAudit = () => {
           <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {outcomes.map((o, i) => (
               <div key={i} className="border border-border rounded-2xl p-7 bg-background">
-                <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-3">0{i + 1}</p>
+                <p className="font-mono text-[13px] tracking-[0.16em] text-primary mb-3">0{i + 1}</p>
                 <h3 className="display text-2xl text-gradient">{o.t}</h3>
                 <p className="text-sm text-body mt-3 leading-relaxed">{o.d}</p>
               </div>
@@ -513,10 +513,10 @@ const RequestAudit = () => {
           <SectionHeading eyebrow="Fit" title="Who the Visibility Audit is built for." align="left" />
           <div className="mt-12 grid md:grid-cols-2 gap-6">
             <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-5">BEST FIT</p>
+              <p className="font-mono text-[13px] tracking-[0.16em] text-primary mb-5">BEST FIT</p>
               <ul className="space-y-3">
                 {bestFit.map((f) => (
-                  <li key={f} className="flex gap-3 text-sm text-foreground/85">
+                  <li key={f} className="flex gap-3 text-sm text-body">
                     <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                     <span>{f}</span>
                   </li>
@@ -524,7 +524,7 @@ const RequestAudit = () => {
               </ul>
             </div>
             <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[12px] tracking-[0.16em] text-body mb-5">NOT THE BEST FIT</p>
+              <p className="font-mono text-[13px] tracking-[0.16em] text-body mb-5">NOT THE BEST FIT</p>
               <ul className="space-y-3">
                 {notFit.map((f) => (
                   <li key={f} className="flex gap-3 text-sm text-muted-fg">
@@ -545,8 +545,8 @@ const RequestAudit = () => {
           <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             {problems.map((p, i) => (
               <div key={i} className="border border-border rounded-xl p-5 bg-background flex gap-3 items-start">
-                <span className="font-mono text-[12px] text-primary mt-1">{String(i + 1).padStart(2, "0")}</span>
-                <p className="text-sm text-foreground/85">{p}</p>
+                <span className="font-mono text-[13px] text-primary mt-1">{String(i + 1).padStart(2, "0")}</span>
+                <p className="text-sm text-body">{p}</p>
               </div>
             ))}
           </div>
@@ -560,7 +560,7 @@ const RequestAudit = () => {
           <div className="mt-12 grid md:grid-cols-3 gap-4">
             {afterAudit.map((a) => (
               <div key={a.n} className="border border-border rounded-2xl p-7 bg-card/30">
-                <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-3">PATH / {a.n}</p>
+                <p className="font-mono text-[13px] tracking-[0.16em] text-primary mb-3">PATH / {a.n}</p>
                 <h3 className="display text-xl mb-3">{a.t}</h3>
                 <p className="text-sm text-body leading-relaxed">{a.d}</p>
               </div>

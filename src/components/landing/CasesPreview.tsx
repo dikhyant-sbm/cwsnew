@@ -57,11 +57,11 @@ export const CasesPreview = () => (
             key={i}
             className="group relative card-premium p-7 hover:border-primary/40 transition-all overflow-hidden"
           >
-            <p className="font-mono text-[12px] tracking-[0.16em] text-subtle uppercase mb-6">
+            <p className="font-mono text-[13px] tracking-[0.16em] text-subtle uppercase mb-6">
               {c.cat}
             </p>
             <p className="display text-5xl text-gradient leading-none">{c.metric}</p>
-            <p className="text-sm text-foreground/85 mt-3 font-medium">{c.label}</p>
+            <p className="text-sm text-body mt-3 font-medium">{c.label}</p>
             <p className="text-xs text-subtle mt-4 leading-relaxed border-t border-border pt-4">
               {c.detail}
             </p>

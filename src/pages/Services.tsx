@@ -358,7 +358,7 @@ const Services = () => {
               ].map((q, i) => (
                 <div key={i} className="flex gap-4 items-start">
                   <span className="font-mono text-xs text-primary mt-1">0{i + 1}</span>
-                  <p className="text-foreground/85">{q}</p>
+                  <p className="text-body">{q}</p>
                 </div>
               ))}
             </div>
@@ -377,7 +377,7 @@ const Services = () => {
             {coreServices.map((s, i) => (
               <div key={i} className="bg-background p-6 flex items-start gap-4">
                 <span className="font-mono text-[13px] text-primary mt-1">{String(i + 1).padStart(2, "0")}</span>
-                <p className="text-sm text-foreground/85">{s}</p>
+                <p className="text-sm text-body">{s}</p>
               </div>
             ))}
           </div>
@@ -472,7 +472,7 @@ const Services = () => {
               <p className="font-mono text-[13px] text-primary mb-4">BEST FIT</p>
               <ul className="space-y-3">
                 {bestFit.map((f) => (
-                  <li key={f} className="flex gap-3 text-sm text-foreground/85">
+                  <li key={f} className="flex gap-3 text-sm text-body">
                     <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                     <span>{f}</span>
                   </li>

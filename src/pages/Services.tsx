@@ -184,7 +184,7 @@ const services = [
     n: "09",
     title: "Social, Video & Discussion-Led Visibility",
     def: "Social, video, and discussion-led visibility strengthens the public evidence around your company across the platforms where buyers and AI-influencing sources gather context.",
-    body: "We help create and support assets that make your company more visible, understandable, and credible across the public sources that matter in your category.",
+    body: "Modern search does not stop at your website. Buyers look for proof across social platforms, video platforms, review environments, communities, and industry conversations. We help create and support assets that make your company more visible, understandable, and credible across those environments. This does not mean chasing every platform. It means identifying which public sources matter in your category and building the right support around them.",
     includes: [
       "Social content planning",
       "LinkedIn content support",

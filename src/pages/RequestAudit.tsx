@@ -199,6 +199,9 @@ const RequestAudit = () => {
         </div>
       </section>
 
+      {/* Premium audit output preview */}
+      <AuditPreview />
+
       {/* What happens after you submit */}
       <section className="py-8" aria-label="What happens after you submit">
         <div className="mx-auto max-w-3xl px-6">

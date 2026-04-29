@@ -100,6 +100,19 @@ const measurement = [
   "Prompt-cluster visibility", "Competitor visibility", "Estimated branded visibility value",
 ];
 
+const bestFit = [
+  "Growth-minded companies",
+  "High-consideration brands",
+  "Category challengers",
+  "Financial services companies",
+  "B2B SaaS companies",
+  "Ecommerce brands",
+  "Home service companies",
+  "Insurance and mortgage brands",
+  "Consumer apps",
+  "Agencies serving high-value clients",
+];
+
 const faqs = [
   { q: "Why are the case studies anonymized?", a: "Some CiteWorks Studio work is performed under white-label or confidential client arrangements. The public case studies preserve vertical-level detail, engagement type, and reported outcomes without disclosing client names." },
   { q: "What do these case studies measure?", a: "Google rankings, AI Overview mentions, ChatGPT brand mentions, AI Share of Voice, cited pages, source visibility, keyword coverage, average ranking position, competitor visibility, and estimated branded visibility value." },
@@ -117,7 +130,9 @@ const CaseStudies = () => {
   );
 
   useEffect(() => {
-    document.title = "Case Studies | CiteWorks Studio — AI Search & GEO Results";
+    document.title = "CiteWorks Studio Case Studies | AI Search Visibility, GEO, and Citation Architecture Results";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Explore CiteWorks Studio case studies showing how growth-minded companies improved visibility across Google, AI answers, citation sources, and recommendation-stage search through GEO, citation architecture, technical SEO, and source-layer authority.");
   }, []);
 
   return (
@@ -133,7 +148,7 @@ const CaseStudies = () => {
           </h1>
           <div className="mt-10 max-w-3xl space-y-5 text-lg text-body">
             <p>CiteWorks Studio helps growth-minded companies improve how they are found, cited, compared, and recommended across modern search environments.</p>
-            <p>These case studies show how visibility improves when companies strengthen more than rankings — across GEO, citation architecture, AI search visibility, technical SEO, content strategy, and source-layer authority.</p>
+            <p>These case studies show how visibility improves when companies strengthen more than rankings. The work often includes GEO, citation architecture, AI search visibility, technical SEO, content strategy, source-layer authority, and public evidence across the places buyers and AI systems use to make sense of a market.</p>
           </div>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">
@@ -166,8 +181,10 @@ const CaseStudies = () => {
             </h2>
           </div>
           <div className="lg:col-span-7 space-y-5 text-body text-lg">
-            <p>Modern buyers do not move through one search result. They search Google, ask AI systems, read comparison pages, check reviews, watch videos, scan public discussions, and validate brands through trusted third-party sources before deciding.</p>
-            <p>The strongest visibility programs measure whether a company becomes easier to find, easier to validate, easier to cite, and easier to recommend.</p>
+            <p>Modern buyers do not move through one search result.</p>
+            <p>They search Google. They ask AI systems. They read comparison pages. They check reviews. They watch videos. They scan public discussions. They validate brands through trusted third-party sources before making a decision.</p>
+            <p>That means the strongest visibility programs do not measure only rankings or traffic. They measure whether a company becomes easier to find, easier to validate, easier to cite, and easier to recommend.</p>
+            <p className="text-sm text-body">CiteWorks Studio case studies focus on movement across:</p>
             <div className="grid grid-cols-2 gap-2 pt-6 border-t border-border">
               {movement.map((m, i) => (
                 <div key={i} className="flex gap-3 items-start py-1">
@@ -187,18 +204,27 @@ const CaseStudies = () => {
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
             AI visibility growth across four high-consideration verticals.
           </h2>
+          <p className="text-body max-w-3xl mb-4">
+            The featured synthesis compares four anonymized CiteWorks Studio engagements across tax relief, household appliance, crypto wallet, and pest control.
+          </p>
           <p className="text-body max-w-3xl mb-12">
-            A structured comparison of four published CiteWorks Studio engagements — tax relief, household appliance, crypto wallet, and pest control — showing how citation footprint, brand context, and high-intent public-source visibility can improve alongside Google and AI visibility.
+            The synthesis found that reported gains did not center on rankings alone. They centered on visibility across public sources that shape AI-generated answers, including community discussions, cited pages, third-party reference environments, and decision-stage comparison contexts.
           </p>
           <div className="border border-primary/30 bg-background rounded-2xl p-8 lg:p-12">
             <p className="font-mono text-[13px] text-primary mb-4">FEATURED CASE</p>
             <h3 className="text-2xl md:text-3xl font-semibold mb-4 leading-tight">
               Cross-Case Synthesis: AI Visibility Growth Across Four Verticals
             </h3>
-            <div className="mt-6 border-t border-border pt-6">
-              <p className="font-mono text-[13px] text-body mb-3">KEY TAKEAWAY</p>
+            <p className="text-body leading-relaxed">
+              A structured comparison of four published CiteWorks Studio case studies showing how citation footprint, brand context, and high-intent public-source visibility can improve alongside Google and AI visibility.
+            </p>
+            <div className="mt-6 border-t border-border pt-6 space-y-4">
+              <p className="font-mono text-[13px] text-body mb-1">KEY TAKEAWAY</p>
               <p className="text-body text-lg leading-relaxed">
-                The pattern was not simply "rank higher and AI visibility follows." The stronger pattern: improve citation footprint, brand context, and high-intent presence across Google and public reference environments, and AI visibility can improve alongside traditional search.
+                The pattern was not simply: "rank higher and AI visibility follows."
+              </p>
+              <p className="text-body text-lg leading-relaxed">
+                The stronger pattern was: improve citation footprint, brand context, and high-intent presence across Google and public reference environments, and AI visibility can improve alongside traditional search visibility.
               </p>
             </div>
             <Button className="mt-8 rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">
@@ -232,9 +258,10 @@ const CaseStudies = () => {
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
             Explore the case studies.
           </h2>
-          <p className="text-body max-w-2xl mb-10">
-            The method changes by category, but the goal stays consistent: make the company easier to find, cite, compare, and recommend.
-          </p>
+          <div className="max-w-3xl space-y-4 text-body mb-10">
+            <p>Each case study shows how visibility work changes by category. Some markets are trust-sensitive. Some are comparison-driven. Some are urgent-intent. Some depend heavily on public discussions, review environments, third-party sources, or AI-generated summaries.</p>
+            <p>The method changes by category, but the goal stays consistent: make the company easier to find, cite, compare, and recommend.</p>
+          </div>
 
           {/* Filter chips */}
           <div role="tablist" aria-label="Filter case studies" className="flex flex-wrap gap-2 mb-10">
@@ -303,9 +330,10 @@ const CaseStudies = () => {
       <section className="py-24 border-t border-border">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ Patterns</p>
-          <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-12">
+          <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
             What repeats across the case studies.
           </h2>
+          <p className="text-body max-w-2xl mb-12">The categories are different, but several patterns repeat.</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {patterns.map((p) => (
               <div key={p.n} className="border border-border rounded-xl p-6 bg-card/30">
@@ -374,12 +402,56 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* Best Fit */}
+      <section className="py-24 border-t border-border">
+        <div className="mx-auto max-w-[1400px] px-6 grid lg:grid-cols-12 gap-12">
+          <div className="lg:col-span-5">
+            <p className="eyebrow mb-6">/ Best fit</p>
+            <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight">
+              These case studies are most relevant if visibility affects your growth.
+            </h2>
+          </div>
+          <div className="lg:col-span-7 space-y-5 text-body text-lg">
+            <p>CiteWorks Studio works best with companies where being found, cited, compared, and recommended has real commercial value.</p>
+            <p>You do not need to be an enterprise company. You do need a market where search visibility, source authority, and buyer trust matter.</p>
+            <div className="grid sm:grid-cols-2 gap-2 pt-6 border-t border-border">
+              {bestFit.map((b, i) => (
+                <div key={i} className="flex gap-3 items-start py-1">
+                  <span className="font-mono text-[13px] text-primary mt-1.5">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-sm text-body">{b}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Audit CTA */}
       <section className="py-24 border-t border-border bg-card/30">
+        <div className="mx-auto max-w-[1400px] px-6 text-center">
+          <h2 className="display text-3xl md:text-5xl leading-tight tracking-tight max-w-3xl mx-auto mb-6">
+            Want to understand your own AI citation footprint?
+          </h2>
+          <p className="text-body text-lg max-w-2xl mx-auto">
+            Your company may already have useful content, real expertise, and strong customer value. The question is whether Google, AI systems, third-party sources, and buyers can clearly recognize it.
+          </p>
+          <p className="mt-4 text-body text-lg max-w-2xl mx-auto">
+            A Visibility Audit shows where your company appears, where competitors are stronger, which sources influence your category, and what needs to change next.
+          </p>
+          <div className="mt-10">
+            <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">
+              <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3 h-3 ml-1" /></Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-24 border-t border-border">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ FAQ</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-12">
-            Common questions about our case studies.
+            Common questions about CiteWorks Studio case studies
           </h2>
           <Accordion type="single" collapsible className="max-w-4xl">
             {faqs.map((f, i) => (
@@ -399,7 +471,13 @@ const CaseStudies = () => {
             Find out where your visibility is breaking down.
           </h2>
           <p className="mt-6 text-body text-lg max-w-2xl mx-auto">
-            The strongest case studies start with a clear diagnosis. CiteWorks Studio helps growth-minded companies identify where they are losing visibility — then we build the corrective-action plan.
+            The strongest case studies start with a clear diagnosis.
+          </p>
+          <p className="mt-4 text-body text-lg max-w-2xl mx-auto">
+            CiteWorks Studio helps growth-minded companies identify where they are losing visibility across Google, AI answers, citation sources, competitor positioning, technical SEO, content structure, and source-layer authority.
+          </p>
+          <p className="mt-4 text-body text-lg max-w-2xl mx-auto">
+            Then we build the corrective-action plan.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">

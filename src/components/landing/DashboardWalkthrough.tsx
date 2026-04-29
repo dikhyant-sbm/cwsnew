@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { DASHBOARDS, type DashboardKey } from "./DashboardShowcase";
+import { useTheme } from "@/components/theme/ThemeProvider";
 
 type Step = {
   key: DashboardKey;
@@ -60,6 +61,7 @@ const STEPS: Step[] = [
 export const DashboardWalkthrough = () => {
   const [active, setActive] = useState(0);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const reduce =
@@ -125,7 +127,7 @@ export const DashboardWalkthrough = () => {
                     {STEPS.map((s, i) => (
                       <img
                         key={s.key}
-                        src={DASHBOARDS[s.key].src}
+                        src={(theme === "dark" && (DASHBOARDS[s.key] as any).srcDark) || DASHBOARDS[s.key].src}
                         alt={`${DASHBOARDS[s.key].label} — ${DASHBOARDS[s.key].caption}`}
                         loading="lazy"
                         decoding="async"

@@ -52,6 +52,12 @@ const Resources = () => {
   const [active, setActive] = useState("All");
   const filtered = active === "All" ? articles : articles.filter((a) => a.category === active);
 
+  useEffect(() => {
+    document.title = "Resources | CiteWorks Studio — GEO, AI Search & Citation Architecture";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Guides, case studies, and definitions on GEO, AI search visibility, citation architecture, technical SEO, content strategy, and source-layer authority.");
+  }, []);
+
   return (
     <PageShell>
       <PageHero

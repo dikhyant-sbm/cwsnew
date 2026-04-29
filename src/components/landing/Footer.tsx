@@ -5,11 +5,11 @@ const cols = [
   {
     title: "Services",
     links: [
-      { label: "GEO Services", to: "/#services" },
-      { label: "AI Search Visibility", to: "/#services" },
-      { label: "Citation Architecture", to: "/#services" },
-      { label: "Technical SEO", to: "/#services" },
-      { label: "Content Strategy", to: "/#services" },
+      { label: "GEO & AI Search Visibility", to: "/services" },
+      { label: "Citation Architecture", to: "/services" },
+      { label: "Technical SEO & Schema", to: "/services" },
+      { label: "Content Strategy", to: "/services" },
+      { label: "AI Market Intelligence", to: "/services" },
       { label: "Visibility Audits", to: "/request-audit" },
     ],
   },
@@ -17,6 +17,7 @@ const cols = [
     title: "Company",
     links: [
       { label: "Methodology", to: "/methodology" },
+      { label: "Case Studies", to: "/case-studies" },
       { label: "Agency Partners", to: "/agency-partners" },
       { label: "Resources", to: "/resources" },
       { label: "Request an Audit", to: "/request-audit" },
@@ -25,12 +26,12 @@ const cols = [
   {
     title: "Models Tracked",
     links: [
-      { label: "ChatGPT", to: "#" },
-      { label: "Gemini", to: "#" },
-      { label: "Perplexity", to: "#" },
-      { label: "Copilot", to: "#" },
-      { label: "AI Overviews", to: "#" },
-      { label: "Claude", to: "#" },
+      { label: "ChatGPT", to: "/resources" },
+      { label: "Gemini", to: "/resources" },
+      { label: "Perplexity", to: "/resources" },
+      { label: "Copilot", to: "/resources" },
+      { label: "Google AI Overviews", to: "/resources" },
+      { label: "Claude", to: "/resources" },
     ],
   },
   {
@@ -72,8 +73,8 @@ export const Footer = () => (
       <div className="mt-16 pt-8 border-t border-border/40 flex flex-col sm:flex-row justify-between gap-4 text-[11px] text-muted-foreground font-mono tracking-widest">
         <p>© 2026 CITEWORKS STUDIO. ALL RIGHTS RESERVED.</p>
         <div className="flex gap-6">
-          <a href="#" className="hover:text-foreground">PRIVACY</a>
-          <a href="#" className="hover:text-foreground">TERMS</a>
+          <a href="mailto:hello@citeworksstudio.com" className="hover:text-foreground transition-colors">CONTACT</a>
+          <Link to="/request-audit" className="hover:text-foreground transition-colors">REQUEST AUDIT</Link>
         </div>
       </div>
     </div>

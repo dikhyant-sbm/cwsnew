@@ -11,145 +11,170 @@
      ========================================================= */
   :root {
     --background: 220 30% 98.5%;
-    --foreground: 222 35% 11%;
+    --foreground: 222 45% 7%;
 
-    --card: 220 28% 96%;
-    --card-foreground: 222 35% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 45% 7%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 35% 11%;
+    --popover-foreground: 222 45% 7%;
 
     /* Restrained primary — deeper blue for legibility on light */
-    --primary: 222 75% 36%;
+    --primary: 222 85% 32%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 22% 95%;
-    --secondary-foreground: 222 35% 14%;
+    --secondary: 220 22% 94%;
+    --secondary-foreground: 222 40% 12%;
 
-    --muted: 220 22% 95%;
-    --muted-foreground: 222 12% 38%;
+    --muted: 220 22% 94%;
+    /* Bumped from 38% → 28% lightness for AA on white (≈ 7.6:1) */
+    --muted-foreground: 222 18% 28%;
 
-    --accent: 222 75% 36%;
+    --accent: 222 85% 32%;
     --accent-foreground: 0 0% 100%;
 
     /* Accent gradient stops — softer in light mode */
-    --accent-blue: 222 80% 48%;
-    --accent-violet: 258 65% 56%;
-    --accent-cyan: 188 75% 42%;
-    --accent-graphite: 220 12% 35%;
+    --accent-blue: 222 80% 44%;
+    --accent-violet: 258 65% 50%;
+    --accent-cyan: 188 75% 36%;
+    --accent-graphite: 220 15% 28%;
 
-    --destructive: 0 70% 45%;
+    --destructive: 0 72% 42%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 16% 88%;
-    --input: 220 16% 88%;
-    --ring: 222 75% 36%;
+    /* Stronger borders for clearer structure */
+    --border: 220 18% 84%;
+    --input: 220 20% 78%;
+    --ring: 222 85% 38%;
 
     --radius: 0.875rem;
 
     /* Subtle grid lines */
-    --grid-line: 220 18% 86%;
+    --grid-line: 220 18% 84%;
+
+    /* Semantic readability tokens (WCAG AA / AAA targets) */
+    --text-heading: 222 45% 6%;     /* ~ #060B14 */
+    --text-primary: 222 40% 10%;    /* ~ #0B1220 */
+    --text-body: 220 25% 18%;       /* ~ #1F2937 — 12.6:1 on white */
+    --text-muted: 220 18% 28%;      /* ~ #374151 — 8.9:1 */
+    --text-subtle: 220 16% 36%;     /* ~ #4B5563 — 6.6:1 */
+    --text-tertiary: 220 14% 42%;   /* ~ #5B6472 — 5.0:1, lower bound */
+    --border-strong: 220 16% 60%;   /* ~ #94A3B8 */
+    --link: 222 85% 36%;            /* underlined inline link */
+    --focus-ring: 222 85% 42%;
 
     /* Surface tokens used by utilities (theme-aware) */
     --surface-card-from: 0 0% 100%;
     --surface-card-to: 220 30% 97%;
-    --surface-card-border: 220 18% 90%;
+    --surface-card-border: 220 18% 86%;
     --hairline-top: 0 0% 100%;
-    --hairline-edge: 222 75% 36%;
+    --hairline-edge: 222 85% 36%;
 
-    --glass-bg-from: 0 0% 100% / 0.78;
-    --glass-bg-to: 0 0% 100% / 0.55;
-    --glass-border: 220 18% 88% / 0.9;
-    --glass-shadow: 220 30% 30% / 0.10;
+    --glass-bg-from: 0 0% 100% / 0.86;
+    --glass-bg-to: 0 0% 100% / 0.66;
+    --glass-border: 220 18% 82% / 0.95;
+    --glass-shadow: 220 30% 25% / 0.12;
 
-    --gradient-text-top: 222 35% 11%;
-    --gradient-text-mid: 222 75% 36%;
-    --gradient-text-end: 258 65% 50%;
+    --gradient-text-top: 222 45% 7%;
+    --gradient-text-mid: 222 85% 34%;
+    --gradient-text-end: 258 65% 46%;
 
-    --selection-bg: 222 80% 48% / 0.18;
+    --selection-bg: 222 80% 48% / 0.22;
 
-    --ambient-strength-blue: 0.06;
-    --ambient-strength-violet: 0.04;
-    --ambient-strength-cyan: 0.03;
+    --ambient-strength-blue: 0.05;
+    --ambient-strength-violet: 0.035;
+    --ambient-strength-cyan: 0.025;
 
     --sidebar-background: 220 30% 98.5%;
-    --sidebar-foreground: 222 35% 11%;
-    --sidebar-primary: 222 75% 36%;
+    --sidebar-foreground: 222 45% 7%;
+    --sidebar-primary: 222 85% 32%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 22% 95%;
-    --sidebar-accent-foreground: 222 35% 14%;
-    --sidebar-border: 220 16% 88%;
-    --sidebar-ring: 222 75% 36%;
+    --sidebar-accent: 220 22% 94%;
+    --sidebar-accent-foreground: 222 40% 12%;
+    --sidebar-border: 220 18% 84%;
+    --sidebar-ring: 222 85% 38%;
   }
 
   /* =========================================================
      DARK THEME — graphite near-black, ice-blue accents
      ========================================================= */
   .dark {
-    --background: 222 30% 4%;
+    --background: 222 32% 4%;
     --foreground: 210 30% 98%;
 
-    --card: 222 25% 7%;
+    --card: 222 28% 8%;
     --card-foreground: 210 30% 98%;
 
-    --popover: 222 30% 6%;
+    --popover: 222 32% 6%;
     --popover-foreground: 210 30% 98%;
 
-    --primary: 214 100% 84%;
+    --primary: 214 100% 78%;
     --primary-foreground: 222 40% 6%;
 
-    --secondary: 222 20% 11%;
+    --secondary: 222 22% 12%;
     --secondary-foreground: 210 30% 98%;
 
-    --muted: 222 18% 11%;
-    --muted-foreground: 215 14% 62%;
+    --muted: 222 20% 12%;
+    /* Brighter so paragraph text reads (≈ #AEBBD0, ~7:1 on near-black) */
+    --muted-foreground: 218 20% 78%;
 
-    --accent: 214 100% 84%;
+    --accent: 214 100% 78%;
     --accent-foreground: 222 40% 6%;
 
-    --accent-blue: 214 100% 70%;
-    --accent-violet: 258 90% 72%;
-    --accent-cyan: 188 95% 70%;
-    --accent-graphite: 220 12% 26%;
+    --accent-blue: 214 100% 72%;
+    --accent-violet: 258 90% 76%;
+    --accent-cyan: 188 95% 72%;
+    --accent-graphite: 220 14% 28%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 84% 65%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 14% 14%;
-    --input: 220 14% 14%;
-    --ring: 214 100% 84%;
+    --border: 220 15% 20%;
+    --input: 220 15% 22%;
+    --ring: 214 100% 78%;
 
-    --grid-line: 220 14% 14%;
+    --grid-line: 220 14% 16%;
 
-    --surface-card-from: 222 25% 8%;
-    --surface-card-to: 222 30% 5%;
-    --surface-card-border: 220 14% 16%;
+    /* Semantic readability tokens — bright on dark (AA/AAA) */
+    --text-heading: 210 40% 99%;     /* ~ #F8FAFC */
+    --text-primary: 210 35% 96%;     /* ~ #F1F5F9 */
+    --text-body: 218 32% 90%;        /* ~ #DDE6F3 */
+    --text-muted: 218 24% 82%;       /* ~ #C7D2E1 */
+    --text-subtle: 218 20% 74%;      /* ~ #AEBBD0 */
+    --text-tertiary: 215 18% 64%;    /* ~ #94A3B8 */
+    --border-strong: 215 16% 48%;
+    --link: 218 100% 80%;            /* ~ #8FB3FF */
+    --focus-ring: 218 100% 76%;
+
+    --surface-card-from: 222 28% 9%;
+    --surface-card-to: 222 32% 5%;
+    --surface-card-border: 220 15% 20%;
     --hairline-top: 0 0% 100%;
-    --hairline-edge: 214 100% 70%;
+    --hairline-edge: 214 100% 72%;
 
-    --glass-bg-from: 0 0% 100% / 0.04;
-    --glass-bg-to: 0 0% 100% / 0.01;
-    --glass-border: 0 0% 100% / 0.07;
+    --glass-bg-from: 0 0% 100% / 0.05;
+    --glass-bg-to: 0 0% 100% / 0.015;
+    --glass-border: 0 0% 100% / 0.10;
     --glass-shadow: 0 0% 0% / 0.7;
 
     --gradient-text-top: 0 0% 100%;
-    --gradient-text-mid: 214 100% 84%;
-    --gradient-text-end: 258 90% 80%;
+    --gradient-text-mid: 214 100% 86%;
+    --gradient-text-end: 258 90% 84%;
 
-    --selection-bg: 214 100% 70% / 0.35;
+    --selection-bg: 214 100% 70% / 0.40;
 
     --ambient-strength-blue: 0.16;
     --ambient-strength-violet: 0.10;
     --ambient-strength-cyan: 0.06;
 
-    --sidebar-background: 222 30% 4%;
+    --sidebar-background: 222 32% 4%;
     --sidebar-foreground: 210 30% 98%;
-    --sidebar-primary: 214 100% 84%;
+    --sidebar-primary: 214 100% 78%;
     --sidebar-primary-foreground: 222 40% 6%;
-    --sidebar-accent: 222 20% 11%;
+    --sidebar-accent: 222 22% 12%;
     --sidebar-accent-foreground: 210 30% 98%;
-    --sidebar-border: 220 14% 14%;
-    --sidebar-ring: 214 100% 84%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 214 100% 78%;
   }
 }
 

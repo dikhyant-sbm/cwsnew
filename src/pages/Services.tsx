@@ -202,7 +202,7 @@ const services = [
     n: "10",
     title: "Ongoing Search Visibility Execution Retainers",
     def: "A search visibility retainer turns audit findings into ongoing corrective action across SEO, GEO, content, citations, technical improvements, and source-layer authority.",
-    body: "Once the audit and strategy are complete, we build a coordinated monthly program around the keyword clusters, prompt environments, technical gaps, source gaps, and content opportunities that matter most. We do not only report visibility problems — we help fix them.",
+    body: "Audits do not create growth by themselves. Execution does. Once the audit and strategy are complete, we build a coordinated monthly program around the keyword clusters, prompt environments, technical gaps, source gaps, and content opportunities that matter most. This is where CiteWorks Studio is different from tools and dashboards. We do not only report visibility problems. We help fix them.",
     includes: [
       "Monthly strategy leadership",
       "SEO optimization sprints",

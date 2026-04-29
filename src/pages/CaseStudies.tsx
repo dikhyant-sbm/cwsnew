@@ -451,7 +451,7 @@ const CaseStudies = () => {
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ FAQ</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-12">
-            Common questions about our case studies.
+            Common questions about CiteWorks Studio case studies
           </h2>
           <Accordion type="single" collapsible className="max-w-4xl">
             {faqs.map((f, i) => (

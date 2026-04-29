@@ -377,9 +377,12 @@ const Services = () => {
       <section id="core" className="py-24 border-t border-border bg-card/30 scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ What CiteWorks Studio does</p>
-          <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-10">
+          <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
             A GEO, AI search visibility, and citation architecture agency for modern search.
           </h2>
+          <p className="text-body text-lg max-w-3xl mb-10">
+            CiteWorks Studio helps growth-minded companies improve how they appear across Google, ChatGPT, Gemini, Perplexity, Google AI Overviews, Copilot, organic search results, third-party sources, and buyer research environments.
+          </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border">
             {coreServices.map((s, i) => (
               <div key={i} className="bg-background p-6 flex items-start gap-4">

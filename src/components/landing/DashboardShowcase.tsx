@@ -53,20 +53,22 @@ export const DashboardShowcase = ({
       <div className="absolute -inset-x-10 -inset-y-8 -z-10 rounded-[2rem] bg-[radial-gradient(60%_60%_at_50%_50%,hsl(var(--accent-blue)/0.18),transparent_70%)] blur-2xl" />
       <div className="absolute -inset-x-20 -inset-y-12 -z-10 rounded-[2rem] bg-[radial-gradient(50%_50%_at_70%_50%,hsl(var(--accent-violet)/0.10),transparent_70%)] blur-2xl" />
 
-      <div className="relative rounded-2xl glass border-gradient overflow-hidden lift">
-        <img
-          src={d.src}
-          alt={`${d.label} — CiteWorks Studio dashboard mockup. ${d.caption}`}
-          loading={priority ? "eager" : "lazy"}
-          decoding="async"
-          // @ts-expect-error fetchpriority is valid HTML, not yet in React types in all setups
-          fetchpriority={priority ? "high" : "low"}
-          width={1024}
-          height={1024}
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
-          className="block w-full h-auto"
-          {...imgProps}
-        />
+      <div className="device-frame lift">
+        <div className="device-screen">
+          <img
+            src={d.src}
+            alt={`${d.label} — CiteWorks Studio dashboard mockup. ${d.caption}`}
+            loading={priority ? "eager" : "lazy"}
+            decoding="async"
+            // @ts-expect-error fetchpriority is valid HTML, not yet in React types in all setups
+            fetchpriority={priority ? "high" : "low"}
+            width={1024}
+            height={1024}
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
+            className="block w-full h-auto"
+            {...imgProps}
+          />
+        </div>
       </div>
 
       {showCaption && (

@@ -7,12 +7,14 @@ const cols = [
   {
     title: "Services",
     links: [
-      { label: "GEO & AI Search Visibility", to: "/services" },
+      { label: "GEO Services", to: "/services" },
+      { label: "AI Search Visibility", to: "/services" },
       { label: "Citation Architecture", to: "/services" },
-      { label: "Technical SEO & Schema", to: "/services" },
+      { label: "Technical SEO", to: "/services" },
       { label: "Content Strategy", to: "/services" },
-      { label: "AI Market Intelligence", to: "/services" },
-      { label: "Execution Retainers", to: "/services" },
+      { label: "Visibility Audits", to: "/request-audit" },
+      { label: "Agency Partners", to: "/agency-partners" },
+      { label: "Case Studies", to: "/case-studies" },
     ],
   },
   {

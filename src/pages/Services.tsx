@@ -147,7 +147,7 @@ const services = [
     n: "07",
     title: "AI Market Research Intelligence",
     def: "AI market research intelligence shows how your category is being framed across search results, AI answers, competitors, cited sources, and buyer research environments.",
-    body: "Our reports show where your company appears, where competitors are gaining ground, which sources shape the category, which prompts and keywords matter most, and where the biggest recoverable opportunities exist.",
+    body: "Most reporting shows what already happened. We focus on what needs to change. Our AI market research reports show where your company appears, where competitors are gaining ground, which sources are shaping the category, which prompts and keywords matter most, and where the biggest recoverable opportunities exist. This gives leadership and marketing teams a clearer view of how the market is being interpreted by search engines, AI systems, and buyers.",
     includes: [
       "Competitive visibility analysis",
       "High-intent keyword and prompt prioritization",

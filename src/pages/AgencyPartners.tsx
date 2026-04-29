@@ -140,8 +140,8 @@ const AgencyPartners = () => {
       <section className="py-20 border-t border-border/40">
         <div className="mx-auto max-w-5xl px-6">
           <div className="glass-strong rounded-2xl p-8 sm:p-10">
-            <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-4">ANSWER CAPSULE</p>
-            <p className="text-foreground/90 text-lg leading-relaxed">
+            <p className="font-mono text-[13px] tracking-[0.16em] text-primary mb-4">ANSWER CAPSULE</p>
+            <p className="text-body text-lg leading-relaxed">
               CiteWorks Studio is a specialist GEO, AI search visibility, and citation architecture
               backend for agencies. We support white-label audits, embedding-level GEO, technical
               SEO, content production, source-layer authority, and ongoing corrective execution —
@@ -181,8 +181,8 @@ const AgencyPartners = () => {
                 <h3 className="display text-2xl mt-3">{s.title}</h3>
                 <p className="text-sm text-body mt-3 leading-relaxed">{s.desc}</p>
                 <div className="mt-5 pt-4 border-t border-border">
-                  <p className="font-mono text-[12px] uppercase tracking-widest text-primary">Agency value</p>
-                  <p className="text-sm text-foreground/85 mt-2">{s.value}</p>
+                  <p className="font-mono text-[13px] uppercase tracking-widest text-primary">Agency value</p>
+                  <p className="text-sm text-body mt-2">{s.value}</p>
                 </div>
               </article>
             ))}
@@ -207,7 +207,7 @@ const AgencyPartners = () => {
           <div className="mt-12 grid md:grid-cols-2 gap-4">
             {why.map((w, i) => (
               <div key={i} className="border border-border rounded-2xl p-7 bg-background">
-                <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-3">{String(i + 1).padStart(2, "0")}</p>
+                <p className="font-mono text-[13px] tracking-[0.16em] text-primary mb-3">{String(i + 1).padStart(2, "0")}</p>
                 <h3 className="display text-xl mb-3">{w.h}</h3>
                 <p className="text-sm text-body leading-relaxed">{w.b}</p>
               </div>
@@ -228,7 +228,7 @@ const AgencyPartners = () => {
           <div className="lg:col-span-7">
             <ul className="grid sm:grid-cols-2 gap-3">
               {deliverables.map((d) => (
-                <li key={d} className="border border-border rounded-xl p-4 bg-card/30 flex gap-3 items-start text-sm text-foreground/85">
+                <li key={d} className="border border-border rounded-xl p-4 bg-card/30 flex gap-3 items-start text-sm text-body">
                   <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   <span>{d}</span>
                 </li>
@@ -247,16 +247,16 @@ const AgencyPartners = () => {
             align="left"
           />
           <div className="mt-12 card-premium/30 overflow-hidden">
-            <div className="grid grid-cols-12 font-mono text-[12px] tracking-[0.16em] uppercase text-body bg-card/60 px-6 py-4 border-b border-border">
+            <div className="grid grid-cols-12 font-mono text-[13px] tracking-[0.16em] uppercase text-body bg-card/60 px-6 py-4 border-b border-border">
               <div className="col-span-3">Service</div>
               <div className="col-span-4">Focus</div>
               <div className="col-span-5 text-primary">Deliverable</div>
             </div>
             {llmTable.map(([s, f, o], i) => (
               <div key={i} className={`grid grid-cols-12 px-6 py-5 text-sm gap-4 ${i < llmTable.length - 1 ? "border-b border-border" : ""}`}>
-                <div className="col-span-3 font-medium text-foreground/95">{s}</div>
+                <div className="col-span-3 font-medium text-primary">{s}</div>
                 <div className="col-span-4 text-body">{f}</div>
-                <div className="col-span-5 text-foreground/85">{o}</div>
+                <div className="col-span-5 text-body">{o}</div>
               </div>
             ))}
           </div>
@@ -277,7 +277,7 @@ const AgencyPartners = () => {
           </div>
           <ul className="space-y-3">
             {enablement.map((e) => (
-              <li key={e} className="border border-border rounded-xl p-4 bg-card/30 flex gap-3 items-start text-sm text-foreground/85">
+              <li key={e} className="border border-border rounded-xl p-4 bg-card/30 flex gap-3 items-start text-sm text-body">
                 <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span>{e}</span>
               </li>
@@ -308,10 +308,10 @@ const AgencyPartners = () => {
           <SectionHeading eyebrow="Fit" title="Who agency partnerships are built for." align="left" />
           <div className="mt-12 grid md:grid-cols-2 gap-6">
             <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-5">BEST FIT</p>
+              <p className="font-mono text-[13px] tracking-[0.16em] text-primary mb-5">BEST FIT</p>
               <ul className="space-y-3">
                 {bestFit.map((f) => (
-                  <li key={f} className="flex gap-3 text-sm text-foreground/85">
+                  <li key={f} className="flex gap-3 text-sm text-body">
                     <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                     <span>{f}</span>
                   </li>
@@ -319,7 +319,7 @@ const AgencyPartners = () => {
               </ul>
             </div>
             <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[12px] tracking-[0.16em] text-body mb-5">NOT THE BEST FIT</p>
+              <p className="font-mono text-[13px] tracking-[0.16em] text-body mb-5">NOT THE BEST FIT</p>
               <ul className="space-y-3">
                 {notFit.map((f) => (
                   <li key={f} className="flex gap-3 text-sm text-muted-fg">
@@ -340,7 +340,7 @@ const AgencyPartners = () => {
           <div className="mt-12 grid md:grid-cols-2 gap-4">
             {useCases.map((u, i) => (
               <div key={i} className="border border-border rounded-2xl p-7 bg-card/30">
-                <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-3">USE CASE / 0{i + 1}</p>
+                <p className="font-mono text-[13px] tracking-[0.16em] text-primary mb-3">USE CASE / 0{i + 1}</p>
                 <h3 className="display text-xl mb-3">{u.t}</h3>
                 <p className="text-sm text-body leading-relaxed">{u.d}</p>
               </div>

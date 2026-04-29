@@ -116,7 +116,7 @@ const Resources = () => {
                 className="group card-premium p-7 flex flex-col animate-fade-in"
                 style={{ animationDelay: `${i * 40}ms` }}
               >
-                <p className="font-mono text-[12px] uppercase tracking-widest text-primary">{a.category}</p>
+                <p className="font-mono text-[13px] uppercase tracking-widest text-primary">{a.category}</p>
                 <h3 className="display text-xl mt-3">{a.title}</h3>
                 <p className="text-sm text-body mt-3 leading-relaxed flex-1">{a.desc}</p>
                 <a href="#" className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] tracking-widest text-primary group-hover:gap-2 transition-all w-fit">
@@ -164,9 +164,9 @@ const Resources = () => {
           <div className="mt-12 space-y-3">
             {paths.map((p, i) => (
               <div key={i} className="card-premium p-6 reveal-on-scroll" style={{ transitionDelay: `${i * 60}ms` }}>
-                <p className="font-mono text-[12px] uppercase tracking-widest text-primary">{`Path ${String(i + 1).padStart(2, "0")}`}</p>
+                <p className="font-mono text-[13px] uppercase tracking-widest text-primary">{`Path ${String(i + 1).padStart(2, "0")}`}</p>
                 <h3 className="display text-lg mt-2">{p.when}</h3>
-                <p className="text-sm text-body mt-3"><span className="text-foreground/85">Start with:</span> {p.start}</p>
+                <p className="text-sm text-body mt-3"><span className="text-body">Start with:</span> {p.start}</p>
               </div>
             ))}
           </div>

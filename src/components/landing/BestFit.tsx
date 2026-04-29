@@ -34,14 +34,14 @@ export const BestFit = () => (
         <div className="card-premium p-8 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-3 py-1">
             <Check className="size-3.5 text-primary" strokeWidth={2} />
-            <span className="font-mono text-[12px] tracking-[0.16em] uppercase text-primary">
+            <span className="font-mono text-[13px] tracking-[0.16em] uppercase text-primary">
               Best fit
             </span>
           </div>
           <h3 className="display text-2xl mt-5">Companies and teams we serve well</h3>
           <ul className="mt-6 space-y-3">
             {bestFit.map((b) => (
-              <li key={b} className="flex gap-3 text-sm text-foreground/85">
+              <li key={b} className="flex gap-3 text-sm text-body">
                 <Check className="size-4 text-primary mt-0.5 shrink-0" strokeWidth={1.75} />
                 <span>{b}</span>
               </li>
@@ -52,7 +52,7 @@ export const BestFit = () => (
         <div className="card-premium p-8 reveal-on-scroll" style={{ transitionDelay: "80ms" }}>
           <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 border border-border px-3 py-1">
             <Minus className="size-3.5 text-muted-fg" strokeWidth={2} />
-            <span className="font-mono text-[12px] tracking-[0.16em] uppercase text-muted-fg">
+            <span className="font-mono text-[13px] tracking-[0.16em] uppercase text-muted-fg">
               Not the right fit
             </span>
           </div>

@@ -72,7 +72,7 @@ export const Features = () => (
                 <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 border border-primary/20">
                   <Icon className="size-4 text-primary" strokeWidth={1.5} />
                 </div>
-                <span className="font-mono text-[12px] tracking-[0.2em] text-tertiary">
+                <span className="font-mono text-[13px] tracking-[0.2em] text-tertiary">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>

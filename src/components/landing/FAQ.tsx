@@ -44,10 +44,10 @@ export const FAQ = () => (
             value={`item-${i}`}
             className="border-border/60 group transition-colors hover:border-primary/30"
           >
-            <AccordionTrigger className="text-left text-lg font-medium hover:text-primary hover:no-underline py-6 transition-colors">
+            <AccordionTrigger className="text-left text-[20px] leading-[30px] font-semibold text-heading hover:text-primary hover:no-underline py-6 transition-colors">
               {f.q}
             </AccordionTrigger>
-            <AccordionContent className="text-body leading-relaxed pb-6">
+            <AccordionContent className="text-[18px] leading-[30px] text-body pb-6">
               {f.a}
             </AccordionContent>
           </AccordionItem>

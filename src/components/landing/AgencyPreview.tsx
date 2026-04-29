@@ -38,14 +38,14 @@ export const AgencyPreview = () => (
 
         <div className="lg:col-span-6">
           <div className="glass border-gradient rounded-2xl p-8">
-            <p className="font-mono text-[12px] tracking-[0.16em] text-primary mb-5">
+            <p className="font-mono text-[13px] tracking-[0.16em] text-primary mb-5">
               PARTNER CAPABILITIES
             </p>
             <ul className="space-y-4">
               {points.map((p) => (
                 <li key={p} className="flex gap-3 items-start">
                   <Check className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                  <span className="text-foreground/85">{p}</span>
+                  <span className="text-body">{p}</span>
                 </li>
               ))}
             </ul>

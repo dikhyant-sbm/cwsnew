@@ -23,7 +23,7 @@ export const SeoVsCiteworks = () => (
       </div>
 
       <div className="mt-12 card-premium/30 overflow-hidden">
-        <div className="grid grid-cols-12 font-mono text-[12px] tracking-[0.16em] uppercase text-body bg-card/60 px-6 py-4 border-b border-border">
+        <div className="grid grid-cols-12 font-mono text-[13px] tracking-[0.16em] uppercase text-body bg-card/60 px-6 py-4 border-b border-border">
           <div className="col-span-3">Dimension</div>
           <div className="col-span-4">Traditional SEO</div>
           <div className="col-span-5 text-primary">CiteWorks Studio</div>
@@ -33,9 +33,9 @@ export const SeoVsCiteworks = () => (
             key={i}
             className={`grid grid-cols-12 px-6 py-5 text-sm gap-4 ${i < rows.length - 1 ? "border-b border-border" : ""}`}
           >
-            <div className="col-span-3 font-medium text-foreground/90">{dim}</div>
+            <div className="col-span-3 font-medium text-body">{dim}</div>
             <div className="col-span-4 text-subtle">{a}</div>
-            <div className="col-span-5 text-foreground/95">{b}</div>
+            <div className="col-span-5 text-primary">{b}</div>
           </div>
         ))}
       </div>

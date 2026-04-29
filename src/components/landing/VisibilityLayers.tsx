@@ -78,7 +78,7 @@ export const VisibilityLayers = ({
                         <Icon className="w-5 h-5 text-primary" aria-hidden="true" />
                       </div>
                       <div>
-                        <p className="font-mono text-[12px] tracking-[0.16em] text-primary">
+                        <p className="font-mono text-[13px] tracking-[0.16em] text-primary">
                           LAYER / {l.n}
                         </p>
                         <h3 className="display text-xl sm:text-2xl mt-1">{l.label}</h3>
@@ -103,7 +103,7 @@ export const VisibilityLayers = ({
             })}
           </div>
           {/* Connector hint */}
-          <p className="mt-6 text-center font-mono text-[12px] tracking-[0.16em] text-body">
+          <p className="mt-6 text-center font-mono text-[13px] tracking-[0.16em] text-body">
             ALL THREE LAYERS COMPOUND — A WEAKNESS IN ONE LIMITS THE OTHERS
           </p>
         </div>

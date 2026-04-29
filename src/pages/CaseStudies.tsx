@@ -171,7 +171,7 @@ const CaseStudies = () => {
             <div className="grid grid-cols-2 gap-2 pt-6 border-t border-border">
               {movement.map((m, i) => (
                 <div key={i} className="flex gap-3 items-start py-1">
-                  <span className="font-mono text-[12px] text-primary mt-1.5">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="font-mono text-[13px] text-primary mt-1.5">{String(i + 1).padStart(2, "0")}</span>
                   <span className="text-sm text-body">{m}</span>
                 </div>
               ))}
@@ -197,7 +197,7 @@ const CaseStudies = () => {
             </h3>
             <div className="mt-6 border-t border-border pt-6">
               <p className="font-mono text-[13px] text-body mb-3">KEY TAKEAWAY</p>
-              <p className="text-foreground/85 text-lg leading-relaxed">
+              <p className="text-body text-lg leading-relaxed">
                 The pattern was not simply "rank higher and AI visibility follows." The stronger pattern: improve citation footprint, brand context, and high-intent presence across Google and public reference environments, and AI visibility can improve alongside traditional search.
               </p>
             </div>
@@ -260,7 +260,7 @@ const CaseStudies = () => {
             })}
           </div>
 
-          <p className="font-mono text-[12px] tracking-[0.16em] text-body mb-6" aria-live="polite">
+          <p className="font-mono text-[13px] tracking-[0.16em] text-body mb-6" aria-live="polite">
             SHOWING {filteredCases.length} OF {cases.length}
           </p>
 
@@ -277,7 +277,7 @@ const CaseStudies = () => {
                 </h3>
                 <p className="text-sm text-body mb-5 flex-grow">{c.desc}</p>
                 <div className="border-t border-border pt-4">
-                  <p className="font-mono text-[12px] text-body mb-2">BEST FOR</p>
+                  <p className="font-mono text-[13px] text-body mb-2">BEST FOR</p>
                   <div className="flex flex-wrap gap-1.5">
                     {c.best.map((b) => (
                       <span key={b} className="text-[13px] px-2 py-1 rounded-full bg-card border border-border text-body">{b}</span>
@@ -334,8 +334,8 @@ const CaseStudies = () => {
             <div className="grid sm:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden border border-border">
               {measurement.map((m, i) => (
                 <div key={i} className="bg-background p-4 flex items-center gap-3">
-                  <span className="font-mono text-[12px] text-primary">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="text-sm text-foreground/85">{m}</span>
+                  <span className="font-mono text-[13px] text-primary">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-sm text-body">{m}</span>
                 </div>
               ))}
             </div>
@@ -367,7 +367,7 @@ const CaseStudies = () => {
             ].map((q, i) => (
               <div key={i} className="flex gap-4 items-start border border-border rounded-lg p-4 bg-card/30">
                 <span className="font-mono text-xs text-primary mt-1">0{i + 1}</span>
-                <p className="text-foreground/85">{q}</p>
+                <p className="text-body">{q}</p>
               </div>
             ))}
           </div>

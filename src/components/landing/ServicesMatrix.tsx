@@ -67,7 +67,7 @@ export const ServicesMatrix = ({ services }: ServicesMatrixProps) => {
         })}
       </div>
 
-      <p className="font-mono text-[12px] tracking-[0.16em] text-body mb-5" aria-live="polite">
+      <p className="font-mono text-[13px] tracking-[0.16em] text-body mb-5" aria-live="polite">
         SHOWING {filtered.length} OF {services.length}
       </p>
 
@@ -85,8 +85,8 @@ export const ServicesMatrix = ({ services }: ServicesMatrixProps) => {
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="font-mono text-[12px] tracking-[0.2em] text-primary">{CATEGORY_MAP[s.n].toUpperCase()}</span>
-                    <span className="font-mono text-[12px] text-body">/ {s.n}</span>
+                    <span className="font-mono text-[13px] tracking-[0.2em] text-primary">{CATEGORY_MAP[s.n].toUpperCase()}</span>
+                    <span className="font-mono text-[13px] text-body">/ {s.n}</span>
                   </div>
                   <h3 className="text-lg font-semibold leading-snug">{s.title}</h3>
                 </div>
@@ -99,15 +99,15 @@ export const ServicesMatrix = ({ services }: ServicesMatrixProps) => {
               {isOpen && (
                 <div className="mt-5 grid lg:grid-cols-12 gap-6 animate-fade-in">
                   <div className="lg:col-span-7 space-y-4">
-                    <p className="text-foreground/90">{s.def}</p>
+                    <p className="text-body">{s.def}</p>
                     <p className="text-sm text-body">{s.body}</p>
                     <div className="rounded-xl border border-border bg-card/40 p-4">
-                      <p className="font-mono text-[12px] uppercase tracking-widest text-body mb-2">Outcome</p>
-                      <p className="text-sm text-foreground/90">{s.outcome}</p>
+                      <p className="font-mono text-[13px] uppercase tracking-widest text-body mb-2">Outcome</p>
+                      <p className="text-sm text-body">{s.outcome}</p>
                     </div>
                   </div>
                   <div className="lg:col-span-5">
-                    <p className="font-mono text-[12px] uppercase tracking-widest text-body mb-3">Includes</p>
+                    <p className="font-mono text-[13px] uppercase tracking-widest text-body mb-3">Includes</p>
                     <ul className="space-y-2">
                       {s.includes.map((it) => (
                         <li key={it} className="flex gap-2 text-sm text-body">

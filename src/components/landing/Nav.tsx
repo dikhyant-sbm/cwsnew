@@ -173,6 +173,7 @@ export const Nav = () => {
             </SheetContent>
           </Sheet>
         </div>
+      </div>
     </header>
   );
 };

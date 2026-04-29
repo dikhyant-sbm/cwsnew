@@ -366,7 +366,7 @@ const Services = () => {
       </section>
 
       {/* Core Services Capsule */}
-      <section className="py-24 border-t border-border bg-card/30">
+      <section id="core" className="py-24 border-t border-border bg-card/30 scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ What CiteWorks Studio does</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-10">
@@ -384,7 +384,7 @@ const Services = () => {
       </section>
 
       {/* Service Detail Cards */}
-      <section className="py-24 border-t border-border">
+      <section id="detail" className="py-24 border-t border-border scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ Service detail</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-16">
@@ -423,7 +423,7 @@ const Services = () => {
       </section>
 
       {/* Engagement Paths */}
-      <section className="py-24 border-t border-border bg-card/30">
+      <section id="engagements" className="py-24 border-t border-border bg-card/30 scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ How engagements work</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
@@ -445,7 +445,7 @@ const Services = () => {
       </section>
 
       {/* Matrix */}
-      <section className="py-24 border-t border-border">
+      <section id="matrix" className="py-24 border-t border-border scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ Service matrix</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-12">
@@ -469,7 +469,7 @@ const Services = () => {
       </section>
 
       {/* Why CiteWorks */}
-      <section className="py-24 border-t border-border bg-card/30">
+      <section id="why" className="py-24 border-t border-border bg-card/30 scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ Why CiteWorks Studio</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-12">
@@ -488,7 +488,7 @@ const Services = () => {
       </section>
 
       {/* Best Fit */}
-      <section className="py-24 border-t border-border">
+      <section id="fit" className="py-24 border-t border-border scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ Best fit</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-12">
@@ -522,7 +522,7 @@ const Services = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 border-t border-border bg-card/30">
+      <section id="faq" className="py-24 border-t border-border bg-card/30 scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ FAQ</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-12">

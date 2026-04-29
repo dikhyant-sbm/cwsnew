@@ -43,7 +43,7 @@ const services = [
     n: "01",
     title: "SEO Auditing & Search Opportunity Mapping",
     def: "SEO auditing identifies where your company is winning, losing, or missing visibility across Google search results, high-intent keywords, competitor pages, and buyer research environments.",
-    body: "We identify the keyword clusters closest to revenue, benchmark your current rankings, and map where visibility is being won or lost across your category — including best-of pages, comparison articles, review sites, directories, and third-party publishers shaping buyer decisions.",
+    body: "This is where many engagements begin. We identify the keyword clusters closest to revenue, benchmark your current rankings, analyze who owns the search results, and map where visibility is being won or lost across your category. But we do not stop at your website. We also review the surrounding search environment: best-of pages, comparison articles, review sites, directories, informational content, third-party publishers, and non-competitor pages shaping buyer decisions. This gives you a clearer view of where your company stands inside the full Google decision layer.",
     includes: [
       "High-intent keyword cluster mapping",
       "SERP benchmarking",

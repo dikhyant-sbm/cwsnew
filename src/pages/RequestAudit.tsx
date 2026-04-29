@@ -608,7 +608,7 @@ const RequestAudit = () => {
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Button asChild className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
-              <a href="#main"><ArrowUpRight className="w-3.5 h-3.5 mr-1.5 rotate-180" /> BACK TO FORM</a>
+              <a href="#audit-form"><ArrowUpRight className="w-3.5 h-3.5 mr-1.5 rotate-180" /> BACK TO FORM</a>
             </Button>
             <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/15 hover:bg-foreground/5 px-7 h-12">
               <Link to="/methodology">SEE THE METHODOLOGY</Link>

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 
 const categories = ["All", "GEO", "AI Search Visibility", "Citation Architecture", "Technical SEO", "Content Strategy", "Case Studies", "Definitions"];
@@ -51,6 +51,12 @@ const faqs = [
 const Resources = () => {
   const [active, setActive] = useState("All");
   const filtered = active === "All" ? articles : articles.filter((a) => a.category === active);
+
+  useEffect(() => {
+    document.title = "Resources | CiteWorks Studio — GEO, AI Search & Citation Architecture";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Guides, case studies, and definitions on GEO, AI search visibility, citation architecture, technical SEO, content strategy, and source-layer authority.");
+  }, []);
 
   return (
     <PageShell>

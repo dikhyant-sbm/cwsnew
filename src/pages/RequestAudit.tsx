@@ -115,6 +115,8 @@ const RequestAudit = () => {
   const [describes, setDescribes] = useState("");
   const [support, setSupport] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     document.title = "Request a Visibility Audit | CiteWorks Studio";
@@ -125,8 +127,9 @@ const RequestAudit = () => {
   const toggleImprove = (v: string) =>
     setImproving((prev) => (prev.includes(v) ? prev.filter((p) => p !== v) : [...prev, v]));
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (submitting) return;
     const fd = new FormData(e.currentTarget);
     const payload = {
       name: String(fd.get("name") || ""),
@@ -150,18 +153,34 @@ const RequestAudit = () => {
       });
       setErrors(fieldErrors);
       toast({ title: "Please review the form", description: "A few fields need attention.", variant: "destructive" });
+      // Focus first error
+      const firstKey = Object.keys(fieldErrors)[0];
+      if (firstKey) {
+        const el = document.querySelector<HTMLElement>(`[name="${firstKey}"]`);
+        el?.focus();
+        el?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
       return;
     }
 
     setErrors({});
-    toast({
-      title: "Request received",
-      description: "We review every request manually and will get back to you within one business day.",
-    });
-    e.currentTarget.reset();
+    setSubmitting(true);
+    try {
+      // Simulated submission — replace with real endpoint when wired to backend.
+      await new Promise((r) => setTimeout(r, 600));
+      setSubmitted(true);
+      window.scrollTo({ top: document.getElementById("audit-form")?.offsetTop ?? 0, behavior: "smooth" });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const resetForm = () => {
+    setSubmitted(false);
     setImproving([]);
     setDescribes("");
     setSupport("");
+    setErrors({});
   };
 
   return (
@@ -199,8 +218,56 @@ const RequestAudit = () => {
       </section>
 
       {/* Form FIRST */}
-      <section className="py-12">
+      <section id="audit-form" className="py-12 scroll-mt-24">
         <div className="mx-auto max-w-3xl px-6">
+          {submitted ? (
+            <div
+              role="status"
+              aria-live="polite"
+              className="rounded-2xl border-gradient glass-strong p-10 sm:p-12 text-center"
+            >
+              <div className="mx-auto w-14 h-14 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center">
+                <Check className="w-6 h-6 text-primary" aria-hidden="true" />
+              </div>
+              <p className="eyebrow mt-6">Request received</p>
+              <h2 className="display text-3xl sm:text-4xl mt-4 leading-tight">
+                Thanks — your audit request is in.
+              </h2>
+              <p className="mt-5 text-foreground/70 leading-relaxed max-w-xl mx-auto">
+                A senior strategist will personally review your submission and respond within
+                <span className="text-foreground"> one business day</span> with next steps,
+                scoping questions, or a scheduling link for a 30-minute fit call.
+              </p>
+              <div className="mt-8 grid sm:grid-cols-3 gap-3 text-left">
+                {[
+                  { n: "01", t: "Manual fit review", d: "Within one business day." },
+                  { n: "02", t: "Scoping call", d: "30 minutes, calendar link." },
+                  { n: "03", t: "Audit kickoff", d: "Typically within 1–2 weeks." },
+                ].map((s) => (
+                  <div key={s.n} className="card-premium p-4">
+                    <p className="font-mono text-[10px] tracking-[0.22em] text-primary">{s.n}</p>
+                    <p className="display text-sm mt-2">{s.t}</p>
+                    <p className="text-xs text-muted-foreground mt-1">{s.d}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-10 flex flex-wrap justify-center gap-3">
+                <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/15 hover:bg-foreground/5 px-6 h-11">
+                  <Link to="/methodology">EXPLORE THE METHODOLOGY</Link>
+                </Button>
+                <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/15 hover:bg-foreground/5 px-6 h-11">
+                  <Link to="/case-studies">SEE CASE STUDIES</Link>
+                </Button>
+                <button
+                  type="button"
+                  onClick={resetForm}
+                  className="rounded-full font-mono text-[11px] tracking-[0.22em] text-muted-foreground hover:text-foreground px-4 h-11 transition-colors"
+                >
+                  SUBMIT ANOTHER
+                </button>
+              </div>
+            </div>
+          ) : (
           <form onSubmit={onSubmit} noValidate className="rounded-2xl border-gradient glass-strong p-8 sm:p-10 space-y-7">
             <div>
               <p className="eyebrow">Audit request</p>
@@ -295,14 +362,22 @@ const RequestAudit = () => {
               <Textarea id="other" name="other" rows={3} maxLength={2000} />
             </div>
 
-            <Button type="submit" className="w-full group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
-              REQUEST VISIBILITY AUDIT <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <Button
+              type="submit"
+              disabled={submitting}
+              aria-busy={submitting}
+              className="w-full group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)] disabled:opacity-70"
+            >
+              {submitting ? "SUBMITTING…" : (
+                <>REQUEST VISIBILITY AUDIT <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></>
+              )}
             </Button>
 
             <p className="text-xs text-muted-foreground text-center">
-              We review every request manually. CiteWorks Studio is best suited for companies and agency partners ready to improve search visibility across Google, AI answers, and trusted source environments.
+              We review every request manually. No automated follow-ups. Reply within one business day. CiteWorks Studio is best suited for companies and agency partners ready to improve search visibility across Google, AI answers, and trusted source environments.
             </p>
           </form>
+          )}
 
           {/* Contact info */}
           <div className="mt-8 grid sm:grid-cols-2 gap-3">
@@ -533,7 +608,7 @@ const RequestAudit = () => {
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Button asChild className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
-              <a href="#main"><ArrowUpRight className="w-3.5 h-3.5 mr-1.5 rotate-180" /> BACK TO FORM</a>
+              <a href="#audit-form"><ArrowUpRight className="w-3.5 h-3.5 mr-1.5 rotate-180" /> BACK TO FORM</a>
             </Button>
             <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/15 hover:bg-foreground/5 px-7 h-12">
               <Link to="/methodology">SEE THE METHODOLOGY</Link>

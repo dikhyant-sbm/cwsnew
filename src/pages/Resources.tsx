@@ -79,24 +79,37 @@ const Resources = () => {
           />
 
           <div className="mt-12 flex flex-wrap justify-center gap-2">
-            {categories.map((c) => (
-              <button
-                key={c}
-                onClick={() => setActive(c)}
-                className={`px-4 py-2 rounded-full font-mono text-[11px] tracking-widest border transition-colors ${
-                  active === c
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "border-border text-foreground/80 hover:border-primary/40 hover:text-foreground"
-                }`}
-              >
-                {c.toUpperCase()}
-              </button>
-            ))}
+            {categories.map((c) => {
+              const isActive = active === c;
+              return (
+                <button
+                  key={c}
+                  onClick={() => setActive(c)}
+                  className={`relative px-4 py-2 rounded-full font-mono text-[11px] tracking-widest border transition-all duration-300 ${
+                    isActive
+                      ? "text-primary-foreground border-transparent"
+                      : "border-border text-foreground/70 hover:border-primary/40 hover:text-foreground"
+                  }`}
+                >
+                  {isActive && (
+                    <span
+                      aria-hidden
+                      className="absolute inset-0 rounded-full bg-primary animate-scale-in"
+                    />
+                  )}
+                  <span className="relative">{c.toUpperCase()}</span>
+                </button>
+              );
+            })}
           </div>
 
-          <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((a) => (
-              <article key={a.title} className="group rounded-2xl border border-border/60 bg-card p-7 hover:border-primary/40 transition-colors flex flex-col">
+          <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {filtered.map((a, i) => (
+              <article
+                key={a.title + active}
+                className="group card-premium p-7 flex flex-col animate-fade-in"
+                style={{ animationDelay: `${i * 40}ms` }}
+              >
                 <p className="font-mono text-[10px] uppercase tracking-widest text-primary">{a.category}</p>
                 <h3 className="display text-xl mt-3">{a.title}</h3>
                 <p className="text-sm text-muted-foreground mt-3 leading-relaxed flex-1">{a.desc}</p>
@@ -128,9 +141,9 @@ const Resources = () => {
       <section className="py-20 border-t border-border/40">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading eyebrow="Glossary" title="Key definitions in modern search visibility." />
-          <div className="mt-12 grid md:grid-cols-2 gap-6">
+          <div className="mt-12 grid md:grid-cols-2 gap-5">
             {definitions.map((d) => (
-              <div key={d.t} className="rounded-2xl border border-border/60 bg-card p-7 hover:border-primary/40 transition-colors">
+              <div key={d.t} className="card-premium p-7 reveal-on-scroll">
                 <h3 className="display text-lg text-primary">{d.t}</h3>
                 <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{d.d}</p>
               </div>
@@ -142,9 +155,9 @@ const Resources = () => {
       <section className="py-20 border-t border-border/40">
         <div className="mx-auto max-w-4xl px-6">
           <SectionHeading eyebrow="Learning paths" title="Not sure where to start?" />
-          <div className="mt-12 space-y-4">
+          <div className="mt-12 space-y-3">
             {paths.map((p, i) => (
-              <div key={i} className="rounded-2xl border border-border/60 bg-card p-6">
+              <div key={i} className="card-premium p-6 reveal-on-scroll" style={{ transitionDelay: `${i * 60}ms` }}>
                 <p className="font-mono text-[10px] uppercase tracking-widest text-primary">{`Path ${String(i + 1).padStart(2, "0")}`}</p>
                 <h3 className="display text-lg mt-2">{p.when}</h3>
                 <p className="text-sm text-muted-foreground mt-3"><span className="text-foreground/85">Start with:</span> {p.start}</p>

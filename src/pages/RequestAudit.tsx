@@ -179,6 +179,25 @@ const RequestAudit = () => {
         </div>
       </section>
 
+      {/* What happens after you submit */}
+      <section className="py-8" aria-label="What happens after you submit">
+        <div className="mx-auto max-w-3xl px-6">
+          <ol className="grid sm:grid-cols-3 gap-3 text-left">
+            {[
+              { n: "01", t: "We review your request", d: "A senior strategist reviews fit and category context within one business day." },
+              { n: "02", t: "We schedule a scoping call", d: "30 minutes to align on goals, competitors, and the questions the audit should answer." },
+              { n: "03", t: "We deliver the audit", d: "An executive-ready Visibility Audit with a prioritized corrective-action roadmap." },
+            ].map((s) => (
+              <li key={s.n} className="card-premium p-5">
+                <p className="font-mono text-[10px] tracking-[0.22em] text-primary">{s.n}</p>
+                <p className="display text-base mt-2">{s.t}</p>
+                <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{s.d}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       {/* Form FIRST */}
       <section className="py-12">
         <div className="mx-auto max-w-3xl px-6">
@@ -187,7 +206,7 @@ const RequestAudit = () => {
               <p className="eyebrow">Audit request</p>
               <h2 className="display text-2xl sm:text-3xl mt-3">Tell us what you want to improve.</h2>
               <p className="text-sm text-muted-foreground mt-3">
-                Complete the form and we'll review whether a Visibility Audit is the right starting point for your company or agency client.
+                Complete the form and a senior strategist will review whether a Visibility Audit is the right starting point. White-label and confidential delivery available for agency partners.
               </p>
             </div>
 

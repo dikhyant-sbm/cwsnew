@@ -50,7 +50,9 @@ export const DashboardShowcase = ({
 }: Props) => {
   const d = DASHBOARDS[dashboard];
   const { theme } = useTheme();
-  const src = theme === "dark" && "srcDark" in d && d.srcDark ? d.srcDark : d.src;
+  // Use the dark-bg screenshot in light mode (it pops against the light page),
+  // and the light-bg screenshot in dark mode (matches the reference treatment).
+  const src = theme === "light" && "srcDark" in d && d.srcDark ? d.srcDark : d.src;
   return (
     <figure className={`relative mx-auto ${SIZE_MAX[size]} ${className}`}>
       {/* Ambient glow behind the panel */}

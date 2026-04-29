@@ -127,7 +127,7 @@ export const DashboardWalkthrough = () => {
                     {STEPS.map((s, i) => (
                       <img
                         key={s.key}
-                        src={(theme === "dark" && (DASHBOARDS[s.key] as any).srcDark) || DASHBOARDS[s.key].src}
+                        src={(theme === "light" && (DASHBOARDS[s.key] as any).srcDark) || DASHBOARDS[s.key].src}
                         alt={`${DASHBOARDS[s.key].label} — ${DASHBOARDS[s.key].caption}`}
                         loading="lazy"
                         decoding="async"

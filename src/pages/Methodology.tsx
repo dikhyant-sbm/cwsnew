@@ -2,11 +2,26 @@ import { PageShell, PageHero, SectionHeading } from "@/components/landing/Shell"
 import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
 import { TrustPledges } from "@/components/landing/TrustPledges";
 import { BestFit } from "@/components/landing/BestFit";
+import { VisibilityLayers } from "@/components/landing/VisibilityLayers";
+import { VisibilityLoop } from "@/components/landing/VisibilityLoop";
+import { SectionNav } from "@/components/landing/SectionNav";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Check } from "lucide-react";
 import { useEffect } from "react";
+
+const methodologyNav = [
+  { id: "summary", label: "Summary" },
+  { id: "principle", label: "Core principle" },
+  { id: "layers", label: "Three layers" },
+  { id: "loop", label: "Visibility loop" },
+  { id: "process", label: "Process" },
+  { id: "table", label: "At a glance" },
+  { id: "comparison", label: "vs. Traditional SEO" },
+  { id: "fit", label: "Best fit" },
+  { id: "faq", label: "FAQ" },
+];
 
 const layers = [
   {
@@ -115,224 +130,205 @@ const Methodology = () => {
         </div>
       </section>
 
-      {/* Methodology summary + Answer capsule */}
-      <section className="py-24 border-t border-border/40">
-        <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-5">
-            <p className="eyebrow">Summary</p>
-            <h2 className="display text-4xl sm:text-5xl mt-5 leading-tight">
-              A connected visibility system, not a checklist of tactics.
-            </h2>
-          </div>
-          <div className="lg:col-span-7 space-y-5 text-foreground/75 text-lg leading-relaxed">
-            <p>
-              The CiteWorks Studio methodology unifies SEO, GEO, AI search visibility, technical
-              SEO, entity clarity, citation architecture, content strategy, and source-layer
-              authority under one corrective-action diagnosis.
-            </p>
-            <div className="glass-strong rounded-2xl p-6 mt-8">
-              <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-3">ANSWER CAPSULE</p>
-              <p className="text-foreground/90">
-                CiteWorks Studio uses an audit-led, evidence-first methodology to identify where a
-                company is winning, losing, or missing visibility across Google, AI answers, and
-                trusted source environments — then builds a prioritized corrective-action roadmap
-                across SEO, GEO, citation architecture, technical SEO, content, and source-layer
-                authority.
-              </p>
+      {/* Body wrapper with sticky in-page nav */}
+      <div className="mx-auto max-w-7xl px-6 lg:grid lg:grid-cols-12 lg:gap-10">
+        <aside className="lg:col-span-3">
+          <SectionNav items={methodologyNav} />
+        </aside>
+
+        <div className="lg:col-span-9 min-w-0">
+          {/* Methodology summary + Answer capsule */}
+          <section id="summary" className="py-20 border-t border-border/40 scroll-mt-24">
+            <div className="grid lg:grid-cols-12 gap-10">
+              <div className="lg:col-span-5">
+                <p className="eyebrow">Summary</p>
+                <h2 className="display text-4xl sm:text-5xl mt-5 leading-tight">
+                  A connected visibility system, not a checklist of tactics.
+                </h2>
+              </div>
+              <div className="lg:col-span-7 space-y-5 text-foreground/75 text-lg leading-relaxed">
+                <p>
+                  The CiteWorks Studio methodology unifies SEO, GEO, AI search visibility, technical
+                  SEO, entity clarity, citation architecture, content strategy, and source-layer
+                  authority under one corrective-action diagnosis.
+                </p>
+                <div className="glass-strong rounded-2xl p-6 mt-8">
+                  <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-3">ANSWER CAPSULE</p>
+                  <p className="text-foreground/90">
+                    CiteWorks Studio uses an audit-led, evidence-first methodology to identify where a
+                    company is winning, losing, or missing visibility across Google, AI answers, and
+                    trusted source environments — then builds a prioritized corrective-action roadmap
+                    across SEO, GEO, citation architecture, technical SEO, content, and source-layer
+                    authority.
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <section className="py-20 border-t border-border/40">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <SectionHeading
-            eyebrow="Core principle"
-            title="Audit first. Strategy second. Execution third."
-            body="A good visibility program does not begin with a content calendar, link-building package, or generic SEO checklist. It begins with evidence."
-          />
-        </div>
-      </section>
+          <section id="principle" className="py-20 border-t border-border/40 scroll-mt-24">
+            <div className="max-w-3xl">
+              <SectionHeading
+                eyebrow="Core principle"
+                title="Audit first. Strategy second. Execution third."
+                body="A good visibility program does not begin with a content calendar, link-building package, or generic SEO checklist. It begins with evidence."
+                align="left"
+              />
+            </div>
+          </section>
 
-      <section className="py-24 border-t border-border/40">
-        <div className="mx-auto max-w-7xl px-6">
-          <SectionHeading
-            eyebrow="The three-layer model"
-            title="We analyze visibility across three connected layers."
-            body="Search is no longer just a website ranking problem. Buyers and AI systems both rely on a wider evidence layer."
-          />
-          <div className="mt-16 grid md:grid-cols-3 gap-6">
-            {layers.map((l) => (
-              <div key={l.n} className="card-premium p-8 hover:border-primary/40 transition-colors">
-                <p className="font-mono text-xs text-primary">{l.n}</p>
-                <h3 className="display text-2xl mt-3">{l.title}</h3>
-                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{l.sub}</p>
-                <ul className="mt-6 space-y-2">
-                  {l.items.map((i) => (
-                    <li key={i} className="text-sm text-foreground/80 flex gap-2">
-                      <span className="text-primary">·</span>{i}
+          {/* New: three-layer visual */}
+          <section id="layers" className="border-t border-border/40 scroll-mt-24">
+            <VisibilityLayers variant="compact" />
+          </section>
+
+          {/* New: interactive visibility loop */}
+          <section id="loop" className="border-t border-border/40 scroll-mt-24">
+            <VisibilityLoop compact />
+          </section>
+
+          <section id="process" className="py-24 border-t border-border/40 scroll-mt-24">
+            <SectionHeading
+              eyebrow="Process"
+              title="The CiteWorks Studio methodology, step by step."
+              body="Every engagement is shaped by your market, category, competition, and the specific gaps we find. The core methodology follows a consistent eight-step process."
+              align="left"
+            />
+            <div className="mt-12 grid md:grid-cols-2 gap-6">
+              {steps.map((s) => (
+                <div key={s.n} className="card-premium p-8 hover:border-primary/40 transition-colors">
+                  <div className="flex items-center justify-between">
+                    <p className="font-mono text-xs text-primary">{s.n}</p>
+                    <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Output</p>
+                  </div>
+                  <h3 className="display text-2xl mt-3">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{s.desc}</p>
+                  <p className="mt-5 pt-4 border-t border-border text-sm text-foreground/85">{s.out}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section id="table" className="py-24 border-t border-border/40 scroll-mt-24">
+            <SectionHeading
+              eyebrow="LLM-readable summary"
+              title="Methodology at a glance."
+              body="A structured reference for buyers, internal teams, and AI systems summarizing each step, focus, and output."
+              align="left"
+            />
+            <div className="mt-10 card-premium overflow-hidden">
+              <div className="grid grid-cols-12 font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground bg-card/60 px-6 py-4 border-b border-border">
+                <div className="col-span-4">Step</div>
+                <div className="col-span-5">Focus</div>
+                <div className="col-span-3 text-primary">Output</div>
+              </div>
+              {llmTable.map(([s, f, o], i) => (
+                <div key={i} className={`grid grid-cols-12 px-6 py-5 text-sm gap-4 ${i < llmTable.length - 1 ? "border-b border-border" : ""}`}>
+                  <div className="col-span-4 font-medium text-foreground/95">{s}</div>
+                  <div className="col-span-5 text-foreground/70">{f}</div>
+                  <div className="col-span-3 text-foreground/85">{o}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section id="comparison" className="py-24 border-t border-border/40 scroll-mt-24">
+            <SectionHeading
+              eyebrow="Comparison"
+              title="Traditional SEO process vs. CiteWorks Studio methodology"
+              align="left"
+            />
+            <div className="mt-10 card-premium overflow-hidden">
+              <div className="grid grid-cols-2 font-mono text-[11px] uppercase tracking-widest text-primary border-b border-border">
+                <div className="p-5">Traditional SEO Process</div>
+                <div className="p-5 border-l border-border">CiteWorks Studio Methodology</div>
+              </div>
+              {compare.map(([a, b], i) => (
+                <div key={i} className={`grid grid-cols-2 ${i < compare.length - 1 ? "border-b border-border" : ""}`}>
+                  <div className="p-5 text-sm text-muted-foreground">{a}</div>
+                  <div className="p-5 text-sm text-foreground/90 border-l border-border">{b}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section id="fit" className="py-24 border-t border-border/40 scroll-mt-24">
+            <SectionHeading
+              eyebrow="Best fit"
+              title="Who this methodology is built for."
+              align="left"
+            />
+            <div className="mt-10 grid md:grid-cols-2 gap-6">
+              <div className="border border-border rounded-2xl p-8 bg-card/30">
+                <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-5">BEST FIT</p>
+                <ul className="space-y-3">
+                  {bestFit.map((f) => (
+                    <li key={f} className="flex gap-3 text-sm text-foreground/85">
+                      <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span>{f}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              <div className="border border-border rounded-2xl p-8 bg-card/30">
+                <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground mb-5">NOT THE BEST FIT</p>
+                <ul className="space-y-3">
+                  {notFit.map((f) => (
+                    <li key={f} className="flex gap-3 text-sm text-foreground/65">
+                      <span className="text-muted-foreground mt-0.5" aria-hidden="true">—</span>
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
 
-      <section className="py-28 border-t border-border/40">
-        <div className="mx-auto max-w-7xl px-6">
-          <SectionHeading
-            eyebrow="Process"
-            title="The CiteWorks Studio methodology, step by step."
-            body="Every engagement is shaped by your market, category, competition, and the specific gaps we find. The core methodology follows a consistent eight-step process."
-          />
-          <div className="mt-16 grid md:grid-cols-2 gap-6">
-            {steps.map((s) => (
-              <div key={s.n} className="card-premium p-8 hover:border-primary/40 transition-colors">
-                <div className="flex items-center justify-between">
-                  <p className="font-mono text-xs text-primary">{s.n}</p>
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Output</p>
+          {/* Mid-page Audit CTA */}
+          <section className="py-16 border-t border-border/40">
+            <div className="relative glass-strong rounded-3xl border-gradient p-8 sm:p-12 overflow-hidden">
+              <div className="absolute -top-32 -right-20 w-96 h-96 conic-ring opacity-50 pointer-events-none" />
+              <div className="relative grid lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-8">
+                  <p className="eyebrow">Ready to apply the methodology</p>
+                  <h2 className="display text-3xl sm:text-4xl mt-5 leading-[1.05]">
+                    Run the methodology against your own visibility.
+                  </h2>
+                  <p className="mt-5 text-foreground/70 leading-relaxed">
+                    A Visibility Audit applies the eight-step process to your category, website,
+                    competitors, AI presence, citations, and source environment.
+                  </p>
                 </div>
-                <h3 className="display text-2xl mt-3">{s.title}</h3>
-                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{s.desc}</p>
-                <p className="mt-5 pt-4 border-t border-border text-sm text-foreground/85">{s.out}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* LLM-readable methodology table */}
-      <section className="py-28 border-t border-border/40">
-        <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading
-            eyebrow="LLM-readable summary"
-            title="Methodology at a glance."
-            body="A structured reference for buyers, internal teams, and AI systems summarizing each step, focus, and output."
-            align="left"
-          />
-          <div className="mt-12 card-premium/30 overflow-hidden">
-            <div className="grid grid-cols-12 font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground bg-card/60 px-6 py-4 border-b border-border">
-              <div className="col-span-4">Step</div>
-              <div className="col-span-5">Focus</div>
-              <div className="col-span-3 text-primary">Output</div>
-            </div>
-            {llmTable.map(([s, f, o], i) => (
-              <div key={i} className={`grid grid-cols-12 px-6 py-5 text-sm gap-4 ${i < llmTable.length - 1 ? "border-b border-border" : ""}`}>
-                <div className="col-span-4 font-medium text-foreground/95">{s}</div>
-                <div className="col-span-5 text-foreground/70">{f}</div>
-                <div className="col-span-3 text-foreground/85">{o}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-28 border-t border-border/40">
-        <div className="mx-auto max-w-5xl px-6">
-          <SectionHeading
-            eyebrow="Comparison"
-            title="Traditional SEO process vs. CiteWorks Studio methodology"
-            align="left"
-          />
-          <div className="mt-12 card-premium overflow-hidden">
-            <div className="grid grid-cols-2 font-mono text-[11px] uppercase tracking-widest text-primary border-b border-border">
-              <div className="p-5">Traditional SEO Process</div>
-              <div className="p-5 border-l border-border">CiteWorks Studio Methodology</div>
-            </div>
-            {compare.map(([a, b], i) => (
-              <div key={i} className={`grid grid-cols-2 ${i < compare.length - 1 ? "border-b border-border" : ""}`}>
-                <div className="p-5 text-sm text-muted-foreground">{a}</div>
-                <div className="p-5 text-sm text-foreground/90 border-l border-border">{b}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Best fit / not best fit */}
-      <section className="py-28 border-t border-border/40">
-        <div className="mx-auto max-w-7xl px-6">
-          <SectionHeading
-            eyebrow="Best fit"
-            title="Who this methodology is built for."
-            align="left"
-          />
-          <div className="mt-12 grid md:grid-cols-2 gap-6">
-            <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[10px] tracking-[0.22em] text-primary mb-5">BEST FIT</p>
-              <ul className="space-y-3">
-                {bestFit.map((f) => (
-                  <li key={f} className="flex gap-3 text-sm text-foreground/85">
-                    <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="border border-border rounded-2xl p-8 bg-card/30">
-              <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground mb-5">NOT THE BEST FIT</p>
-              <ul className="space-y-3">
-                {notFit.map((f) => (
-                  <li key={f} className="flex gap-3 text-sm text-foreground/65">
-                    <span className="text-muted-foreground mt-0.5">—</span>
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mid-page Audit CTA */}
-      <section className="py-20 border-t border-border/40">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="relative glass-strong rounded-3xl border-gradient p-10 sm:p-14 overflow-hidden">
-            <div className="absolute -top-32 -right-20 w-96 h-96 conic-ring opacity-50 pointer-events-none" />
-            <div className="relative grid lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-8">
-                <p className="eyebrow">Ready to apply the methodology</p>
-                <h2 className="display text-3xl sm:text-5xl mt-5 leading-[1.05]">
-                  Run the methodology against your own visibility.
-                </h2>
-                <p className="mt-5 text-foreground/70 text-lg max-w-2xl leading-relaxed">
-                  A Visibility Audit applies the eight-step process to your category, website,
-                  competitors, AI presence, citations, and source environment.
-                </p>
-              </div>
-              <div className="lg:col-span-4 flex lg:justify-end">
-                <Button asChild className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12">
-                  <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>
-                </Button>
+                <div className="lg:col-span-4 flex lg:justify-end">
+                  <Button asChild className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12">
+                    <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" /></Link>
+                  </Button>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <section className="py-28 border-t border-border/40">
-        <div className="mx-auto max-w-4xl px-6">
-          <SectionHeading
-            eyebrow="FAQ"
-            title="Common questions about the methodology"
-            align="left"
-          />
-          <Accordion type="single" collapsible className="mt-12">
-            {faqs.map((f, i) => (
-              <AccordionItem key={i} value={`m-${i}`} className="border-border">
-                <AccordionTrigger className="text-left text-lg font-medium hover:text-primary hover:no-underline py-6">
-                  {f.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
-                  {f.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <section id="faq" className="py-24 border-t border-border/40 scroll-mt-24">
+            <SectionHeading
+              eyebrow="FAQ"
+              title="Common questions about the methodology"
+              align="left"
+            />
+            <Accordion type="single" collapsible className="mt-10">
+              {faqs.map((f, i) => (
+                <AccordionItem key={i} value={`m-${i}`} className="border-border">
+                  <AccordionTrigger className="text-left text-lg font-medium hover:text-primary hover:no-underline py-6">
+                    {f.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                    {f.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </section>
         </div>
-      </section>
+      </div>
 
       <TrustPledges />
       <BestFit />

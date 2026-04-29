@@ -5,7 +5,22 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState, useMemo } from "react";
+
+const FILTERS = [
+  "All",
+  "B2B SaaS",
+  "Finance",
+  "Insurance",
+  "Ecommerce",
+  "Home Services",
+  "Apps",
+  "Agency Use Cases",
+  "AI Visibility",
+  "Google Visibility",
+  "Citation Architecture",
+] as const;
+type Filter = typeof FILTERS[number];
 
 const movement = [
   "Google search rankings",
@@ -47,25 +62,26 @@ const results = [
   },
 ];
 
-const cases = [
-  { n: "01", title: "Job Board AI Search Case Study", desc: "How a job board responded when AI-powered search began reshaping how employers discover job posting platforms.", best: ["B2B platforms", "Recruiting technology", "Marketplace visibility", "AI recommendation tracking"] },
-  { n: "02", title: "Crypto Wallet AI Search Case Study", desc: "How a crypto wallet improved AI Overview brand mentions by 120% across 80 high-intent crypto wallet queries while strengthening cited pages and discussion sources.", best: ["Trust-sensitive categories", "Fintech", "Crypto", "Security-driven buyer journeys"] },
-  { n: "03", title: "Household Appliance AI Search Case Study", desc: "How a household appliance brand strengthened citation footprint and source context — a 400% MoM lift in ChatGPT brand mentions and 13,679 keywords in Google's top 10.", best: ["Consumer products", "Appliances", "Comparison-heavy ecommerce", "Product recommendation visibility"] },
-  { n: "04", title: "Kitchen Appliance AI Search Case Study", desc: "How a kitchen appliance brand built presence across high-intent decision environments as buyer research moved from product pages into communities, comparisons, and AI recommendations.", best: ["Consumer products", "Product-led SEO", "Community-driven buying", "AI recommendation visibility"] },
-  { n: "05", title: "Tax Relief AI Search Case Study", desc: "How a tax relief brand improved competitiveness across Google page-one results and AI-generated recommendations, including a 112.5% increase in AI Overview brand mentions.", best: ["Financial services", "High-trust categories", "Lead generation", "Reputation-sensitive search"] },
-  { n: "06", title: "Budgeting App AI Search Case Study", desc: "How a budgeting app improved visibility across community threads, video tutorials, review platforms, and AI-generated answers that pull from public sources buyers already trust.", best: ["Apps", "Consumer fintech", "Review-led categories", "Community-driven discovery"] },
-  { n: "07", title: "Insurance Technology AI Search Case Study", desc: "How an insurance technology company strengthened public discussions, authority channels, and third-party trust environments — 848 page-one keywords and 11 AI-referenced pages.", best: ["B2B technology", "Insurance technology", "Trust-led evaluation", "Longer buyer journeys"] },
-  { n: "08", title: "Language Learning App AI Search Case Study", desc: "How a language learning app strengthened its citation footprint across high-intent discovery surfaces and the sources AI systems reference when recommending tools.", best: ["Consumer apps", "Education technology", "App comparisons", "Recommendation-stage visibility"] },
-  { n: "09", title: "Mattress Company AI Search Case Study", desc: "How a mattress company strengthened citation footprint as buyers compared organic options through public reviews, sleep experts, and AI summaries before purchasing.", best: ["Consumer products", "Health-adjacent products", "Review-led ecommerce", "Comparison-stage buying"] },
-  { n: "10", title: "Business Analytics Provider AI Search Case Study", desc: "How a B2B analytics provider increased AI recommendation visibility — 192 high-value keywords on page one and 35 pages with strengthened brand context referenced by AI systems.", best: ["B2B SaaS", "Business intelligence", "Vendor comparison searches", "Demo-driven buyer journeys"] },
-  { n: "11", title: "Debt Relief AI Search Case Study", desc: "How a debt relief brand strengthened citation architecture across Google discovery and the sources AI systems reference when consumers compare providers.", best: ["Debt relief", "Financial services", "Trust-sensitive lead generation", "Reputation-heavy categories"] },
-  { n: "12", title: "Pet Insurance AI Search Case Study", desc: "How a pet insurance brand strengthened citation footprint as buyers increasingly used AI summaries and trusted third-party context before visiting provider websites.", best: ["Insurance", "Consumer finance", "Comparison searches", "Review-led buyer journeys"] },
-  { n: "13", title: "Business Insurance AI Search Case Study", desc: "How a business insurance brand improved visibility across Google discovery and AI-led comparisons as small business owners used AI summaries and trusted proof points.", best: ["Commercial insurance", "B2B services", "Small business markets", "Trust-led comparison searches"] },
-  { n: "14", title: "Pest Control AI Search Case Study", desc: "How a pest control brand strengthened citation footprint so it appeared more consistently across Google discovery and AI-generated recommendations during urgent searches.", best: ["Home services", "Urgent-intent categories", "Local-to-national operators", "Service comparison searches"] },
-  { n: "15", title: "Home Services AI Search Case Study", desc: "How a home maintenance brand improved visibility across Google discovery and AI summaries people rely on when choosing urgent service providers.", best: ["Home services", "HVAC", "Plumbing", "High-intent local search"] },
-  { n: "16", title: "ID Theft Protection AI Search Case Study", desc: "How an identity theft protection brand strengthened citation footprint so it appeared more consistently during security comparisons and AI-generated recommendations.", best: ["Identity protection", "Cybersecurity", "Consumer security", "Trust-sensitive search"] },
-  { n: "17", title: "Eyewear AI Search Case Study", desc: "How an eyewear and sunglasses company strengthened citation footprint across public threads, creator reviews, and AI-generated comparisons.", best: ["Ecommerce", "Fashion", "Consumer products", "\"Is this legit?\" searches"] },
-  { n: "18", title: "VA Mortgage Lender AI Search Case Study", desc: "How a VA mortgage lender strengthened citation footprint across Google discovery and lender-comparison answers as borrowers researched rates, eligibility, and trusted public guidance.", best: ["Mortgage lending", "Financial services", "Eligibility-driven search", "High-trust buyer journeys"] },
+const cases: { n: string; title: string; desc: string; best: string[]; categories: Filter[] }[] = [
+  { n: "01", title: "Job Board AI Search Case Study", desc: "How a job board responded when AI-powered search began reshaping how employers discover job posting platforms.", best: ["B2B platforms", "Recruiting technology", "Marketplace visibility", "AI recommendation tracking"], categories: ["B2B SaaS", "AI Visibility"] },
+  { n: "02", title: "Crypto Wallet AI Search Case Study", desc: "How a crypto wallet improved AI Overview brand mentions by 120% across 80 high-intent crypto wallet queries while strengthening cited pages and discussion sources.", best: ["Trust-sensitive categories", "Fintech", "Crypto", "Security-driven buyer journeys"], categories: ["Finance", "AI Visibility", "Citation Architecture"] },
+  { n: "03", title: "Household Appliance AI Search Case Study", desc: "How a household appliance brand strengthened citation footprint and source context — a 400% MoM lift in ChatGPT brand mentions and 13,679 keywords in Google's top 10.", best: ["Consumer products", "Appliances", "Comparison-heavy ecommerce", "Product recommendation visibility"], categories: ["Ecommerce", "AI Visibility", "Google Visibility"] },
+  { n: "04", title: "Kitchen Appliance AI Search Case Study", desc: "How a kitchen appliance brand built presence across high-intent decision environments as buyer research moved from product pages into communities, comparisons, and AI recommendations.", best: ["Consumer products", "Product-led SEO", "Community-driven buying", "AI recommendation visibility"], categories: ["Ecommerce", "AI Visibility"] },
+  { n: "05", title: "Tax Relief AI Search Case Study", desc: "How a tax relief brand improved competitiveness across Google page-one results and AI-generated recommendations, including a 112.5% increase in AI Overview brand mentions.", best: ["Financial services", "High-trust categories", "Lead generation", "Reputation-sensitive search"], categories: ["Finance", "AI Visibility", "Google Visibility"] },
+  { n: "06", title: "Budgeting App AI Search Case Study", desc: "How a budgeting app improved visibility across community threads, video tutorials, review platforms, and AI-generated answers that pull from public sources buyers already trust.", best: ["Apps", "Consumer fintech", "Review-led categories", "Community-driven discovery"], categories: ["Apps", "Finance", "Citation Architecture"] },
+  { n: "07", title: "Insurance Technology AI Search Case Study", desc: "How an insurance technology company strengthened public discussions, authority channels, and third-party trust environments — 848 page-one keywords and 11 AI-referenced pages.", best: ["B2B technology", "Insurance technology", "Trust-led evaluation", "Longer buyer journeys"], categories: ["Insurance", "B2B SaaS", "Citation Architecture"] },
+  { n: "08", title: "Language Learning App AI Search Case Study", desc: "How a language learning app strengthened its citation footprint across high-intent discovery surfaces and the sources AI systems reference when recommending tools.", best: ["Consumer apps", "Education technology", "App comparisons", "Recommendation-stage visibility"], categories: ["Apps", "Citation Architecture"] },
+  { n: "09", title: "Mattress Company AI Search Case Study", desc: "How a mattress company strengthened citation footprint as buyers compared organic options through public reviews, sleep experts, and AI summaries before purchasing.", best: ["Consumer products", "Health-adjacent products", "Review-led ecommerce", "Comparison-stage buying"], categories: ["Ecommerce", "Citation Architecture"] },
+  { n: "10", title: "Business Analytics Provider AI Search Case Study", desc: "How a B2B analytics provider increased AI recommendation visibility — 192 high-value keywords on page one and 35 pages with strengthened brand context referenced by AI systems.", best: ["B2B SaaS", "Business intelligence", "Vendor comparison searches", "Demo-driven buyer journeys"], categories: ["B2B SaaS", "AI Visibility", "Google Visibility"] },
+  { n: "11", title: "Debt Relief AI Search Case Study", desc: "How a debt relief brand strengthened citation architecture across Google discovery and the sources AI systems reference when consumers compare providers.", best: ["Debt relief", "Financial services", "Trust-sensitive lead generation", "Reputation-heavy categories"], categories: ["Finance", "Citation Architecture"] },
+  { n: "12", title: "Pet Insurance AI Search Case Study", desc: "How a pet insurance brand strengthened citation footprint as buyers increasingly used AI summaries and trusted third-party context before visiting provider websites.", best: ["Insurance", "Consumer finance", "Comparison searches", "Review-led buyer journeys"], categories: ["Insurance", "Citation Architecture"] },
+  { n: "13", title: "Business Insurance AI Search Case Study", desc: "How a business insurance brand improved visibility across Google discovery and AI-led comparisons as small business owners used AI summaries and trusted proof points.", best: ["Commercial insurance", "B2B services", "Small business markets", "Trust-led comparison searches"], categories: ["Insurance", "B2B SaaS", "Google Visibility"] },
+  { n: "14", title: "Pest Control AI Search Case Study", desc: "How a pest control brand strengthened citation footprint so it appeared more consistently across Google discovery and AI-generated recommendations during urgent searches.", best: ["Home services", "Urgent-intent categories", "Local-to-national operators", "Service comparison searches"], categories: ["Home Services", "Citation Architecture", "AI Visibility"] },
+  { n: "15", title: "Home Services AI Search Case Study", desc: "How a home maintenance brand improved visibility across Google discovery and AI summaries people rely on when choosing urgent service providers.", best: ["Home services", "HVAC", "Plumbing", "High-intent local search"], categories: ["Home Services", "Google Visibility", "AI Visibility"] },
+  { n: "16", title: "ID Theft Protection AI Search Case Study", desc: "How an identity theft protection brand strengthened citation footprint so it appeared more consistently during security comparisons and AI-generated recommendations.", best: ["Identity protection", "Cybersecurity", "Consumer security", "Trust-sensitive search"], categories: ["Apps", "Citation Architecture"] },
+  { n: "17", title: "Eyewear AI Search Case Study", desc: "How an eyewear and sunglasses company strengthened citation footprint across public threads, creator reviews, and AI-generated comparisons.", best: ["Ecommerce", "Fashion", "Consumer products", "\"Is this legit?\" searches"], categories: ["Ecommerce", "Citation Architecture"] },
+  { n: "18", title: "VA Mortgage Lender AI Search Case Study", desc: "How a VA mortgage lender strengthened citation footprint across Google discovery and lender-comparison answers as borrowers researched rates, eligibility, and trusted public guidance.", best: ["Mortgage lending", "Financial services", "Eligibility-driven search", "High-trust buyer journeys"], categories: ["Finance", "Google Visibility", "Citation Architecture"] },
+  { n: "19", title: "Agency Partner Delivery", desc: "How an agency partner used CiteWorks Studio as a white-label backend to deliver GEO, AI search audits, and citation architecture to enterprise clients.", best: ["Agencies", "White-label delivery", "Multi-client programs", "Backend execution"], categories: ["Agency Use Cases", "AI Visibility", "Citation Architecture"] },
 ];
 
 const patterns = [
@@ -93,6 +109,12 @@ const faqs = [
 ];
 
 const CaseStudies = () => {
+  const [filter, setFilter] = useState<Filter>("All");
+  const filteredCases = useMemo(
+    () => (filter === "All" ? cases : cases.filter((c) => c.categories.includes(filter))),
+    [filter]
+  );
+
   useEffect(() => {
     document.title = "Case Studies | CiteWorks Studio — AI Search & GEO Results";
   }, []);
@@ -218,18 +240,51 @@ const CaseStudies = () => {
       </section>
 
       {/* Case Study Grid */}
-      <section className="py-24 border-t border-border bg-card/30">
+      <section id="cases" className="py-24 border-t border-border bg-card/30 scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ The case studies</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
             Explore the case studies.
           </h2>
-          <p className="text-foreground/70 max-w-2xl mb-12">
+          <p className="text-foreground/70 max-w-2xl mb-10">
             The method changes by category, but the goal stays consistent: make the company easier to find, cite, compare, and recommend.
           </p>
+
+          {/* Filter chips */}
+          <div role="tablist" aria-label="Filter case studies" className="flex flex-wrap gap-2 mb-10">
+            {FILTERS.map((f) => {
+              const isActive = filter === f;
+              const count = f === "All" ? cases.length : cases.filter((c) => c.categories.includes(f)).length;
+              return (
+                <button
+                  key={f}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => setFilter(f)}
+                  className={`px-4 py-2 rounded-full font-mono text-[11px] tracking-[0.18em] border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                    isActive
+                      ? "bg-primary text-primary-foreground border-transparent"
+                      : "border-border text-foreground/70 hover:border-primary/40 hover:text-foreground"
+                  }`}
+                >
+                  {f.toUpperCase()} <span className={`ml-1.5 ${isActive ? "opacity-80" : "opacity-50"}`}>{count}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground mb-6" aria-live="polite">
+            SHOWING {filteredCases.length} OF {cases.length}
+          </p>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {cases.map((c) => (
-              <article key={c.n} className="border border-border rounded-xl bg-background p-6 hover:border-primary/40 transition-colors group flex flex-col">
+            {filteredCases.map((c, i) => (
+              <article
+                key={c.n + filter}
+                className="border border-border rounded-xl bg-background p-6 hover:border-primary/40 transition-colors group flex flex-col animate-fade-in"
+                style={{ animationDelay: `${i * 30}ms` }}
+              >
                 <p className="font-mono text-[11px] text-primary mb-4">CASE / {c.n}</p>
                 <h3 className="text-lg font-semibold mb-3 leading-snug group-hover:text-primary transition-colors">
                   {c.title}
@@ -244,11 +299,17 @@ const CaseStudies = () => {
                   </div>
                 </div>
                 <button className="mt-5 inline-flex items-center gap-1 font-mono text-[11px] tracking-[0.18em] text-primary hover:gap-2 transition-all">
-                  READ CASE STUDY <ArrowUpRight className="w-3 h-3" />
+                  READ CASE STUDY <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
                 </button>
               </article>
             ))}
           </div>
+
+          {filteredCases.length === 0 && (
+            <div className="mt-10 text-center text-muted-foreground">
+              No case studies in this category yet. <button onClick={() => setFilter("All")} className="text-primary underline-offset-4 hover:underline">View all</button>.
+            </div>
+          )}
         </div>
       </section>
 

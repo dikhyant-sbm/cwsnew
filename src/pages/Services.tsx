@@ -4,11 +4,23 @@ import { StickyAuditCTA } from "@/components/landing/StickyAuditCTA";
 import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
 import { TrustPledges } from "@/components/landing/TrustPledges";
 import { BestFit } from "@/components/landing/BestFit";
+import { SectionNav } from "@/components/landing/SectionNav";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Check } from "lucide-react";
 import { useEffect } from "react";
+
+const servicesNav = [
+  { id: "intro", label: "Connected system" },
+  { id: "core", label: "Core services" },
+  { id: "detail", label: "Service detail" },
+  { id: "engagements", label: "Engagement paths" },
+  { id: "matrix", label: "Service matrix" },
+  { id: "why", label: "Why CiteWorks" },
+  { id: "fit", label: "Best fit" },
+  { id: "faq", label: "FAQ" },
+];
 
 const coreServices = [
   "GEO and AI search visibility strategy",
@@ -289,6 +301,7 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
+      <SectionNav items={servicesNav} variant="floating" />
 
       {/* Hero */}
       <section className="relative pt-32 pb-24 grid-bg overflow-hidden">
@@ -323,7 +336,7 @@ const Services = () => {
       </section>
 
       {/* Intro */}
-      <section className="py-24 border-t border-border">
+      <section id="intro" className="py-24 border-t border-border scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6 grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
             <p className="eyebrow mb-6">/ A connected system</p>
@@ -353,7 +366,7 @@ const Services = () => {
       </section>
 
       {/* Core Services Capsule */}
-      <section className="py-24 border-t border-border bg-card/30">
+      <section id="core" className="py-24 border-t border-border bg-card/30 scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ What CiteWorks Studio does</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-10">
@@ -371,7 +384,7 @@ const Services = () => {
       </section>
 
       {/* Service Detail Cards */}
-      <section className="py-24 border-t border-border">
+      <section id="detail" className="py-24 border-t border-border scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ Service detail</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-16">
@@ -410,7 +423,7 @@ const Services = () => {
       </section>
 
       {/* Engagement Paths */}
-      <section className="py-24 border-t border-border bg-card/30">
+      <section id="engagements" className="py-24 border-t border-border bg-card/30 scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ How engagements work</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
@@ -432,7 +445,7 @@ const Services = () => {
       </section>
 
       {/* Matrix */}
-      <section className="py-24 border-t border-border">
+      <section id="matrix" className="py-24 border-t border-border scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ Service matrix</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-12">
@@ -456,7 +469,7 @@ const Services = () => {
       </section>
 
       {/* Why CiteWorks */}
-      <section className="py-24 border-t border-border bg-card/30">
+      <section id="why" className="py-24 border-t border-border bg-card/30 scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ Why CiteWorks Studio</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-12">
@@ -475,7 +488,7 @@ const Services = () => {
       </section>
 
       {/* Best Fit */}
-      <section className="py-24 border-t border-border">
+      <section id="fit" className="py-24 border-t border-border scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ Best fit</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-12">
@@ -509,7 +522,7 @@ const Services = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 border-t border-border bg-card/30">
+      <section id="faq" className="py-24 border-t border-border bg-card/30 scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ FAQ</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-12">

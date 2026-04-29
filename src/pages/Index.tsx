@@ -9,7 +9,6 @@ import { VisibilityLoop } from "@/components/landing/VisibilityLoop";
 import { CoverageStrip } from "@/components/landing/CoverageStrip";
 import { Differentiation } from "@/components/landing/Differentiation";
 import { CoreConcepts } from "@/components/landing/CoreConcepts";
-import { CaseStudies as MethodologyPreview } from "@/components/landing/CaseStudies";
 import { Features } from "@/components/landing/Features";
 import { Outcomes } from "@/components/landing/Outcomes";
 import { UseCases } from "@/components/landing/UseCases";
@@ -52,7 +51,6 @@ const Index = () => {
       <Differentiation />
       <CoreConcepts />
       <VisibilityLoop />
-      <MethodologyPreview />
       <Features />
       <Outcomes />
       <section className="relative py-16">

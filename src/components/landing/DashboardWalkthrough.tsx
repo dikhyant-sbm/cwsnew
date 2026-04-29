@@ -115,16 +115,17 @@ export const DashboardWalkthrough = () => {
           </p>
         </div>
 
-        {/* Scrollytelling grid */}
-        <div className="mt-16 grid lg:grid-cols-12 gap-10 lg:gap-14">
-          {/* LEFT — sticky changing image */}
-          <div className="lg:col-span-7">
-            <div className="lg:sticky lg:top-28">
-              <figure className="relative">
+        {/* Scrollytelling grid — right column drives section height; left column sticks centered */}
+        <div className="mt-16 grid lg:grid-cols-12 gap-10 lg:gap-14 lg:items-start">
+          {/* LEFT — sticky, vertically centered image. Spans full height of steps column. */}
+          <div className="lg:col-span-8 lg:self-start">
+            <div className="lg:sticky lg:top-[10vh] lg:h-[80vh] lg:flex lg:items-center">
+              <figure className="relative w-full">
                 {/* Ambient glow */}
-                <div className="absolute -inset-x-10 -inset-y-8 -z-10 rounded-[2rem] bg-[radial-gradient(60%_60%_at_50%_50%,hsl(var(--accent-blue)/0.18),transparent_70%)] blur-2xl" />
+                <div className="absolute -inset-x-16 -inset-y-12 -z-10 rounded-[2.5rem] bg-[radial-gradient(60%_60%_at_50%_50%,hsl(var(--accent-blue)/0.20),transparent_70%)] blur-3xl" />
+                <div className="absolute -inset-x-24 -inset-y-16 -z-10 rounded-[2.5rem] bg-[radial-gradient(50%_50%_at_70%_50%,hsl(var(--accent-violet)/0.12),transparent_70%)] blur-3xl" />
                 <div className="device-frame lift">
-                  <div className="device-screen relative aspect-[16/10] overflow-hidden">
+                  <div className="device-screen relative aspect-[16/9] overflow-hidden">
                     {STEPS.map((s, i) => (
                       <img
                         key={s.key}
@@ -163,8 +164,9 @@ export const DashboardWalkthrough = () => {
             </div>
           </div>
 
-          {/* RIGHT — scrolling step rail */}
-          <ol className="lg:col-span-5 relative">
+          {/* RIGHT — scrolling step rail. Each step is ~one viewport tall so the sticky
+              image stays pinned through every step. */}
+          <ol className="lg:col-span-4 relative lg:pt-[10vh] lg:pb-[10vh]">
             {/* Vertical guide line */}
             <span
               className="absolute left-[15px] top-2 bottom-2 w-px bg-border hidden sm:block"
@@ -177,12 +179,12 @@ export const DashboardWalkthrough = () => {
                   <div
                     ref={(el) => (stepRefs.current[i] = el)}
                     data-idx={i}
-                    className="relative pl-12 py-10 sm:py-14 first:pt-0"
+                    className="relative pl-12 py-10 lg:py-0 lg:min-h-[80vh] lg:flex lg:flex-col lg:justify-center"
                   >
                     {/* Marker */}
                     <span
                       aria-hidden="true"
-                      className={`absolute left-0 top-10 sm:top-14 first:top-0 flex items-center justify-center w-8 h-8 rounded-full border transition-colors duration-300 ${
+                      className={`absolute left-0 top-10 lg:top-1/2 lg:-translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full border transition-colors duration-300 ${
                         isActive
                           ? "bg-primary text-primary-foreground border-primary shadow-[0_0_0_4px_hsl(var(--primary)/0.12)]"
                           : "bg-card text-body border-border"

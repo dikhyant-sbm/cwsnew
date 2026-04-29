@@ -402,6 +402,50 @@ const CaseStudies = () => {
         </div>
       </section>
 
+      {/* Best Fit */}
+      <section className="py-24 border-t border-border">
+        <div className="mx-auto max-w-[1400px] px-6 grid lg:grid-cols-12 gap-12">
+          <div className="lg:col-span-5">
+            <p className="eyebrow mb-6">/ Best fit</p>
+            <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight">
+              These case studies are most relevant if visibility affects your growth.
+            </h2>
+          </div>
+          <div className="lg:col-span-7 space-y-5 text-body text-lg">
+            <p>CiteWorks Studio works best with companies where being found, cited, compared, and recommended has real commercial value.</p>
+            <p>You do not need to be an enterprise company. You do need a market where search visibility, source authority, and buyer trust matter.</p>
+            <div className="grid sm:grid-cols-2 gap-2 pt-6 border-t border-border">
+              {bestFit.map((b, i) => (
+                <div key={i} className="flex gap-3 items-start py-1">
+                  <span className="font-mono text-[13px] text-primary mt-1.5">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-sm text-body">{b}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Audit CTA */}
+      <section className="py-24 border-t border-border bg-card/30">
+        <div className="mx-auto max-w-[1400px] px-6 text-center">
+          <h2 className="display text-3xl md:text-5xl leading-tight tracking-tight max-w-3xl mx-auto mb-6">
+            Want to understand your own AI citation footprint?
+          </h2>
+          <p className="text-body text-lg max-w-2xl mx-auto">
+            Your company may already have useful content, real expertise, and strong customer value. The question is whether Google, AI systems, third-party sources, and buyers can clearly recognize it.
+          </p>
+          <p className="mt-4 text-body text-lg max-w-2xl mx-auto">
+            A Visibility Audit shows where your company appears, where competitors are stronger, which sources influence your category, and what needs to change next.
+          </p>
+          <div className="mt-10">
+            <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">
+              <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3 h-3 ml-1" /></Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-24 border-t border-border bg-card/30">
         <div className="mx-auto max-w-[1400px] px-6">

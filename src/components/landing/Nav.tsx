@@ -4,6 +4,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/s
 import { ArrowUpRight, Menu } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 type NavLinkItem = {
   label: string;
@@ -132,7 +133,8 @@ export const Nav = () => {
           })}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-2">
+          <ThemeToggle />
           <Button
             asChild
             className="group rounded-full font-mono text-[11px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow h-9 px-5"

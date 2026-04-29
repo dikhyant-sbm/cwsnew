@@ -109,6 +109,12 @@ const faqs = [
 ];
 
 const CaseStudies = () => {
+  const [filter, setFilter] = useState<Filter>("All");
+  const filteredCases = useMemo(
+    () => (filter === "All" ? cases : cases.filter((c) => c.categories.includes(filter))),
+    [filter]
+  );
+
   useEffect(() => {
     document.title = "Case Studies | CiteWorks Studio — AI Search & GEO Results";
   }, []);

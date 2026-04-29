@@ -129,7 +129,7 @@ const services = [
     n: "06",
     title: "Citation Architecture & Authority Strategy",
     def: "Citation architecture is the structured improvement of the owned and third-party sources that support your company's authority.",
-    body: "We map the sources influencing your category, compare your source footprint against competitors, and identify where your authority needs stronger support across articles, review sites, directories, comparison pages, communities, YouTube, podcasts, and trusted brand mentions.",
+    body: "Search engines and AI systems do not rely on your website alone. They rely on the wider evidence layer around your company. That evidence layer may include third-party articles, review sites, directories, comparison pages, communities, YouTube videos, social profiles, podcasts, industry publications, and trusted brand mentions. We map the sources influencing your category, compare your source footprint against competitors, and identify where your authority needs stronger support. The goal is not random distribution. The goal is deliberate source architecture around the pages, platforms, and domains that shape search visibility, AI answers, and buyer confidence.",
     includes: [
       "Citation source mapping",
       "Third-party source review",

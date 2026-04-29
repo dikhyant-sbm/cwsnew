@@ -106,6 +106,13 @@ const Methodology = () => {
         }
       />
 
+      {/* Dashboard: Closed-Loop methodology */}
+      <section className="relative py-12">
+        <div className="mx-auto max-w-7xl px-6 reveal-on-scroll">
+          <DashboardShowcase dashboard="closed-loop" size="lg" showCaption />
+        </div>
+      </section>
+
       {/* Methodology summary + Answer capsule */}
       <section className="py-24 border-t border-border/40">
         <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-12 gap-12">

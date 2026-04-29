@@ -172,6 +172,13 @@ const RequestAudit = () => {
         body="A CiteWorks Studio Visibility Audit shows where your company stands across Google rankings, AI answers, citation sources, competitor positioning, technical SEO, content structure, entity clarity, and source-layer authority — then shows what needs to change next."
       />
 
+      {/* Dashboard: what an audit produces */}
+      <section className="relative py-12">
+        <div className="mx-auto max-w-7xl px-6 reveal-on-scroll">
+          <DashboardShowcase dashboard="executive-report" size="lg" showCaption />
+        </div>
+      </section>
+
       {/* Form FIRST */}
       <section className="py-12">
         <div className="mx-auto max-w-3xl px-6">

@@ -117,7 +117,9 @@ const CaseStudies = () => {
   );
 
   useEffect(() => {
-    document.title = "Case Studies | CiteWorks Studio — AI Search & GEO Results";
+    document.title = "CiteWorks Studio Case Studies | AI Search Visibility, GEO, and Citation Architecture Results";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Explore CiteWorks Studio case studies showing how growth-minded companies improved visibility across Google, AI answers, citation sources, and recommendation-stage search through GEO, citation architecture, technical SEO, and source-layer authority.");
   }, []);
 
   return (

@@ -1,6 +1,9 @@
 import { Nav } from "@/components/landing/Nav";
 import { Footer } from "@/components/landing/Footer";
+import { StickyAuditCTA } from "@/components/landing/StickyAuditCTA";
 import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
+import { TrustPledges } from "@/components/landing/TrustPledges";
+import { BestFit } from "@/components/landing/BestFit";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
@@ -523,6 +526,9 @@ const Services = () => {
         </div>
       </section>
 
+      <TrustPledges />
+      <BestFit />
+
       {/* Final CTA */}
       <section className="py-32 border-t border-border grid-bg">
         <div className="mx-auto max-w-[1400px] px-6 text-center">
@@ -533,17 +539,21 @@ const Services = () => {
             Your company may already have strong expertise, useful content, and real authority. The question is whether Google, AI systems, third-party sources, and buyers can clearly recognize it.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button asChild className="rounded-full font-mono text-[11px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button asChild className="rounded-full font-mono text-[11px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3 h-3 ml-1" /></Link>
             </Button>
             <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.18em] border-border">
               <Link to="/methodology">EXPLORE THE METHODOLOGY</Link>
             </Button>
           </div>
+          <p className="mt-6 text-xs text-muted-foreground">
+            No guaranteed rankings or AI recommendations. Evidence-led improvement, prioritized by revenue impact.
+          </p>
         </div>
       </section>
 
       <Footer />
+      <StickyAuditCTA />
     </div>
   );
 };

@@ -1,5 +1,7 @@
 import { PageShell, PageHero, SectionHeading } from "@/components/landing/Shell";
 import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
+import { TrustPledges } from "@/components/landing/TrustPledges";
+import { BestFit } from "@/components/landing/BestFit";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
@@ -332,6 +334,9 @@ const Methodology = () => {
         </div>
       </section>
 
+      <TrustPledges />
+      <BestFit />
+
       <section className="py-32 border-t border-border/40 text-center grid-bg">
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="display text-4xl sm:text-6xl">Ready to see where visibility is breaking down?</h2>
@@ -340,13 +345,16 @@ const Methodology = () => {
             Google, AI answers, citation sources, and competitor positioning.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button asChild className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-12 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
+            <Button asChild className="group rounded-full font-mono text-[11px] tracking-[0.22em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow px-7 h-12">
               <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>
             </Button>
             <Button asChild variant="outline" className="rounded-full font-mono text-[11px] tracking-[0.22em] border-foreground/15 hover:bg-foreground/5 px-7 h-12">
               <Link to="/case-studies">VIEW CASE STUDIES</Link>
             </Button>
           </div>
+          <p className="mt-6 text-xs text-muted-foreground">
+            Audit-led corrective action. No guaranteed rankings or AI placements — evidence-led improvement instead.
+          </p>
         </div>
       </section>
     </PageShell>

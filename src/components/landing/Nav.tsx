@@ -4,6 +4,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/s
 import { ArrowUpRight, Menu } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 type NavLinkItem = {
   label: string;
@@ -132,7 +133,8 @@ export const Nav = () => {
           })}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-2">
+          <ThemeToggle />
           <Button
             asChild
             className="group rounded-full font-mono text-[11px] tracking-[0.18em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow h-9 px-5"
@@ -144,30 +146,33 @@ export const Nav = () => {
           </Button>
         </div>
 
-        <Sheet>
-          <SheetTrigger asChild className="lg:hidden">
-            <Button variant="ghost" size="icon"><Menu /></Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="bg-background border-border">
-            <div className="flex flex-col gap-1 mt-8 font-mono text-sm">
-              {groups.map((g) => (
-                <SheetClose asChild key={g.label}>
-                  <Link
-                    to={g.to ?? "#"}
-                    className="py-3 border-b border-border/60 hover:text-primary transition-colors"
-                  >
-                    {g.label}
-                  </Link>
+        <div className="flex md:hidden items-center gap-2">
+          <ThemeToggle />
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" aria-label="Open menu"><Menu /></Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="bg-background border-border">
+              <div className="flex flex-col gap-1 mt-8 font-mono text-sm">
+                {groups.map((g) => (
+                  <SheetClose asChild key={g.label}>
+                    <Link
+                      to={g.to ?? "#"}
+                      className="py-3 border-b border-border/60 hover:text-primary transition-colors"
+                    >
+                      {g.label}
+                    </Link>
+                  </SheetClose>
+                ))}
+                <SheetClose asChild>
+                  <Button asChild className="rounded-full mt-6 bg-primary text-primary-foreground btn-glow">
+                    <Link to="/request-audit">REQUEST A VISIBILITY AUDIT</Link>
+                  </Button>
                 </SheetClose>
-              ))}
-              <SheetClose asChild>
-                <Button asChild className="rounded-full mt-6 bg-primary text-primary-foreground btn-glow">
-                  <Link to="/request-audit">REQUEST A VISIBILITY AUDIT</Link>
-                </Button>
-              </SheetClose>
-            </div>
-          </SheetContent>
-        </Sheet>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   );

@@ -145,7 +145,7 @@ export const DashboardWalkthrough = () => {
                 {/* Ambient glow */}
                 <div className="absolute -inset-x-16 -inset-y-12 -z-10 rounded-[2.5rem] bg-[radial-gradient(60%_60%_at_50%_50%,hsl(var(--accent-blue)/0.20),transparent_70%)] blur-3xl" />
                 <div className="absolute -inset-x-24 -inset-y-16 -z-10 rounded-[2.5rem] bg-[radial-gradient(50%_50%_at_70%_50%,hsl(var(--accent-violet)/0.12),transparent_70%)] blur-3xl" />
-                <div className="device-frame lift">
+                <div ref={imageRef} className="device-frame lift">
                   <div className="device-screen relative aspect-[16/9] overflow-hidden">
                     {STEPS.map((s, i) => (
                       <img

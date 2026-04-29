@@ -317,9 +317,10 @@ const CaseStudies = () => {
       <section className="py-24 border-t border-border">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ Patterns</p>
-          <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-12">
+          <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
             What repeats across the case studies.
           </h2>
+          <p className="text-body max-w-2xl mb-12">The categories are different, but several patterns repeat.</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {patterns.map((p) => (
               <div key={p.n} className="border border-border rounded-xl p-6 bg-card/30">

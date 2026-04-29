@@ -28,10 +28,10 @@ import { useEffect } from "react";
 const Index = () => {
   useEffect(() => {
     document.title =
-      "CiteWorks Studio | GEO, AI Search Visibility & Citation Architecture Agency";
+      "CiteWorks Studio | GEO, AI Search Visibility, and Citation Architecture Agency";
     const meta = document.querySelector('meta[name="description"]');
     const desc =
-      "CiteWorks Studio helps growth-minded companies improve visibility across Google, AI answers, and trusted source environments through GEO, AI search audits, citation architecture, technical SEO, and corrective-action retainers.";
+      "CiteWorks Studio helps growth-minded companies improve visibility across Google, AI answers, and the source environments that shape buyer decisions through GEO, citation architecture, technical SEO, content strategy, and cosine gap analysis.";
     if (meta) meta.setAttribute("content", desc);
   }, []);
 

@@ -205,10 +205,13 @@ const CaseStudies = () => {
             <p className="text-body leading-relaxed">
               A structured comparison of four published CiteWorks Studio case studies showing how citation footprint, brand context, and high-intent public-source visibility can improve alongside Google and AI visibility.
             </p>
-            <div className="mt-6 border-t border-border pt-6">
-              <p className="font-mono text-[13px] text-body mb-3">KEY TAKEAWAY</p>
+            <div className="mt-6 border-t border-border pt-6 space-y-4">
+              <p className="font-mono text-[13px] text-body mb-1">KEY TAKEAWAY</p>
               <p className="text-body text-lg leading-relaxed">
-                The pattern was not simply "rank higher and AI visibility follows." The stronger pattern: improve citation footprint, brand context, and high-intent presence across Google and public reference environments, and AI visibility can improve alongside traditional search.
+                The pattern was not simply: "rank higher and AI visibility follows."
+              </p>
+              <p className="text-body text-lg leading-relaxed">
+                The stronger pattern was: improve citation footprint, brand context, and high-intent presence across Google and public reference environments, and AI visibility can improve alongside traditional search visibility.
               </p>
             </div>
             <Button className="mt-8 rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">

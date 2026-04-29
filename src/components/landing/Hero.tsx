@@ -18,7 +18,7 @@ export const Hero = () => (
           <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
         </span>
         <span className="font-mono text-[13px] tracking-[0.16em] text-body uppercase">
-          GEO · AI Search · Citation Architecture
+          GEO, AI Search Visibility, and Citation Architecture
         </span>
       </div>
 
@@ -28,24 +28,24 @@ export const Hero = () => (
       </h1>
 
       <p className="reveal reveal-delay-2 hero-lead mt-8 mx-auto text-center">
-        CiteWorks Studio is the corrective-action partner for modern search visibility — across
-        Google, AI answers, and the trusted source environments that shape buyer decisions.
+        CiteWorks Studio helps growth-minded companies improve visibility across Google, AI answers,
+        and the source environments that shape buyer decisions.
       </p>
 
       <div className="reveal reveal-delay-3 mt-12 flex flex-wrap justify-center gap-3">
         <Button asChild className="group rounded-full font-sans text-[15px] font-bold tracking-[0.02em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-14 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]">
           <Link to="/request-audit">
-            Request a visibility audit
+            Request a Visibility Audit
             <ArrowUpRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </Button>
         <Button asChild variant="outline" className="rounded-full font-sans text-[15px] font-bold tracking-[0.02em] border-foreground/35 hover:border-foreground/50 px-7 h-14 backdrop-blur">
-          <Link to="/methodology">See the methodology</Link>
+          <Link to="/methodology">See the Methodology</Link>
         </Button>
       </div>
 
       <p className="reveal reveal-delay-4 meta mt-10 mx-auto max-w-xl">
-        Built for companies where visibility, trust, and recommendation strength directly affect revenue.
+        Built for growth-minded companies where visibility, trust, and recommendation strength directly affect revenue.
       </p>
 
       <div className="reveal reveal-delay-4 mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">

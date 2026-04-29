@@ -353,8 +353,9 @@ const Services = () => {
           </div>
           <div className="lg:col-span-7 space-y-5 text-body text-lg">
             <p>Most agencies still separate SEO, content, social, digital PR, technical optimization, and AI search into different conversations. CiteWorks Studio does not.</p>
-            <p>A buyer may search Google, ask ChatGPT, scan AI Overviews, compare brands in Perplexity, watch YouTube, read Reddit, check review sites, and then return to your website before deciding.</p>
-            <p>Your company needs more than rankings. It needs clear entity signals, useful content, credible sources, technical structure, third-party support, and stronger retrieval alignment.</p>
+            <p>Search now works across connected environments. A buyer may search Google, ask ChatGPT, scan AI Overviews, compare brands in Perplexity, watch YouTube, read Reddit, check review sites, visit comparison pages, and then return to your website before making a decision.</p>
+            <p>That means your company needs more than rankings. It needs clear entity signals, useful content, credible sources, technical structure, third-party support, and stronger retrieval alignment.</p>
+            <p>Our services are designed to answer four questions:</p>
             <div className="pt-6 border-t border-border space-y-3 text-base">
               {[
                 "Where are you losing high-intent visibility?",

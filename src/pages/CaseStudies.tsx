@@ -5,7 +5,22 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState, useMemo } from "react";
+
+const FILTERS = [
+  "All",
+  "B2B SaaS",
+  "Finance",
+  "Insurance",
+  "Ecommerce",
+  "Home Services",
+  "Apps",
+  "Agency Use Cases",
+  "AI Visibility",
+  "Google Visibility",
+  "Citation Architecture",
+] as const;
+type Filter = typeof FILTERS[number];
 
 const movement = [
   "Google search rankings",

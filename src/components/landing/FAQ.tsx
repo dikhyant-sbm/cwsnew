@@ -2,32 +2,28 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const faqs = [
   {
-    q: "What is AEO?",
-    a: "Answer Engine Optimization (AEO) is the practice of structuring and optimizing content and technical site health so that it provides clear, direct answers to user questions—particularly for large language models (LLMs) and AI-driven platforms. Unlike traditional SEO, which focuses on driving clicks to a website, AEO is about ensuring your brand becomes the definitive source that AI systems reference or cite within their generated responses. The goal is not just traffic, but visibility, authority, and influence in an AI-powered search landscape.",
+    q: "Is CiteWorks Studio an SEO agency?",
+    a: "CiteWorks Studio includes SEO, but the work goes beyond traditional SEO. We connect SEO, GEO, AI search visibility, citation architecture, technical optimization, content, and source-layer authority into one visibility system.",
   },
   {
-    q: "Why is AEO (Answer Engine Optimization) important?",
-    a: "AEO is important for brands seeking to enable visibility and authority growth as user search behavior shifts to AI-powered tools that provide direct answers, rather than links to websites. AEO allows brands to be directly featured as answers to queries, increasing brand exposure, user trust, and driving traffic and engagement by satisfying users' demand for quick, accurate information.",
+    q: "Is GEO different from SEO?",
+    a: "Yes. SEO improves visibility in traditional search engines. GEO improves visibility in AI-generated and retrieval-based answer systems. The two are connected because AI systems often rely on indexed pages, structured content, trusted sources, and authority signals.",
   },
   {
-    q: "How does Goodie work?",
-    a: "Goodie combines prompt research, visibility monitoring, optimization actions, and attribution into a single closed-loop platform. We track how your brand appears across every major AI model, surface the gaps, recommend the actions that move the needle, and measure the resulting business outcomes.",
+    q: "Why does citation architecture matter?",
+    a: "Buyers and AI systems rarely rely on your website alone. They look at articles, reviews, directories, comparison pages, videos, and community discussions. Citation architecture strengthens the public evidence that supports trust and machine-recognized authority.",
   },
   {
-    q: "Who should use Goodie?",
-    a: "Goodie is ideal for startup founders, CMOs, PR teams, SEO specialists, and marketing professionals who want to lead in the AI search era and ensure their brand stands out in AI-powered search results.",
+    q: "Who is the right fit for CiteWorks Studio?",
+    a: "Growth-minded companies, high-consideration brands, category challengers, established companies in competitive markets, and agency partners that want stronger visibility across Google, AI answers, and trusted source environments.",
   },
   {
-    q: "How can I get started with Goodie?",
-    a: "The easiest way to get started is to chat with someone from our team. We'll learn about what you're working on and show you how the platform might help. Just fill out our form and we'll get back to you within a day.",
+    q: "How does an engagement start?",
+    a: "Most engagements start with a Visibility Audit. We diagnose where visibility is breaking down, then build the corrective-action plan across your website, content, technical SEO, citation sources, and authority environment.",
   },
   {
-    q: "What makes Goodie different from traditional SEO tools?",
-    a: "Unlike traditional SEO tools, Goodie is specifically designed for AI-driven search engines. It focuses on optimizing your brand's presence in AI Answer Engines, which require different strategies than conventional search engines.",
-  },
-  {
-    q: "Is Goodie suitable for global brands?",
-    a: "Yes, Goodie is built to serve enterprise-level brands with a global footprint. Our platform supports multiple markets and languages, ensuring comprehensive AI search optimization.",
+    q: "Do you only provide strategy, or do you execute too?",
+    a: "Both. After the audit and roadmap, CiteWorks Studio can support technical SEO, content creation and refreshes, citation architecture, source-layer authority, AI visibility improvements, and ongoing reporting.",
   },
 ];
 

@@ -112,7 +112,7 @@ const services = [
     n: "05",
     title: "Entity Clarity & Semantic Content Structure",
     def: "Entity clarity helps search engines and AI systems understand who your company is, what you offer, who you serve, where you operate, and how your expertise connects to your market.",
-    body: "We improve the way your company, services, products, locations, people, categories, and proof points are represented across your digital presence — reducing ambiguity and strengthening association with the topics and buyer questions that matter most.",
+    body: "AI systems do not understand your company the way a human sales prospect might. They rely on repeated signals, structured information, clear relationships, and consistent language across your website and the wider web. We improve the way your company, services, products, locations, people, categories, and proof points are represented across your digital presence. This helps reduce ambiguity and strengthens your association with the topics and buyer questions that matter most.",
     includes: [
       "Brand entity review",
       "Service and product entity mapping",

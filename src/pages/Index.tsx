@@ -4,7 +4,9 @@ import { ProductShot } from "@/components/landing/ProductShot";
 import { TrustedBy } from "@/components/landing/TrustedBy";
 import { WhatWeDo } from "@/components/landing/WhatWeDo";
 import { Problem } from "@/components/landing/Problem";
-import { ThreeLayers } from "@/components/landing/ClosedLoop";
+import { VisibilityLayers } from "@/components/landing/VisibilityLayers";
+import { VisibilityLoop } from "@/components/landing/VisibilityLoop";
+import { CoverageStrip } from "@/components/landing/CoverageStrip";
 import { Differentiation } from "@/components/landing/Differentiation";
 import { CoreConcepts } from "@/components/landing/CoreConcepts";
 import { CaseStudies as MethodologyPreview } from "@/components/landing/CaseStudies";
@@ -15,7 +17,6 @@ import { AuditCTA } from "@/components/landing/AuditCTA";
 import { SeoVsCiteworks } from "@/components/landing/SeoVsCiteworks";
 import { CasesPreview } from "@/components/landing/CasesPreview";
 import { AgencyPreview } from "@/components/landing/AgencyPreview";
-import { Models } from "@/components/landing/Models";
 import { Blog } from "@/components/landing/Blog";
 import { FAQ } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
@@ -38,10 +39,11 @@ const Index = () => {
     <PageShell>
       <Hero />
       <ProductShot />
+      <CoverageStrip />
       <TrustedBy />
       <WhatWeDo />
       <Problem />
-      <ThreeLayers />
+      <VisibilityLayers />
       <section className="relative py-12">
         <div className="mx-auto max-w-7xl px-6">
           <DashboardShowcase dashboard="competitor-matrix" size="lg" showCaption className="reveal-on-scroll" />
@@ -49,12 +51,8 @@ const Index = () => {
       </section>
       <Differentiation />
       <CoreConcepts />
+      <VisibilityLoop />
       <MethodologyPreview />
-      <section className="relative py-16 border-t border-border/40">
-        <div className="mx-auto max-w-7xl px-6">
-          <DashboardShowcase dashboard="closed-loop" size="lg" showCaption className="reveal-on-scroll" />
-        </div>
-      </section>
       <Features />
       <Outcomes />
       <section className="relative py-16">
@@ -69,7 +67,6 @@ const Index = () => {
       <CasesPreview />
       <AgencyPreview />
       <BestFit />
-      <Models />
       <Blog />
       <FAQ />
       <FinalCTA />

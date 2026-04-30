@@ -1,5 +1,6 @@
 import { Nav } from "@/components/landing/Nav";
 import { Footer } from "@/components/landing/Footer";
+import { StickyAuditCTA } from "@/components/landing/StickyAuditCTA";
 import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
 import { ResultsChart } from "@/components/landing/ResultsChart";
 import { Button } from "@/components/ui/button";
@@ -473,6 +474,7 @@ const CaseStudies = () => {
       </section>
 
       <Footer />
+      <StickyAuditCTA />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { Nav } from "@/components/landing/Nav";
 import { Footer } from "@/components/landing/Footer";
+import { StickyAuditCTA } from "@/components/landing/StickyAuditCTA";
 import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
 import { ResultsChart } from "@/components/landing/ResultsChart";
 import { Button } from "@/components/ui/button";
@@ -428,26 +429,6 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* Audit CTA */}
-      <section className="py-24 border-t border-border bg-card/30">
-        <div className="mx-auto max-w-[1400px] px-6 text-center">
-          <h2 className="display text-3xl md:text-5xl leading-tight tracking-tight max-w-3xl mx-auto mb-6">
-            Want to understand your own AI citation footprint?
-          </h2>
-          <p className="text-body text-lg max-w-2xl mx-auto">
-            Your company may already have useful content, real expertise, and strong customer value. The question is whether Google, AI systems, third-party sources, and buyers can clearly recognize it.
-          </p>
-          <p className="mt-4 text-body text-lg max-w-2xl mx-auto">
-            A Visibility Audit shows where your company appears, where competitors are stronger, which sources influence your category, and what needs to change next.
-          </p>
-          <div className="mt-10">
-            <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">
-              <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3 h-3 ml-1" /></Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="py-24 border-t border-border">
         <div className="mx-auto max-w-[1400px] px-6">
@@ -493,6 +474,7 @@ const CaseStudies = () => {
       </section>
 
       <Footer />
+      <StickyAuditCTA />
     </div>
   );
 };

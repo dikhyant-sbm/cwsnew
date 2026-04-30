@@ -169,26 +169,6 @@ const Resources = () => {
         </div>
       </section>
 
-      {/* Visibility Audit CTA */}
-      <section className="py-20 border-t border-border/40">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="eyebrow">Visibility Audit</p>
-          <h2 className="display text-3xl sm:text-5xl mt-4">Want to know which resources apply to your company?</h2>
-          <p className="mt-6 text-body">
-            The fastest way to understand your visibility problem is to audit the search environment around your company.
-          </p>
-          <p className="mt-3 text-body">
-            A CiteWorks Visibility Audit shows where you stand across Google rankings, AI answers, citation sources, competitor positioning, technical SEO, content structure, entity clarity, and source-layer authority.
-          </p>
-          <p className="mt-3 text-body">Then we show what needs to change next.</p>
-          <div className="mt-8">
-            <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 px-7 h-14">
-              <Link to="/request-audit">REQUEST A VISIBILITY AUDIT</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Bottom Educational / LLM Section */}
       <section className="py-20 border-t border-border/40">
         <div className="mx-auto max-w-3xl px-6 text-center">

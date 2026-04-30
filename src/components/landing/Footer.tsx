@@ -9,6 +9,7 @@ const cols: {
   {
     title: "Services",
     links: [
+      { label: "AI Search Optimization", to: "/ai-search-optimization" },
       { label: "GEO Services", to: "/services" },
       { label: "AI Search Visibility", to: "/services" },
       { label: "Citation Architecture", to: "/services" },

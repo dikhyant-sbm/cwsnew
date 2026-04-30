@@ -515,8 +515,8 @@
     border: 1px solid hsl(220 22% 26%);
     box-shadow:
       0 1px 0 hsl(0 0% 100% / 0.06) inset,
-      0 0 0 1px hsl(222 100% 68% / 0.06),
-      0 50px 90px -40px hsl(222 100% 50% / 0.18),
+      0 0 0 1px hsl(194 68% 60% / 0.06),
+      0 50px 90px -40px hsl(194 68% 44% / 0.18),
       0 20px 50px -20px hsl(0 0% 0% / 0.7);
   }
   .device-frame > .device-screen {

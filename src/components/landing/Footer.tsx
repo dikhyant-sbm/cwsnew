@@ -122,12 +122,23 @@ export const Footer = () => (
               <ul className="space-y-3">
                 {c.links.map((l) => (
                   <li key={l.label}>
-                    <Link
-                      to={l.to}
-                      className="text-sm text-body hover:text-foreground transition-colors"
-                    >
-                      {l.label}
-                    </Link>
+                    {l.external ? (
+                      <a
+                        href={l.to}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-body hover:text-foreground transition-colors"
+                      >
+                        {l.label}
+                      </a>
+                    ) : (
+                      <Link
+                        to={l.to}
+                        className="text-sm text-body hover:text-foreground transition-colors"
+                      >
+                        {l.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

@@ -84,7 +84,7 @@ export const Nav = () => {
                 {groups.map((g) => (
                   <SheetClose asChild key={g.label}>
                     <Link
-                      to={g.to ?? "#"}
+                      to={g.to}
                       className="py-3 border-b border-border/60 hover:text-primary transition-colors"
                     >
                       {g.label}

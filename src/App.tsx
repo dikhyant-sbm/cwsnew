@@ -12,6 +12,7 @@ import Resources from "./pages/Resources.tsx";
 import RequestAudit from "./pages/RequestAudit.tsx";
 import Services from "./pages/Services.tsx";
 import CaseStudies from "./pages/CaseStudies.tsx";
+import JobBoardAISearch from "./pages/case-studies/JobBoardAISearch.tsx";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/request-audit" element={<RequestAudit />} />
             <Route path="/services" element={<Services />} />
             <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/case-studies/job-board-ai-search" element={<JobBoardAISearch />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

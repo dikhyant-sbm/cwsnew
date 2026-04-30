@@ -2,52 +2,25 @@ import { Logo } from "./Logo";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { ArrowUpRight, Menu } from "lucide-react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
-type NavLinkItem = {
-  label: string;
-  to: string;
-  description?: string;
-};
-
 type NavGroup = {
   label: string;
-  to?: string;
-  children?: NavLinkItem[];
+  to: string;
 };
 
 const groups: NavGroup[] = [
-  {
-    label: "SERVICES",
-    to: "/services",
-    children: [
-      { label: "GEO & AI Search Visibility", to: "/services", description: "AI Overviews, ChatGPT, Gemini, Perplexity." },
-      { label: "Citation Architecture", to: "/services", description: "Owned + third-party source environment." },
-      { label: "Technical SEO & Schema", to: "/services", description: "Crawlability, indexation, entity-level schema." },
-      { label: "Content Strategy", to: "/services", description: "Pages built for ranking, retrieval, citation." },
-      { label: "AI Market Intelligence", to: "/services", description: "Prompt clusters, source influence, framing." },
-    ],
-  },
+  { label: "SERVICES", to: "/services" },
   { label: "CASE STUDIES", to: "/case-studies" },
   { label: "METHODOLOGY", to: "/methodology" },
   { label: "AGENCY PARTNERS", to: "/agency-partners" },
-  {
-    label: "RESOURCES",
-    to: "/resources",
-    children: [
-      { label: "Library", to: "/resources", description: "Guides, definitions, and case studies." },
-      { label: "Glossary", to: "/resources", description: "GEO, citation architecture, embeddings." },
-      { label: "Learning paths", to: "/resources", description: "Where to start, by situation." },
-    ],
-  },
+  { label: "RESOURCES", to: "/resources" },
 ];
 
 export const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
-  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -55,9 +28,6 @@ export const Nav = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  // Close dropdowns on navigation
-  useEffect(() => setOpenIdx(null), [location.pathname]);
 
   return (
     <header

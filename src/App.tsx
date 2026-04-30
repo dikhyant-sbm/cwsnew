@@ -12,6 +12,7 @@ import Resources from "./pages/Resources.tsx";
 import RequestAudit from "./pages/RequestAudit.tsx";
 import Services from "./pages/Services.tsx";
 import CaseStudies from "./pages/CaseStudies.tsx";
+import JobBoardAISearch from "./pages/case-studies/JobBoardAISearch.tsx";
 
 const queryClient = new QueryClient();
 

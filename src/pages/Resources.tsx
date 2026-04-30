@@ -19,6 +19,7 @@ const categories = [
 ];
 
 const articles = [
+  { title: "Embedding-Level GEO Explained", desc: "How brands become retrievable, trusted, and recommended inside AI retrieval systems. Vector optimization and cosine gap engineering, explained for enterprise teams.", category: "GEO", cta: "READ ARTICLE", href: "/resources/embedding-level-geo", featured: true },
   { title: "What Is GEO?", desc: "A clear explanation of generative engine optimization and how it helps companies appear in AI-generated answers and retrieval-based search systems.", category: "GEO", cta: "READ RESOURCE" },
   { title: "What Is AI Search Visibility?", desc: "A practical guide to how companies appear, disappear, get cited, or get recommended across ChatGPT, Gemini, Perplexity, Copilot, and Google AI Overviews.", category: "AI Search Visibility", cta: "READ RESOURCE" },
   { title: "What Is Citation Architecture?", desc: "A framework for understanding how owned and third-party sources support trust, authority, rankings, and AI recommendations.", category: "Citation Architecture", cta: "READ RESOURCE" },

@@ -522,9 +522,6 @@ const Services = () => {
         </div>
       </section>
 
-      <TrustPledges />
-      <BestFit />
-
       {/* Final CTA */}
       <section className="py-32 border-t border-border grid-bg">
         <div className="mx-auto max-w-[1400px] px-6 text-center">

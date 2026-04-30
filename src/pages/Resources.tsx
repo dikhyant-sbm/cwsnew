@@ -18,7 +18,8 @@ const categories = [
   "Definitions",
 ];
 
-const articles = [
+type Article = { title: string; desc: string; category: string; cta: string; href?: string; featured?: boolean };
+const articles: Article[] = [
   { title: "Embedding-Level GEO Explained", desc: "How brands become retrievable, trusted, and recommended inside AI retrieval systems. Vector optimization and cosine gap engineering, explained for enterprise teams.", category: "GEO", cta: "READ ARTICLE", href: "/resources/embedding-level-geo", featured: true },
   { title: "What Is GEO?", desc: "A clear explanation of generative engine optimization and how it helps companies appear in AI-generated answers and retrieval-based search systems.", category: "GEO", cta: "READ RESOURCE" },
   { title: "What Is AI Search Visibility?", desc: "A practical guide to how companies appear, disappear, get cited, or get recommended across ChatGPT, Gemini, Perplexity, Copilot, and Google AI Overviews.", category: "AI Search Visibility", cta: "READ RESOURCE" },
@@ -132,7 +133,7 @@ const Resources = () => {
           </div>
 
           <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filtered.map((a: (typeof articles)[number], i) => (
+            {filtered.map((a, i) => (
               <article
                 key={a.title + active}
                 className={`group card-premium p-7 flex flex-col animate-fade-in transition-colors ${a.href ? "hover:border-primary/50" : ""} ${a.featured ? "ring-1 ring-primary/40 lg:col-span-2 bg-gradient-to-br from-primary/5 to-transparent" : ""}`}

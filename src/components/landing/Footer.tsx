@@ -1,7 +1,6 @@
 import { Logo } from "./Logo";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { ArrowUpRight, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 const cols: {
   title: string;

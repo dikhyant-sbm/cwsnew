@@ -124,6 +124,7 @@ const faqs = [
 ];
 
 const CaseStudies = () => {
+  useScrollReveal();
   const [filter, setFilter] = useState<Filter>("All");
   const filteredCases = useMemo(
     () => (filter === "All" ? cases : cases.filter((c) => c.categories.includes(filter))),

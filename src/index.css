@@ -19,8 +19,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 45% 7%;
 
-    /* Restrained primary — deeper blue for legibility on light */
-    --primary: 222 85% 32%;
+    /* Restrained primary — brand cyan-blue (#2596be) */
+    --primary: 194 68% 44%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 220 22% 94%;
@@ -30,13 +30,13 @@
     /* Bumped from 38% → 28% lightness for AA on white (≈ 7.6:1) */
     --muted-foreground: 222 18% 28%;
 
-    --accent: 222 85% 32%;
+    --accent: 194 68% 44%;
     --accent-foreground: 0 0% 100%;
 
     /* Accent gradient stops — softer in light mode */
-    --accent-blue: 222 80% 44%;
+    --accent-blue: 194 68% 44%;
     --accent-violet: 258 65% 50%;
-    --accent-cyan: 188 75% 36%;
+    --accent-cyan: 188 75% 42%;
     --accent-graphite: 220 15% 28%;
 
     --destructive: 0 72% 42%;
@@ -45,7 +45,7 @@
     /* Stronger borders for clearer structure */
     --border: 220 18% 84%;
     --input: 220 20% 78%;
-    --ring: 222 85% 38%;
+    --ring: 194 68% 44%;
 
     --radius: 0.875rem;
 
@@ -60,15 +60,15 @@
     --text-subtle: 220 16% 36%;     /* ~ #4B5563 — 6.6:1 */
     --text-tertiary: 220 14% 42%;   /* ~ #5B6472 — 5.0:1, lower bound */
     --border-strong: 220 16% 60%;   /* ~ #94A3B8 */
-    --link: 222 85% 36%;            /* underlined inline link */
-    --focus-ring: 222 85% 42%;
+    --link: 194 68% 38%;            /* underlined inline link */
+    --focus-ring: 194 68% 44%;
 
     /* Surface tokens used by utilities (theme-aware) */
     --surface-card-from: 0 0% 100%;
     --surface-card-to: 220 30% 97%;
     --surface-card-border: 220 18% 86%;
     --hairline-top: 0 0% 100%;
-    --hairline-edge: 222 85% 36%;
+    --hairline-edge: 194 68% 44%;
 
     --glass-bg-from: 0 0% 100% / 0.86;
     --glass-bg-to: 0 0% 100% / 0.66;
@@ -76,10 +76,10 @@
     --glass-shadow: 220 30% 25% / 0.12;
 
     --gradient-text-top: 222 45% 7%;
-    --gradient-text-mid: 222 85% 34%;
+    --gradient-text-mid: 194 68% 40%;
     --gradient-text-end: 258 65% 46%;
 
-    --selection-bg: 222 80% 48% / 0.22;
+    --selection-bg: 194 68% 48% / 0.22;
 
     --ambient-strength-blue: 0.05;
     --ambient-strength-violet: 0.035;
@@ -87,12 +87,12 @@
 
     --sidebar-background: 220 30% 98.5%;
     --sidebar-foreground: 222 45% 7%;
-    --sidebar-primary: 222 85% 32%;
+    --sidebar-primary: 194 68% 44%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 220 22% 94%;
     --sidebar-accent-foreground: 222 40% 12%;
     --sidebar-border: 220 18% 84%;
-    --sidebar-ring: 222 85% 38%;
+    --sidebar-ring: 194 68% 44%;
   }
 
   /* =========================================================

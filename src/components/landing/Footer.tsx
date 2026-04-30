@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, Mail } from "lucide-react";
 
-const cols = [
+const cols: {
+  title: string;
+  links: { label: string; to: string; external?: boolean }[];
+}[] = [
   {
     title: "Services",
     links: [
@@ -15,6 +18,7 @@ const cols = [
       { label: "Visibility Audits", to: "/request-audit" },
       { label: "Agency Partners", to: "/agency-partners" },
       { label: "Case Studies", to: "/case-studies" },
+      { label: "LLM Authority Index", to: "https://www.llmauthorityindex.com/", external: true },
     ],
   },
   {
@@ -118,12 +122,23 @@ export const Footer = () => (
               <ul className="space-y-3">
                 {c.links.map((l) => (
                   <li key={l.label}>
-                    <Link
-                      to={l.to}
-                      className="text-sm text-body hover:text-foreground transition-colors"
-                    >
-                      {l.label}
-                    </Link>
+                    {l.external ? (
+                      <a
+                        href={l.to}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-body hover:text-foreground transition-colors"
+                      >
+                        {l.label}
+                      </a>
+                    ) : (
+                      <Link
+                        to={l.to}
+                        className="text-sm text-body hover:text-foreground transition-colors"
+                      >
+                        {l.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

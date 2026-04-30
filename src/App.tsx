@@ -14,6 +14,7 @@ import Services from "./pages/Services.tsx";
 import CaseStudies from "./pages/CaseStudies.tsx";
 import JobBoardAISearch from "./pages/case-studies/JobBoardAISearch.tsx";
 import AISearchOptimization from "./pages/AISearchOptimization.tsx";
+import EmbeddingLevelGEO from "./pages/resources/EmbeddingLevelGEO.tsx";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/case-studies/job-board-ai-search" element={<JobBoardAISearch />} />
             <Route path="/ai-search-optimization" element={<AISearchOptimization />} />
+            <Route path="/resources/embedding-level-geo" element={<EmbeddingLevelGEO />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

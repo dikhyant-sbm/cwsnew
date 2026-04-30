@@ -609,3 +609,29 @@
     }
   }
 }
+
+@layer components {
+  .prose-article {
+    @apply text-body leading-[1.8] text-[16px];
+  }
+  .prose-article p { @apply mt-5 first:mt-0; }
+  .prose-article strong { @apply text-foreground font-semibold; }
+  .prose-article em { @apply text-foreground/90; }
+  .prose-article ul { @apply mt-5 space-y-2.5 list-none pl-0; }
+  .prose-article ul > li { @apply relative pl-6; }
+  .prose-article ul > li::before {
+    content: "";
+    @apply absolute left-0 top-[0.7em] size-1.5 rounded-full bg-primary;
+  }
+  .prose-article ol { @apply mt-5 space-y-3 list-none pl-0 counter-reset-[item]; }
+  .prose-article ol { counter-reset: item; }
+  .prose-article ol > li {
+    counter-increment: item;
+    @apply relative pl-10;
+  }
+  .prose-article ol > li::before {
+    content: counter(item, decimal-leading-zero);
+    @apply absolute left-0 top-0 font-mono text-[12px] tracking-widest text-primary;
+  }
+  .prose-article a { @apply text-primary underline underline-offset-4 hover:no-underline; }
+}

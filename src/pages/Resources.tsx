@@ -18,7 +18,9 @@ const categories = [
   "Definitions",
 ];
 
-const articles = [
+type Article = { title: string; desc: string; category: string; cta: string; href?: string; featured?: boolean };
+const articles: Article[] = [
+  { title: "Embedding-Level GEO Explained", desc: "How brands become retrievable, trusted, and recommended inside AI retrieval systems. Vector optimization and cosine gap engineering, explained for enterprise teams.", category: "GEO", cta: "READ ARTICLE", href: "/resources/embedding-level-geo", featured: true },
   { title: "What Is GEO?", desc: "A clear explanation of generative engine optimization and how it helps companies appear in AI-generated answers and retrieval-based search systems.", category: "GEO", cta: "READ RESOURCE" },
   { title: "What Is AI Search Visibility?", desc: "A practical guide to how companies appear, disappear, get cited, or get recommended across ChatGPT, Gemini, Perplexity, Copilot, and Google AI Overviews.", category: "AI Search Visibility", cta: "READ RESOURCE" },
   { title: "What Is Citation Architecture?", desc: "A framework for understanding how owned and third-party sources support trust, authority, rankings, and AI recommendations.", category: "Citation Architecture", cta: "READ RESOURCE" },
@@ -134,15 +136,24 @@ const Resources = () => {
             {filtered.map((a, i) => (
               <article
                 key={a.title + active}
-                className="group card-premium p-7 flex flex-col animate-fade-in"
+                className={`group card-premium p-7 flex flex-col animate-fade-in transition-colors ${a.href ? "hover:border-primary/50" : ""} ${a.featured ? "ring-1 ring-primary/40 lg:col-span-2 bg-gradient-to-br from-primary/5 to-transparent" : ""}`}
                 style={{ animationDelay: `${i * 40}ms` }}
               >
+                {a.featured && (
+                  <p className="font-mono text-[11px] tracking-[0.18em] text-primary mb-2">★ FEATURED ARTICLE</p>
+                )}
                 <p className="font-mono text-[13px] uppercase tracking-widest text-primary">{a.category}</p>
-                <h3 className="display text-xl mt-3">{a.title}</h3>
+                <h3 className={`display mt-3 ${a.featured ? "text-2xl sm:text-3xl" : "text-xl"}`}>{a.title}</h3>
                 <p className="text-sm text-body mt-3 leading-relaxed flex-1">{a.desc}</p>
-                <a href="#" className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] tracking-widest text-primary group-hover:gap-2 transition-all w-fit">
-                  {a.cta} <ArrowRight className="size-3" />
-                </a>
+                {a.href ? (
+                  <Link to={a.href} className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] tracking-widest text-primary group-hover:gap-2 transition-all w-fit">
+                    {a.cta} <ArrowRight className="size-3" />
+                  </Link>
+                ) : (
+                  <span className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] tracking-widest text-body w-fit">
+                    {a.cta} <ArrowRight className="size-3" />
+                  </span>
+                )}
               </article>
             ))}
           </div>

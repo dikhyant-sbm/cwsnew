@@ -314,9 +314,15 @@ const CaseStudies = () => {
                     ))}
                   </div>
                 </div>
-                <button className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary hover:gap-2 transition-all">
-                  READ CASE STUDY <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
-                </button>
+                {c.slug ? (
+                  <Link to={`/case-studies/${c.slug}`} className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary hover:gap-2 transition-all">
+                    READ CASE STUDY <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
+                  </Link>
+                ) : (
+                  <span className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-body/60">
+                    COMING SOON
+                  </span>
+                )}
               </article>
             ))}
           </div>

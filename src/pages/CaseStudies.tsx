@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { useEffect, useState, useMemo } from "react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const FILTERS = [
   "All",

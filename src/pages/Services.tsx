@@ -2,8 +2,6 @@ import { Nav } from "@/components/landing/Nav";
 import { Footer } from "@/components/landing/Footer";
 import { StickyAuditCTA } from "@/components/landing/StickyAuditCTA";
 import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
-import { TrustPledges } from "@/components/landing/TrustPledges";
-import { BestFit } from "@/components/landing/BestFit";
 import { SectionNav } from "@/components/landing/SectionNav";
 import { ServicesMatrix } from "@/components/landing/ServicesMatrix";
 import { Button } from "@/components/ui/button";

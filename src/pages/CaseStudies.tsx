@@ -65,8 +65,8 @@ const results = [
   },
 ];
 
-const cases: { n: string; title: string; desc: string; best: string[]; categories: Filter[] }[] = [
-  { n: "01", title: "Job Board AI Search Case Study", desc: "How a job board responded when AI-powered search began reshaping how employers discover job posting platforms.", best: ["B2B platforms", "Recruiting technology", "Marketplace visibility", "AI recommendation tracking"], categories: ["B2B SaaS", "AI Visibility"] },
+const cases: { n: string; title: string; desc: string; best: string[]; categories: Filter[]; slug?: string }[] = [
+  { n: "01", title: "Job Board AI Search Case Study", desc: "How a job board responded when AI-powered search began reshaping how employers discover job posting platforms.", best: ["B2B platforms", "Recruiting technology", "Marketplace visibility", "AI recommendation tracking"], categories: ["B2B SaaS", "AI Visibility"], slug: "job-board-ai-search" },
   { n: "02", title: "Crypto Wallet AI Search Case Study", desc: "How a crypto wallet improved AI Overview brand mentions by 120% across 80 high-intent crypto wallet queries while strengthening cited pages and discussion sources.", best: ["Trust-sensitive categories", "Fintech", "Crypto", "Security-driven buyer journeys"], categories: ["Finance", "AI Visibility", "Citation Architecture"] },
   { n: "03", title: "Household Appliance AI Search Case Study", desc: "How a household appliance brand strengthened citation footprint and source context — a 400% MoM lift in ChatGPT brand mentions and 13,679 keywords in Google's top 10.", best: ["Consumer products", "Appliances", "Comparison-heavy ecommerce", "Product recommendation visibility"], categories: ["Ecommerce", "AI Visibility", "Google Visibility"] },
   { n: "04", title: "Kitchen Appliance AI Search Case Study", desc: "How a kitchen appliance brand built presence across high-intent decision environments as buyer research moved from product pages into communities, comparisons, and AI recommendations.", best: ["Consumer products", "Product-led SEO", "Community-driven buying", "AI recommendation visibility"], categories: ["Ecommerce", "AI Visibility"] },

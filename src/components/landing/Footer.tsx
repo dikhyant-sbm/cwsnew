@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, Mail } from "lucide-react";
 
-const cols = [
+const cols: {
+  title: string;
+  links: { label: string; to: string; external?: boolean }[];
+}[] = [
   {
     title: "Services",
     links: [
@@ -15,6 +18,7 @@ const cols = [
       { label: "Visibility Audits", to: "/request-audit" },
       { label: "Agency Partners", to: "/agency-partners" },
       { label: "Case Studies", to: "/case-studies" },
+      { label: "LLM Authority Index", to: "https://www.llmauthorityindex.com/", external: true },
     ],
   },
   {

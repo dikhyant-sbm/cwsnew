@@ -2,52 +2,25 @@ import { Logo } from "./Logo";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { ArrowUpRight, Menu } from "lucide-react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
-type NavLinkItem = {
-  label: string;
-  to: string;
-  description?: string;
-};
-
 type NavGroup = {
   label: string;
-  to?: string;
-  children?: NavLinkItem[];
+  to: string;
 };
 
 const groups: NavGroup[] = [
-  {
-    label: "SERVICES",
-    to: "/services",
-    children: [
-      { label: "GEO & AI Search Visibility", to: "/services", description: "AI Overviews, ChatGPT, Gemini, Perplexity." },
-      { label: "Citation Architecture", to: "/services", description: "Owned + third-party source environment." },
-      { label: "Technical SEO & Schema", to: "/services", description: "Crawlability, indexation, entity-level schema." },
-      { label: "Content Strategy", to: "/services", description: "Pages built for ranking, retrieval, citation." },
-      { label: "AI Market Intelligence", to: "/services", description: "Prompt clusters, source influence, framing." },
-    ],
-  },
+  { label: "SERVICES", to: "/services" },
   { label: "CASE STUDIES", to: "/case-studies" },
   { label: "METHODOLOGY", to: "/methodology" },
   { label: "AGENCY PARTNERS", to: "/agency-partners" },
-  {
-    label: "RESOURCES",
-    to: "/resources",
-    children: [
-      { label: "Library", to: "/resources", description: "Guides, definitions, and case studies." },
-      { label: "Glossary", to: "/resources", description: "GEO, citation architecture, embeddings." },
-      { label: "Learning paths", to: "/resources", description: "Where to start, by situation." },
-    ],
-  },
+  { label: "RESOURCES", to: "/resources" },
 ];
 
 export const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
-  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -55,9 +28,6 @@ export const Nav = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  // Close dropdowns on navigation
-  useEffect(() => setOpenIdx(null), [location.pathname]);
 
   return (
     <header
@@ -74,63 +44,20 @@ export const Nav = () => {
       >
         <Logo />
 
-        <nav
-          className="hidden lg:flex items-center font-mono text-[13px] font-semibold tracking-[0.14em] text-body"
-          onMouseLeave={() => setOpenIdx(null)}
-        >
-          {groups.map((g, i) => {
-            const hasMenu = !!g.children?.length;
-            return (
-              <div
-                key={g.label}
-                className="relative"
-                onMouseEnter={() => setOpenIdx(hasMenu ? i : null)}
-              >
-                <NavLink
-                  to={g.to ?? "#"}
-                  className={({ isActive }) =>
-                    `inline-flex items-center gap-1 px-4 py-2 transition-colors hover:text-primary ${
-                      isActive ? "text-primary" : ""
-                    }`
-                  }
-                >
-                  {g.label}
-                </NavLink>
-
-                {hasMenu && (
-                  <div
-                    className={`absolute left-0 top-full pt-3 transition-all duration-300 ${
-                      openIdx === i
-                        ? "opacity-100 translate-y-0 pointer-events-auto"
-                        : "opacity-0 -translate-y-1 pointer-events-none"
-                    }`}
-                  >
-                    <div className="w-[360px] glass rounded-2xl p-2 border-gradient">
-                      {g.children!.map((c) => (
-                        <Link
-                          key={c.label}
-                          to={c.to}
-                          className="group block rounded-xl px-4 py-3 hover:bg-foreground/5 transition-colors"
-                        >
-                          <div className="flex items-center justify-between">
-                            <span className="font-sans text-sm tracking-normal text-foreground">
-                              {c.label}
-                            </span>
-                            <ArrowUpRight className="size-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-primary" />
-                          </div>
-                          {c.description && (
-                            <p className="font-sans text-xs tracking-normal text-body mt-1">
-                              {c.description}
-                            </p>
-                          )}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+        <nav className="hidden lg:flex items-center font-mono text-[13px] font-semibold tracking-[0.14em] text-body">
+          {groups.map((g) => (
+            <NavLink
+              key={g.label}
+              to={g.to}
+              className={({ isActive }) =>
+                `inline-flex items-center gap-1 px-4 py-2 transition-colors hover:text-primary ${
+                  isActive ? "text-primary" : ""
+                }`
+              }
+            >
+              {g.label}
+            </NavLink>
+          ))}
         </nav>
 
         <div className="hidden md:flex items-center gap-2">
@@ -157,7 +84,7 @@ export const Nav = () => {
                 {groups.map((g) => (
                   <SheetClose asChild key={g.label}>
                     <Link
-                      to={g.to ?? "#"}
+                      to={g.to}
                       className="py-3 border-b border-border/60 hover:text-primary transition-colors"
                     >
                       {g.label}

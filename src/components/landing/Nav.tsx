@@ -44,63 +44,20 @@ export const Nav = () => {
       >
         <Logo />
 
-        <nav
-          className="hidden lg:flex items-center font-mono text-[13px] font-semibold tracking-[0.14em] text-body"
-          onMouseLeave={() => setOpenIdx(null)}
-        >
-          {groups.map((g, i) => {
-            const hasMenu = !!g.children?.length;
-            return (
-              <div
-                key={g.label}
-                className="relative"
-                onMouseEnter={() => setOpenIdx(hasMenu ? i : null)}
-              >
-                <NavLink
-                  to={g.to ?? "#"}
-                  className={({ isActive }) =>
-                    `inline-flex items-center gap-1 px-4 py-2 transition-colors hover:text-primary ${
-                      isActive ? "text-primary" : ""
-                    }`
-                  }
-                >
-                  {g.label}
-                </NavLink>
-
-                {hasMenu && (
-                  <div
-                    className={`absolute left-0 top-full pt-3 transition-all duration-300 ${
-                      openIdx === i
-                        ? "opacity-100 translate-y-0 pointer-events-auto"
-                        : "opacity-0 -translate-y-1 pointer-events-none"
-                    }`}
-                  >
-                    <div className="w-[360px] glass rounded-2xl p-2 border-gradient">
-                      {g.children!.map((c) => (
-                        <Link
-                          key={c.label}
-                          to={c.to}
-                          className="group block rounded-xl px-4 py-3 hover:bg-foreground/5 transition-colors"
-                        >
-                          <div className="flex items-center justify-between">
-                            <span className="font-sans text-sm tracking-normal text-foreground">
-                              {c.label}
-                            </span>
-                            <ArrowUpRight className="size-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-primary" />
-                          </div>
-                          {c.description && (
-                            <p className="font-sans text-xs tracking-normal text-body mt-1">
-                              {c.description}
-                            </p>
-                          )}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+        <nav className="hidden lg:flex items-center font-mono text-[13px] font-semibold tracking-[0.14em] text-body">
+          {groups.map((g) => (
+            <NavLink
+              key={g.label}
+              to={g.to}
+              className={({ isActive }) =>
+                `inline-flex items-center gap-1 px-4 py-2 transition-colors hover:text-primary ${
+                  isActive ? "text-primary" : ""
+                }`
+              }
+            >
+              {g.label}
+            </NavLink>
+          ))}
         </nav>
 
         <div className="hidden md:flex items-center gap-2">

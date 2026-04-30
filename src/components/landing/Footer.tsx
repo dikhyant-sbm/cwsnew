@@ -1,7 +1,6 @@
 import { Logo } from "./Logo";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { ArrowUpRight, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 const cols: {
   title: string;
@@ -56,35 +55,6 @@ const cols: {
 
 export const Footer = () => (
   <footer className="border-t border-border/40" role="contentinfo">
-    {/* Top CTA band */}
-    <div className="border-b border-border/40 bg-card/30">
-      <div className="mx-auto max-w-7xl px-6 py-12 grid lg:grid-cols-12 gap-8 items-center">
-        <div className="lg:col-span-8">
-          <p className="eyebrow">Ready when you are</p>
-          <h3 className="display text-2xl sm:text-4xl mt-3 leading-tight">
-            Find out where your visibility is breaking down — across Google, AI, and the source layer.
-          </h3>
-        </div>
-        <div className="lg:col-span-4 flex flex-wrap lg:justify-end gap-3">
-          <Button
-            asChild
-            className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 px-6 h-12"
-          >
-            <Link to="/request-audit">
-              REQUEST A VISIBILITY AUDIT{" "}
-              <ArrowUpRight className="w-3.5 h-3.5 ml-1.5" aria-hidden="true" />
-            </Link>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-foreground/30 hover:bg-foreground/5 px-6 h-12"
-          >
-            <Link to="/agency-partners">DISCUSS AGENCY PARTNERSHIP</Link>
-          </Button>
-        </div>
-      </div>
-    </div>
 
     {/* Main footer */}
     <div className="mx-auto max-w-7xl px-6 py-16">

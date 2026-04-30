@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { useEffect, useState, useMemo } from "react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const FILTERS = [
   "All",
@@ -123,6 +124,7 @@ const faqs = [
 ];
 
 const CaseStudies = () => {
+  useScrollReveal();
   const [filter, setFilter] = useState<Filter>("All");
   const filteredCases = useMemo(
     () => (filter === "All" ? cases : cases.filter((c) => c.categories.includes(filter))),

@@ -623,7 +623,7 @@
     content: "";
     @apply absolute left-0 top-[0.7em] size-1.5 rounded-full bg-primary;
   }
-  .prose-article ol { @apply mt-5 space-y-3 list-none pl-0 counter-reset-[item]; }
+  .prose-article ol { @apply mt-5 space-y-3 list-none pl-0; }
   .prose-article ol { counter-reset: item; }
   .prose-article ol > li {
     counter-increment: item;

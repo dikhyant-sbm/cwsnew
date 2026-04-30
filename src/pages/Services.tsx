@@ -297,6 +297,7 @@ const faqs = [
 ];
 
 const Services = () => {
+  useScrollReveal();
   useEffect(() => {
     document.title = "CiteWorks Studio Services | GEO, AI Search Visibility, SEO, and Citation Architecture";
     const meta = document.querySelector('meta[name="description"]');

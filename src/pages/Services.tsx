@@ -9,6 +9,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Check } from "lucide-react";
 import { useEffect } from "react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const servicesNav = [
   { id: "intro", label: "Connected system" },

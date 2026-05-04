@@ -73,13 +73,22 @@ export const Footer = () => (
             CiteWorks Studio is a GEO, AI search visibility, and citation architecture agency for
             growth-minded companies.
           </p>
-          <a
-            href="mailto:hello@citeworksstudio.com"
-            className="mt-6 inline-flex items-center gap-2 text-sm text-body hover:text-foreground transition-colors"
-          >
-            <Mail className="w-4 h-4 text-primary" aria-hidden="true" />
-            hello@citeworksstudio.com
-          </a>
+          <div className="mt-6 space-y-2">
+            <a
+              href="mailto:mark@citeworksstudio.com"
+              className="inline-flex items-center gap-2 text-sm text-body hover:text-foreground transition-colors"
+            >
+              <Mail className="w-4 h-4 text-primary" aria-hidden="true" />
+              mark@citeworksstudio.com
+            </a>
+            <a
+              href="mailto:kaushal@citeworksstudio.com"
+              className="flex items-center gap-2 text-sm text-body hover:text-foreground transition-colors"
+            >
+              <Mail className="w-4 h-4 text-primary" aria-hidden="true" />
+              kaushal@citeworksstudio.com
+            </a>
+          </div>
         </div>
 
         {/* Link columns */}
@@ -125,7 +134,7 @@ export const Footer = () => (
         <p>© 2026 CITEWORKS STUDIO. ALL RIGHTS RESERVED.</p>
         <div className="flex flex-wrap gap-6">
           <a
-            href="mailto:hello@citeworksstudio.com"
+            href="mailto:mark@citeworksstudio.com"
             className="hover:text-foreground transition-colors"
           >
             CONTACT

@@ -62,7 +62,7 @@ export const DashboardWalkthrough = () => {
   const [active, setActive] = useState(0);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
   const imageRef = useRef<HTMLDivElement | null>(null);
-  const { theme } = useTheme();
+  
 
   useEffect(() => {
     const reduce =

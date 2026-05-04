@@ -49,11 +49,12 @@ export const DashboardShowcase = ({
   className = "",
   ...imgProps
 }: Props) => {
-  const d = DASHBOARDS[dashboard];
+  const d = DASHBOARDS[dashboard] as any;
   const { theme } = useTheme();
-  // Use the dark-bg screenshot in light mode (it pops against the light page),
-  // and the light-bg screenshot in dark mode (matches the reference treatment).
-  const src = theme === "light" && "srcDark" in d && d.srcDark ? d.srcDark : d.src;
+  const useDark = theme === "light" && d.srcDark;
+  const src = useDark ? d.srcDark : d.src;
+  const w = (useDark && d.wDark) || d.w;
+  const h = (useDark && d.hDark) || d.h;
   return (
     <figure className={`relative mx-auto ${SIZE_MAX[size]} ${className}`}>
       {/* Ambient glow behind the panel */}
@@ -61,7 +62,7 @@ export const DashboardShowcase = ({
       <div className="absolute -inset-x-20 -inset-y-12 -z-10 rounded-[2rem] bg-[radial-gradient(50%_50%_at_70%_50%,hsl(var(--accent-violet)/0.10),transparent_70%)] blur-2xl" />
 
       <div className="device-frame lift">
-        <div className="device-screen">
+        <div className="device-screen" style={{ aspectRatio: `${w} / ${h}` }}>
           <img
             src={src}
             alt={`${d.label} — CiteWorks Studio dashboard mockup. ${d.caption}`}
@@ -69,8 +70,8 @@ export const DashboardShowcase = ({
             decoding="async"
             // @ts-expect-error fetchpriority is valid HTML, not yet in React types in all setups
             fetchpriority={priority ? "high" : "low"}
-            width={1024}
-            height={1024}
+            width={w}
+            height={h}
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
             className="block w-full h-auto"
             {...imgProps}

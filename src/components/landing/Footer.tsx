@@ -139,6 +139,9 @@ export const Footer = () => (
           <Link to="/privacy-policy" className="hover:text-foreground transition-colors">
             PRIVACY POLICY
           </Link>
+          <Link to="/terms" className="hover:text-foreground transition-colors">
+            TERMS
+          </Link>
         </div>
       </div>
     </div>

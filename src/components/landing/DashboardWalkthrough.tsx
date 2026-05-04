@@ -35,8 +35,8 @@ const STEPS: Step[] = [
   {
     key: "competitor-matrix",
     number: "04",
-    title: "Competitor Visibility Matrix",
-    body: "Side-by-side scoring across Google, AI answers, Source-Layer Authority, citation strength, and recommendation presence.",
+    title: "Model × Topic Matrix",
+    body: "Spot visibility gaps by AI model and topic — see exactly where coverage is strong, mixed, or missing across AI Overviews, ChatGPT, Perplexity, Claude, and AI Mode.",
   },
   {
     key: "corrective-action",

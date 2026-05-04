@@ -136,7 +136,7 @@ const Resources = () => {
             {filtered.map((a, i) => (
               <article
                 key={a.title + active}
-                className={`group card-premium p-7 flex flex-col animate-fade-in transition-colors ${a.href ? "hover:border-primary/50" : ""} ${a.featured ? "ring-1 ring-primary/40 lg:col-span-2 bg-gradient-to-br from-primary/5 to-transparent" : ""}`}
+                className={`group card-premium p-7 flex flex-col animate-fade-in transition-colors relative ${a.href ? "hover:border-primary/50 cursor-pointer" : ""} ${a.featured ? "ring-1 ring-primary/40 lg:col-span-2 bg-gradient-to-br from-primary/5 to-transparent" : ""}`}
                 style={{ animationDelay: `${i * 40}ms` }}
               >
                 {a.featured && (
@@ -146,9 +146,12 @@ const Resources = () => {
                 <h3 className={`display mt-3 ${a.featured ? "text-2xl sm:text-3xl" : "text-xl"}`}>{a.title}</h3>
                 <p className="text-sm text-body mt-3 leading-relaxed flex-1">{a.desc}</p>
                 {a.href ? (
-                  <Link to={a.href} className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] tracking-widest text-primary group-hover:gap-2 transition-all w-fit">
-                    {a.cta} <ArrowRight className="size-3" />
-                  </Link>
+                  <>
+                    <span className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] tracking-widest text-primary group-hover:gap-2 transition-all w-fit">
+                      {a.cta} <ArrowRight className="size-3" />
+                    </span>
+                    <Link to={a.href} aria-label={a.title} className="absolute inset-0 rounded-[inherit] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
+                  </>
                 ) : (
                   <span className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] tracking-widest text-body w-fit">
                     {a.cta} <ArrowRight className="size-3" />

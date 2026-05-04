@@ -298,7 +298,7 @@ const CaseStudies = () => {
             {filteredCases.map((c, i) => (
               <article
                 key={c.n + filter}
-                className="border border-border rounded-xl bg-background p-6 hover:border-primary/40 transition-colors group flex flex-col animate-fade-in"
+                className={`border border-border rounded-xl bg-background p-6 hover:border-primary/40 transition-colors group flex flex-col animate-fade-in relative ${c.slug ? "cursor-pointer" : ""}`}
                 style={{ animationDelay: `${i * 30}ms` }}
               >
                 <p className="font-mono text-[13px] text-primary mb-4">CASE / {c.n}</p>
@@ -315,9 +315,12 @@ const CaseStudies = () => {
                   </div>
                 </div>
                 {c.slug ? (
-                  <Link to={`/case-studies/${c.slug}`} className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary hover:gap-2 transition-all">
-                    READ CASE STUDY <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
-                  </Link>
+                  <>
+                    <span className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2 transition-all">
+                      READ CASE STUDY <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
+                    </span>
+                    <Link to={`/case-studies/${c.slug}`} aria-label={c.title} className="absolute inset-0 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
+                  </>
                 ) : (
                   <span className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-body/60">
                     COMING SOON

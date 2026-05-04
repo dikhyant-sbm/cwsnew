@@ -19,6 +19,7 @@ import About from "./pages/About.tsx";
 import Careers from "./pages/Careers.tsx";
 import JobPosting from "./pages/careers/JobPosting.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
+import TermsAndConditions from "./pages/TermsAndConditions.tsx";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const App = () => (
             <Route path="/careers" element={<Careers />} />
             <Route path="/careers/:slug" element={<JobPosting />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsAndConditions />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

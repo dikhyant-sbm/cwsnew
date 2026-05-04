@@ -490,12 +490,19 @@ const RequestAudit = () => {
           )}
 
           {/* Contact info */}
-          <div className="mt-8 grid sm:grid-cols-2 gap-3">
-            <a href="mailto:hello@citeworksstudio.com" className="flex items-center gap-3 rounded-xl border border-border bg-card/30 p-4 hover:border-primary/40 transition-colors">
+          <div className="mt-8 grid sm:grid-cols-3 gap-3">
+            <a href="mailto:mark@citeworksstudio.com" className="flex items-center gap-3 rounded-xl border border-border bg-card/30 p-4 hover:border-primary/40 transition-colors">
               <Mail className="w-4 h-4 text-primary" />
               <div>
-                <p className="font-mono text-[13px] tracking-[0.16em] text-body">EMAIL</p>
-                <p className="text-sm text-body">hello@citeworksstudio.com</p>
+                <p className="font-mono text-[13px] tracking-[0.16em] text-body">MARK</p>
+                <p className="text-sm text-body">mark@citeworksstudio.com</p>
+              </div>
+            </a>
+            <a href="mailto:kaushal@citeworksstudio.com" className="flex items-center gap-3 rounded-xl border border-border bg-card/30 p-4 hover:border-primary/40 transition-colors">
+              <Mail className="w-4 h-4 text-primary" />
+              <div>
+                <p className="font-mono text-[13px] tracking-[0.16em] text-body">KAUSHAL</p>
+                <p className="text-sm text-body">kaushal@citeworksstudio.com</p>
               </div>
             </a>
             <div className="flex items-center gap-3 rounded-xl border border-border bg-card/30 p-4">

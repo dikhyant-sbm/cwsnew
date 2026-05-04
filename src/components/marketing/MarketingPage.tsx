@@ -370,12 +370,10 @@ export const MarketingPage = ({ meta, hero, sections }: MarketingPageProps) => {
     if (m) m.setAttribute("content", meta.description);
   }, [meta.title, meta.description]);
 
-  const navItems: SectionNavItem[] = sections
-    .filter((s) => s.type !== "finalCta")
-    .map((s) => {
-      const t = "title" in s ? s.title : s.id;
-      return { id: s.id, label: t.length > 32 ? t.slice(0, 30) + "…" : t };
-    });
+  const navItems: SectionNavItem[] = sections.map((s) => {
+    const t = s.type === "finalCta" ? "Get started" : s.title;
+    return { id: s.id, label: t.length > 32 ? t.slice(0, 30) + "…" : t };
+  });
 
   const heroBody = Array.isArray(hero.body) ? hero.body : [hero.body];
 

@@ -124,13 +124,23 @@ const faqs = [
   { q: "Who are these case studies most relevant for?", a: "Growth-minded companies in categories where buyers compare options, validate trust, read third-party sources, and increasingly use AI-generated answers before making a decision." },
 ];
 
+const PAGE_SIZE = 6;
+
 const CaseStudies = () => {
   useScrollReveal();
   const [filter, setFilter] = useState<Filter>("All");
+  const [page, setPage] = useState(1);
   const filteredCases = useMemo(
     () => (filter === "All" ? cases : cases.filter((c) => c.categories.includes(filter))),
     [filter]
   );
+  const totalPages = Math.max(1, Math.ceil(filteredCases.length / PAGE_SIZE));
+  const currentPage = Math.min(page, totalPages);
+  const pagedCases = useMemo(
+    () => filteredCases.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
+    [filteredCases, currentPage]
+  );
+  useEffect(() => { setPage(1); }, [filter]);
 
   useEffect(() => {
     document.title = "CiteWorks Studio Case Studies | AI Search Visibility, GEO, and Citation Architecture Results";
@@ -164,39 +174,6 @@ const CaseStudies = () => {
           <p className="mt-12 text-sm text-body max-w-2xl font-mono">
             Anonymized case studies across high-consideration categories where search visibility, trust, comparison, and recommendation placement affect growth.
           </p>
-        </div>
-      </section>
-
-      {/* Dashboard: Executive Visibility Report */}
-      <section className="relative py-12">
-        <div className="mx-auto max-w-[1400px] px-6 reveal-on-scroll">
-          <DashboardShowcase dashboard="executive-report" size="lg" showCaption />
-        </div>
-      </section>
-
-      {/* Proof Positioning */}
-      <section className="py-24 border-t border-border">
-        <div className="mx-auto max-w-[1400px] px-6 grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-5">
-            <p className="eyebrow mb-6">/ Why this proof</p>
-            <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight">
-              These are not traffic stories. They are visibility-system stories.
-            </h2>
-          </div>
-          <div className="lg:col-span-7 space-y-5 text-body text-lg">
-            <p>Modern buyers do not move through one search result.</p>
-            <p>They search Google. They ask AI systems. They read comparison pages. They check reviews. They watch videos. They scan public discussions. They validate brands through trusted third-party sources before making a decision.</p>
-            <p>That means the strongest visibility programs do not measure only rankings or traffic. They measure whether a company becomes easier to find, easier to validate, easier to cite, and easier to recommend.</p>
-            <p className="text-sm text-body">CiteWorks Studio case studies focus on movement across:</p>
-            <div className="grid grid-cols-2 gap-2 pt-6 border-t border-border">
-              {movement.map((m, i) => (
-                <div key={i} className="flex gap-3 items-start py-1">
-                  <span className="font-mono text-[13px] text-primary mt-1.5">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="text-sm text-body">{m}</span>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 

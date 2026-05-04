@@ -57,36 +57,16 @@ const benefits = [
   },
 ];
 
-const roles = [
-  {
-    title: "Head of AI Visibility Product",
-    location: "Remote · United States preferred",
-    team: "Product",
-    blurb:
-      "Lead the product roadmap for AI visibility dashboards, recommendation tracking, citation tracking, prompt-cluster monitoring, competitor visibility reports, customer review intelligence, and executive reporting systems.",
-  },
-  {
-    title: "Semantic Retrieval / Vector Optimization Engineer",
-    location: "Remote · United States preferred",
-    team: "Engineering",
-    blurb:
-      "Build semantic retrieval and vector optimization systems that analyze how brands, pages, entities, reviews, competitors, and authority signals sit in embedding space — then turn those insights into dashboard recommendations for AI visibility and generative engine optimization.",
-  },
-  {
-    title: "AI Search Data Scientist",
-    location: "Remote · United States preferred",
-    team: "Data Science",
-    blurb:
-      "Convert messy AI visibility signals into reliable metrics for AI Share of Voice, AI Recommendation Share, citation frequency, brand inclusion rate, prompt-level win/loss analysis, recommendation movement over time, and competitor displacement tracking.",
-  },
-  {
-    title: "Prompt Intelligence Analyst",
-    location: "Remote · United States preferred",
-    team: "Research",
-    blurb:
-      "Map how buyers ask AI systems questions before making decisions, then build prompt libraries and prompt clusters that power AI visibility dashboards, recommendation tracking, competitor analysis, and corrective-action workflows.",
-  },
-];
+import { jobs } from "@/data/jobs";
+
+const roles = jobs.map((j) => ({
+  slug: j.slug,
+  title: j.title,
+  location: j.location,
+  team: j.team,
+  blurb: j.shortBlurb,
+}));
+
 
 const Careers = () => {
   useEffect(() => {

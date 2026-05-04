@@ -177,32 +177,6 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* Proof Positioning */}
-      <section className="py-24 border-t border-border">
-        <div className="mx-auto max-w-[1400px] px-6 grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-5">
-            <p className="eyebrow mb-6">/ Why this proof</p>
-            <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight">
-              These are not traffic stories. They are visibility-system stories.
-            </h2>
-          </div>
-          <div className="lg:col-span-7 space-y-5 text-body text-lg">
-            <p>Modern buyers do not move through one search result.</p>
-            <p>They search Google. They ask AI systems. They read comparison pages. They check reviews. They watch videos. They scan public discussions. They validate brands through trusted third-party sources before making a decision.</p>
-            <p>That means the strongest visibility programs do not measure only rankings or traffic. They measure whether a company becomes easier to find, easier to validate, easier to cite, and easier to recommend.</p>
-            <p className="text-sm text-body">CiteWorks Studio case studies focus on movement across:</p>
-            <div className="grid grid-cols-2 gap-2 pt-6 border-t border-border">
-              {movement.map((m, i) => (
-                <div key={i} className="flex gap-3 items-start py-1">
-                  <span className="font-mono text-[13px] text-primary mt-1.5">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="text-sm text-body">{m}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Featured Synthesis */}
       <section id="featured" className="py-24 border-t border-border bg-card/30">
         <div className="mx-auto max-w-[1400px] px-6">

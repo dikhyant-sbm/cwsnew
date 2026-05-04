@@ -1,5 +1,5 @@
 import { ImgHTMLAttributes } from "react";
-import { useTheme } from "@/components/theme/ThemeProvider";
+
 
 /** Available CiteWorks dashboard mockups (eager-imported so Vite picks correct hashed URLs). */
 import aiVisibility from "@/assets/dashboards/01-ai-visibility-overview.png";

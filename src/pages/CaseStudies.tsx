@@ -177,13 +177,6 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* Dashboard: Executive Visibility Report */}
-      <section className="relative py-12">
-        <div className="mx-auto max-w-[1400px] px-6 reveal-on-scroll">
-          <DashboardShowcase dashboard="executive-report" size="lg" showCaption />
-        </div>
-      </section>
-
       {/* Proof Positioning */}
       <section className="py-24 border-t border-border">
         <div className="mx-auto max-w-[1400px] px-6 grid lg:grid-cols-12 gap-12">

@@ -131,7 +131,7 @@ export const Footer = () => (
 
       {/* Bottom bar */}
       <div className="mt-16 pt-8 border-t border-border/40 flex flex-col sm:flex-row justify-between gap-4 text-[13px] text-body font-mono tracking-widest">
-        <p>© 2026 CITEWORKS STUDIO. ALL RIGHTS RESERVED.</p>
+        <p>© 2026 3D CHESS MEDIA LLC DBA CITEWORKS STUDIO. ALL RIGHTS RESERVED.</p>
         <div className="flex flex-wrap gap-6">
           <Link to="/contact" className="hover:text-foreground transition-colors">
             CONTACT

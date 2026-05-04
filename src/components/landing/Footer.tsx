@@ -24,6 +24,7 @@ const cols: {
   {
     title: "Pages",
     links: [
+      { label: "About Us", to: "/about" },
       { label: "Methodology", to: "/methodology" },
       { label: "Case Studies", to: "/case-studies" },
       { label: "Services", to: "/services" },

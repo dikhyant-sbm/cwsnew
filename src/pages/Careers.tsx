@@ -197,7 +197,7 @@ const Careers = () => {
             <div className="mt-10 space-y-4">
               {roles.map((r) => (
                 <article
-                  key={r.title}
+                  key={r.slug}
                   className="card-premium p-7 hover:border-primary/40 transition-colors group"
                 >
                   <div className="grid lg:grid-cols-12 gap-6 items-start">
@@ -210,19 +210,27 @@ const Careers = () => {
                           <MapPin className="w-3.5 h-3.5" /> {r.location}
                         </span>
                       </div>
-                      <h3 className="display text-2xl mt-4 leading-tight">{r.title}</h3>
+                      <Link to={`/careers/${r.slug}`} className="block mt-4 hover:text-primary transition-colors">
+                        <h3 className="display text-2xl leading-tight">{r.title}</h3>
+                      </Link>
                       <p className="mt-3 text-body text-sm leading-relaxed">{r.blurb}</p>
                     </div>
-                    <div className="lg:col-span-4 flex lg:justify-end">
+                    <div className="lg:col-span-4 flex flex-col lg:items-end gap-2">
                       <Button
                         asChild
                         className="rounded-full font-mono text-[12px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow h-12 px-6"
                       >
-                        <a href={mailtoFor(r.title)}>
-                          APPLY NOW
+                        <Link to={`/careers/${r.slug}`}>
+                          VIEW ROLE
                           <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                        </a>
+                        </Link>
                       </Button>
+                      <a
+                        href={mailtoFor(r.title)}
+                        className="font-mono text-[11px] tracking-[0.16em] uppercase text-body hover:text-primary transition-colors"
+                      >
+                        Quick apply →
+                      </a>
                     </div>
                   </div>
                 </article>

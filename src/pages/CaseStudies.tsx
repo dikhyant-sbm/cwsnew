@@ -214,25 +214,8 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* Results Snapshot */}
-      <section className="py-24 border-t border-border">
-        <div className="mx-auto max-w-[1400px] px-6">
-          <p className="eyebrow mb-6">/ Results snapshot</p>
-          <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
-            Published outcomes across AI search and Google visibility.
-          </h2>
-          <p className="text-body max-w-2xl mb-12">
-            Each case uses its own measurement framework, category context, and timeframe. Read these as published case-study outcomes, not a universal benchmark.
-          </p>
-          <ResultsChart results={results} />
-          <p className="mt-6 text-xs text-body max-w-3xl font-mono">
-            Source note: published outcomes from the CiteWorks cross-case synthesis. Cases use different surfaces, timeframes, and metric types and should be compared descriptively rather than blended into a single benchmark.
-          </p>
-        </div>
-      </section>
-
-      {/* Case Study Grid */}
-      <section id="cases" className="py-24 border-t border-border bg-card/30 scroll-mt-24">
+      {/* Case Study List */}
+      <section id="cases" className="py-24 border-t border-border scroll-mt-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="eyebrow mb-6">/ The case studies</p>
           <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
@@ -268,41 +251,45 @@ const CaseStudies = () => {
           </div>
 
           <p className="font-mono text-[13px] tracking-[0.16em] text-body mb-6" aria-live="polite">
-            SHOWING {filteredCases.length} OF {cases.length}
+            SHOWING {(currentPage - 1) * PAGE_SIZE + (filteredCases.length === 0 ? 0 : 1)}–{Math.min(currentPage * PAGE_SIZE, filteredCases.length)} OF {filteredCases.length}
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredCases.map((c, i) => (
+          <div className="flex flex-col gap-4">
+            {pagedCases.map((c, i) => (
               <article
-                key={c.n + filter}
-                className={`border border-border rounded-xl bg-background p-6 hover:border-primary/40 transition-colors group flex flex-col animate-fade-in relative ${c.slug ? "cursor-pointer" : ""}`}
+                key={c.n + filter + currentPage}
+                className={`border border-border rounded-xl bg-card/30 p-6 lg:p-8 hover:border-primary/40 transition-colors group flex flex-col lg:flex-row lg:items-stretch gap-6 animate-fade-in relative ${c.slug ? "cursor-pointer" : ""}`}
                 style={{ animationDelay: `${i * 30}ms` }}
               >
-                <p className="font-mono text-[13px] text-primary mb-4">CASE / {c.n}</p>
-                <h3 className="text-lg font-semibold mb-3 leading-snug group-hover:text-primary transition-colors">
-                  {c.title}
-                </h3>
-                <p className="text-sm text-body mb-5 flex-grow">{c.desc}</p>
-                <div className="border-t border-border pt-4">
-                  <p className="font-mono text-[13px] text-body mb-2">BEST FOR</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {c.best.map((b) => (
-                      <span key={b} className="text-[13px] px-2 py-1 rounded-full bg-card border border-border text-body">{b}</span>
-                    ))}
-                  </div>
+                <div className="lg:w-1/3 flex flex-col">
+                  <p className="font-mono text-[13px] text-primary mb-3">CASE / {c.n}</p>
+                  <h3 className="text-xl lg:text-2xl font-semibold leading-snug group-hover:text-primary transition-colors">
+                    {c.title}
+                  </h3>
                 </div>
-                {c.slug ? (
-                  <>
-                    <span className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2 transition-all">
-                      READ CASE STUDY <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
+                <div className="lg:w-2/3 flex flex-col">
+                  <p className="text-base text-body mb-5">{c.desc}</p>
+                  <div className="border-t border-border pt-4 mt-auto">
+                    <p className="font-mono text-[13px] text-body mb-2">BEST FOR</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {c.best.map((b) => (
+                        <span key={b} className="text-[13px] px-2 py-1 rounded-full bg-background border border-border text-body">{b}</span>
+                      ))}
+                    </div>
+                  </div>
+                  {c.slug ? (
+                    <>
+                      <span className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2 transition-all">
+                        READ CASE STUDY <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
+                      </span>
+                      <Link to={`/case-studies/${c.slug}`} aria-label={c.title} className="absolute inset-0 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
+                    </>
+                  ) : (
+                    <span className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-body/60">
+                      COMING SOON
                     </span>
-                    <Link to={`/case-studies/${c.slug}`} aria-label={c.title} className="absolute inset-0 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
-                  </>
-                ) : (
-                  <span className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-body/60">
-                    COMING SOON
-                  </span>
-                )}
+                  )}
+                </div>
               </article>
             ))}
           </div>
@@ -312,6 +299,93 @@ const CaseStudies = () => {
               No case studies in this category yet. <button onClick={() => setFilter("All")} className="text-primary underline-offset-4 hover:underline">View all</button>.
             </div>
           )}
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <nav aria-label="Case studies pagination" className="mt-10 flex flex-wrap items-center justify-center gap-2">
+              <button
+                type="button"
+                onClick={() => setPage((p) => Math.max(1, p - 1))}
+                disabled={currentPage === 1}
+                className="px-4 py-2 rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border border-border text-body hover:border-primary/40 hover:text-foreground disabled:opacity-40 disabled:pointer-events-none transition-colors"
+              >
+                ← PREV
+              </button>
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+                <button
+                  key={p}
+                  type="button"
+                  onClick={() => setPage(p)}
+                  aria-current={p === currentPage ? "page" : undefined}
+                  className={`min-w-[40px] px-3 py-2 rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border transition-colors ${
+                    p === currentPage
+                      ? "bg-primary text-primary-foreground border-transparent"
+                      : "border-border text-body hover:border-primary/40 hover:text-foreground"
+                  }`}
+                >
+                  {String(p).padStart(2, "0")}
+                </button>
+              ))}
+              <button
+                type="button"
+                onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                disabled={currentPage === totalPages}
+                className="px-4 py-2 rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border border-border text-body hover:border-primary/40 hover:text-foreground disabled:opacity-40 disabled:pointer-events-none transition-colors"
+              >
+                NEXT →
+              </button>
+            </nav>
+          )}
+        </div>
+      </section>
+
+      {/* Dashboard: Executive Visibility Report */}
+      <section className="relative py-12 border-t border-border">
+        <div className="mx-auto max-w-[1400px] px-6 reveal-on-scroll">
+          <DashboardShowcase dashboard="executive-report" size="lg" showCaption />
+        </div>
+      </section>
+
+      {/* Proof Positioning */}
+      <section className="py-24 border-t border-border">
+        <div className="mx-auto max-w-[1400px] px-6 grid lg:grid-cols-12 gap-12">
+          <div className="lg:col-span-5">
+            <p className="eyebrow mb-6">/ Why this proof</p>
+            <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight">
+              These are not traffic stories. They are visibility-system stories.
+            </h2>
+          </div>
+          <div className="lg:col-span-7 space-y-5 text-body text-lg">
+            <p>Modern buyers do not move through one search result.</p>
+            <p>They search Google. They ask AI systems. They read comparison pages. They check reviews. They watch videos. They scan public discussions. They validate brands through trusted third-party sources before making a decision.</p>
+            <p>That means the strongest visibility programs do not measure only rankings or traffic. They measure whether a company becomes easier to find, easier to validate, easier to cite, and easier to recommend.</p>
+            <p className="text-sm text-body">CiteWorks Studio case studies focus on movement across:</p>
+            <div className="grid grid-cols-2 gap-2 pt-6 border-t border-border">
+              {movement.map((m, i) => (
+                <div key={i} className="flex gap-3 items-start py-1">
+                  <span className="font-mono text-[13px] text-primary mt-1.5">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-sm text-body">{m}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Results Snapshot */}
+      <section className="py-24 border-t border-border bg-card/30">
+        <div className="mx-auto max-w-[1400px] px-6">
+          <p className="eyebrow mb-6">/ Results snapshot</p>
+          <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
+            Published outcomes across AI search and Google visibility.
+          </h2>
+          <p className="text-body max-w-2xl mb-12">
+            Each case uses its own measurement framework, category context, and timeframe. Read these as published case-study outcomes, not a universal benchmark.
+          </p>
+          <ResultsChart results={results} />
+          <p className="mt-6 text-xs text-body max-w-3xl font-mono">
+            Source note: published outcomes from the CiteWorks cross-case synthesis. Cases use different surfaces, timeframes, and metric types and should be compared descriptively rather than blended into a single benchmark.
+          </p>
         </div>
       </section>
 

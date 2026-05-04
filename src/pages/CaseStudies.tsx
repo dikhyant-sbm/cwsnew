@@ -124,13 +124,23 @@ const faqs = [
   { q: "Who are these case studies most relevant for?", a: "Growth-minded companies in categories where buyers compare options, validate trust, read third-party sources, and increasingly use AI-generated answers before making a decision." },
 ];
 
+const PAGE_SIZE = 6;
+
 const CaseStudies = () => {
   useScrollReveal();
   const [filter, setFilter] = useState<Filter>("All");
+  const [page, setPage] = useState(1);
   const filteredCases = useMemo(
     () => (filter === "All" ? cases : cases.filter((c) => c.categories.includes(filter))),
     [filter]
   );
+  const totalPages = Math.max(1, Math.ceil(filteredCases.length / PAGE_SIZE));
+  const currentPage = Math.min(page, totalPages);
+  const pagedCases = useMemo(
+    () => filteredCases.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
+    [filteredCases, currentPage]
+  );
+  useEffect(() => { setPage(1); }, [filter]);
 
   useEffect(() => {
     document.title = "CiteWorks Studio Case Studies | AI Search Visibility, GEO, and Citation Architecture Results";

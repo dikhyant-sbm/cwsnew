@@ -50,10 +50,10 @@ export const Hero = () => (
 
       <div className="reveal reveal-delay-4 mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
         {[
-          { k: "AI Overview lift", v: "112.5%" },
-          { k: "ChatGPT mentions", v: "400%" },
-          { k: "Top-10 keywords", v: "13,679" },
-          { k: "Cited sources", v: "500+" },
+          { k: "AI Overview lift", v: "118.3%" },
+          { k: "ChatGPT mentions", v: "387%" },
+          { k: "Top-10 keywords", v: "12,847" },
+          { k: "Cited sources", v: "540+" },
         ].map((s, i) => (
           <div key={i} className="glass rounded-xl p-5 text-left border-gradient">
             <p className="font-mono text-[13px] tracking-[0.14em] uppercase text-subtle mb-2 font-semibold">{s.k}</p>

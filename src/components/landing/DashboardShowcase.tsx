@@ -61,9 +61,9 @@ export const DashboardShowcase = ({
   const w = (useDark && d.wDark) || d.w;
   const h = (useDark && d.hDark) || d.h;
   const hasDark = !!d.srcDark;
-  // In light mode we show d.srcDark (the white-bg version), in dark mode we show d.src.
-  const aspectW = theme === "light" && d.wDark ? d.wDark : d.w;
-  const aspectH = theme === "light" && d.hDark ? d.hDark : d.h;
+  // Use a stable aspect ratio (light variant) to avoid layout shift on theme toggle.
+  const aspectW = d.wDark || d.w;
+  const aspectH = d.hDark || d.h;
   return (
     <figure className={`relative mx-auto ${SIZE_MAX[size]} ${className}`}>
       {/* Ambient glow behind the panel */}

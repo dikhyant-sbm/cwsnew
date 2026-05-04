@@ -60,6 +60,10 @@ export const DashboardShowcase = ({
   const src = useDark ? d.srcDark : d.src;
   const w = (useDark && d.wDark) || d.w;
   const h = (useDark && d.hDark) || d.h;
+  const hasDark = !!d.srcDark;
+  // In light mode we show d.srcDark (the white-bg version), in dark mode we show d.src.
+  const aspectW = theme === "light" && d.wDark ? d.wDark : d.w;
+  const aspectH = theme === "light" && d.hDark ? d.hDark : d.h;
   return (
     <figure className={`relative mx-auto ${SIZE_MAX[size]} ${className}`}>
       {/* Ambient glow behind the panel */}
@@ -67,20 +71,34 @@ export const DashboardShowcase = ({
       <div className="absolute -inset-x-20 -inset-y-12 -z-10 rounded-[2rem] bg-[radial-gradient(50%_50%_at_70%_50%,hsl(var(--accent-violet)/0.10),transparent_70%)] blur-2xl" />
 
       <div className="device-frame lift">
-        <div className="device-screen" style={{ aspectRatio: `${w} / ${h}` }}>
+        <div className="device-screen relative" style={{ aspectRatio: `${aspectW} / ${aspectH}` }}>
+          {/* Dark-mode image (dark-bg) — visible in dark mode */}
           <img
-            src={src}
+            src={d.src}
             alt={`${d.label} — CiteWorks Studio dashboard mockup. ${d.caption}`}
             loading={priority ? "eager" : "lazy"}
             decoding="async"
-            // @ts-expect-error fetchpriority is valid HTML, not yet in React types in all setups
+            // @ts-expect-error fetchpriority
             fetchpriority={priority ? "high" : "low"}
-            width={w}
-            height={h}
+            width={d.w}
+            height={d.h}
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
-            className="block w-full h-auto"
+            className="absolute inset-0 block w-full h-full object-contain dark:opacity-100 opacity-0 transition-opacity duration-200"
             {...imgProps}
           />
+          {hasDark && (
+            <img
+              src={d.srcDark}
+              alt=""
+              aria-hidden="true"
+              loading={priority ? "eager" : "lazy"}
+              decoding="async"
+              width={d.wDark}
+              height={d.hDark}
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
+              className="absolute inset-0 block w-full h-full object-contain dark:opacity-0 opacity-100 transition-opacity duration-200"
+            />
+          )}
         </div>
       </div>
 

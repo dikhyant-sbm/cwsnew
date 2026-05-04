@@ -136,6 +136,9 @@ export const Footer = () => (
           <Link to="/agency-partners" className="hover:text-foreground transition-colors">
             AGENCY PARTNERS
           </Link>
+          <Link to="/privacy-policy" className="hover:text-foreground transition-colors">
+            PRIVACY POLICY
+          </Link>
         </div>
       </div>
     </div>

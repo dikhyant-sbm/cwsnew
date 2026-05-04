@@ -18,6 +18,7 @@ import EmbeddingLevelGEO from "./pages/resources/EmbeddingLevelGEO.tsx";
 import About from "./pages/About.tsx";
 import Careers from "./pages/Careers.tsx";
 import JobPosting from "./pages/careers/JobPosting.tsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/careers/:slug" element={<JobPosting />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

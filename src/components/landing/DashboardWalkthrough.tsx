@@ -146,7 +146,7 @@ export const DashboardWalkthrough = () => {
                 <div className="absolute -inset-x-16 -inset-y-12 -z-10 rounded-[2.5rem] bg-[radial-gradient(60%_60%_at_50%_50%,hsl(var(--accent-blue)/0.20),transparent_70%)] blur-3xl" />
                 <div className="absolute -inset-x-24 -inset-y-16 -z-10 rounded-[2.5rem] bg-[radial-gradient(50%_50%_at_70%_50%,hsl(var(--accent-violet)/0.12),transparent_70%)] blur-3xl" />
                 <div ref={imageRef} className="device-frame lift">
-                  <div className="device-screen relative aspect-[16/9] overflow-hidden">
+                  <div className="device-screen relative aspect-[16/9] overflow-hidden bg-black">
                     {STEPS.map((s, i) => (
                       <img
                         key={s.key}
@@ -154,7 +154,7 @@ export const DashboardWalkthrough = () => {
                         alt={`${DASHBOARDS[s.key].label} — ${DASHBOARDS[s.key].caption}`}
                         loading="lazy"
                         decoding="async"
-                        className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 ease-out ${
+                        className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-out ${
                           i === active ? "opacity-100" : "opacity-0"
                         }`}
                         aria-hidden={i !== active}

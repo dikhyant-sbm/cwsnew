@@ -65,7 +65,7 @@ export const Features = () => (
           return (
             <article
               key={f.title}
-              className={`reveal-on-scroll card-premium p-8 flex flex-col ${f.span}`}
+              className={`reveal-on-scroll card-premium p-8 flex flex-col relative cursor-pointer hover:border-primary/40 transition-colors group ${f.span}`}
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               <div className="flex items-center justify-between">
@@ -78,12 +78,14 @@ export const Features = () => (
               </div>
               <h3 className="display text-2xl mt-6">{f.title}</h3>
               <p className="text-sm text-body mt-3 leading-relaxed flex-1">{f.desc}</p>
+              <span className="mt-6 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2 transition-all w-fit">
+                LEARN MORE <ArrowRight className="size-3" />
+              </span>
               <Link
                 to="/methodology"
-                className="mt-6 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary hover:gap-2 transition-all w-fit"
-              >
-                LEARN MORE <ArrowRight className="size-3" />
-              </Link>
+                aria-label={f.title}
+                className="absolute inset-0 rounded-[inherit] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              />
             </article>
           );
         })}

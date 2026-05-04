@@ -14,6 +14,7 @@ import {
 import { PageShell } from "@/components/landing/Shell";
 import { Button } from "@/components/ui/button";
 import { SectionNav, type SectionNavItem } from "@/components/landing/SectionNav";
+import { jobs } from "@/data/jobs";
 
 const HR_EMAIL = "hr@citeworksstudio.com";
 
@@ -56,8 +57,6 @@ const benefits = [
     b: "Operate at the intersection of search intelligence, AI retrieval systems, and enterprise strategy.",
   },
 ];
-
-import { jobs } from "@/data/jobs";
 
 const roles = jobs.map((j) => ({
   slug: j.slug,

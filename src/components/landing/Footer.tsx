@@ -133,12 +133,9 @@ export const Footer = () => (
       <div className="mt-16 pt-8 border-t border-border/40 flex flex-col sm:flex-row justify-between gap-4 text-[13px] text-body font-mono tracking-widest">
         <p>© 2026 CITEWORKS STUDIO. ALL RIGHTS RESERVED.</p>
         <div className="flex flex-wrap gap-6">
-          <a
-            href="mailto:mark@citeworksstudio.com"
-            className="hover:text-foreground transition-colors"
-          >
+          <Link to="/contact" className="hover:text-foreground transition-colors">
             CONTACT
-          </a>
+          </Link>
           <Link to="/request-audit" className="hover:text-foreground transition-colors">
             REQUEST AUDIT
           </Link>

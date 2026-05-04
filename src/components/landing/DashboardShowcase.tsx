@@ -10,6 +10,7 @@ import competitorMatrix from "@/assets/dashboards/04-competitor-visibility-matri
 import roadmap from "@/assets/dashboards/05-corrective-action-roadmap.png";
 import execReport from "@/assets/dashboards/06-executive-visibility-report.png";
 import closedLoop from "@/assets/dashboards/07-closed-loop-methodology.png";
+import closedLoopDark from "@/assets/dashboards/07-closed-loop-methodology-dark.png";
 
 export const DASHBOARDS = {
   "ai-visibility": { src: aiVisibility, srcDark: aiVisibilityDark, label: "AI Visibility Overview", caption: "Share of Voice, Recommendation Strength, and model coverage across ChatGPT, Gemini, Perplexity, Copilot, and Google AI Overviews." },
@@ -18,7 +19,7 @@ export const DASHBOARDS = {
   "competitor-matrix": { src: competitorMatrix, label: "Model × Topic Matrix", caption: "Spot visibility gaps by AI model and topic across AI Overviews, ChatGPT, Perplexity, Claude, and AI Mode." },
   "corrective-action": { src: roadmap, label: "Corrective Action", caption: "Prioritized roadmap across Technical SEO, content, citation sources, and entity clarity — Planned → In Progress → Live → Measuring." },
   "executive-report": { src: execReport, label: "Executive Visibility Report", caption: "Leadership-ready snapshot: visibility baseline, movement, top risks, recoverable opportunities, and recommended next actions." },
-  "closed-loop": { src: closedLoop, label: "Closed-Loop Methodology", caption: "Map · Benchmark · Analyze · Build · Execute · Measure — a continuous visibility system." },
+  "closed-loop": { src: closedLoopDark, srcDark: closedLoop, label: "Closed-Loop Methodology", caption: "Map · Benchmark · Analyze · Build · Execute · Measure — a continuous visibility system." },
 } as const;
 
 export type DashboardKey = keyof typeof DASHBOARDS;

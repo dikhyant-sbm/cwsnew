@@ -55,13 +55,8 @@ export const DashboardShowcase = ({
   ...imgProps
 }: Props) => {
   const d = DASHBOARDS[dashboard] as any;
-  const { theme } = useTheme();
-  const useDark = theme === "light" && d.srcDark;
-  const src = useDark ? d.srcDark : d.src;
-  const w = (useDark && d.wDark) || d.w;
-  const h = (useDark && d.hDark) || d.h;
   const hasDark = !!d.srcDark;
-  // Use a stable aspect ratio (light variant) to avoid layout shift on theme toggle.
+  // Use a stable aspect ratio to avoid layout shift on theme toggle.
   const aspectW = d.wDark || d.w;
   const aspectH = d.hDark || d.h;
   return (

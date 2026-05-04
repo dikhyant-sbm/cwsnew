@@ -147,19 +147,37 @@ export const DashboardWalkthrough = () => {
                 <div className="absolute -inset-x-24 -inset-y-16 -z-10 rounded-[2.5rem] bg-[radial-gradient(50%_50%_at_70%_50%,hsl(var(--accent-violet)/0.12),transparent_70%)] blur-3xl" />
                 <div ref={imageRef} className="device-frame lift">
                   <div className="device-screen relative aspect-[16/9] overflow-hidden bg-black">
-                    {STEPS.map((s, i) => (
-                      <img
-                        key={s.key}
-                        src={(theme === "light" && (DASHBOARDS[s.key] as any).srcDark) || DASHBOARDS[s.key].src}
-                        alt={`${DASHBOARDS[s.key].label} — ${DASHBOARDS[s.key].caption}`}
-                        loading="lazy"
-                        decoding="async"
-                        className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-out ${
-                          i === active ? "opacity-100" : "opacity-0 pointer-events-none"
-                        }`}
-                        aria-hidden={i !== active}
-                      />
-                    ))}
+                    {STEPS.map((s, i) => {
+                      const dash = DASHBOARDS[s.key] as any;
+                      const isActive = i === active;
+                      return (
+                        <div
+                          key={s.key}
+                          className={`absolute inset-0 transition-opacity duration-500 ease-out ${
+                            isActive ? "opacity-100" : "opacity-0 pointer-events-none"
+                          }`}
+                          aria-hidden={!isActive}
+                        >
+                          <img
+                            src={dash.src}
+                            alt={`${dash.label} — ${dash.caption}`}
+                            loading="lazy"
+                            decoding="async"
+                            className="absolute inset-0 w-full h-full object-contain dark:opacity-100 opacity-0 transition-opacity duration-200"
+                          />
+                          {dash.srcDark && (
+                            <img
+                              src={dash.srcDark}
+                              alt=""
+                              aria-hidden="true"
+                              loading="lazy"
+                              decoding="async"
+                              className="absolute inset-0 w-full h-full object-contain dark:opacity-0 opacity-100 transition-opacity duration-200"
+                            />
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
                 <figcaption className="mt-4 flex items-center justify-between font-mono text-[13px] tracking-[0.16em] uppercase text-tertiary">

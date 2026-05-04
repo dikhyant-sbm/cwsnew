@@ -15,7 +15,7 @@ export const DASHBOARDS = {
   "ai-visibility": { src: aiVisibility, srcDark: aiVisibilityDark, label: "AI Visibility Overview", caption: "Share of Voice, Recommendation Strength, and model coverage across ChatGPT, Gemini, Perplexity, Copilot, and Google AI Overviews." },
   "prompt-clusters": { src: promptClusters, label: "Prompt Cluster Tracking", caption: "Visibility scored by buyer-intent cluster — present, cited, recommended, or absent — benchmarked against the category." },
   "citation-architecture": { src: citationMap, label: "Citation Architecture", caption: "Owned, third-party, review, comparison, community, video, and industry sources with live citation gap status." },
-  "competitor-matrix": { src: competitorMatrix, label: "Executive Level Reporting", caption: "Executive Level Reporting" },
+  "competitor-matrix": { src: competitorMatrix, label: "Model × Topic Matrix", caption: "Spot visibility gaps by AI model and topic across AI Overviews, ChatGPT, Perplexity, Claude, and AI Mode." },
   "corrective-action": { src: roadmap, label: "Corrective Action", caption: "Prioritized roadmap across Technical SEO, content, citation sources, and entity clarity — Planned → In Progress → Live → Measuring." },
   "executive-report": { src: execReport, label: "Executive Visibility Report", caption: "Leadership-ready snapshot: visibility baseline, movement, top risks, recoverable opportunities, and recommended next actions." },
   "closed-loop": { src: closedLoop, label: "Closed-Loop Methodology", caption: "Map · Benchmark · Analyze · Build · Execute · Measure — a continuous visibility system." },

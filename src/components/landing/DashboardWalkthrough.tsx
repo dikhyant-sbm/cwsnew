@@ -155,7 +155,7 @@ export const DashboardWalkthrough = () => {
                         loading="lazy"
                         decoding="async"
                         className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-out ${
-                          i === active ? "opacity-100" : "opacity-0"
+                          i === active ? "opacity-100" : "opacity-0 pointer-events-none"
                         }`}
                         aria-hidden={i !== active}
                       />

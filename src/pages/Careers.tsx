@@ -198,9 +198,14 @@ const Careers = () => {
               {roles.map((r) => (
                 <article
                   key={r.slug}
-                  className="card-premium p-7 hover:border-primary/40 transition-colors group"
+                  className="card-premium p-7 hover:border-primary/40 transition-colors group relative cursor-pointer"
                 >
-                  <div className="grid lg:grid-cols-12 gap-6 items-start">
+                  <Link
+                    to={`/careers/${r.slug}`}
+                    aria-label={r.title}
+                    className="absolute inset-0 rounded-[inherit] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring z-0"
+                  />
+                  <div className="grid lg:grid-cols-12 gap-6 items-start relative">
                     <div className="lg:col-span-8">
                       <div className="flex flex-wrap items-center gap-3">
                         <span className="font-mono text-[11px] tracking-[0.18em] uppercase text-primary px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20">
@@ -210,12 +215,10 @@ const Careers = () => {
                           <MapPin className="w-3.5 h-3.5" /> {r.location}
                         </span>
                       </div>
-                      <Link to={`/careers/${r.slug}`} className="block mt-4 hover:text-primary transition-colors">
-                        <h3 className="display text-2xl leading-tight">{r.title}</h3>
-                      </Link>
+                      <h3 className="display text-2xl leading-tight mt-4 group-hover:text-primary transition-colors">{r.title}</h3>
                       <p className="mt-3 text-body text-sm leading-relaxed">{r.blurb}</p>
                     </div>
-                    <div className="lg:col-span-4 flex flex-col lg:items-end gap-2">
+                    <div className="lg:col-span-4 flex flex-col lg:items-end gap-2 relative z-10">
                       <Button
                         asChild
                         className="rounded-full font-mono text-[12px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90 btn-glow h-12 px-6"

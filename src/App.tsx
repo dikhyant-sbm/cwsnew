@@ -21,6 +21,7 @@ import JobPosting from "./pages/careers/JobPosting.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import TermsAndConditions from "./pages/TermsAndConditions.tsx";
 import Contact from "./pages/Contact.tsx";
+import { Lightbox } from "./components/Lightbox.tsx";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <Lightbox />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />

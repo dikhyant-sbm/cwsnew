@@ -1,5 +1,6 @@
 import { PageShell } from "@/components/landing/Shell";
 import { Hero } from "@/components/landing/Hero";
+import { ClientLogos } from "@/components/landing/ClientLogos";
 import { ProductShot } from "@/components/landing/ProductShot";
 import { TrustedBy } from "@/components/landing/TrustedBy";
 import { WhatWeDo } from "@/components/landing/WhatWeDo";
@@ -38,6 +39,7 @@ const Index = () => {
   return (
     <PageShell>
       <Hero />
+      <ClientLogos />
       <ProductShot />
       <CoverageStrip />
       <TrustedBy />

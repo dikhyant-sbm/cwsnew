@@ -55,7 +55,7 @@ export const ClientLogos = () => {
                   alt={`${c.name} logo`}
                   loading="lazy"
                   decoding="async"
-                  className="max-h-12 w-auto max-w-[170px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300 ease-out dark:invert dark:hover:invert-0"
+                  className="max-h-12 w-auto max-w-[170px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300 ease-out dark:invert dark:hover:grayscale dark:hover:opacity-70"
                 />
               </li>
             ))}

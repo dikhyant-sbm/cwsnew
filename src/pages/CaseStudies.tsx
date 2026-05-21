@@ -271,10 +271,10 @@ const CaseStudies = () => {
         <div className="relative z-10 mx-auto max-w-[1400px] px-6">
           <div className="grid lg:grid-cols-[1.05fr_1fr] gap-14 items-center">
             <div>
-              <p className="eyebrow mb-6">/ Case Studies & AI Market Discovery</p>
+              <p className="eyebrow mb-6">/ Case Studies & AI Market Strategy</p>
               <h1 className="display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02]">
                 Case Studies &{" "}
-                <span className="text-gradient">AI Market Discovery</span> Reports
+                <span className="text-gradient">AI Market Strategy</span> Reports
               </h1>
               <div className="mt-8 space-y-5 max-w-2xl text-body text-lg leading-relaxed">
                 <p>

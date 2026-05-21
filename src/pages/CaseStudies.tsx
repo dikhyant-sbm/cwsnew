@@ -24,7 +24,7 @@ const overviewCards = [
   {
     icon: Map,
     label: "Independent market analysis",
-    title: "AI Market Discovery Case Studies",
+    title: "AI Market Strategy",
     body:
       "Industry-level analysis powered by benchmark data. These case studies examine how AI systems recommend companies across a category, which brands are gaining shortlist visibility, and where competitors are winning buyer-intent prompts.",
     cta: "View market case studies",
@@ -51,7 +51,7 @@ const overviewCards = [
 ];
 
 const anchors = [
-  { id: "market-discovery", label: "AI Market Discovery Case Studies" },
+  { id: "market-discovery", label: "AI Market Strategy" },
   { id: "company-reports", label: "AI Company Discovery Reports" },
   { id: "client-results", label: "Client Implementation Case Studies" },
   { id: "methodology", label: "How to Read These Reports" },
@@ -62,7 +62,7 @@ const marketCases = [
     title: "How AI Search Is Recommending Tax Relief Companies in 2026",
     excerpt:
       "A benchmark-based analysis of how AI systems surface, compare, and recommend tax relief companies across high-intent discovery, comparison, and decision-stage prompts — with remediation priorities for brands losing recommendation share.",
-    type: "AI Market Discovery Case Study",
+    type: "AI Market Strategy",
     source: "LLM Authority Index benchmark data",
     status: "Independent market analysis",
     href: "/case-studies/tax-relief-ai-market-discovery",
@@ -71,7 +71,7 @@ const marketCases = [
     title: "How AI Search Is Recommending AI Work Collaboration Platforms",
     excerpt:
       "An industry-level look at how AI systems compare collaboration platforms, where recommendation strength drops across buyer stages, and which source, content, and citation gaps may be shaping shortlist visibility.",
-    type: "AI Market Discovery Case Study",
+    type: "AI Market Strategy",
     source: "LLM Authority Index benchmark data",
     status: "Independent market analysis",
     href: "/case-studies/ai-work-collaboration-ai-market-discovery",
@@ -118,7 +118,7 @@ const trustColumns = [
   {
     title: "Market intelligence",
     body:
-      "AI Market Discovery Case Studies are benchmark-based analyses of how AI systems recommend, compare, and frame companies in a category. They are independent market analyses and should not be read as client engagements.",
+      "AI Market Strategy analyses are benchmark-based examinations of how AI systems recommend, compare, and frame companies in a category. They are independent market analyses and should not be read as client engagements.",
   },
   {
     title: "Company readouts",
@@ -251,12 +251,12 @@ const CaseStudies = () => {
 
   useEffect(() => {
     document.title =
-      "AI Market Discovery Case Studies & Client Results | CiteWorks Studio";
+      "AI Market Strategy & Client Results | CiteWorks Studio";
     const meta = document.querySelector('meta[name="description"]');
     if (meta)
       meta.setAttribute(
         "content",
-        "Explore CiteWorks Studio case studies, AI Market Discovery analyses, and company-level AI recommendation reports showing how brands appear across search, AI answers, citations, and buyer-intent prompts."
+        "Explore CiteWorks Studio case studies, AI Market Strategy analyses, and company-level AI recommendation reports showing how brands appear across search, AI answers, citations, and buyer-intent prompts."
       );
   }, []);
 

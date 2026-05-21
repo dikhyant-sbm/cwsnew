@@ -317,10 +317,15 @@ const CaseStudies = () => {
         <div className="mx-auto max-w-[1400px] px-6">
           <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 mb-14">
             <div>
-              <SectionEyebrow>AI Market Discovery Action Reports</SectionEyebrow>
-              <h2 className="display text-3xl sm:text-4xl md:text-5xl leading-[1.08]">
-                Benchmark intelligence, translated into the fixes that move recommendation share.
+              <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-5">
+                Pillar 02 · Market intelligence
+              </p>
+              <h2 className="display text-4xl sm:text-5xl md:text-6xl leading-[1.02] tracking-tight">
+                AI Market Discovery Action Reports
               </h2>
+              <p className="mt-6 text-body text-lg leading-relaxed">
+                Benchmark intelligence, translated into the fixes that move recommendation share.
+              </p>
             </div>
             <div className="space-y-5 text-body leading-relaxed">
               <p>

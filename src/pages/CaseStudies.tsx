@@ -22,16 +22,6 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const pillars = [
   {
-    icon: Map,
-    label: "Benchmark-led market intelligence",
-    title: "AI Market Discovery Action Reports",
-    body:
-      "Category-level analyses powered by LLM Authority Index. Each report summarizes how AI systems recommend a market, why it matters for buyer discovery, what's likely causing the gap, what CiteWorks Studio would prioritize fixing, and the actionable plays brands can implement to lift LLM visibility.",
-    sectionHref: "#market-discovery",
-    directoryHref: "/case-studies/ai-market-discovery",
-    directoryLabel: "Explore all market reports",
-  },
-  {
     icon: CheckCircle2,
     label: "Real CiteWorks engagements",
     title: "Client Implementation Case Studies",
@@ -40,6 +30,16 @@ const pillars = [
     sectionHref: "#client-results",
     directoryHref: "/case-studies/client-results",
     directoryLabel: "Explore all client case studies",
+  },
+  {
+    icon: Map,
+    label: "Benchmark-led market intelligence",
+    title: "AI Market Discovery Action Reports",
+    body:
+      "Category-level analyses powered by LLM Authority Index. Each report summarizes how AI systems recommend a market, why it matters for buyer discovery, what's likely causing the gap, what CiteWorks Studio would prioritize fixing, and the actionable plays brands can implement to lift LLM visibility.",
+    sectionHref: "#market-discovery",
+    directoryHref: "/case-studies/ai-market-discovery",
+    directoryLabel: "Explore all market reports",
   },
   {
     icon: Building2,
@@ -54,9 +54,9 @@ const pillars = [
 ];
 
 const anchors = [
+  { id: "client-results", label: "Client Implementation Case Studies" },
   { id: "market-discovery", label: "AI Market Discovery Action Reports" },
   { id: "company-reports", label: "AI Company Market Strategy Reports" },
-  { id: "client-results", label: "Client Implementation Case Studies" },
   { id: "methodology", label: "How to Read These Reports" },
 ];
 

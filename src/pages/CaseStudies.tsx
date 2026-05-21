@@ -24,7 +24,7 @@ const overviewCards = [
   {
     icon: Map,
     label: "Independent market analysis",
-    title: "AI Market Discovery Case Studies",
+    title: "AI Market Strategy",
     body:
       "Industry-level analysis powered by benchmark data. These case studies examine how AI systems recommend companies across a category, which brands are gaining shortlist visibility, and where competitors are winning buyer-intent prompts.",
     cta: "View market case studies",
@@ -51,7 +51,7 @@ const overviewCards = [
 ];
 
 const anchors = [
-  { id: "market-discovery", label: "AI Market Discovery Case Studies" },
+  { id: "market-discovery", label: "AI Market Strategy" },
   { id: "company-reports", label: "AI Company Discovery Reports" },
   { id: "client-results", label: "Client Implementation Case Studies" },
   { id: "methodology", label: "How to Read These Reports" },
@@ -62,7 +62,7 @@ const marketCases = [
     title: "How AI Search Is Recommending Tax Relief Companies in 2026",
     excerpt:
       "A benchmark-based analysis of how AI systems surface, compare, and recommend tax relief companies across high-intent discovery, comparison, and decision-stage prompts — with remediation priorities for brands losing recommendation share.",
-    type: "AI Market Discovery Case Study",
+    type: "AI Market Strategy",
     source: "LLM Authority Index benchmark data",
     status: "Independent market analysis",
     href: "/case-studies/tax-relief-ai-market-discovery",
@@ -71,7 +71,7 @@ const marketCases = [
     title: "How AI Search Is Recommending AI Work Collaboration Platforms",
     excerpt:
       "An industry-level look at how AI systems compare collaboration platforms, where recommendation strength drops across buyer stages, and which source, content, and citation gaps may be shaping shortlist visibility.",
-    type: "AI Market Discovery Case Study",
+    type: "AI Market Strategy",
     source: "LLM Authority Index benchmark data",
     status: "Independent market analysis",
     href: "/case-studies/ai-work-collaboration-ai-market-discovery",
@@ -118,7 +118,7 @@ const trustColumns = [
   {
     title: "Market intelligence",
     body:
-      "AI Market Discovery Case Studies are benchmark-based analyses of how AI systems recommend, compare, and frame companies in a category. They are independent market analyses and should not be read as client engagements.",
+      "AI Market Strategy analyses are benchmark-based examinations of how AI systems recommend, compare, and frame companies in a category. They are independent market analyses and should not be read as client engagements.",
   },
   {
     title: "Company readouts",
@@ -251,12 +251,12 @@ const CaseStudies = () => {
 
   useEffect(() => {
     document.title =
-      "AI Market Discovery Case Studies & Client Results | CiteWorks Studio";
+      "AI Market Strategy & Client Results | CiteWorks Studio";
     const meta = document.querySelector('meta[name="description"]');
     if (meta)
       meta.setAttribute(
         "content",
-        "Explore CiteWorks Studio case studies, AI Market Discovery analyses, and company-level AI recommendation reports showing how brands appear across search, AI answers, citations, and buyer-intent prompts."
+        "Explore CiteWorks Studio case studies, AI Market Strategy analyses, and company-level AI recommendation reports showing how brands appear across search, AI answers, citations, and buyer-intent prompts."
       );
   }, []);
 
@@ -271,10 +271,10 @@ const CaseStudies = () => {
         <div className="relative z-10 mx-auto max-w-[1400px] px-6">
           <div className="grid lg:grid-cols-[1.05fr_1fr] gap-14 items-center">
             <div>
-              <p className="eyebrow mb-6">/ Case Studies & AI Market Discovery</p>
+              <p className="eyebrow mb-6">/ Case Studies & AI Market Strategy</p>
               <h1 className="display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02]">
                 Case Studies &{" "}
-                <span className="text-gradient">AI Market Discovery</span> Reports
+                <span className="text-gradient">AI Market Strategy</span> Reports
               </h1>
               <div className="mt-8 space-y-5 max-w-2xl text-body text-lg leading-relaxed">
                 <p>
@@ -283,7 +283,7 @@ const CaseStudies = () => {
                 </p>
                 <p>
                   This library shows both sides of that shift. Explore benchmark-based
-                  AI Market Discovery Case Studies that reveal how entire industries are
+                  AI Market Strategy analyses that reveal how entire industries are
                   being recommended, compared, and framed by AI systems — and client
                   implementation case studies that show how CiteWorks Studio helps
                   brands improve visibility, citation architecture, and
@@ -296,7 +296,7 @@ const CaseStudies = () => {
                   className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] btn-glow"
                 >
                   <a href="#market-discovery">
-                    EXPLORE AI MARKET DISCOVERY CASE STUDIES
+                    EXPLORE AI MARKET STRATEGY
                   </a>
                 </Button>
                 <Button
@@ -390,7 +390,7 @@ const CaseStudies = () => {
         <div className="mx-auto max-w-[1400px] px-6">
           <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 mb-14">
             <div>
-              <SectionEyebrow>AI Market Discovery Case Studies</SectionEyebrow>
+              <SectionEyebrow>AI Market Strategy</SectionEyebrow>
               <h2 className="display text-3xl sm:text-4xl md:text-5xl leading-[1.08]">
                 How AI systems are recommending entire markets.
               </h2>
@@ -404,7 +404,7 @@ const CaseStudies = () => {
                 pricing, and recommend the best fit.
               </p>
               <p>
-                CiteWorks Studio AI Market Discovery Case Studies use benchmark data
+                CiteWorks Studio AI Market Strategy analyses use benchmark data
                 from LLM Authority Index to show what those recommendation environments
                 mean commercially for companies in a category.
               </p>
@@ -451,7 +451,7 @@ const CaseStudies = () => {
               >
                 <div className="flex items-center gap-2 mb-6">
                   <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-primary border border-primary/30 bg-primary/5 rounded-full px-2.5 py-1">
-                    Market Discovery
+                    Market Strategy
                   </span>
                   <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
                     Benchmark-based
@@ -680,7 +680,7 @@ const CaseStudies = () => {
                 engagements, real execution, and measurable outcomes.
               </p>
               <p>
-                Where AI Market Discovery Case Studies show how a market is behaving,
+                Where AI Market Strategy analyses show how a market is behaving,
                 client implementation case studies show how CiteWorks Studio helps
                 brands respond. These pages focus on the work delivered, the visibility
                 problem being solved, and the measurable movement across AI

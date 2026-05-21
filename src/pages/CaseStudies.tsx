@@ -283,7 +283,7 @@ const CaseStudies = () => {
                 </p>
                 <p>
                   This library shows both sides of that shift. Explore benchmark-based
-                  AI Market Discovery Case Studies that reveal how entire industries are
+                  AI Market Strategy analyses that reveal how entire industries are
                   being recommended, compared, and framed by AI systems — and client
                   implementation case studies that show how CiteWorks Studio helps
                   brands improve visibility, citation architecture, and
@@ -296,7 +296,7 @@ const CaseStudies = () => {
                   className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] btn-glow"
                 >
                   <a href="#market-discovery">
-                    EXPLORE AI MARKET DISCOVERY CASE STUDIES
+                    EXPLORE AI MARKET STRATEGY
                   </a>
                 </Button>
                 <Button
@@ -390,7 +390,7 @@ const CaseStudies = () => {
         <div className="mx-auto max-w-[1400px] px-6">
           <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 mb-14">
             <div>
-              <SectionEyebrow>AI Market Discovery Case Studies</SectionEyebrow>
+              <SectionEyebrow>AI Market Strategy</SectionEyebrow>
               <h2 className="display text-3xl sm:text-4xl md:text-5xl leading-[1.08]">
                 How AI systems are recommending entire markets.
               </h2>
@@ -404,7 +404,7 @@ const CaseStudies = () => {
                 pricing, and recommend the best fit.
               </p>
               <p>
-                CiteWorks Studio AI Market Discovery Case Studies use benchmark data
+                CiteWorks Studio AI Market Strategy analyses use benchmark data
                 from LLM Authority Index to show what those recommendation environments
                 mean commercially for companies in a category.
               </p>
@@ -451,7 +451,7 @@ const CaseStudies = () => {
               >
                 <div className="flex items-center gap-2 mb-6">
                   <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-primary border border-primary/30 bg-primary/5 rounded-full px-2.5 py-1">
-                    Market Discovery
+                    Market Strategy
                   </span>
                   <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
                     Benchmark-based
@@ -680,7 +680,7 @@ const CaseStudies = () => {
                 engagements, real execution, and measurable outcomes.
               </p>
               <p>
-                Where AI Market Discovery Case Studies show how a market is behaving,
+                Where AI Market Strategy analyses show how a market is behaving,
                 client implementation case studies show how CiteWorks Studio helps
                 brands respond. These pages focus on the work delivered, the visibility
                 problem being solved, and the measurable movement across AI

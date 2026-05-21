@@ -1,534 +1,907 @@
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import {
+  ArrowUpRight,
+  Map,
+  CheckCircle2,
+  Building2,
+  ArrowRight,
+  Database,
+  Target,
+  Layers,
+  Compass,
+  Quote,
+} from "lucide-react";
 import { Nav } from "@/components/landing/Nav";
 import { Footer } from "@/components/landing/Footer";
 import { StickyAuditCTA } from "@/components/landing/StickyAuditCTA";
-import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
-import { ResultsChart } from "@/components/landing/ResultsChart";
 import { Button } from "@/components/ui/button";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
-import { useEffect, useState, useMemo } from "react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
-const FILTERS = [
-  "All",
-  "B2B SaaS",
-  "Finance",
-  "Insurance",
-  "Ecommerce",
-  "Home Services",
-  "Apps",
-  "Agency Use Cases",
-  "AI Visibility",
-  "Google Visibility",
-  "Citation Architecture",
-] as const;
-type Filter = typeof FILTERS[number];
+/* ---------------- Data ---------------- */
 
-const movement = [
-  "Google search rankings",
-  "AI-generated answers",
-  "AI Overview mentions",
-  "ChatGPT brand mentions",
-  "Citation footprint",
-  "Third-party source visibility",
-  "Recommendation-stage queries",
-  "High-intent keyword coverage",
-  "Buyer trust environments",
-  "Estimated branded visibility value",
-];
-
-const results = [
+const overviewCards = [
   {
-    cat: "Tax Relief",
-    ai: "112.5% increase in AI Overview brand mentions across 19 high-intent tax queries",
-    search: "#6 average ranking position; 9,984 keywords in Google's top 10",
-    source: "500+ high-impact community sources and cited pages strengthened",
+    icon: Map,
+    label: "Independent market analysis",
+    title: "AI Market Discovery Case Studies",
+    body:
+      "Industry-level analysis powered by benchmark data. These case studies examine how AI systems recommend companies across a category, which brands are gaining shortlist visibility, and where competitors are winning buyer-intent prompts.",
+    cta: "View market case studies",
+    href: "#market-discovery",
   },
   {
-    cat: "Household Appliance",
-    ai: "400% increase in ChatGPT brand mentions across 100+ high-intent queries",
-    search: "#7 average ranking; 13,679 keywords in Google's top 10",
-    source: "100 high-impact community sources and cited pages strengthened",
+    icon: CheckCircle2,
+    label: "Client work",
+    title: "Client Implementation Case Studies",
+    body:
+      "Real CiteWorks Studio engagements and outcomes. These case studies show how CiteWorks Studio improves AI visibility, search presence, citation footprint, and competitive positioning through measurable, repeatable programs.",
+    cta: "View client results",
+    href: "#client-results",
   },
   {
-    cat: "Crypto Wallet",
-    ai: "120% increase in AI Overview brand mentions across 80 high-intent crypto wallet queries",
-    search: "#6 average ranking; 4,136 keywords in Google's top 10",
-    source: "300+ high-impact cited pages and discussion sources strengthened",
-  },
-  {
-    cat: "Pest Control",
-    ai: "64 cited pages influenced in 5 days for ChatGPT and AI Overviews",
-    search: "520 high-value keywords reached Google's top 10",
-    source: "23 high-authority citation opportunities activated",
+    icon: Building2,
+    label: "Public company report, not client work",
+    title: "AI Company Discovery Reports",
+    body:
+      "Company-specific readouts from the market data. These reports show how individual companies appear across selected high-intent AI prompt clusters, including where they earn positive recommendations, where visibility does not convert into recommendation credit, and where competitors can intercept demand.",
+    cta: "View company reports",
+    href: "#company-reports",
   },
 ];
 
-const cases: { n: string; title: string; desc: string; best: string[]; categories: Filter[]; slug?: string }[] = [
-  { n: "01", title: "Job Board AI Search Case Study", desc: "How a job board responded when AI-powered search began reshaping how employers discover job posting platforms.", best: ["B2B platforms", "Recruiting technology", "Marketplace visibility", "AI recommendation tracking"], categories: ["B2B SaaS", "AI Visibility"], slug: "job-board-ai-search" },
-  { n: "02", title: "Crypto Wallet AI Search Case Study", desc: "How a crypto wallet improved AI Overview brand mentions by 120% across 80 high-intent crypto wallet queries while strengthening cited pages and discussion sources.", best: ["Trust-sensitive categories", "Fintech", "Crypto", "Security-driven buyer journeys"], categories: ["Finance", "AI Visibility", "Citation Architecture"] },
-  { n: "03", title: "Household Appliance AI Search Case Study", desc: "How a household appliance brand strengthened citation footprint and source context — a 400% MoM lift in ChatGPT brand mentions and 13,679 keywords in Google's top 10.", best: ["Consumer products", "Appliances", "Comparison-heavy ecommerce", "Product recommendation visibility"], categories: ["Ecommerce", "AI Visibility", "Google Visibility"] },
-  { n: "04", title: "Kitchen Appliance AI Search Case Study", desc: "How a kitchen appliance brand built presence across high-intent decision environments as buyer research moved from product pages into communities, comparisons, and AI recommendations.", best: ["Consumer products", "Product-led SEO", "Community-driven buying", "AI recommendation visibility"], categories: ["Ecommerce", "AI Visibility"] },
-  { n: "05", title: "Tax Relief AI Search Case Study", desc: "How a tax relief brand improved competitiveness across Google page-one results and AI-generated recommendations, including a 112.5% increase in AI Overview brand mentions.", best: ["Financial services", "High-trust categories", "Lead generation", "Reputation-sensitive search"], categories: ["Finance", "AI Visibility", "Google Visibility"] },
-  { n: "06", title: "Budgeting App AI Search Case Study", desc: "How a budgeting app improved visibility across community threads, video tutorials, review platforms, and AI-generated answers that pull from public sources buyers already trust.", best: ["Apps", "Consumer fintech", "Review-led categories", "Community-driven discovery"], categories: ["Apps", "Finance", "Citation Architecture"] },
-  { n: "07", title: "Insurance Technology AI Search Case Study", desc: "How an insurance technology company strengthened public discussions, authority channels, and third-party trust environments — 848 page-one keywords and 11 AI-referenced pages.", best: ["B2B technology", "Insurance technology", "Trust-led evaluation", "Longer buyer journeys"], categories: ["Insurance", "B2B SaaS", "Citation Architecture"] },
-  { n: "08", title: "Language Learning App AI Search Case Study", desc: "How a language learning app strengthened its citation footprint across high-intent discovery surfaces and the sources AI systems reference when recommending tools.", best: ["Consumer apps", "Education technology", "App comparisons", "Recommendation-stage visibility"], categories: ["Apps", "Citation Architecture"] },
-  { n: "09", title: "Mattress Company AI Search Case Study", desc: "How a mattress company strengthened citation footprint as buyers compared organic options through public reviews, sleep experts, and AI summaries before purchasing.", best: ["Consumer products", "Health-adjacent products", "Review-led ecommerce", "Comparison-stage buying"], categories: ["Ecommerce", "Citation Architecture"] },
-  { n: "10", title: "Business Analytics Provider AI Search Case Study", desc: "How a B2B analytics provider increased AI recommendation visibility — 192 high-value keywords on page one and 35 pages with strengthened brand context referenced by AI systems.", best: ["B2B SaaS", "Business intelligence", "Vendor comparison searches", "Demo-driven buyer journeys"], categories: ["B2B SaaS", "AI Visibility", "Google Visibility"] },
-  { n: "11", title: "Debt Relief AI Search Case Study", desc: "How a debt relief brand strengthened citation architecture across Google discovery and the sources AI systems reference when consumers compare providers.", best: ["Debt relief", "Financial services", "Trust-sensitive lead generation", "Reputation-heavy categories"], categories: ["Finance", "Citation Architecture"] },
-  { n: "12", title: "Pet Insurance AI Search Case Study", desc: "How a pet insurance brand strengthened citation footprint as buyers increasingly used AI summaries and trusted third-party context before visiting provider websites.", best: ["Insurance", "Consumer finance", "Comparison searches", "Review-led buyer journeys"], categories: ["Insurance", "Citation Architecture"] },
-  { n: "13", title: "Business Insurance AI Search Case Study", desc: "How a business insurance brand improved visibility across Google discovery and AI-led comparisons as small business owners used AI summaries and trusted proof points.", best: ["Commercial insurance", "B2B services", "Small business markets", "Trust-led comparison searches"], categories: ["Insurance", "B2B SaaS", "Google Visibility"] },
-  { n: "14", title: "Pest Control AI Search Case Study", desc: "How a pest control brand strengthened citation footprint so it appeared more consistently across Google discovery and AI-generated recommendations during urgent searches.", best: ["Home services", "Urgent-intent categories", "Local-to-national operators", "Service comparison searches"], categories: ["Home Services", "Citation Architecture", "AI Visibility"] },
-  { n: "15", title: "Home Services AI Search Case Study", desc: "How a home maintenance brand improved visibility across Google discovery and AI summaries people rely on when choosing urgent service providers.", best: ["Home services", "HVAC", "Plumbing", "High-intent local search"], categories: ["Home Services", "Google Visibility", "AI Visibility"] },
-  { n: "16", title: "ID Theft Protection AI Search Case Study", desc: "How an identity theft protection brand strengthened citation footprint so it appeared more consistently during security comparisons and AI-generated recommendations.", best: ["Identity protection", "Cybersecurity", "Consumer security", "Trust-sensitive search"], categories: ["Apps", "Citation Architecture"] },
-  { n: "17", title: "Eyewear AI Search Case Study", desc: "How an eyewear and sunglasses company strengthened citation footprint across public threads, creator reviews, and AI-generated comparisons.", best: ["Ecommerce", "Fashion", "Consumer products", "\"Is this legit?\" searches"], categories: ["Ecommerce", "Citation Architecture"] },
-  { n: "18", title: "VA Mortgage Lender AI Search Case Study", desc: "How a VA mortgage lender strengthened citation footprint across Google discovery and lender-comparison answers as borrowers researched rates, eligibility, and trusted public guidance.", best: ["Mortgage lending", "Financial services", "Eligibility-driven search", "High-trust buyer journeys"], categories: ["Finance", "Google Visibility", "Citation Architecture"] },
-  { n: "19", title: "Agency Partner Delivery", desc: "How an agency partner used CiteWorks Studio as a white-label backend to deliver GEO, AI search audits, and citation architecture to enterprise clients.", best: ["Agencies", "White-label delivery", "Multi-client programs", "Backend execution"], categories: ["Agency Use Cases", "AI Visibility", "Citation Architecture"] },
+const anchors = [
+  { id: "market-discovery", label: "AI Market Discovery Case Studies" },
+  { id: "company-reports", label: "AI Company Discovery Reports" },
+  { id: "client-results", label: "Client Implementation Case Studies" },
+  { id: "methodology", label: "How to Read These Reports" },
 ];
 
-const patterns = [
-  { n: "01", h: "AI visibility depends on public evidence.", b: "AI systems do not rely only on a company's website. They summarize, compare, and recommend using public sources, third-party references, reviews, discussions, and cited pages." },
-  { n: "02", h: "Citation footprint matters.", b: "Brands improved visibility when their presence became stronger and clearer across the sources that shape buyer trust and AI-generated answers." },
-  { n: "03", h: "High-intent queries beat generic awareness.", b: "The strongest opportunities came from decision-stage searches, comparison prompts, buyer questions, and category-specific recommendation moments." },
-  { n: "04", h: "Category context changes the strategy.", b: "Trust-led, urgent-intent, and comparison-heavy categories do not behave the same way. Each requires a different source-layer and content strategy." },
-  { n: "05", h: "Rankings and AI visibility work together.", b: "The case studies show movement across both traditional Google visibility and AI-shaped discovery — but not always through the same metric or surface." },
+const marketCases = [
+  {
+    title: "How AI Search Is Recommending Tax Relief Companies in 2026",
+    excerpt:
+      "A benchmark-based analysis of how AI systems surface, compare, and recommend tax relief companies across high-intent discovery, comparison, and decision-stage prompts — with remediation priorities for brands losing recommendation share.",
+    type: "AI Market Discovery Case Study",
+    source: "LLM Authority Index benchmark data",
+    status: "Independent market analysis",
+    href: "/case-studies/tax-relief-ai-market-discovery",
+  },
+  {
+    title: "How AI Search Is Recommending AI Work Collaboration Platforms",
+    excerpt:
+      "An industry-level look at how AI systems compare collaboration platforms, where recommendation strength drops across buyer stages, and which source, content, and citation gaps may be shaping shortlist visibility.",
+    type: "AI Market Discovery Case Study",
+    source: "LLM Authority Index benchmark data",
+    status: "Independent market analysis",
+    href: "/case-studies/ai-work-collaboration-ai-market-discovery",
+  },
 ];
 
-const measurement = [
-  "Google rankings", "Top-10 keyword coverage", "Average ranking position",
-  "AI Overview brand mentions", "ChatGPT brand mentions", "AI Share of Voice",
-  "Cited pages", "Citation source strength", "Third-party source visibility",
-  "Prompt-cluster visibility", "Competitor visibility", "Estimated branded visibility value",
+const benchmarkLeft = [
+  "Which brands are visible?",
+  "Which brands are actually recommended?",
+  "Which competitors win top-three positions?",
+  "Which buyer-stage prompts carry the most risk?",
+  "Which platforms produce different recommendation patterns?",
 ];
 
-const bestFit = [
-  "Growth-minded companies",
-  "High-consideration brands",
-  "Category challengers",
-  "Financial services companies",
-  "B2B SaaS companies",
-  "Ecommerce brands",
-  "Home service companies",
-  "Insurance and mortgage brands",
-  "Consumer apps",
-  "Agencies serving high-value clients",
+const benchmarkRight = [
+  "Which content gaps are suppressing recommendation credit?",
+  "Which citation sources need to be built or strengthened?",
+  "Which comparison and pricing prompts need better coverage?",
+  "Which third-party authority signals are missing?",
+  "Which AI visibility fixes should be prioritized first?",
 ];
 
-const faqs = [
-  { q: "Why are the case studies anonymized?", a: "Some CiteWorks Studio work is performed under white-label or confidential client arrangements. The public case studies preserve vertical-level detail, engagement type, and reported outcomes without disclosing client names." },
-  { q: "What do these case studies measure?", a: "Google rankings, AI Overview mentions, ChatGPT brand mentions, AI Share of Voice, cited pages, source visibility, keyword coverage, average ranking position, competitor visibility, and estimated branded visibility value." },
-  { q: "Are the monetary values revenue numbers?", a: "No. Published monetary values are directional estimates based on tracked keyword visibility and modeled paid-equivalent value. They should not be read as exact revenue attribution." },
-  { q: "Are all case studies measured the same way?", a: "No. Different categories, AI surfaces, timelines, and campaign types require different measurement frameworks. The case studies should be compared descriptively, not blended into one universal benchmark." },
-  { q: "What is the main pattern across the case studies?", a: "Visibility improves when companies strengthen both search presence and source-layer authority. Rankings matter, but so do citations, public discussions, trusted sources, third-party context, and AI-generated recommendation environments." },
-  { q: "Who are these case studies most relevant for?", a: "Growth-minded companies in categories where buyers compare options, validate trust, read third-party sources, and increasingly use AI-generated answers before making a decision." },
+const slackMetrics = [
+  { label: "Recommended top-three rate", value: "15.84%" },
+  { label: "Rank-one recommendation rate", value: "13.60%" },
+  { label: "Positive visibility", value: "24.72%" },
+  { label: "Pricing-stage positive capture", value: "0.00%" },
 ];
 
-const PAGE_SIZE = 6;
+const clientCases = [
+  {
+    title:
+      "How an Insurance Technology Brand Strengthened Its AI Visibility and Citation Footprint",
+    excerpt:
+      "A client implementation case study showing how CiteWorks Studio improved the brand's presence across AI recommendation environments, citation-bearing sources, and high-intent search visibility.",
+    type: "Client Implementation Case Study",
+    work: "AI visibility, citation architecture, search visibility",
+    status: "Client result",
+    href: "/case-studies/client-results/insurance-tech-ai-visibility",
+  },
+];
+
+const trustColumns = [
+  {
+    title: "Market intelligence",
+    body:
+      "AI Market Discovery Case Studies are benchmark-based analyses of how AI systems recommend, compare, and frame companies in a category. They are independent market analyses and should not be read as client engagements.",
+  },
+  {
+    title: "Company readouts",
+    body:
+      "AI Company Discovery Reports are company-specific public readouts based on a limited scope of high-intent prompt clusters. They are designed to show directional recommendation patterns, not replace a full AI visibility audit.",
+  },
+  {
+    title: "Client results",
+    body:
+      "Client Implementation Case Studies describe actual CiteWorks Studio work and should only include outcomes supported by client data, campaign data, search data, AI visibility data, or citation evidence.",
+  },
+];
+
+/* ---------------- Building Blocks ---------------- */
+
+const SectionEyebrow = ({ children }: { children: React.ReactNode }) => (
+  <p className="eyebrow mb-5">{children}</p>
+);
+
+const Metadata = ({ items }: { items: { k: string; v: string }[] }) => (
+  <dl className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-border pt-5">
+    {items.map((i) => (
+      <div key={i.k}>
+        <dt className="font-mono text-[11px] tracking-[0.18em] uppercase text-tertiary">
+          {i.k}
+        </dt>
+        <dd className="text-sm text-body mt-1.5 leading-snug">{i.v}</dd>
+      </div>
+    ))}
+  </dl>
+);
+
+/* ---------------- Hero Visual ---------------- */
+
+const HeroVisual = () => {
+  const layers = [
+    {
+      eyebrow: "Layer 01 · Source",
+      title: "LLM Authority Benchmark Data",
+      chips: ["Recommendation signals", "Ranking signals", "Sentiment signals"],
+    },
+    {
+      eyebrow: "Layer 02 · Interpretation",
+      title: "CiteWorks Market Interpretation",
+      chips: ["Citation footprint", "Buyer-stage prompts", "Competitive gaps"],
+    },
+    {
+      eyebrow: "Layer 03 · Action",
+      title: "Remediation & Implementation Priorities",
+      chips: ["Content gaps", "Source authority", "Prompt coverage"],
+    },
+  ];
+
+  return (
+    <div className="relative">
+      <div className="absolute -inset-8 conic-ring opacity-30 pointer-events-none" />
+      <div className="relative glass-strong rounded-2xl p-6 sm:p-7">
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-2">
+            <span className="size-2 rounded-full bg-primary" />
+            <span className="font-mono text-[11px] tracking-[0.18em] uppercase text-subtle">
+              AI Discovery Intelligence
+            </span>
+          </div>
+          <span className="font-mono text-[11px] text-tertiary">v.2026.Q1</span>
+        </div>
+
+        <div className="space-y-3">
+          {layers.map((l, i) => (
+            <div
+              key={l.title}
+              className="relative rounded-xl border border-border bg-card/70 p-4 hover:border-primary/40 transition-colors"
+            >
+              <div className="flex items-center justify-between mb-2">
+                <span className="font-mono text-[10.5px] tracking-[0.18em] uppercase text-primary">
+                  {l.eyebrow}
+                </span>
+                <span className="font-mono text-[10.5px] text-tertiary">0{i + 1}</span>
+              </div>
+              <p className="text-[15px] font-semibold text-heading leading-snug">
+                {l.title}
+              </p>
+              <div className="flex flex-wrap gap-1.5 mt-3">
+                {l.chips.map((c) => (
+                  <span
+                    key={c}
+                    className="font-mono text-[10.5px] tracking-wide text-body bg-secondary/70 border border-border rounded-full px-2 py-0.5"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
+              {i < layers.length - 1 && (
+                <div className="absolute left-1/2 -bottom-2 -translate-x-1/2 z-10">
+                  <div className="size-5 rounded-full bg-background border border-border grid place-items-center">
+                    <ArrowRight className="size-2.5 text-primary rotate-90" />
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-6 grid grid-cols-3 gap-3">
+          {[
+            { k: "Prompts tracked", v: "1,240" },
+            { k: "Citation sources", v: "8.6K" },
+            { k: "Platforms", v: "6" },
+          ].map((s) => (
+            <div
+              key={s.k}
+              className="rounded-lg border border-border bg-background/60 p-3"
+            >
+              <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-tertiary">
+                {s.k}
+              </p>
+              <p className="display text-xl mt-1">{s.v}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* ---------------- Page ---------------- */
 
 const CaseStudies = () => {
   useScrollReveal();
-  const [filter, setFilter] = useState<Filter>("All");
-  const [page, setPage] = useState(1);
-  const filteredCases = useMemo(
-    () => (filter === "All" ? cases : cases.filter((c) => c.categories.includes(filter))),
-    [filter]
-  );
-  const totalPages = Math.max(1, Math.ceil(filteredCases.length / PAGE_SIZE));
-  const currentPage = Math.min(page, totalPages);
-  const pagedCases = useMemo(
-    () => filteredCases.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
-    [filteredCases, currentPage]
-  );
-  useEffect(() => { setPage(1); }, [filter]);
 
   useEffect(() => {
-    document.title = "CiteWorks Studio Case Studies | AI Search Visibility, GEO, and Citation Architecture Results";
+    document.title =
+      "AI Market Discovery Case Studies & Client Results | CiteWorks Studio";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Explore CiteWorks Studio case studies showing how growth-minded companies improved visibility across Google, AI answers, citation sources, and recommendation-stage search through GEO, citation architecture, technical SEO, and source-layer authority.");
+    if (meta)
+      meta.setAttribute(
+        "content",
+        "Explore CiteWorks Studio case studies, AI Market Discovery analyses, and company-level AI recommendation reports showing how brands appear across search, AI answers, citations, and buyer-intent prompts."
+      );
   }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
 
-      {/* Hero */}
-      <section className="relative pt-32 pb-24 grid-bg overflow-hidden">
-        <div className="mx-auto max-w-[1400px] px-6">
-          <p className="eyebrow mb-6">/ Case Studies</p>
-          <h1 className="display text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight max-w-5xl">
-            Proof across Google, AI answers, and the sources that shape buyer decisions.
-          </h1>
-          <div className="mt-10 max-w-3xl space-y-5 text-lg text-body">
-            <p>CiteWorks Studio helps growth-minded companies improve how they are found, cited, compared, and recommended across modern search environments.</p>
-            <p>These case studies show how visibility improves when companies strengthen more than rankings. The work often includes GEO, citation architecture, AI search visibility, technical SEO, content strategy, source-layer authority, and public evidence across the places buyers and AI systems use to make sense of a market.</p>
-          </div>
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">
-              <a href="#featured">VIEW FEATURED SYNTHESIS</a>
-            </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-border">
-              <Link to="/request-audit">REQUEST A VISIBILITY AUDIT</Link>
-            </Button>
-          </div>
-          <p className="mt-12 text-sm text-body max-w-2xl font-mono">
-            Anonymized case studies across high-consideration categories where search visibility, trust, comparison, and recommendation placement affect growth.
-          </p>
-        </div>
-      </section>
-
-      {/* Featured Synthesis */}
-      <section id="featured" className="py-24 border-t border-border bg-card/30">
-        <div className="mx-auto max-w-[1400px] px-6">
-          <p className="eyebrow mb-6">/ Featured Analysis</p>
-          <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
-            AI visibility growth across four high-consideration verticals.
-          </h2>
-          <p className="text-body max-w-3xl mb-4">
-            The featured synthesis compares four anonymized CiteWorks Studio engagements across tax relief, household appliance, crypto wallet, and pest control.
-          </p>
-          <p className="text-body max-w-3xl mb-12">
-            The synthesis found that reported gains did not center on rankings alone. They centered on visibility across public sources that shape AI-generated answers, including community discussions, cited pages, third-party reference environments, and decision-stage comparison contexts.
-          </p>
-          <div className="border border-primary/30 bg-background rounded-2xl p-8 lg:p-12">
-            <p className="font-mono text-[13px] text-primary mb-4">FEATURED CASE</p>
-            <h3 className="text-2xl md:text-3xl font-semibold mb-4 leading-tight">
-              Cross-Case Synthesis: AI Visibility Growth Across Four Verticals
-            </h3>
-            <p className="text-body leading-relaxed">
-              A structured comparison of four published CiteWorks Studio case studies showing how citation footprint, brand context, and high-intent public-source visibility can improve alongside Google and AI visibility.
-            </p>
-            <div className="mt-6 border-t border-border pt-6 space-y-4">
-              <p className="font-mono text-[13px] text-body mb-1">KEY TAKEAWAY</p>
-              <p className="text-body text-lg leading-relaxed">
-                The pattern was not simply: "rank higher and AI visibility follows."
-              </p>
-              <p className="text-body text-lg leading-relaxed">
-                The stronger pattern was: improve citation footprint, brand context, and high-intent presence across Google and public reference environments, and AI visibility can improve alongside traditional search visibility.
+      {/* ---------- 1. HERO ---------- */}
+      <section className="relative pt-32 pb-24 overflow-hidden ambient-glow">
+        <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background pointer-events-none" />
+        <div className="relative z-10 mx-auto max-w-[1400px] px-6">
+          <div className="grid lg:grid-cols-[1.05fr_1fr] gap-14 items-center">
+            <div>
+              <p className="eyebrow mb-6">/ Case Studies & AI Market Discovery</p>
+              <h1 className="display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02]">
+                Case Studies &{" "}
+                <span className="text-gradient">AI Market Discovery</span> Reports
+              </h1>
+              <div className="mt-8 space-y-5 max-w-2xl text-body text-lg leading-relaxed">
+                <p>
+                  Buyers now discover brands in two places at once: traditional search
+                  results and AI-generated recommendations.
+                </p>
+                <p>
+                  This library shows both sides of that shift. Explore benchmark-based
+                  AI Market Discovery Case Studies that reveal how entire industries are
+                  being recommended, compared, and framed by AI systems — and client
+                  implementation case studies that show how CiteWorks Studio helps
+                  brands improve visibility, citation architecture, and
+                  recommendation-stage presence.
+                </p>
+              </div>
+              <div className="mt-9 flex flex-wrap gap-3">
+                <Button
+                  asChild
+                  className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] btn-glow"
+                >
+                  <a href="#market-discovery">
+                    EXPLORE AI MARKET DISCOVERY CASE STUDIES
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em]"
+                >
+                  <a href="#client-results">VIEW CLIENT IMPLEMENTATION CASE STUDIES</a>
+                </Button>
+              </div>
+              <p className="mt-8 text-sm text-subtle max-w-xl">
+                Built for brands competing across search, AI answers, citations, and
+                buyer-intent prompts.
               </p>
             </div>
-            <Button className="mt-8 rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">
-              READ THE SYNTHESIS <ArrowUpRight className="w-3 h-3 ml-1" />
-            </Button>
+            <HeroVisual />
           </div>
         </div>
       </section>
 
-      {/* Case Study List */}
-      <section id="cases" className="py-24 border-t border-border scroll-mt-24">
+      {/* ---------- 2. OVERVIEW ---------- */}
+      <section className="py-24 border-t border-border">
         <div className="mx-auto max-w-[1400px] px-6">
-          <p className="eyebrow mb-6">/ The case studies</p>
-          <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
-            Explore the case studies.
-          </h2>
-          <div className="max-w-3xl space-y-4 text-body mb-10">
-            <p>Each case study shows how visibility work changes by category. Some markets are trust-sensitive. Some are comparison-driven. Some are urgent-intent. Some depend heavily on public discussions, review environments, third-party sources, or AI-generated summaries.</p>
-            <p>The method changes by category, but the goal stays consistent: make the company easier to find, cite, compare, and recommend.</p>
+          <div className="max-w-3xl">
+            <SectionEyebrow>Content Library</SectionEyebrow>
+            <h2 className="display text-3xl sm:text-4xl md:text-5xl leading-[1.08]">
+              Three ways to understand AI discovery performance.
+            </h2>
+            <p className="mt-6 text-body text-lg leading-relaxed">
+              CiteWorks Studio separates market intelligence from client results, so
+              each asset has a clear purpose.
+            </p>
           </div>
 
-          {/* Filter chips */}
-          <div role="tablist" aria-label="Filter case studies" className="flex flex-wrap gap-2 mb-10">
-            {FILTERS.map((f) => {
-              const isActive = filter === f;
-              const count = f === "All" ? cases.length : cases.filter((c) => c.categories.includes(f)).length;
+          <div className="mt-14 grid md:grid-cols-3 gap-5">
+            {overviewCards.map((c) => {
+              const Icon = c.icon;
               return (
-                <button
-                  key={f}
-                  type="button"
-                  role="tab"
-                  aria-selected={isActive}
-                  onClick={() => setFilter(f)}
-                  className={`px-4 py-2 rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
-                    isActive
-                      ? "bg-primary text-primary-foreground border-transparent"
-                      : "border-border text-body hover:border-primary/40 hover:text-foreground"
-                  }`}
+                <a
+                  key={c.title}
+                  href={c.href}
+                  className="card-premium p-8 flex flex-col group"
                 >
-                  {f.toUpperCase()} <span className={`ml-1.5 ${isActive ? "opacity-80" : "opacity-50"}`}>{count}</span>
-                </button>
+                  <div className="flex items-center justify-between mb-7">
+                    <div className="size-11 rounded-xl bg-primary/10 border border-primary/20 grid place-items-center text-primary">
+                      <Icon className="size-5" />
+                    </div>
+                    <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary text-right max-w-[55%]">
+                      {c.label}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-heading leading-snug">
+                    {c.title}
+                  </h3>
+                  <p className="mt-4 text-body leading-relaxed text-[15px] flex-1">
+                    {c.body}
+                  </p>
+                  <span className="mt-7 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2.5 transition-all uppercase">
+                    {c.cta} <ArrowUpRight className="size-3.5" />
+                  </span>
+                </a>
               );
             })}
           </div>
+        </div>
+      </section>
 
-          <p className="font-mono text-[13px] tracking-[0.16em] text-body mb-6" aria-live="polite">
-            SHOWING {(currentPage - 1) * PAGE_SIZE + (filteredCases.length === 0 ? 0 : 1)}–{Math.min(currentPage * PAGE_SIZE, filteredCases.length)} OF {filteredCases.length}
-          </p>
-
-          <div className="flex flex-col gap-4">
-            {pagedCases.map((c, i) => (
-              <article
-                key={c.n + filter + currentPage}
-                className={`border border-border rounded-xl bg-card/30 p-6 lg:p-8 hover:border-primary/40 transition-colors group flex flex-col lg:flex-row lg:items-stretch gap-6 animate-fade-in relative ${c.slug ? "cursor-pointer" : ""}`}
-                style={{ animationDelay: `${i * 30}ms` }}
-              >
-                <div className="lg:w-1/3 flex flex-col">
-                  <p className="font-mono text-[13px] text-primary mb-3">CASE / {c.n}</p>
-                  <h3 className="text-xl lg:text-2xl font-semibold leading-snug group-hover:text-primary transition-colors">
-                    {c.title}
-                  </h3>
-                </div>
-                <div className="lg:w-2/3 flex flex-col">
-                  <p className="text-base text-body mb-5">{c.desc}</p>
-                  <div className="border-t border-border pt-4 mt-auto">
-                    <p className="font-mono text-[13px] text-body mb-2">BEST FOR</p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {c.best.map((b) => (
-                        <span key={b} className="text-[13px] px-2 py-1 rounded-full bg-background border border-border text-body">{b}</span>
-                      ))}
-                    </div>
-                  </div>
-                  {c.slug ? (
-                    <>
-                      <span className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2 transition-all">
-                        READ CASE STUDY <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
-                      </span>
-                      <Link to={`/case-studies/${c.slug}`} aria-label={c.title} className="absolute inset-0 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
-                    </>
-                  ) : (
-                    <span className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] font-semibold tracking-[0.14em] text-body/60">
-                      COMING SOON
-                    </span>
-                  )}
-                </div>
-              </article>
-            ))}
-          </div>
-
-          {filteredCases.length === 0 && (
-            <div className="mt-10 text-center text-body">
-              No case studies in this category yet. <button onClick={() => setFilter("All")} className="text-primary underline-offset-4 hover:underline">View all</button>.
-            </div>
-          )}
-
-          {/* Pagination */}
-          {totalPages > 1 && (
-            <nav aria-label="Case studies pagination" className="mt-10 flex flex-wrap items-center justify-center gap-2">
-              <button
-                type="button"
-                onClick={() => setPage((p) => Math.max(1, p - 1))}
-                disabled={currentPage === 1}
-                className="px-4 py-2 rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border border-border text-body hover:border-primary/40 hover:text-foreground disabled:opacity-40 disabled:pointer-events-none transition-colors"
-              >
-                ← PREV
-              </button>
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
-                <button
-                  key={p}
-                  type="button"
-                  onClick={() => setPage(p)}
-                  aria-current={p === currentPage ? "page" : undefined}
-                  className={`min-w-[40px] px-3 py-2 rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border transition-colors ${
-                    p === currentPage
-                      ? "bg-primary text-primary-foreground border-transparent"
-                      : "border-border text-body hover:border-primary/40 hover:text-foreground"
-                  }`}
+      {/* ---------- 3. STICKY ANCHOR NAV ---------- */}
+      <nav
+        aria-label="Page sections"
+        className="sticky top-16 z-30 border-y border-border bg-background/85 backdrop-blur-md"
+      >
+        <div className="mx-auto max-w-[1400px] px-6">
+          <ul className="flex gap-1 overflow-x-auto no-scrollbar py-2">
+            {anchors.map((a) => (
+              <li key={a.id} className="shrink-0">
+                <a
+                  href={`#${a.id}`}
+                  className="block px-4 py-2 rounded-full font-mono text-[11.5px] tracking-[0.14em] uppercase text-body hover:bg-secondary hover:text-heading transition-colors whitespace-nowrap"
                 >
-                  {String(p).padStart(2, "0")}
-                </button>
-              ))}
-              <button
-                type="button"
-                onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-                disabled={currentPage === totalPages}
-                className="px-4 py-2 rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border border-border text-body hover:border-primary/40 hover:text-foreground disabled:opacity-40 disabled:pointer-events-none transition-colors"
+                  {a.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+
+      {/* ---------- 4. AI MARKET DISCOVERY ---------- */}
+      <section id="market-discovery" className="py-28 scroll-mt-32">
+        <div className="mx-auto max-w-[1400px] px-6">
+          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 mb-14">
+            <div>
+              <SectionEyebrow>AI Market Discovery Case Studies</SectionEyebrow>
+              <h2 className="display text-3xl sm:text-4xl md:text-5xl leading-[1.08]">
+                How AI systems are recommending entire markets.
+              </h2>
+            </div>
+            <div className="space-y-5 text-body leading-relaxed">
+              <p>
+                AI search is changing how buyers form shortlists. In many categories,
+                buyers are no longer moving directly from Google to a brand website.
+                They are asking ChatGPT, Gemini, Perplexity, Copilot, Google AI Mode,
+                and AI Overviews to compare providers, summarize reputation, explain
+                pricing, and recommend the best fit.
+              </p>
+              <p>
+                CiteWorks Studio AI Market Discovery Case Studies use benchmark data
+                from LLM Authority Index to show what those recommendation environments
+                mean commercially for companies in a category.
+              </p>
+              <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2 pt-3 text-[15px]">
+                {[
+                  "which companies are visible",
+                  "which companies are actually recommended",
+                  "which brands earn top-three and rank-one positions",
+                  "how sentiment and framing affect buyer trust",
+                  "which prompt clusters carry the most competitive risk",
+                  "where citation architecture may influence AI answers",
+                  "what brands need to fix to improve recommendation visibility",
+                ].map((p) => (
+                  <li key={p} className="flex gap-2.5">
+                    <span className="mt-2 size-1 rounded-full bg-primary shrink-0" />
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap items-center gap-4 pt-4">
+                <span className="font-mono text-[11px] tracking-[0.18em] uppercase text-primary border border-primary/30 bg-primary/5 rounded-full px-3 py-1">
+                  Independent market analysis · Not client work
+                </span>
+              </div>
+
+              <div className="pt-4">
+                <Button
+                  asChild
+                  className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] btn-glow"
+                >
+                  <Link to="/request-audit">SEE HOW AI IS RECOMMENDING YOUR MARKET</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-5">
+            {marketCases.map((c) => (
+              <Link
+                key={c.title}
+                to={c.href}
+                className="card-premium p-8 group flex flex-col"
               >
-                NEXT →
-              </button>
-            </nav>
-          )}
-        </div>
-      </section>
-
-      {/* Dashboard: Executive Visibility Report */}
-      <section className="relative py-12 border-t border-border">
-        <div className="mx-auto max-w-[1400px] px-6 reveal-on-scroll">
-          <DashboardShowcase dashboard="executive-report" size="lg" showCaption />
-        </div>
-      </section>
-
-      {/* Proof Positioning */}
-      <section className="py-24 border-t border-border">
-        <div className="mx-auto max-w-[1400px] px-6 grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-5">
-            <p className="eyebrow mb-6">/ Why this proof</p>
-            <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight">
-              These are not traffic stories. They are visibility-system stories.
-            </h2>
-          </div>
-          <div className="lg:col-span-7 space-y-5 text-body text-lg">
-            <p>Modern buyers do not move through one search result.</p>
-            <p>They search Google. They ask AI systems. They read comparison pages. They check reviews. They watch videos. They scan public discussions. They validate brands through trusted third-party sources before making a decision.</p>
-            <p>That means the strongest visibility programs do not measure only rankings or traffic. They measure whether a company becomes easier to find, easier to validate, easier to cite, and easier to recommend.</p>
-            <p className="text-sm text-body">CiteWorks Studio case studies focus on movement across:</p>
-            <div className="grid grid-cols-2 gap-2 pt-6 border-t border-border">
-              {movement.map((m, i) => (
-                <div key={i} className="flex gap-3 items-start py-1">
-                  <span className="font-mono text-[13px] text-primary mt-1.5">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="text-sm text-body">{m}</span>
+                <div className="flex items-center gap-2 mb-6">
+                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-primary border border-primary/30 bg-primary/5 rounded-full px-2.5 py-1">
+                    Market Discovery
+                  </span>
+                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
+                    Benchmark-based
+                  </span>
                 </div>
-              ))}
-            </div>
+                <h3 className="text-2xl font-semibold text-heading leading-tight">
+                  {c.title}
+                </h3>
+                <p className="mt-4 text-body leading-relaxed text-[15px] flex-1">
+                  {c.excerpt}
+                </p>
+                <Metadata
+                  items={[
+                    { k: "Type", v: c.type },
+                    { k: "Source", v: c.source },
+                    { k: "Status", v: c.status },
+                  ]}
+                />
+                <span className="mt-6 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2.5 transition-all uppercase">
+                  Read case study <ArrowUpRight className="size-3.5" />
+                </span>
+              </Link>
+            ))}
           </div>
-        </div>
-      </section>
 
-      {/* Results Snapshot */}
-      <section className="py-24 border-t border-border bg-card/30">
-        <div className="mx-auto max-w-[1400px] px-6">
-          <p className="eyebrow mb-6">/ Results snapshot</p>
-          <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
-            Published outcomes across AI search and Google visibility.
-          </h2>
-          <p className="text-body max-w-2xl mb-12">
-            Each case uses its own measurement framework, category context, and timeframe. Read these as published case-study outcomes, not a universal benchmark.
-          </p>
-          <ResultsChart results={results} />
-          <p className="mt-6 text-xs text-body max-w-3xl font-mono">
-            Source note: published outcomes from the CiteWorks cross-case synthesis. Cases use different surfaces, timeframes, and metric types and should be compared descriptively rather than blended into a single benchmark.
+          <p className="mt-8 text-sm text-subtle font-mono">
+            This analysis is based on benchmark data published by{" "}
+            <a
+              href="#"
+              className="text-primary underline underline-offset-4 hover:text-primary/80"
+            >
+              LLM Authority Index
+            </a>
+            .
           </p>
         </div>
       </section>
 
-      {/* Patterns */}
-      <section className="py-24 border-t border-border">
+      {/* ---------- 5. BENCHMARK → REMEDIATION ---------- */}
+      <section className="py-24">
         <div className="mx-auto max-w-[1400px] px-6">
-          <p className="eyebrow mb-6">/ Patterns</p>
-          <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-6">
-            What repeats across the case studies.
-          </h2>
-          <p className="text-body max-w-2xl mb-12">The categories are different, but several patterns repeat.</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {patterns.map((p) => (
-              <div key={p.n} className="border border-border rounded-xl p-6 bg-card/30">
-                <p className="font-mono text-[13px] text-primary mb-3">PATTERN / {p.n}</p>
-                <h3 className="text-lg font-semibold mb-3 leading-snug">{p.h}</h3>
-                <p className="text-sm text-body">{p.b}</p>
+          <div className="relative rounded-3xl overflow-hidden border border-border bg-card">
+            <div className="absolute inset-0 grid-bg-fine opacity-30 pointer-events-none" />
+            <div className="absolute -top-32 -right-32 size-[500px] conic-ring opacity-40 pointer-events-none" />
+            <div className="relative z-10 p-8 sm:p-12 lg:p-16">
+              <div className="max-w-3xl">
+                <SectionEyebrow>From Benchmark to Remediation</SectionEyebrow>
+                <h2 className="display text-3xl sm:text-4xl md:text-5xl leading-[1.08]">
+                  From benchmark insight to remediation priorities.
+                </h2>
+                <p className="mt-6 text-body text-lg leading-relaxed">
+                  LLM Authority Index identifies how AI systems are recommending a
+                  market. CiteWorks Studio translates those findings into the
+                  commercial questions brands need to answer:
+                </p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Measurement */}
-      <section className="py-24 border-t border-border bg-card/30">
-        <div className="mx-auto max-w-[1400px] px-6 grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-5">
-            <p className="eyebrow mb-6">/ Measurement</p>
-            <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight">
-              How we measure case study movement.
-            </h2>
-          </div>
-          <div className="lg:col-span-7">
-            <p className="text-body text-lg mb-8">
-              CiteWorks Studio case studies are designed to show visibility movement across the search environments that influence buyers. Depending on category and engagement, measurement may include:
-            </p>
-            <div className="grid sm:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden border border-border">
-              {measurement.map((m, i) => (
-                <div key={i} className="bg-background p-4 flex items-center gap-3">
-                  <span className="font-mono text-[13px] text-primary">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="text-sm text-body">{m}</span>
+              <div className="mt-12 grid md:grid-cols-2 gap-5">
+                <div className="rounded-2xl border border-border bg-background/60 p-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="size-9 rounded-lg bg-secondary border border-border grid place-items-center">
+                      <Database className="size-4 text-primary" />
+                    </div>
+                    <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-subtle">
+                      Benchmark signals
+                    </p>
+                  </div>
+                  <ul className="space-y-3.5">
+                    {benchmarkLeft.map((b) => (
+                      <li key={b} className="flex gap-3 text-body text-[15px]">
+                        <Compass className="size-4 text-primary mt-1 shrink-0" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              ))}
-            </div>
-            <p className="mt-6 text-xs text-body font-mono">
-              Disclosure: published monetary values are directional estimates based on tracked keyword visibility and modeled paid-equivalent value. They are not exact revenue attribution.
-            </p>
-          </div>
-        </div>
-      </section>
 
-      {/* Why this proof matters */}
-      <section className="py-24 border-t border-border">
-        <div className="mx-auto max-w-[1400px] px-6">
-          <p className="eyebrow mb-6">/ Why this matters</p>
-          <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-8">
-            Case studies should show more than "we got traffic."
-          </h2>
-          <p className="text-body text-lg max-w-3xl mb-10">
-            Traffic alone does not explain whether a company is becoming easier to trust, compare, cite, or recommend. These case studies focus on the visibility signals that matter in modern search:
-          </p>
-          <div className="grid md:grid-cols-2 gap-3 max-w-4xl">
-            {[
-              "Is the company appearing in high-intent searches?",
-              "Is the company being cited by AI systems?",
-              "Is the brand present in comparison environments?",
-              "Are third-party sources supporting its authority?",
-              "Are competitors being recommended more often?",
-              "Is the company easier for buyers to validate before they convert?",
-            ].map((q, i) => (
-              <div key={i} className="flex gap-4 items-start border border-border rounded-lg p-4 bg-card/30">
-                <span className="font-mono text-xs text-primary mt-1">0{i + 1}</span>
-                <p className="text-body">{q}</p>
+                <div className="rounded-2xl border border-primary/30 bg-primary/[0.04] p-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="size-9 rounded-lg bg-primary/10 border border-primary/30 grid place-items-center">
+                      <Target className="size-4 text-primary" />
+                    </div>
+                    <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-primary">
+                      CiteWorks remediation lens
+                    </p>
+                  </div>
+                  <ul className="space-y-3.5">
+                    {benchmarkRight.map((b) => (
+                      <li key={b} className="flex gap-3 text-body text-[15px]">
+                        <CheckCircle2 className="size-4 text-primary mt-1 shrink-0" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Best Fit */}
-      <section className="py-24 border-t border-border">
-        <div className="mx-auto max-w-[1400px] px-6 grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-5">
-            <p className="eyebrow mb-6">/ Best fit</p>
-            <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight">
-              These case studies are most relevant if visibility affects your growth.
-            </h2>
-          </div>
-          <div className="lg:col-span-7 space-y-5 text-body text-lg">
-            <p>CiteWorks Studio works best with companies where being found, cited, compared, and recommended has real commercial value.</p>
-            <p>You do not need to be an enterprise company. You do need a market where search visibility, source authority, and buyer trust matter.</p>
-            <div className="grid sm:grid-cols-2 gap-2 pt-6 border-t border-border">
-              {bestFit.map((b, i) => (
-                <div key={i} className="flex gap-3 items-start py-1">
-                  <span className="font-mono text-[13px] text-primary mt-1.5">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="text-sm text-body">{b}</span>
-                </div>
-              ))}
+              <div className="mt-10">
+                <Button
+                  asChild
+                  className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] btn-glow"
+                >
+                  <Link to="/request-audit">REQUEST AN AI VISIBILITY AUDIT</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-24 border-t border-border">
+      {/* ---------- 6. COMPANY REPORTS ---------- */}
+      <section id="company-reports" className="py-28 scroll-mt-32 border-t border-border">
         <div className="mx-auto max-w-[1400px] px-6">
-          <p className="eyebrow mb-6">/ FAQ</p>
-          <h2 className="display text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl mb-12">
-            Common questions about CiteWorks Studio case studies
-          </h2>
-          <Accordion type="single" collapsible className="max-w-4xl">
-            {faqs.map((f, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="border-border">
-                <AccordionTrigger className="text-left text-lg hover:no-underline">{f.q}</AccordionTrigger>
-                <AccordionContent className="text-body text-base">{f.a}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 mb-14">
+            <div>
+              <SectionEyebrow>AI Company Discovery Reports</SectionEyebrow>
+              <h2 className="display text-3xl sm:text-4xl md:text-5xl leading-[1.08]">
+                Company-level readouts from the same benchmark data.
+              </h2>
+            </div>
+            <div className="space-y-5 text-body leading-relaxed">
+              <p>
+                Industry benchmarks show how a market is being recommended. AI Company
+                Discovery Reports show how a specific company is positioned inside that
+                market.
+              </p>
+              <p>
+                Each report applies the same recommendation-quality lens to a limited
+                public scope. The free version clearly states that it covers 3 of 10
+                high-intent clusters, with broader prompt sampling, deeper citation
+                tracing, and more complete platform analysis reserved for full
+                engagements.
+              </p>
+              <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2 pt-3 text-[15px]">
+                {[
+                  "where it is visible",
+                  "where it is positively recommended",
+                  "where it is seen but not endorsed",
+                  "where competitors win comparison or pricing prompts",
+                  "which buyer-stage clusters need remediation",
+                  "what CiteWorks would prioritize in a full engagement",
+                ].map((p) => (
+                  <li key={p} className="flex gap-2.5">
+                    <span className="mt-2 size-1 rounded-full bg-primary shrink-0" />
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+              <span className="inline-flex font-mono text-[11px] tracking-[0.18em] uppercase text-primary border border-primary/30 bg-primary/5 rounded-full px-3 py-1 mt-2">
+                Public market report · Not client work · Not a full audit
+              </span>
+            </div>
+          </div>
+
+          <Link
+            to="/ai-company-reports/slack"
+            className="card-premium p-8 sm:p-10 block group"
+          >
+            <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10">
+              <div>
+                <div className="flex items-center gap-2 mb-6">
+                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-primary border border-primary/30 bg-primary/5 rounded-full px-2.5 py-1">
+                    Company Discovery Report
+                  </span>
+                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
+                    Public readout
+                  </span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-semibold text-heading leading-tight">
+                  Slack AI Company Discovery Report
+                </h3>
+                <p className="mt-5 text-body leading-relaxed text-[16px]">
+                  Slack shows strong broad discovery signals, but the pricing-stage
+                  cluster shows neutral visibility without positive recommendation
+                  capture. In the sample report, Slack had 15.84% recommended top-three
+                  rate, 13.60% rank-one recommendation rate, and 24.72% positive
+                  visibility, while the pricing cluster showed 11.43% neutral
+                  visibility and 0.00% positive recommendation capture.
+                </p>
+                <Metadata
+                  items={[
+                    { k: "Type", v: "AI Company Discovery Report" },
+                    { k: "Scope", v: "3 of 10 high-intent clusters" },
+                    { k: "Status", v: "Public market readout" },
+                  ]}
+                />
+                <span className="mt-7 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2.5 transition-all uppercase">
+                  View company report <ArrowUpRight className="size-3.5" />
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 content-start">
+                {slackMetrics.map((m) => (
+                  <div
+                    key={m.label}
+                    className="rounded-xl border border-border bg-background/70 p-5"
+                  >
+                    <p className="font-mono text-[10.5px] tracking-[0.18em] uppercase text-tertiary leading-snug min-h-[28px]">
+                      {m.label}
+                    </p>
+                    <p className="display text-3xl mt-2 text-gradient">{m.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-32 border-t border-border grid-bg">
-        <div className="mx-auto max-w-[1400px] px-6 text-center">
-          <h2 className="display text-4xl md:text-6xl leading-tight tracking-tight max-w-4xl mx-auto">
-            Find out where your visibility is breaking down.
-          </h2>
-          <p className="mt-6 text-body text-lg max-w-2xl mx-auto">
-            The strongest case studies start with a clear diagnosis.
-          </p>
-          <p className="mt-4 text-body text-lg max-w-2xl mx-auto">
-            CiteWorks Studio helps growth-minded companies identify where they are losing visibility across Google, AI answers, citation sources, competitor positioning, technical SEO, content structure, and source-layer authority.
-          </p>
-          <p className="mt-4 text-body text-lg max-w-2xl mx-auto">
-            Then we build the corrective-action plan.
-          </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button asChild className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] bg-primary text-primary-foreground hover:bg-primary/90">
-              <Link to="/request-audit">REQUEST A VISIBILITY AUDIT <ArrowUpRight className="w-3 h-3 ml-1" /></Link>
-            </Button>
-            <Button asChild variant="outline" className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] border-border">
-              <Link to="/methodology">EXPLORE THE METHODOLOGY</Link>
-            </Button>
+      {/* ---------- 7. CLIENT IMPLEMENTATION ---------- */}
+      <section
+        id="client-results"
+        className="py-28 scroll-mt-32 border-t border-border bg-card/30"
+      >
+        <div className="mx-auto max-w-[1400px] px-6">
+          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 mb-14">
+            <div>
+              <SectionEyebrow>Client Implementation Case Studies</SectionEyebrow>
+              <h2 className="display text-3xl sm:text-4xl md:text-5xl leading-[1.08]">
+                What CiteWorks Studio builds, improves, and measures.
+              </h2>
+            </div>
+            <div className="space-y-5 text-body leading-relaxed">
+              <p>
+                These are the traditional CiteWorks Studio case studies: real
+                engagements, real execution, and measurable outcomes.
+              </p>
+              <p>
+                Where AI Market Discovery Case Studies show how a market is behaving,
+                client implementation case studies show how CiteWorks Studio helps
+                brands respond. These pages focus on the work delivered, the visibility
+                problem being solved, and the measurable movement across AI
+                recommendations, citations, source quality, search performance, and
+                competitive positioning.
+              </p>
+              <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2 pt-3 text-[15px]">
+                {[
+                  "What changed in the market?",
+                  "What did the brand need?",
+                  "What did CiteWorks Studio do?",
+                  "Which metrics improved?",
+                  "What was the commercial takeaway?",
+                ].map((p) => (
+                  <li key={p} className="flex gap-2.5">
+                    <CheckCircle2 className="size-4 text-primary mt-0.5 shrink-0" />
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="pt-4">
+                <Button
+                  asChild
+                  className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] btn-glow"
+                >
+                  <Link to="/request-audit">SEE HOW CITEWORKS IMPROVES AI DISCOVERY</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-5">
+            {clientCases.map((c) => (
+              <Link
+                key={c.title}
+                to={c.href}
+                className="card-premium p-8 group flex flex-col bg-background"
+              >
+                <div className="flex items-center gap-2 mb-6">
+                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase bg-primary text-primary-foreground rounded-full px-2.5 py-1">
+                    Client Result
+                  </span>
+                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
+                    Implementation
+                  </span>
+                </div>
+                <h3 className="text-2xl font-semibold text-heading leading-tight">
+                  {c.title}
+                </h3>
+                <p className="mt-4 text-body leading-relaxed text-[15px] flex-1">
+                  {c.excerpt}
+                </p>
+                <Metadata
+                  items={[
+                    { k: "Type", v: c.type },
+                    { k: "Work", v: c.work },
+                    { k: "Status", v: c.status },
+                  ]}
+                />
+                <span className="mt-6 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2.5 transition-all uppercase">
+                  Read case study <ArrowUpRight className="size-3.5" />
+                </span>
+              </Link>
+            ))}
+
+            <div className="card-premium p-8 flex flex-col items-start justify-center bg-background/60 border-dashed">
+              <Layers className="size-6 text-primary mb-4" />
+              <h3 className="text-xl font-semibold text-heading">
+                More client case studies in production.
+              </h3>
+              <p className="mt-3 text-body leading-relaxed text-[15px]">
+                Engagements across financial services, insurance technology, consumer
+                products, and B2B SaaS are being prepared for publication.
+              </p>
+              <Link
+                to="/request-audit"
+                className="mt-6 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary hover:gap-2.5 transition-all uppercase"
+              >
+                Discuss your engagement <ArrowUpRight className="size-3.5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- 8. METHODOLOGY / TRUST ---------- */}
+      <section id="methodology" className="py-28 scroll-mt-32 border-t border-border">
+        <div className="mx-auto max-w-[1400px] px-6">
+          <div className="max-w-3xl mb-12">
+            <SectionEyebrow>Methodology & Trust</SectionEyebrow>
+            <h2 className="display text-3xl sm:text-4xl md:text-5xl leading-[1.08]">
+              How to read these reports.
+            </h2>
+            <p className="mt-6 text-body text-lg leading-relaxed">
+              CiteWorks Studio separates market intelligence from client results.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-border bg-card p-2">
+            <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
+              {trustColumns.map((t) => (
+                <div key={t.title} className="p-7">
+                  <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-primary mb-4">
+                    {t.title}
+                  </p>
+                  <p className="text-body leading-relaxed text-[15px]">{t.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8 flex gap-4 items-start max-w-4xl">
+            <Quote className="size-5 text-primary mt-1 shrink-0" />
+            <p className="text-subtle leading-relaxed text-[15px]">
+              Recommendation metrics should be interpreted carefully. Mention volume is
+              not the same as recommendation share, citation frequency is not the same
+              as endorsement, and modeled commercial value is not realized revenue.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- 9. BOTTOM CTA ---------- */}
+      <section className="py-24">
+        <div className="mx-auto max-w-[1400px] px-6">
+          <div className="relative rounded-3xl overflow-hidden border border-border bg-gradient-to-br from-card via-background to-card">
+            <div className="absolute inset-0 grid-bg-fine opacity-20 pointer-events-none" />
+            <div className="absolute -top-40 left-1/2 -translate-x-1/2 size-[700px] conic-ring opacity-50 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
+
+            <div className="relative z-10 p-8 sm:p-14 lg:p-20 grid lg:grid-cols-[1.2fr_1fr] gap-12 items-center">
+              <div>
+                <SectionEyebrow>Get Started</SectionEyebrow>
+                <h2 className="display text-3xl sm:text-4xl md:text-5xl leading-[1.05]">
+                  Want to know how AI systems are{" "}
+                  <span className="text-gradient">recommending your brand?</span>
+                </h2>
+                <p className="mt-7 text-body text-lg leading-relaxed max-w-2xl">
+                  CiteWorks Studio helps brands understand and improve how they appear
+                  across AI-generated recommendations, search results, comparison
+                  prompts, and citation-bearing sources.
+                </p>
+                <p className="mt-5 text-body leading-relaxed">
+                  Request an AI Visibility Audit to see:
+                </p>
+                <ul className="mt-4 space-y-2.5 text-body text-[15px]">
+                  {[
+                    "where your brand appears",
+                    "where competitors are recommended instead",
+                    "which prompts carry the most commercial risk",
+                    "which sources are shaping AI answers",
+                    "what needs to change to improve recommendation-stage visibility",
+                  ].map((i) => (
+                    <li key={i} className="flex gap-2.5">
+                      <ArrowRight className="size-4 text-primary mt-1 shrink-0" />
+                      <span>{i}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-9 flex flex-wrap gap-3">
+                  <Button
+                    asChild
+                    className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] btn-glow"
+                  >
+                    <Link to="/request-audit">REQUEST AN AI VISIBILITY AUDIT</Link>
+                  </Button>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em]"
+                  >
+                    <a href="#market-discovery">
+                      EXPLORE AI MARKET DISCOVERY CASE STUDIES
+                    </a>
+                  </Button>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="space-y-3">
+                  {[
+                    {
+                      step: "01",
+                      label: "Brand visibility",
+                      body: "Where you appear across AI answers, citations, and search.",
+                    },
+                    {
+                      step: "02",
+                      label: "Recommendation gaps",
+                      body: "Where competitors capture buyer-intent prompts.",
+                    },
+                    {
+                      step: "03",
+                      label: "Remediation plan",
+                      body: "Prioritized fixes across content, citations, and sources.",
+                    },
+                  ].map((s, i) => (
+                    <div
+                      key={s.step}
+                      className="glass rounded-2xl p-5 flex items-center gap-5 hover:border-primary/40 transition-colors"
+                    >
+                      <span className="font-mono text-[11px] tracking-[0.18em] text-primary">
+                        {s.step}
+                      </span>
+                      <div className="flex-1">
+                        <p className="font-semibold text-heading text-[15px]">
+                          {s.label}
+                        </p>
+                        <p className="text-subtle text-[13.5px] mt-0.5 leading-snug">
+                          {s.body}
+                        </p>
+                      </div>
+                      {i < 2 && (
+                        <ArrowRight className="size-4 text-primary shrink-0 rotate-90" />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

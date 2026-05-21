@@ -1,57 +1,74 @@
-# Fix "One platform. Every layer of visibility." scrollytelling
+## Goal
 
-## Problems today
+Tighten the `/case-studies` hero, restructure the AI Market Strategy section around LLM Authority Index findings → remediation, and add per-section "view all" directory buttons so visitors can navigate cleanly between the three content types.
 
-- The image lives in a `sticky top-28` column on the **left** of a 2-column grid. Sticky height = the column's natural height, which is just the image itself — much shorter than the steps column on the right. So when you scroll past the image's own height, the right column is still emitting steps but the image **detaches and scrolls up with the page**.
-- The first step is already past the viewport center when the section enters, so step 1 doesn't feel like "the entry point."
-- By steps 6 and 7 the image is long gone above the fold.
-- The screenshot panel is too small for an executive-grade showcase.
+Rename the types of reports:  
+1)  AI Market Strategy to AI Market Discovery Action Reports  
+2)  Client Implementation Case Studies (existing)  
+3) Company Reports (existing) to  AI Company Market Strategy Reports
 
-## Target behavior
+## 1. Replace the hero with the three-pillar overview
 
-- When the section enters the viewport, the image **pins to the vertical center** and step 1 is active.
-- As the user scrolls, the page advances, **the image stays centered and unchanged in position**, and only the step content on the right moves up. The active image **crossfades** as each step crosses the center line.
-- The image stays pinned through step 7 (last step). Only after step 7 has been read does the section release and the page continues scrolling normally.
-- The dashboard image is visibly larger.
+**Problem:** The current hero shows long marketing copy plus a separate "Three ways to understand AI discovery performance" overview section below it, which duplicates intent and confuses scanning.
 
-## Implementation
+**Change:** Merge them. The hero becomes the single, definitive intro to the three content pillars.
 
-Rewrite `src/components/landing/DashboardWalkthrough.tsx` layout so the sticky container's height is driven by the steps, not by the image:
+- Keep the eyebrow, H1, and one short subhead (1–2 sentences max).
+- Remove the `HeroVisual` right-column panel and the long body copy.
+- Render the three pillars directly inside the hero as a 3-card grid (using the existing `overviewCards` data, refreshed copy):
+  1. **AI Market Strategy** — what AI is recommending in your category, and what to fix.
+  2. **Client Implementation Case Studies** — real CiteWorks engagements and measurable outcomes.
+  3. **AI Company Discovery Reports** — company-level readouts from LLM Authority Index data.
+- Each card gets two affordances: a deep link to its section anchor on this page, and an "Explore directory →" link to the full archive route.
+- Delete the standalone "Content Library / Three ways to understand…" section that follows the hero (now redundant).
 
-1. **Restructure the grid** so the **right (steps) column owns the section height** and the **left (image) column is sticky inside a wrapper that spans the full steps height**.
-   - Outer wrapper: `relative grid lg:grid-cols-12`.
-   - Left col (`lg:col-span-7`): contains a single sticky figure — `sticky top-1/2 -translate-y-1/2` so it pins to **viewport center** (not top), with `h-[80vh]` max and `self-start` so it can stick within the tall parent.
-   - Right col (`lg:col-span-5`): the `<ol>` of steps. Each step gets generous `min-h-[80vh]` so there's exactly one step's worth of scroll per image change. This makes the parent grid tall, which gives the sticky image room to remain pinned through all 7 steps.
+Keep the sticky anchor nav as-is for in-page jumps.
 
-2. **Center-pin the image**: replace `lg:sticky lg:top-28` with `lg:sticky lg:top-[10vh]` and constrain the figure to `max-h-[80vh]` so the whole frame stays within the viewport. Use `flex items-center` so the image is visually centered in its sticky box. (Pure `top-1/2 -translate-y-1/2` plays poorly with sticky in some browsers; `top-[10vh]` with `h-[80vh]` is the reliable equivalent.)
+## 2. Restructure the AI Market Strategy section
 
-3. **Enlarge the screenshot**:
-   - Bump left column to `lg:col-span-8` and right column to `lg:col-span-4` so the image gets ~14% more horizontal space.
-   - Change the device screen aspect from `aspect-[16/10]` to `aspect-[16/9]` (wider, more dashboard-like) and let it fill the sticky box up to `max-h-[78vh]`.
-   - Increase ambient glow radius to match the larger frame.
+**Positioning:** AI Market Strategy = LLM Authority Index benchmark summary → what it means for buyer discovery → what's likely causing the gap → what CiteWorks would prioritize fixing → actionable takeaways enterprise teams can implement.
 
-4. **Tune the IntersectionObserver** so the active step switches when a step crosses the **viewport center**, matching the centered image:
-   - `rootMargin: "-50% 0px -50% 0px"` (a 1px-tall activation band at center) with `threshold: 0`.
-   - Each step is `min-h-[80vh] flex flex-col justify-center`, so its activation point aligns with the centered image.
+**New section layout (`#market-discovery`):**
 
-5. **First / last step framing**:
-   - Add `pt-[10vh]` before the first step and `pb-[10vh]` after the last so step 1 activates exactly when the section header clears the top, and step 7 activates before the section releases the sticky.
+1. **Intro block** — eyebrow + H2 + 2-sentence positioning ("Benchmark-led market intelligence, powered by LLM Authority Index, translated into the fixes that move recommendation share.").
+2. **The five-part anatomy of every AI Market Strategy report** — a 5-step rail or numbered grid so enterprise readers immediately see what's inside:
+  - 01 · Benchmark summary (LLM Authority Index findings for the category)
+  - 02 · Why it matters for buyer discovery
+  - 03 · Likely causes of the visibility / recommendation gap
+  - 04 · What CiteWorks Studio would prioritize fixing
+  - 05 · Actionable plays brands can implement to lift LLM visibility
+3. **Featured reports grid** — keep the two existing `marketCases` cards (tax relief, AI collaboration) with a "Market Strategy" badge.
+4. **Section CTAs** (replacing the single audit button):
+  - Primary: `View all AI Market Strategy reports` → `/case-studies/ai-market-strategy` (the directory route).
+  - Secondary: `Request an AI Visibility Audit` → `/request-audit`.
+5. Keep the existing "From Benchmark to Remediation" comparison block beneath it — it reinforces the anatomy.
 
-6. **Reduced motion**: keep current behavior (force `active = 0`, no scroll-driven changes).
+## 3. Add directory CTAs to the other two sections
 
-7. **Mobile (`<lg`)**: keep stacked layout — image above each step block, no sticky. Already handled by the `lg:` prefixes.
+So each pillar has a clear "see everything" path.
 
-## File touched
+- **AI Company Discovery Reports (`#company-reports`)**: under the Slack card, add a CTA row with `View all AI Company Discovery Reports` → `/case-studies/ai-company-reports` (plus keep the existing audit CTA).
+- **Client Implementation Case Studies (`#client-results`)**: under the client cards grid, add `View all client case studies` → `/case-studies/client-results`.
 
-- `src/components/landing/DashboardWalkthrough.tsx` — layout, sticky strategy, IntersectionObserver margins, step min-heights, image aspect ratio, column spans.
+Routes themselves are out of scope for this change (they can 404 until the directory pages are built); the buttons just need to point to stable URLs.
 
-No new dependencies. No changes to `DashboardShowcase` or other sections.
+## 4. Copy polish for SEO / GEO / enterprise tone
 
-## QA
+Across hero cards, section intros, and CTAs:
 
-After the change, browser-test at 1952×1177:
-- Scroll into the section: image appears centered, step 1 active.
-- Continue scrolling: page scrolls, image holds center, steps advance and crossfade.
-- At step 7: image still centered.
-- Scroll past step 7: section releases, page resumes normal scroll.
-- Screenshot to confirm the dashboard panel is visibly larger than before.
+- Lead each pillar with the noun phrase ("AI Market Strategy reports", "AI Company Discovery Reports", "Client implementation case studies") so the page is unambiguous for both crawlers and LLM retrieval.
+- Use consistent, plain-English verbs: *benchmark*, *diagnose*, *prioritize*, *remediate*, *implement*.
+- Update `<title>` and `<meta name="description">` to lead with the three content types and mention LLM Authority Index as the benchmark source.
+- Make sure every section's H2 and first sentence repeat the pillar name once for keyword clarity without being stuffed.
+
+## Technical notes
+
+- File touched: `src/pages/CaseStudies.tsx` only.
+- Refresh the `overviewCards` array (copy + add a `directoryHref` field) and reuse it inside the hero.
+- Remove the `HeroVisual` component and the now-redundant "Overview" section. Keep `Nav`, `Footer`, `StickyAuditCTA`, sticky anchor nav, Benchmark→Remediation, Methodology, and final CTA sections untouched structurally.
+- Add a small numbered list/grid component inline for the 5-part anatomy (no new file needed) using existing tokens (`card-premium`, `eyebrow`, `display`, `text-gradient`, `font-mono` rails).
+- Directory link targets used (placeholders, no route work in this pass):
+  - `/case-studies/ai-market-strategy`
+  - `/case-studies/ai-company-reports`
+  - `/case-studies/client-results`
+- No design system, no business logic, no backend changes.

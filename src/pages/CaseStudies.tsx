@@ -208,60 +208,83 @@ const CaseStudies = () => {
       <Nav />
 
       {/* ---------- 1. HERO ---------- */}
-      <section className="relative pt-32 pb-24 overflow-hidden ambient-glow">
+      <section className="relative pt-40 pb-28 overflow-hidden ambient-glow">
         <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background pointer-events-none" />
+        <div className="absolute inset-0 grid-bg-fine opacity-[0.15] pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_75%)]" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] conic-ring opacity-40 pointer-events-none float-y-slow" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background pointer-events-none" />
+
         <div className="relative z-10 mx-auto max-w-[1400px] px-6">
-          <div className="max-w-4xl">
-            <p className="eyebrow mb-6">/ Case Studies &amp; AI Market Discovery</p>
-            <h1 className="display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02]">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="reveal inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 mb-7">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 pulse-ring" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary" />
+              </span>
+              <span className="font-mono text-[13px] tracking-[0.16em] text-body uppercase">
+                / Case Studies &amp; AI Market Discovery
+              </span>
+            </div>
+            <h1 className="reveal reveal-delay-1 display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.98]">
               Three libraries.{" "}
               <span className="text-gradient">One AI discovery system.</span>
             </h1>
-            <p className="mt-7 text-body text-lg leading-relaxed max-w-2xl">
+            <p className="reveal reveal-delay-2 mt-8 mx-auto max-w-2xl text-base sm:text-lg text-body leading-relaxed">
               Benchmark-led market intelligence, real client engagements, and
               company-level readouts — built to show enterprise teams exactly how
               AI systems recommend their category and what to fix next.
             </p>
+            <div className="reveal reveal-delay-3 mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 font-mono text-[11.5px] tracking-[0.16em] uppercase text-tertiary">
+              <span>Powered by LLM Authority Index</span>
+              <span className="hidden sm:inline text-border">/</span>
+              <span>Independent benchmark data</span>
+              <span className="hidden sm:inline text-border">/</span>
+              <span>Enterprise-grade analysis</span>
+            </div>
           </div>
 
-          <div className="mt-14 grid md:grid-cols-3 gap-5">
-            {pillars.map((p) => {
+          <div className="reveal reveal-delay-3 mt-16 grid md:grid-cols-3 gap-5">
+            {pillars.map((p, idx) => {
               const Icon = p.icon;
               return (
-                <div
+                <a
                   key={p.title}
-                  className="card-premium p-8 flex flex-col group"
+                  href={p.sectionHref}
+                  className="card-premium p-8 flex flex-col group relative overflow-hidden hover:border-primary/40 hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="flex items-center justify-between mb-7">
-                    <div className="size-11 rounded-xl bg-primary/10 border border-primary/20 grid place-items-center text-primary">
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="flex items-center justify-between mb-8">
+                    <div className="size-12 rounded-xl bg-primary/10 border border-primary/20 grid place-items-center text-primary group-hover:bg-primary/15 group-hover:scale-105 transition-all">
                       <Icon className="size-5" />
                     </div>
-                    <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary text-right max-w-[55%]">
-                      {p.label}
+                    <span className="font-mono text-[11px] tracking-[0.18em] uppercase text-tertiary">
+                      0{idx + 1}
                     </span>
                   </div>
-                  <h2 className="text-xl font-semibold text-heading leading-snug">
+
+                  <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-primary mb-3">
+                    {p.label}
+                  </p>
+                  <h2 className="text-2xl font-semibold text-heading leading-[1.2] tracking-tight">
                     {p.title}
                   </h2>
-                  <p className="mt-4 text-body leading-relaxed text-[15px] flex-1">
+                  <p className="mt-4 text-[14.5px] text-body leading-relaxed flex-1">
                     {p.body}
                   </p>
-                  <div className="mt-7 flex flex-col gap-2.5">
+
+                  <div className="mt-7 pt-5 border-t border-border flex items-center justify-between gap-3">
+                    <span className="inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2.5 transition-all uppercase">
+                      Jump to section <ArrowRight className="size-3.5" />
+                    </span>
                     <Link
                       to={p.directoryHref}
-                      className="inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2.5 transition-all uppercase"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1 font-mono text-[11px] tracking-[0.14em] text-tertiary hover:text-heading transition-colors uppercase whitespace-nowrap"
                     >
-                      {p.directoryLabel} <ArrowUpRight className="size-3.5" />
+                      View all <ArrowUpRight className="size-3" />
                     </Link>
-                    <a
-                      href={p.sectionHref}
-                      className="inline-flex items-center gap-1.5 font-mono text-[11.5px] tracking-[0.14em] text-tertiary hover:text-body transition-colors uppercase"
-                    >
-                      Preview on this page <ArrowRight className="size-3" />
-                    </a>
                   </div>
-                </div>
+                </a>
               );
             })}
           </div>

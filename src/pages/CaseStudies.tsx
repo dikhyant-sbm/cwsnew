@@ -312,8 +312,128 @@ const CaseStudies = () => {
         </div>
       </nav>
 
-      {/* ---------- 3. AI MARKET DISCOVERY ACTION REPORTS ---------- */}
-      <section id="market-discovery" className="py-28 scroll-mt-32">
+      {/* ---------- 3. CLIENT IMPLEMENTATION ---------- */}
+      <section
+        id="client-results"
+        className="py-28 scroll-mt-32 bg-card/30"
+      >
+        <div className="mx-auto max-w-[1400px] px-6">
+          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 mb-14">
+            <div>
+              <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-5">
+                Pillar 01 · Client engagements
+              </p>
+              <h2 className="display text-4xl sm:text-5xl md:text-6xl leading-[1.02] tracking-tight">
+                Client Implementation Case Studies
+              </h2>
+              <p className="mt-6 text-body text-lg leading-relaxed">
+                What CiteWorks Studio builds, improves, and measures.
+              </p>
+            </div>
+            <div className="space-y-5 text-body leading-relaxed">
+              <p>
+                These are the documented CiteWorks Studio engagements: real
+                execution, real measurement, and outcomes tied to client data.
+              </p>
+              <p>
+                Where AI Market Discovery Action Reports show how a market is
+                behaving, client implementation case studies show how CiteWorks
+                Studio helps brands respond — the work delivered, the visibility
+                problem solved, and the measurable movement across AI
+                recommendations, citations, source quality, search performance,
+                and competitive positioning.
+              </p>
+              <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2 pt-3 text-[15px]">
+                {[
+                  "What changed in the market?",
+                  "What did the brand need?",
+                  "What did CiteWorks Studio do?",
+                  "Which metrics improved?",
+                  "What was the commercial takeaway?",
+                ].map((p) => (
+                  <li key={p} className="flex gap-2.5">
+                    <CheckCircle2 className="size-4 text-primary mt-0.5 shrink-0" />
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-5">
+            {clientCases.map((c) => (
+              <Link
+                key={c.title}
+                to={c.href}
+                className="card-premium p-8 group flex flex-col bg-background"
+              >
+                <div className="flex items-center gap-2 mb-6">
+                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase bg-primary text-primary-foreground rounded-full px-2.5 py-1">
+                    Client Result
+                  </span>
+                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
+                    Implementation
+                  </span>
+                </div>
+                <h3 className="text-2xl font-semibold text-heading leading-tight">
+                  {c.title}
+                </h3>
+                <p className="mt-4 text-body leading-relaxed text-[15px] flex-1">
+                  {c.excerpt}
+                </p>
+                <Metadata
+                  items={[
+                    { k: "Type", v: c.type },
+                    { k: "Work", v: c.work },
+                    { k: "Status", v: c.status },
+                  ]}
+                />
+                <span className="mt-6 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2.5 transition-all uppercase">
+                  Read case study <ArrowUpRight className="size-3.5" />
+                </span>
+              </Link>
+            ))}
+
+            <div className="card-premium p-8 flex flex-col items-start justify-center bg-background/60 border-dashed">
+              <Layers className="size-6 text-primary mb-4" />
+              <h3 className="text-xl font-semibold text-heading">
+                More client case studies in production.
+              </h3>
+              <p className="mt-3 text-body leading-relaxed text-[15px]">
+                Engagements across financial services, insurance technology, consumer
+                products, and B2B SaaS are being prepared for publication.
+              </p>
+              <Link
+                to="/request-audit"
+                className="mt-6 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary hover:gap-2.5 transition-all uppercase"
+              >
+                Discuss your engagement <ArrowUpRight className="size-3.5" />
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Button
+              asChild
+              className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] btn-glow"
+            >
+              <Link to="/case-studies/client-results">
+                VIEW ALL CLIENT CASE STUDIES
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em]"
+            >
+              <Link to="/request-audit">SEE HOW CITEWORKS IMPROVES AI DISCOVERY</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- 4. AI MARKET DISCOVERY ACTION REPORTS ---------- */}
+      <section id="market-discovery" className="py-28 scroll-mt-32 border-t border-border">
         <div className="mx-auto max-w-[1400px] px-6">
           <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 mb-14">
             <div>
@@ -434,7 +554,7 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* ---------- 4. BENCHMARK → REMEDIATION ---------- */}
+      {/* ---------- 5. BENCHMARK → REMEDIATION ---------- */}
       <section className="py-24">
         <div className="mx-auto max-w-[1400px] px-6">
           <div className="relative rounded-3xl overflow-hidden border border-border bg-card">
@@ -506,7 +626,7 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* ---------- 5. COMPANY REPORTS ---------- */}
+      {/* ---------- 6. COMPANY REPORTS ---------- */}
       <section id="company-reports" className="py-28 scroll-mt-32 border-t border-border">
         <div className="mx-auto max-w-[1400px] px-6">
           <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 mb-14">
@@ -622,126 +742,6 @@ const CaseStudies = () => {
               className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em]"
             >
               <Link to="/request-audit">REQUEST AN AI VISIBILITY AUDIT</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------- 6. CLIENT IMPLEMENTATION ---------- */}
-      <section
-        id="client-results"
-        className="py-28 scroll-mt-32 border-t border-border bg-card/30"
-      >
-        <div className="mx-auto max-w-[1400px] px-6">
-          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 mb-14">
-            <div>
-              <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-5">
-                Pillar 01 · Client engagements
-              </p>
-              <h2 className="display text-4xl sm:text-5xl md:text-6xl leading-[1.02] tracking-tight">
-                Client Implementation Case Studies
-              </h2>
-              <p className="mt-6 text-body text-lg leading-relaxed">
-                What CiteWorks Studio builds, improves, and measures.
-              </p>
-            </div>
-            <div className="space-y-5 text-body leading-relaxed">
-              <p>
-                These are the documented CiteWorks Studio engagements: real
-                execution, real measurement, and outcomes tied to client data.
-              </p>
-              <p>
-                Where AI Market Discovery Action Reports show how a market is
-                behaving, client implementation case studies show how CiteWorks
-                Studio helps brands respond — the work delivered, the visibility
-                problem solved, and the measurable movement across AI
-                recommendations, citations, source quality, search performance,
-                and competitive positioning.
-              </p>
-              <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2 pt-3 text-[15px]">
-                {[
-                  "What changed in the market?",
-                  "What did the brand need?",
-                  "What did CiteWorks Studio do?",
-                  "Which metrics improved?",
-                  "What was the commercial takeaway?",
-                ].map((p) => (
-                  <li key={p} className="flex gap-2.5">
-                    <CheckCircle2 className="size-4 text-primary mt-0.5 shrink-0" />
-                    <span>{p}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-5">
-            {clientCases.map((c) => (
-              <Link
-                key={c.title}
-                to={c.href}
-                className="card-premium p-8 group flex flex-col bg-background"
-              >
-                <div className="flex items-center gap-2 mb-6">
-                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase bg-primary text-primary-foreground rounded-full px-2.5 py-1">
-                    Client Result
-                  </span>
-                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
-                    Implementation
-                  </span>
-                </div>
-                <h3 className="text-2xl font-semibold text-heading leading-tight">
-                  {c.title}
-                </h3>
-                <p className="mt-4 text-body leading-relaxed text-[15px] flex-1">
-                  {c.excerpt}
-                </p>
-                <Metadata
-                  items={[
-                    { k: "Type", v: c.type },
-                    { k: "Work", v: c.work },
-                    { k: "Status", v: c.status },
-                  ]}
-                />
-                <span className="mt-6 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2.5 transition-all uppercase">
-                  Read case study <ArrowUpRight className="size-3.5" />
-                </span>
-              </Link>
-            ))}
-
-            <div className="card-premium p-8 flex flex-col items-start justify-center bg-background/60 border-dashed">
-              <Layers className="size-6 text-primary mb-4" />
-              <h3 className="text-xl font-semibold text-heading">
-                More client case studies in production.
-              </h3>
-              <p className="mt-3 text-body leading-relaxed text-[15px]">
-                Engagements across financial services, insurance technology, consumer
-                products, and B2B SaaS are being prepared for publication.
-              </p>
-              <Link
-                to="/request-audit"
-                className="mt-6 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary hover:gap-2.5 transition-all uppercase"
-              >
-                Discuss your engagement <ArrowUpRight className="size-3.5" />
-              </Link>
-            </div>
-          </div>
-
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Button
-              asChild
-              className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] btn-glow"
-            >
-              <Link to="/case-studies/client-results">
-                VIEW ALL CLIENT CASE STUDIES
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em]"
-            >
-              <Link to="/request-audit">SEE HOW CITEWORKS IMPROVES AI DISCOVERY</Link>
             </Button>
           </div>
         </div>

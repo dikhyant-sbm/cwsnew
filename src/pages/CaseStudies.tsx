@@ -34,7 +34,7 @@ const pillars = [
   {
     icon: Map,
     label: "Benchmark-led market intelligence",
-    title: "AI Market Discovery Action Reports",
+    title: "AI Industry Market Discovery Reports",
     body:
       "Category-level analyses powered by LLM Authority Index. Each report summarizes how AI systems recommend a market, why it matters for buyer discovery, what's likely causing the gap, what CiteWorks Studio would prioritize fixing, and the actionable plays brands can implement to lift LLM visibility.",
     sectionHref: "#market-discovery",
@@ -55,7 +55,7 @@ const pillars = [
 
 const anchors = [
   { id: "client-results", label: "Client Implementation Case Studies" },
-  { id: "market-discovery", label: "AI Market Discovery Action Reports" },
+  { id: "market-discovery", label: "AI Industry Market Discovery Reports" },
   { id: "company-reports", label: "AI Company Market Strategy Reports" },
   { id: "methodology", label: "How to Read These Reports" },
 ];
@@ -98,7 +98,7 @@ const marketCases = [
     title: "How AI Search Is Recommending Tax Relief Companies in 2026",
     excerpt:
       "A benchmark-based analysis of how AI systems surface, compare, and recommend tax relief companies across high-intent discovery, comparison, and decision-stage prompts — with remediation priorities for brands losing recommendation share.",
-    type: "AI Market Discovery Action Report",
+    type: "AI Industry Market Discovery Report",
     source: "LLM Authority Index benchmark data",
     status: "Independent market analysis",
     href: "/case-studies/tax-relief-ai-market-discovery",
@@ -107,7 +107,7 @@ const marketCases = [
     title: "How AI Search Is Recommending AI Work Collaboration Platforms",
     excerpt:
       "An industry-level look at how AI systems compare collaboration platforms, where recommendation strength drops across buyer stages, and which source, content, and citation gaps may be shaping shortlist visibility.",
-    type: "AI Market Discovery Action Report",
+    type: "AI Industry Market Discovery Report",
     source: "LLM Authority Index benchmark data",
     status: "Independent market analysis",
     href: "/case-studies/ai-work-collaboration-ai-market-discovery",
@@ -154,7 +154,7 @@ const trustColumns = [
   {
     title: "Market intelligence",
     body:
-      "AI Market Discovery Action Reports are benchmark-based examinations of how AI systems recommend, compare, and frame companies in a category. They are independent market analyses and should not be read as client engagements.",
+      "AI Industry Market Discovery Reports are benchmark-based examinations of how AI systems recommend, compare, and frame companies in a category. They are independent market analyses and should not be read as client engagements.",
   },
   {
     title: "Company readouts",
@@ -194,7 +194,7 @@ const CaseStudies = () => {
 
   useEffect(() => {
     document.title =
-      "AI Market Discovery Action Reports, Client Case Studies & Company Reports | CiteWorks Studio";
+      "AI Industry Market Discovery Reports, Client Case Studies & Company Reports | CiteWorks Studio";
     const meta = document.querySelector('meta[name="description"]');
     if (meta)
       meta.setAttribute(
@@ -336,7 +336,7 @@ const CaseStudies = () => {
                 execution, real measurement, and outcomes tied to client data.
               </p>
               <p>
-                Where AI Market Discovery Action Reports show how a market is
+                Where AI Industry Market Discovery Reports show how a market is
                 behaving, client implementation case studies show how CiteWorks
                 Studio helps brands respond — the work delivered, the visibility
                 problem solved, and the measurable movement across AI
@@ -441,7 +441,7 @@ const CaseStudies = () => {
                 Pillar 02 · Market intelligence
               </p>
               <h2 className="display text-4xl sm:text-5xl md:text-6xl leading-[1.02] tracking-tight">
-                AI Market Discovery Action Reports
+                AI Industry Market Discovery Reports
               </h2>
               <p className="mt-6 text-body text-lg leading-relaxed">
                 Benchmark intelligence, translated into the fixes that move recommendation share.
@@ -449,7 +449,7 @@ const CaseStudies = () => {
             </div>
             <div className="space-y-5 text-body leading-relaxed">
               <p>
-                AI Market Discovery Action Reports take the LLM Authority Index
+                AI Industry Market Discovery Reports take the LLM Authority Index
                 benchmark for a category and turn it into a decision document —
                 what AI systems are recommending today, why that matters for
                 buyer discovery, what's most likely causing the gap, and the
@@ -497,7 +497,7 @@ const CaseStudies = () => {
               >
                 <div className="flex items-center gap-2 mb-6">
                   <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-primary border border-primary/30 bg-primary/5 rounded-full px-2.5 py-1">
-                    Market Discovery Action
+                    Industry Market Discovery
                   </span>
                   <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
                     Benchmark-based

@@ -13,6 +13,7 @@ import RequestAudit from "./pages/RequestAudit.tsx";
 import Services from "./pages/Services.tsx";
 import CaseStudies from "./pages/CaseStudies.tsx";
 import JobBoardAISearch from "./pages/case-studies/JobBoardAISearch.tsx";
+import AIWorkCollaborationPlatforms from "./pages/case-studies/AIWorkCollaborationPlatforms.tsx";
 import AISearchOptimization from "./pages/AISearchOptimization.tsx";
 import EmbeddingLevelGEO from "./pages/resources/EmbeddingLevelGEO.tsx";
 import About from "./pages/About.tsx";
@@ -42,6 +43,7 @@ const App = () => (
             <Route path="/services" element={<Services />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/case-studies/job-board-ai-search" element={<JobBoardAISearch />} />
+            <Route path="/case-studies/ai-work-collaboration-platforms" element={<AIWorkCollaborationPlatforms />} />
             <Route path="/ai-search-optimization" element={<AISearchOptimization />} />
             <Route path="/resources/embedding-level-geo" element={<EmbeddingLevelGEO />} />
             <Route path="/about" element={<About />} />

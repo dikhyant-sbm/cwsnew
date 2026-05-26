@@ -93,15 +93,19 @@ const reportAnatomy = [
   },
 ];
 
-const marketCases = [
+type CaseHref = string | null;
+
+const marketCases: {
+  title: string; excerpt: string; type: string; source: string; status: string; href: CaseHref;
+}[] = [
   {
     title: "How AI Search Is Recommending Tax Relief Companies in 2026",
     excerpt:
       "A benchmark-based analysis of how AI systems surface, compare, and recommend tax relief companies across high-intent discovery, comparison, and decision-stage prompts — with remediation priorities for brands losing recommendation share.",
     type: "AI Industry Market Discovery Report",
     source: "LLM Authority Index benchmark data",
-    status: "Independent market analysis",
-    href: "/case-studies/tax-relief-ai-market-discovery",
+    status: "Coming soon",
+    href: null,
   },
   {
     title: "How AI Search Is Recommending AI Work Collaboration Platforms",
@@ -109,8 +113,8 @@ const marketCases = [
       "An industry-level look at how AI systems compare collaboration platforms, where recommendation strength drops across buyer stages, and which source, content, and citation gaps may be shaping shortlist visibility.",
     type: "AI Industry Market Discovery Report",
     source: "LLM Authority Index benchmark data",
-    status: "Independent market analysis",
-    href: "/case-studies/ai-work-collaboration-ai-market-discovery",
+    status: "Coming soon",
+    href: null,
   },
 ];
 
@@ -137,7 +141,19 @@ const slackMetrics = [
   { label: "Pricing-stage positive capture", value: "0.00%" },
 ];
 
-const clientCases = [
+const clientCases: {
+  title: string; excerpt: string; type: string; work: string; status: string; href: CaseHref;
+}[] = [
+  {
+    title:
+      "How a Job Posting Platform Secured a Place in AI's Shortlist for Employers",
+    excerpt:
+      "A 5-month, 480-engagement campaign that lifted brand mentions in AI Overviews by 71%, influenced 100+ cited pages, and put 2,791 keywords into Google's top 10 — by rebuilding the brand's citation footprint where LLMs were already looking.",
+    type: "Client Implementation Case Study",
+    work: "AI visibility, citation architecture, search visibility",
+    status: "Published",
+    href: "/case-studies/job-board-ai-search",
+  },
   {
     title:
       "How an Insurance Technology Brand Strengthened Its AI Visibility and Citation Footprint",
@@ -145,8 +161,8 @@ const clientCases = [
       "A client implementation case study showing how CiteWorks Studio improved the brand's presence across AI recommendation environments, citation-bearing sources, and high-intent search visibility.",
     type: "Client Implementation Case Study",
     work: "AI visibility, citation architecture, search visibility",
-    status: "Client result",
-    href: "/case-studies/client-results/insurance-tech-ai-visibility",
+    status: "Coming soon",
+    href: null,
   },
 ];
 
@@ -276,13 +292,6 @@ const CaseStudies = () => {
                     <span className="inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2.5 transition-all uppercase">
                       Jump to section <ArrowRight className="size-3.5" />
                     </span>
-                    <Link
-                      to={p.directoryHref}
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-1 font-mono text-[11px] tracking-[0.14em] text-tertiary hover:text-heading transition-colors uppercase whitespace-nowrap"
-                    >
-                      View all <ArrowUpRight className="size-3" />
-                    </Link>
                   </div>
                 </a>
               );
@@ -361,38 +370,62 @@ const CaseStudies = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-5">
-            {clientCases.map((c) => (
-              <Link
-                key={c.title}
-                to={c.href}
-                className="card-premium p-8 group flex flex-col bg-background"
-              >
-                <div className="flex items-center gap-2 mb-6">
-                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase bg-primary text-primary-foreground rounded-full px-2.5 py-1">
-                    Client Result
+            {clientCases.map((c) => {
+              const isLive = !!c.href;
+              const cardClass =
+                "card-premium p-8 group flex flex-col bg-background " +
+                (isLive ? "" : "opacity-90 cursor-default");
+              const inner = (
+                <>
+                  <div className="flex items-center gap-2 mb-6">
+                    <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase bg-primary text-primary-foreground rounded-full px-2.5 py-1">
+                      {isLive ? "Client Result" : "Coming Soon"}
+                    </span>
+                    <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
+                      Implementation
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-semibold text-heading leading-tight">
+                    {c.title}
+                  </h3>
+                  <p className="mt-4 text-body leading-relaxed text-[15px] flex-1">
+                    {c.excerpt}
+                  </p>
+                  <Metadata
+                    items={[
+                      { k: "Type", v: c.type },
+                      { k: "Work", v: c.work },
+                      { k: "Status", v: c.status },
+                    ]}
+                  />
+                  <span
+                    className={
+                      "mt-6 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] uppercase " +
+                      (isLive
+                        ? "text-primary group-hover:gap-2.5 transition-all"
+                        : "text-tertiary")
+                    }
+                  >
+                    {isLive ? (
+                      <>
+                        Read case study <ArrowUpRight className="size-3.5" />
+                      </>
+                    ) : (
+                      "Publishing soon"
+                    )}
                   </span>
-                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
-                    Implementation
-                  </span>
+                </>
+              );
+              return isLive ? (
+                <Link key={c.title} to={c.href as string} className={cardClass}>
+                  {inner}
+                </Link>
+              ) : (
+                <div key={c.title} className={cardClass} aria-disabled="true">
+                  {inner}
                 </div>
-                <h3 className="text-2xl font-semibold text-heading leading-tight">
-                  {c.title}
-                </h3>
-                <p className="mt-4 text-body leading-relaxed text-[15px] flex-1">
-                  {c.excerpt}
-                </p>
-                <Metadata
-                  items={[
-                    { k: "Type", v: c.type },
-                    { k: "Work", v: c.work },
-                    { k: "Status", v: c.status },
-                  ]}
-                />
-                <span className="mt-6 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2.5 transition-all uppercase">
-                  Read case study <ArrowUpRight className="size-3.5" />
-                </span>
-              </Link>
-            ))}
+              );
+            })}
 
             <div className="card-premium p-8 flex flex-col items-start justify-center bg-background/60 border-dashed">
               <Layers className="size-6 text-primary mb-4" />
@@ -416,15 +449,6 @@ const CaseStudies = () => {
             <Button
               asChild
               className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] btn-glow"
-            >
-              <Link to="/case-studies/client-results">
-                VIEW ALL CLIENT CASE STUDIES
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em]"
             >
               <Link to="/request-audit">SEE HOW CITEWORKS IMPROVES AI DISCOVERY</Link>
             </Button>
@@ -489,49 +513,65 @@ const CaseStudies = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-5">
-            {marketCases.map((c) => (
-              <Link
-                key={c.title}
-                to={c.href}
-                className="card-premium p-8 group flex flex-col"
-              >
-                <div className="flex items-center gap-2 mb-6">
-                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-primary border border-primary/30 bg-primary/5 rounded-full px-2.5 py-1">
-                    Industry Market Discovery
+            {marketCases.map((c) => {
+              const isLive = !!c.href;
+              const cardClass =
+                "card-premium p-8 group flex flex-col " +
+                (isLive ? "" : "opacity-90 cursor-default");
+              const inner = (
+                <>
+                  <div className="flex items-center gap-2 mb-6">
+                    <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-primary border border-primary/30 bg-primary/5 rounded-full px-2.5 py-1">
+                      {isLive ? "Industry Market Discovery" : "Coming Soon"}
+                    </span>
+                    <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
+                      Benchmark-based
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-semibold text-heading leading-tight">
+                    {c.title}
+                  </h3>
+                  <p className="mt-4 text-body leading-relaxed text-[15px] flex-1">
+                    {c.excerpt}
+                  </p>
+                  <Metadata
+                    items={[
+                      { k: "Type", v: c.type },
+                      { k: "Source", v: c.source },
+                      { k: "Status", v: c.status },
+                    ]}
+                  />
+                  <span
+                    className={
+                      "mt-6 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] uppercase " +
+                      (isLive
+                        ? "text-primary group-hover:gap-2.5 transition-all"
+                        : "text-tertiary")
+                    }
+                  >
+                    {isLive ? (
+                      <>
+                        Read report <ArrowUpRight className="size-3.5" />
+                      </>
+                    ) : (
+                      "Publishing soon"
+                    )}
                   </span>
-                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
-                    Benchmark-based
-                  </span>
+                </>
+              );
+              return isLive ? (
+                <Link key={c.title} to={c.href as string} className={cardClass}>
+                  {inner}
+                </Link>
+              ) : (
+                <div key={c.title} className={cardClass} aria-disabled="true">
+                  {inner}
                 </div>
-                <h3 className="text-2xl font-semibold text-heading leading-tight">
-                  {c.title}
-                </h3>
-                <p className="mt-4 text-body leading-relaxed text-[15px] flex-1">
-                  {c.excerpt}
-                </p>
-                <Metadata
-                  items={[
-                    { k: "Type", v: c.type },
-                    { k: "Source", v: c.source },
-                    { k: "Status", v: c.status },
-                  ]}
-                />
-                <span className="mt-6 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2.5 transition-all uppercase">
-                  Read report <ArrowUpRight className="size-3.5" />
-                </span>
-              </Link>
-            ))}
+              );
+            })}
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <Button
-              asChild
-              className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] btn-glow"
-            >
-              <Link to="/case-studies/ai-market-discovery">
-                VIEW ALL MARKET DISCOVERY REPORTS
-              </Link>
-            </Button>
             <Button
               asChild
               variant="outline"
@@ -674,15 +714,12 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <Link
-            to="/ai-company-reports/slack"
-            className="card-premium p-8 sm:p-10 block group"
-          >
+          <div className="card-premium p-8 sm:p-10 block opacity-90 cursor-default" aria-disabled="true">
             <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10">
               <div>
                 <div className="flex items-center gap-2 mb-6">
                   <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-primary border border-primary/30 bg-primary/5 rounded-full px-2.5 py-1">
-                    Company Market Strategy Report
+                    Coming Soon
                   </span>
                   <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
                     Public readout
@@ -703,11 +740,11 @@ const CaseStudies = () => {
                   items={[
                     { k: "Type", v: "AI Company Market Strategy Report" },
                     { k: "Scope", v: "3 of 10 high-intent clusters" },
-                    { k: "Status", v: "Public market readout" },
+                    { k: "Status", v: "Publishing soon" },
                   ]}
                 />
-                <span className="mt-7 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2.5 transition-all uppercase">
-                  View company report <ArrowUpRight className="size-3.5" />
+                <span className="mt-7 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-tertiary uppercase">
+                  Publishing soon
                 </span>
               </div>
 
@@ -725,17 +762,9 @@ const CaseStudies = () => {
                 ))}
               </div>
             </div>
-          </Link>
+          </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <Button
-              asChild
-              className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] btn-glow"
-            >
-              <Link to="/case-studies/ai-company-reports">
-                VIEW ALL COMPANY MARKET STRATEGY REPORTS
-              </Link>
-            </Button>
             <Button
               asChild
               variant="outline"

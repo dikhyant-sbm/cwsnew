@@ -714,15 +714,12 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <Link
-            to="/ai-company-reports/slack"
-            className="card-premium p-8 sm:p-10 block group"
-          >
+          <div className="card-premium p-8 sm:p-10 block opacity-90 cursor-default" aria-disabled="true">
             <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10">
               <div>
                 <div className="flex items-center gap-2 mb-6">
                   <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-primary border border-primary/30 bg-primary/5 rounded-full px-2.5 py-1">
-                    Company Market Strategy Report
+                    Coming Soon
                   </span>
                   <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
                     Public readout
@@ -743,11 +740,11 @@ const CaseStudies = () => {
                   items={[
                     { k: "Type", v: "AI Company Market Strategy Report" },
                     { k: "Scope", v: "3 of 10 high-intent clusters" },
-                    { k: "Status", v: "Public market readout" },
+                    { k: "Status", v: "Publishing soon" },
                   ]}
                 />
-                <span className="mt-7 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2.5 transition-all uppercase">
-                  View company report <ArrowUpRight className="size-3.5" />
+                <span className="mt-7 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-tertiary uppercase">
+                  Publishing soon
                 </span>
               </div>
 
@@ -765,17 +762,9 @@ const CaseStudies = () => {
                 ))}
               </div>
             </div>
-          </Link>
+          </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <Button
-              asChild
-              className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] btn-glow"
-            >
-              <Link to="/case-studies/ai-company-reports">
-                VIEW ALL COMPANY MARKET STRATEGY REPORTS
-              </Link>
-            </Button>
             <Button
               asChild
               variant="outline"

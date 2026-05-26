@@ -370,38 +370,62 @@ const CaseStudies = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-5">
-            {clientCases.map((c) => (
-              <Link
-                key={c.title}
-                to={c.href}
-                className="card-premium p-8 group flex flex-col bg-background"
-              >
-                <div className="flex items-center gap-2 mb-6">
-                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase bg-primary text-primary-foreground rounded-full px-2.5 py-1">
-                    Client Result
+            {clientCases.map((c) => {
+              const isLive = !!c.href;
+              const cardClass =
+                "card-premium p-8 group flex flex-col bg-background " +
+                (isLive ? "" : "opacity-90 cursor-default");
+              const inner = (
+                <>
+                  <div className="flex items-center gap-2 mb-6">
+                    <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase bg-primary text-primary-foreground rounded-full px-2.5 py-1">
+                      {isLive ? "Client Result" : "Coming Soon"}
+                    </span>
+                    <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
+                      Implementation
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-semibold text-heading leading-tight">
+                    {c.title}
+                  </h3>
+                  <p className="mt-4 text-body leading-relaxed text-[15px] flex-1">
+                    {c.excerpt}
+                  </p>
+                  <Metadata
+                    items={[
+                      { k: "Type", v: c.type },
+                      { k: "Work", v: c.work },
+                      { k: "Status", v: c.status },
+                    ]}
+                  />
+                  <span
+                    className={
+                      "mt-6 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] uppercase " +
+                      (isLive
+                        ? "text-primary group-hover:gap-2.5 transition-all"
+                        : "text-tertiary")
+                    }
+                  >
+                    {isLive ? (
+                      <>
+                        Read case study <ArrowUpRight className="size-3.5" />
+                      </>
+                    ) : (
+                      "Publishing soon"
+                    )}
                   </span>
-                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
-                    Implementation
-                  </span>
+                </>
+              );
+              return isLive ? (
+                <Link key={c.title} to={c.href as string} className={cardClass}>
+                  {inner}
+                </Link>
+              ) : (
+                <div key={c.title} className={cardClass} aria-disabled="true">
+                  {inner}
                 </div>
-                <h3 className="text-2xl font-semibold text-heading leading-tight">
-                  {c.title}
-                </h3>
-                <p className="mt-4 text-body leading-relaxed text-[15px] flex-1">
-                  {c.excerpt}
-                </p>
-                <Metadata
-                  items={[
-                    { k: "Type", v: c.type },
-                    { k: "Work", v: c.work },
-                    { k: "Status", v: c.status },
-                  ]}
-                />
-                <span className="mt-6 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2.5 transition-all uppercase">
-                  Read case study <ArrowUpRight className="size-3.5" />
-                </span>
-              </Link>
-            ))}
+              );
+            })}
 
             <div className="card-premium p-8 flex flex-col items-start justify-center bg-background/60 border-dashed">
               <Layers className="size-6 text-primary mb-4" />
@@ -425,15 +449,6 @@ const CaseStudies = () => {
             <Button
               asChild
               className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] btn-glow"
-            >
-              <Link to="/case-studies/client-results">
-                VIEW ALL CLIENT CASE STUDIES
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em]"
             >
               <Link to="/request-audit">SEE HOW CITEWORKS IMPROVES AI DISCOVERY</Link>
             </Button>

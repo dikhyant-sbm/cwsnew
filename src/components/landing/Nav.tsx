@@ -1,19 +1,41 @@
 import { Logo } from "./Logo";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
-import { ArrowUpRight, Menu } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Menu } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
+type NavChild = { label: string; to: string; description?: string };
 type NavGroup = {
   label: string;
   to: string;
+  children?: NavChild[];
 };
 
 const groups: NavGroup[] = [
   { label: "SERVICES", to: "/services" },
-  { label: "CASE STUDIES", to: "/case-studies" },
+  {
+    label: "CASE STUDIES",
+    to: "/case-studies",
+    children: [
+      {
+        label: "Client Implementation Case Studies",
+        to: "/case-studies#client-results",
+        description: "Documented CiteWorks engagements with measurable outcomes.",
+      },
+      {
+        label: "AI Industry Market Discovery Reports",
+        to: "/case-studies#market-discovery",
+        description: "Benchmark-based category analyses powered by LLM Authority Index.",
+      },
+      {
+        label: "AI Company Market Strategy Reports",
+        to: "/case-studies#company-reports",
+        description: "Company-level readouts on AI recommendation positioning.",
+      },
+    ],
+  },
   { label: "METHODOLOGY", to: "/methodology" },
   { label: "AGENCY PARTNERS", to: "/agency-partners" },
   { label: "RESOURCES", to: "/resources" },
@@ -45,19 +67,57 @@ export const Nav = () => {
         <Logo />
 
         <nav className="hidden lg:flex items-center font-mono text-[13px] font-semibold tracking-[0.14em] text-body">
-          {groups.map((g) => (
-            <NavLink
-              key={g.label}
-              to={g.to}
-              className={({ isActive }) =>
-                `inline-flex items-center gap-1 px-4 py-2 transition-colors hover:text-primary ${
-                  isActive ? "text-primary" : ""
-                }`
-              }
-            >
-              {g.label}
-            </NavLink>
-          ))}
+          {groups.map((g) =>
+            g.children ? (
+              <div key={g.label} className="relative group">
+                <NavLink
+                  to={g.to}
+                  className={({ isActive }) =>
+                    `inline-flex items-center gap-1 px-4 py-2 transition-colors hover:text-primary ${
+                      isActive ? "text-primary" : ""
+                    }`
+                  }
+                >
+                  {g.label}
+                  <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
+                </NavLink>
+                <div
+                  className="invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[380px] z-50"
+                >
+                  <div className="rounded-xl border border-border bg-background/95 backdrop-blur-xl shadow-[0_20px_50px_-12px_hsl(0_0%_0%/0.5)] p-2">
+                    {g.children.map((c) => (
+                      <Link
+                        key={c.label}
+                        to={c.to}
+                        className="block rounded-lg px-3 py-3 hover:bg-secondary/60 transition-colors group/item"
+                      >
+                        <p className="text-[12.5px] font-semibold tracking-[0.08em] text-foreground group-hover/item:text-primary transition-colors normal-case">
+                          {c.label}
+                        </p>
+                        {c.description && (
+                          <p className="mt-1 text-[11.5px] font-sans font-normal tracking-normal text-body leading-snug normal-case">
+                            {c.description}
+                          </p>
+                        )}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <NavLink
+                key={g.label}
+                to={g.to}
+                className={({ isActive }) =>
+                  `inline-flex items-center gap-1 px-4 py-2 transition-colors hover:text-primary ${
+                    isActive ? "text-primary" : ""
+                  }`
+                }
+              >
+                {g.label}
+              </NavLink>
+            )
+          )}
         </nav>
 
         <div className="hidden md:flex items-center gap-2">

@@ -113,8 +113,8 @@ const marketCases: {
       "An industry-level look at how AI systems compare collaboration platforms, where recommendation strength drops across buyer stages, and which source, content, and citation gaps may be shaping shortlist visibility.",
     type: "AI Industry Market Discovery Report",
     source: "LLM Authority Index benchmark data",
-    status: "Coming soon",
-    href: null,
+    status: "Published",
+    href: "/case-studies/ai-work-collaboration-platforms",
   },
 ];
 

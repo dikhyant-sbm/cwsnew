@@ -1,19 +1,41 @@
 import { Logo } from "./Logo";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
-import { ArrowUpRight, Menu } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Menu } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
+type NavChild = { label: string; to: string; description?: string };
 type NavGroup = {
   label: string;
   to: string;
+  children?: NavChild[];
 };
 
 const groups: NavGroup[] = [
   { label: "SERVICES", to: "/services" },
-  { label: "CASE STUDIES", to: "/case-studies" },
+  {
+    label: "CASE STUDIES",
+    to: "/case-studies",
+    children: [
+      {
+        label: "Client Implementation Case Studies",
+        to: "/case-studies#client-results",
+        description: "Documented CiteWorks engagements with measurable outcomes.",
+      },
+      {
+        label: "AI Industry Market Discovery Reports",
+        to: "/case-studies#market-discovery",
+        description: "Benchmark-based category analyses powered by LLM Authority Index.",
+      },
+      {
+        label: "AI Company Market Strategy Reports",
+        to: "/case-studies#company-reports",
+        description: "Company-level readouts on AI recommendation positioning.",
+      },
+    ],
+  },
   { label: "METHODOLOGY", to: "/methodology" },
   { label: "AGENCY PARTNERS", to: "/agency-partners" },
   { label: "RESOURCES", to: "/resources" },

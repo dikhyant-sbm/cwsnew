@@ -247,37 +247,39 @@ const AIWorkCollaborationPlatforms = () => {
             </div>
 
             <aside className="lg:col-span-4">
-              <div className="card-premium p-6">
-                <p className="font-mono text-[12px] tracking-[0.18em] text-subtle uppercase mb-5">
-                  Report Card
-                </p>
-                <dl className="space-y-4 text-sm">
-                  {reportMeta.map((row, i) => (
-                    <div
-                      key={row.label}
-                      className={`flex justify-between gap-4 ${
-                        i < reportMeta.length - 1 ? "border-b border-border pb-3" : ""
-                      }`}
-                    >
-                      <dt className="text-body shrink-0">{row.label}</dt>
-                      <dd className="text-foreground font-medium text-right">
-                        {row.value}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
+              <div className="card-premium overflow-hidden">
+                <div className="relative h-32 overflow-hidden border-b border-border">
+                  <img
+                    src={heroImage}
+                    alt="Abstract network of nodes representing AI-generated recommendation graphs across work collaboration platforms."
+                    width={1920}
+                    height={1080}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent pointer-events-none" />
+                </div>
+                <div className="p-6">
+                  <p className="font-mono text-[12px] tracking-[0.18em] text-subtle uppercase mb-5">
+                    Report Card
+                  </p>
+                  <dl className="space-y-4 text-sm">
+                    {reportMeta.map((row, i) => (
+                      <div
+                        key={row.label}
+                        className={`flex justify-between gap-4 ${
+                          i < reportMeta.length - 1 ? "border-b border-border pb-3" : ""
+                        }`}
+                      >
+                        <dt className="text-body shrink-0">{row.label}</dt>
+                        <dd className="text-foreground font-medium text-right">
+                          {row.value}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
               </div>
             </aside>
-          </div>
-
-          <div className="mt-12 rounded-2xl overflow-hidden border border-border">
-            <img
-              src={heroImage}
-              alt="Abstract network of nodes representing AI-generated recommendation graphs across work collaboration platforms."
-              width={1920}
-              height={1080}
-              className="w-full h-auto object-cover"
-            />
           </div>
         </div>
       </section>

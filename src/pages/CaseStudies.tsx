@@ -93,15 +93,19 @@ const reportAnatomy = [
   },
 ];
 
-const marketCases = [
+type CaseHref = string | null;
+
+const marketCases: {
+  title: string; excerpt: string; type: string; source: string; status: string; href: CaseHref;
+}[] = [
   {
     title: "How AI Search Is Recommending Tax Relief Companies in 2026",
     excerpt:
       "A benchmark-based analysis of how AI systems surface, compare, and recommend tax relief companies across high-intent discovery, comparison, and decision-stage prompts — with remediation priorities for brands losing recommendation share.",
     type: "AI Industry Market Discovery Report",
     source: "LLM Authority Index benchmark data",
-    status: "Independent market analysis",
-    href: "/case-studies/tax-relief-ai-market-discovery",
+    status: "Coming soon",
+    href: null,
   },
   {
     title: "How AI Search Is Recommending AI Work Collaboration Platforms",
@@ -109,8 +113,8 @@ const marketCases = [
       "An industry-level look at how AI systems compare collaboration platforms, where recommendation strength drops across buyer stages, and which source, content, and citation gaps may be shaping shortlist visibility.",
     type: "AI Industry Market Discovery Report",
     source: "LLM Authority Index benchmark data",
-    status: "Independent market analysis",
-    href: "/case-studies/ai-work-collaboration-ai-market-discovery",
+    status: "Coming soon",
+    href: null,
   },
 ];
 
@@ -137,7 +141,19 @@ const slackMetrics = [
   { label: "Pricing-stage positive capture", value: "0.00%" },
 ];
 
-const clientCases = [
+const clientCases: {
+  title: string; excerpt: string; type: string; work: string; status: string; href: CaseHref;
+}[] = [
+  {
+    title:
+      "How a Job Posting Platform Secured a Place in AI's Shortlist for Employers",
+    excerpt:
+      "A 5-month, 480-engagement campaign that lifted brand mentions in AI Overviews by 71%, influenced 100+ cited pages, and put 2,791 keywords into Google's top 10 — by rebuilding the brand's citation footprint where LLMs were already looking.",
+    type: "Client Implementation Case Study",
+    work: "AI visibility, citation architecture, search visibility",
+    status: "Published",
+    href: "/case-studies/job-board-ai-search",
+  },
   {
     title:
       "How an Insurance Technology Brand Strengthened Its AI Visibility and Citation Footprint",
@@ -145,8 +161,8 @@ const clientCases = [
       "A client implementation case study showing how CiteWorks Studio improved the brand's presence across AI recommendation environments, citation-bearing sources, and high-intent search visibility.",
     type: "Client Implementation Case Study",
     work: "AI visibility, citation architecture, search visibility",
-    status: "Client result",
-    href: "/case-studies/client-results/insurance-tech-ai-visibility",
+    status: "Coming soon",
+    href: null,
   },
 ];
 

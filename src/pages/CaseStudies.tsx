@@ -513,49 +513,65 @@ const CaseStudies = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-5">
-            {marketCases.map((c) => (
-              <Link
-                key={c.title}
-                to={c.href}
-                className="card-premium p-8 group flex flex-col"
-              >
-                <div className="flex items-center gap-2 mb-6">
-                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-primary border border-primary/30 bg-primary/5 rounded-full px-2.5 py-1">
-                    Industry Market Discovery
+            {marketCases.map((c) => {
+              const isLive = !!c.href;
+              const cardClass =
+                "card-premium p-8 group flex flex-col " +
+                (isLive ? "" : "opacity-90 cursor-default");
+              const inner = (
+                <>
+                  <div className="flex items-center gap-2 mb-6">
+                    <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-primary border border-primary/30 bg-primary/5 rounded-full px-2.5 py-1">
+                      {isLive ? "Industry Market Discovery" : "Coming Soon"}
+                    </span>
+                    <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
+                      Benchmark-based
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-semibold text-heading leading-tight">
+                    {c.title}
+                  </h3>
+                  <p className="mt-4 text-body leading-relaxed text-[15px] flex-1">
+                    {c.excerpt}
+                  </p>
+                  <Metadata
+                    items={[
+                      { k: "Type", v: c.type },
+                      { k: "Source", v: c.source },
+                      { k: "Status", v: c.status },
+                    ]}
+                  />
+                  <span
+                    className={
+                      "mt-6 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] uppercase " +
+                      (isLive
+                        ? "text-primary group-hover:gap-2.5 transition-all"
+                        : "text-tertiary")
+                    }
+                  >
+                    {isLive ? (
+                      <>
+                        Read report <ArrowUpRight className="size-3.5" />
+                      </>
+                    ) : (
+                      "Publishing soon"
+                    )}
                   </span>
-                  <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-tertiary">
-                    Benchmark-based
-                  </span>
+                </>
+              );
+              return isLive ? (
+                <Link key={c.title} to={c.href as string} className={cardClass}>
+                  {inner}
+                </Link>
+              ) : (
+                <div key={c.title} className={cardClass} aria-disabled="true">
+                  {inner}
                 </div>
-                <h3 className="text-2xl font-semibold text-heading leading-tight">
-                  {c.title}
-                </h3>
-                <p className="mt-4 text-body leading-relaxed text-[15px] flex-1">
-                  {c.excerpt}
-                </p>
-                <Metadata
-                  items={[
-                    { k: "Type", v: c.type },
-                    { k: "Source", v: c.source },
-                    { k: "Status", v: c.status },
-                  ]}
-                />
-                <span className="mt-6 inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2.5 transition-all uppercase">
-                  Read report <ArrowUpRight className="size-3.5" />
-                </span>
-              </Link>
-            ))}
+              );
+            })}
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <Button
-              asChild
-              className="rounded-full font-mono text-[13px] font-semibold tracking-[0.14em] btn-glow"
-            >
-              <Link to="/case-studies/ai-market-discovery">
-                VIEW ALL MARKET DISCOVERY REPORTS
-              </Link>
-            </Button>
             <Button
               asChild
               variant="outline"

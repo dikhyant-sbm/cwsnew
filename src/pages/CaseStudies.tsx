@@ -292,13 +292,6 @@ const CaseStudies = () => {
                     <span className="inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] text-primary group-hover:gap-2.5 transition-all uppercase">
                       Jump to section <ArrowRight className="size-3.5" />
                     </span>
-                    <Link
-                      to={p.directoryHref}
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-1 font-mono text-[11px] tracking-[0.14em] text-tertiary hover:text-heading transition-colors uppercase whitespace-nowrap"
-                    >
-                      View all <ArrowUpRight className="size-3" />
-                    </Link>
                   </div>
                 </a>
               );

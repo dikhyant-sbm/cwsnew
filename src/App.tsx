@@ -14,6 +14,9 @@ import Services from "./pages/Services.tsx";
 import CaseStudies from "./pages/CaseStudies.tsx";
 import JobBoardAISearch from "./pages/case-studies/JobBoardAISearch.tsx";
 import AIWorkCollaborationPlatforms from "./pages/case-studies/AIWorkCollaborationPlatforms.tsx";
+import ClientImplementationDirectory from "./pages/directories/ClientImplementationDirectory.tsx";
+import MarketDiscoveryDirectory from "./pages/directories/MarketDiscoveryDirectory.tsx";
+import CompanyStrategyDirectory from "./pages/directories/CompanyStrategyDirectory.tsx";
 import AISearchOptimization from "./pages/AISearchOptimization.tsx";
 import EmbeddingLevelGEO from "./pages/resources/EmbeddingLevelGEO.tsx";
 import About from "./pages/About.tsx";
@@ -43,7 +46,10 @@ const App = () => (
             <Route path="/services" element={<Services />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/case-studies/job-board-ai-search" element={<JobBoardAISearch />} />
-            <Route path="/case-studies/ai-work-collaboration-platforms" element={<AIWorkCollaborationPlatforms />} />
+            <Route path="/client-implementation-case-studies" element={<ClientImplementationDirectory />} />
+            <Route path="/ai-industry-market-discovery-reports" element={<MarketDiscoveryDirectory />} />
+            <Route path="/ai-industry-market-discovery-reports/ai-work-collaboration-platforms" element={<AIWorkCollaborationPlatforms />} />
+            <Route path="/ai-company-market-strategy-reports" element={<CompanyStrategyDirectory />} />
             <Route path="/ai-search-optimization" element={<AISearchOptimization />} />
             <Route path="/resources/embedding-level-geo" element={<EmbeddingLevelGEO />} />
             <Route path="/about" element={<About />} />

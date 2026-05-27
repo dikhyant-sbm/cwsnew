@@ -87,35 +87,41 @@ const EmbeddingLevelGEO = () => {
 
       {/* Hero */}
       <section className="relative pt-32 pb-12 border-b border-border/40 overflow-hidden">
-        {/* Featured image as ambient backdrop */}
-        <div className="absolute inset-0 pointer-events-none">
-          <img
-            src={heroImage}
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-cover opacity-25 blur-md scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/70 to-background" />
-          <div className="absolute inset-0 grid-bg opacity-20" />
-        </div>
-        <div className="relative mx-auto max-w-4xl px-6">
-          <nav aria-label="Breadcrumb" className="font-mono text-[12px] tracking-widest text-body uppercase flex items-center gap-2">
-            <Link to="/resources" className="hover:text-primary">Resources</Link>
-            <span>/</span>
-            <span className="text-primary">GEO</span>
-          </nav>
-          <p className="eyebrow mt-6">Long Read · Strategy</p>
-          <h1 className="display text-4xl sm:text-5xl md:text-6xl mt-5 leading-[1.02]">
-            Embedding-Level GEO Explained: How Brands Become Retrievable, Trusted, and Recommended
-          </h1>
-          <p className="mt-6 text-lg text-body leading-relaxed">
-            Traditional SEO optimizes pages for crawlers, rankings, and human readers. Embedding-level GEO goes one layer deeper — engineering the semantic conditions under which AI systems are most likely to choose your brand as the answer.
-          </p>
-          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-mono uppercase tracking-widest text-body">
-            <span className="inline-flex items-center gap-2"><BookOpen className="size-3.5" /> 14 min read</span>
-            <span className="inline-flex items-center gap-2"><Calendar className="size-3.5" /> Updated April 2026</span>
-            <span className="inline-flex items-center gap-2"><FileText className="size-3.5" /> By Mark Huntley, J.D.</span>
+        <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
+        <div className="relative mx-auto max-w-6xl px-6 grid lg:grid-cols-[minmax(0,1fr)_360px] gap-10 lg:gap-12 items-center">
+          <div>
+            <nav aria-label="Breadcrumb" className="font-mono text-[12px] tracking-widest text-body uppercase flex items-center gap-2">
+              <Link to="/resources" className="hover:text-primary">Resources</Link>
+              <span>/</span>
+              <span className="text-primary">GEO</span>
+            </nav>
+            <p className="eyebrow mt-6">Long Read · Strategy</p>
+            <h1 className="display text-4xl sm:text-5xl mt-5 leading-[1.05]">
+              Embedding-Level GEO Explained: How Brands Become Retrievable, Trusted, and Recommended
+            </h1>
+            <p className="mt-6 text-base sm:text-lg text-body leading-relaxed">
+              Traditional SEO optimizes pages for crawlers, rankings, and human readers. Embedding-level GEO goes one layer deeper — engineering the semantic conditions under which AI systems are most likely to choose your brand as the answer.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-mono uppercase tracking-widest text-body">
+              <span className="inline-flex items-center gap-2"><BookOpen className="size-3.5" /> 14 min read</span>
+              <span className="inline-flex items-center gap-2"><Calendar className="size-3.5" /> Updated April 2026</span>
+              <span className="inline-flex items-center gap-2"><FileText className="size-3.5" /> By Mark Huntley, J.D.</span>
+            </div>
           </div>
+
+          <figure className="relative overflow-hidden rounded-2xl border border-border/60 aspect-[4/5] bg-secondary shadow-[0_20px_50px_-20px_hsl(var(--primary)/0.25)]">
+            <img
+              src={heroImage}
+              alt="Abstract visualization of semantic vector space and AI retrieval"
+              width={800}
+              height={1000}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background/80 to-transparent" />
+            <figcaption className="absolute bottom-3 left-4 right-4 font-mono text-[10.5px] tracking-[0.18em] uppercase text-foreground/90">
+              Vector space · Retrieval layer
+            </figcaption>
+          </figure>
         </div>
       </section>
 

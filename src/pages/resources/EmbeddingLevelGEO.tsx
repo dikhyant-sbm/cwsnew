@@ -107,6 +107,21 @@ const EmbeddingLevelGEO = () => {
             <span className="inline-flex items-center gap-2"><Calendar className="size-3.5" /> Updated April 2026</span>
             <span className="inline-flex items-center gap-2"><FileText className="size-3.5" /> By Mark Huntley, J.D.</span>
           </div>
+
+          {/* Compact featured image */}
+          <figure className="mt-8 relative overflow-hidden rounded-2xl border border-border/60 aspect-[21/6] bg-secondary">
+            <img
+              src={heroImage}
+              alt="Abstract visualization of semantic vector space and AI retrieval"
+              width={1600}
+              height={900}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/30" />
+            <figcaption className="absolute bottom-3 left-4 font-mono text-[10.5px] tracking-[0.18em] uppercase text-foreground/80">
+              Vector space · Retrieval layer
+            </figcaption>
+          </figure>
         </div>
       </section>
 

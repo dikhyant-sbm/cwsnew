@@ -5,6 +5,26 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import imgGeo from "@/assets/resource-cat-geo.jpg";
+import imgAiVisibility from "@/assets/resource-cat-ai-visibility.jpg";
+import imgCitation from "@/assets/resource-cat-citation.jpg";
+import imgTechnicalSeo from "@/assets/resource-cat-technical-seo.jpg";
+import imgContent from "@/assets/resource-cat-content.jpg";
+import imgCases from "@/assets/resource-cat-case-studies.jpg";
+import imgAgency from "@/assets/resource-cat-agency.jpg";
+import imgDefinitions from "@/assets/resource-cat-definitions.jpg";
+import imgEmbedding from "@/assets/resource-embedding-geo-hero.jpg";
+
+const categoryImages: Record<string, string> = {
+  "GEO": imgGeo,
+  "AI Search Visibility": imgAiVisibility,
+  "Citation Architecture": imgCitation,
+  "Technical SEO": imgTechnicalSeo,
+  "Content Strategy": imgContent,
+  "Case Studies": imgCases,
+  "Agency Partners": imgAgency,
+  "Definitions": imgDefinitions,
+};
 
 const categories = [
   "All",

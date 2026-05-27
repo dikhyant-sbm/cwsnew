@@ -21,17 +21,17 @@ const groups: NavGroup[] = [
     children: [
       {
         label: "Client Implementation Case Studies",
-        to: "/case-studies#client-results",
+        to: "/client-implementation-case-studies",
         description: "Documented CiteWorks engagements with measurable outcomes.",
       },
       {
         label: "AI Industry Market Discovery Reports",
-        to: "/case-studies#market-discovery",
+        to: "/ai-industry-market-discovery-reports",
         description: "Benchmark-based category analyses powered by LLM Authority Index.",
       },
       {
         label: "AI Company Market Strategy Reports",
-        to: "/case-studies#company-reports",
+        to: "/ai-company-market-strategy-reports",
         description: "Company-level readouts on AI recommendation positioning.",
       },
     ],

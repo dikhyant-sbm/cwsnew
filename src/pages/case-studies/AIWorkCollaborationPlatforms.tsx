@@ -200,10 +200,10 @@ const AIWorkCollaborationPlatforms = () => {
 
         <div className="relative z-10 mx-auto max-w-[1280px] px-6">
           <Link
-            to="/case-studies"
+            to="/ai-industry-market-discovery-reports"
             className="inline-flex items-center gap-2 font-mono text-[12px] tracking-[0.18em] text-body hover:text-foreground transition-colors mb-8 uppercase"
           >
-            <ArrowLeft className="size-3.5" /> All Case Studies
+            <ArrowLeft className="size-3.5" /> All Industry Reports
           </Link>
 
           <div className="grid lg:grid-cols-12 gap-10 items-start">

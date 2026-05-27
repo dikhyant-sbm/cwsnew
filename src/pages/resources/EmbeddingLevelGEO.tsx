@@ -4,6 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ArrowRight, ArrowUpRight, BookOpen, Calendar, Clock, Copy, Check, FileText, Linkedin, Twitter, Link as LinkIcon } from "lucide-react";
+import heroImage from "@/assets/resource-embedding-geo-hero.jpg";
 
 const toc = [
   { id: "intro", label: "Introduction" },

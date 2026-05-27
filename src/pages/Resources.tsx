@@ -5,6 +5,26 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import imgGeo from "@/assets/resource-cat-geo.jpg";
+import imgAiVisibility from "@/assets/resource-cat-ai-visibility.jpg";
+import imgCitation from "@/assets/resource-cat-citation.jpg";
+import imgTechnicalSeo from "@/assets/resource-cat-technical-seo.jpg";
+import imgContent from "@/assets/resource-cat-content.jpg";
+import imgCases from "@/assets/resource-cat-case-studies.jpg";
+import imgAgency from "@/assets/resource-cat-agency.jpg";
+import imgDefinitions from "@/assets/resource-cat-definitions.jpg";
+import imgEmbedding from "@/assets/resource-embedding-geo-hero.jpg";
+
+const categoryImages: Record<string, string> = {
+  "GEO": imgGeo,
+  "AI Search Visibility": imgAiVisibility,
+  "Citation Architecture": imgCitation,
+  "Technical SEO": imgTechnicalSeo,
+  "Content Strategy": imgContent,
+  "Case Studies": imgCases,
+  "Agency Partners": imgAgency,
+  "Definitions": imgDefinitions,
+};
 
 const categories = [
   "All",
@@ -133,32 +153,50 @@ const Resources = () => {
           </div>
 
           <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filtered.map((a, i) => (
-              <article
-                key={a.title + active}
-                className={`group card-premium p-7 flex flex-col animate-fade-in transition-colors relative ${a.href ? "hover:border-primary/50 cursor-pointer" : ""} ${a.featured ? "ring-1 ring-primary/40 lg:col-span-2 bg-gradient-to-br from-primary/5 to-transparent" : ""}`}
-                style={{ animationDelay: `${i * 40}ms` }}
-              >
-                {a.featured && (
-                  <p className="font-mono text-[11px] tracking-[0.18em] text-primary mb-2">★ FEATURED ARTICLE</p>
-                )}
-                <p className="font-mono text-[13px] uppercase tracking-widest text-primary">{a.category}</p>
-                <h3 className={`display mt-3 ${a.featured ? "text-2xl sm:text-3xl" : "text-xl"}`}>{a.title}</h3>
-                <p className="text-sm text-body mt-3 leading-relaxed flex-1">{a.desc}</p>
-                {a.href ? (
-                  <>
-                    <span className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] tracking-widest text-primary group-hover:gap-2 transition-all w-fit">
-                      {a.cta} <ArrowRight className="size-3" />
-                    </span>
-                    <Link to={a.href} aria-label={a.title} className="absolute inset-0 rounded-[inherit] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
-                  </>
-                ) : (
-                  <span className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] tracking-widest text-body w-fit">
-                    {a.cta} <ArrowRight className="size-3" />
-                  </span>
-                )}
-              </article>
-            ))}
+            {filtered.map((a, i) => {
+              const img = a.href === "/resources/embedding-level-geo" ? imgEmbedding : categoryImages[a.category];
+              return (
+                <article
+                  key={a.title + active}
+                  className={`group card-premium overflow-hidden flex flex-col animate-fade-in transition-colors relative ${a.href ? "hover:border-primary/50 cursor-pointer" : ""} ${a.featured ? "ring-1 ring-primary/40 lg:col-span-2 bg-gradient-to-br from-primary/5 to-transparent" : ""}`}
+                  style={{ animationDelay: `${i * 40}ms` }}
+                >
+                  {img && (
+                    <div className={`relative w-full overflow-hidden bg-secondary ${a.featured ? "aspect-[21/9]" : "aspect-[16/9]"}`}>
+                      <img
+                        src={img}
+                        alt={a.title}
+                        width={1280}
+                        height={720}
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/10 to-transparent" />
+                    </div>
+                  )}
+                  <div className="p-7 flex flex-col flex-1">
+                    {a.featured && (
+                      <p className="font-mono text-[11px] tracking-[0.18em] text-primary mb-2">★ FEATURED ARTICLE</p>
+                    )}
+                    <p className="font-mono text-[13px] uppercase tracking-widest text-primary">{a.category}</p>
+                    <h3 className={`display mt-3 ${a.featured ? "text-2xl sm:text-3xl" : "text-xl"}`}>{a.title}</h3>
+                    <p className="text-sm text-body mt-3 leading-relaxed flex-1">{a.desc}</p>
+                    {a.href ? (
+                      <>
+                        <span className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] tracking-widest text-primary group-hover:gap-2 transition-all w-fit">
+                          {a.cta} <ArrowRight className="size-3" />
+                        </span>
+                        <Link to={a.href} aria-label={a.title} className="absolute inset-0 rounded-[inherit] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
+                      </>
+                    ) : (
+                      <span className="mt-5 inline-flex items-center gap-1 font-mono text-[13px] tracking-widest text-body w-fit">
+                        {a.cta} <ArrowRight className="size-3" />
+                      </span>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

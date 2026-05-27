@@ -86,9 +86,18 @@ const EmbeddingLevelGEO = () => {
       </div>
 
       {/* Hero */}
-      <section className="relative pt-36 pb-16 border-b border-border/40 overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] conic-ring opacity-30 pointer-events-none" />
+      <section className="relative pt-32 pb-12 border-b border-border/40 overflow-hidden">
+        {/* Featured image as ambient backdrop */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src={heroImage}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover opacity-25 blur-md scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/70 to-background" />
+          <div className="absolute inset-0 grid-bg opacity-20" />
+        </div>
         <div className="relative mx-auto max-w-4xl px-6">
           <nav aria-label="Breadcrumb" className="font-mono text-[12px] tracking-widest text-body uppercase flex items-center gap-2">
             <Link to="/resources" className="hover:text-primary">Resources</Link>
@@ -99,29 +108,14 @@ const EmbeddingLevelGEO = () => {
           <h1 className="display text-4xl sm:text-5xl md:text-6xl mt-5 leading-[1.02]">
             Embedding-Level GEO Explained: How Brands Become Retrievable, Trusted, and Recommended
           </h1>
-          <p className="mt-7 text-lg text-body leading-relaxed">
+          <p className="mt-6 text-lg text-body leading-relaxed">
             Traditional SEO optimizes pages for crawlers, rankings, and human readers. Embedding-level GEO goes one layer deeper — engineering the semantic conditions under which AI systems are most likely to choose your brand as the answer.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-mono uppercase tracking-widest text-body">
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-mono uppercase tracking-widest text-body">
             <span className="inline-flex items-center gap-2"><BookOpen className="size-3.5" /> 14 min read</span>
             <span className="inline-flex items-center gap-2"><Calendar className="size-3.5" /> Updated April 2026</span>
             <span className="inline-flex items-center gap-2"><FileText className="size-3.5" /> By Mark Huntley, J.D.</span>
           </div>
-
-          {/* Compact featured image */}
-          <figure className="mt-8 relative overflow-hidden rounded-2xl border border-border/60 aspect-[21/6] bg-secondary">
-            <img
-              src={heroImage}
-              alt="Abstract visualization of semantic vector space and AI retrieval"
-              width={1600}
-              height={900}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/30" />
-            <figcaption className="absolute bottom-3 left-4 font-mono text-[10.5px] tracking-[0.18em] uppercase text-foreground/80">
-              Vector space · Retrieval layer
-            </figcaption>
-          </figure>
         </div>
       </section>
 

@@ -540,12 +540,13 @@ const JobBoardAISearch = () => {
             <div className="relative glass-strong rounded-3xl border-gradient p-8 sm:p-10 overflow-hidden">
               <div className="absolute -top-32 -right-20 w-96 h-96 conic-ring opacity-40 pointer-events-none" />
               <div className="relative">
-                <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
-                  / Take the next step
-                </p>
-                <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight max-w-2xl">
-                  Want to Understand Your AI Citation Footprint?
+                <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+                  / Take the Next Step
                 </h2>
+                <p className="display text-3xl sm:text-4xl leading-tight tracking-tight max-w-2xl text-foreground">
+                  Want to Understand Your AI Citation Footprint?
+                </p>
+
                 <p className="mt-4 text-body text-lg max-w-2xl">
                   We start every engagement with a full audit.
                 </p>

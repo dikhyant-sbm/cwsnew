@@ -518,13 +518,14 @@ const AIWorkCollaborationPlatforms = () => {
           {/* OPENING SUMMARY */}
           <section id="summary" className="scroll-mt-28">
 
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / Opening Summary
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-3xl">
+            </h2>
+            <p className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-3xl text-foreground">
               AI is compressing collaboration software into a much smaller
               recommendation environment.
-            </h2>
+            </p>
+
             <div className="mt-8 space-y-5 text-body text-base sm:text-lg leading-relaxed">
               <p>
                 Across prompts related to project management, team

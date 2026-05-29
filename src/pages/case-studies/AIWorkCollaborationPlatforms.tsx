@@ -335,22 +335,6 @@ const AIWorkCollaborationPlatforms = () => {
 
               </div>
 
-              {/* KEY-STATS STRIP */}
-              <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {heroStats.map((s) => (
-                  <div
-                    key={s.k}
-                    className="rounded-2xl border border-border bg-card/50 px-4 py-3.5"
-                  >
-                    <p className="display text-xl leading-none text-gradient">
-                      {s.v}
-                    </p>
-                    <p className="mt-2 text-[13px] text-body leading-snug">
-                      {s.k}
-                    </p>
-                  </div>
-                ))}
-              </div>
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button

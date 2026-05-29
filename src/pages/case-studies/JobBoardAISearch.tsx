@@ -382,12 +382,13 @@ const JobBoardAISearch = () => {
           </section>
 
           {/* MARKET CONTEXT */}
-          <section id="market-context" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / Market Context
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-2xl">
+            </h2>
+            <p className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-2xl text-foreground">
               Brand discovery was moving to AI, without them.
+            </p>
+
             </h2>
             <div className="mt-8 space-y-5 text-body text-base sm:text-lg leading-relaxed">
               <p>

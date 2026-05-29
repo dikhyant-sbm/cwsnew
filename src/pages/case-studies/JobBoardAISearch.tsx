@@ -358,12 +358,13 @@ const JobBoardAISearch = () => {
           {/* RESULTS */}
 
           <section id="results" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / Key Outcomes
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
-              Results at a glance.
             </h2>
+            <p className="display text-3xl sm:text-4xl leading-tight tracking-tight text-foreground">
+              Results at a glance.
+            </p>
+
             <p className="mt-4 text-body">
               Top metrics from a 5-month long campaign with 480 engagements:
             </p>

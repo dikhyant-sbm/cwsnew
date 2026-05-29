@@ -804,6 +804,7 @@ const AIWorkCollaborationPlatforms = () => {
           </section>
 
           {/* HOW CITEWORKS HELPS */}
+          <section id="how-we-help" className="scroll-mt-28">
             <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / How CiteWorks Studio Helps
             </h2>
@@ -811,7 +812,6 @@ const AIWorkCollaborationPlatforms = () => {
               From benchmark insight to remediation.
             </p>
 
-            </h2>
             <div className="mt-8 grid md:grid-cols-3 gap-4">
               {howWeHelp.map((h) => (
                 <div key={h.title} className="card-premium p-6">

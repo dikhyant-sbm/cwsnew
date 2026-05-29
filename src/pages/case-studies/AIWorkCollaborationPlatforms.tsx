@@ -931,6 +931,35 @@ const AIWorkCollaborationPlatforms = () => {
             </div>
           </section>
 
+          {/* FAQ */}
+          <section id="faq" className="scroll-mt-28">
+            <div className="flex items-center gap-2 mb-4">
+              <HelpCircle className="size-4 text-primary" />
+              <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary">
+                / FAQ
+              </p>
+            </div>
+            <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
+              Frequently asked questions.
+            </h2>
+            <Accordion type="single" collapsible className="mt-8">
+              {faqs.map((f, i) => (
+                <AccordionItem
+                  key={f.q}
+                  value={`faq-${i}`}
+                  className="border-border"
+                >
+                  <AccordionTrigger className="text-left">
+                    <h3 className="display text-lg leading-snug">{f.q}</h3>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-body text-[15px] leading-relaxed">
+                    {f.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </section>
+
 
           {/* CONTINUE READING */}
           <section className="scroll-mt-28">

@@ -226,7 +226,55 @@ const AIWorkCollaborationPlatforms = () => {
         "Benchmark-based industry analysis of how AI systems recommend, compare, and frame work collaboration platforms — including ClickUp, Asana, Notion, Slack, Microsoft Teams, and more. Powered by LLM Authority Index."
       );
     }
+
+    const pageUrl =
+      "https://cwsnew.lovable.app/ai-industry-market-discovery-reports/ai-work-collaboration-platforms";
+    const ld = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          headline:
+            "How AI Search Is Recommending AI Work Collaboration Platforms",
+          description:
+            "Benchmark-based industry analysis of how AI systems recommend, compare, and frame work collaboration platforms — including ClickUp, Asana, Notion, Slack, and Microsoft Teams.",
+          datePublished: "2026-05-26",
+          author: {
+            "@type": "Person",
+            name: author.name,
+            jobTitle: author.role,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "CiteWorks Studio",
+          },
+          isBasedOn: {
+            "@type": "CreativeWork",
+            name: "LLM Authority Index",
+          },
+          mainEntityOfPage: pageUrl,
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        },
+      ],
+    };
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "aiwc-jsonld";
+    script.text = JSON.stringify(ld);
+    document.head.appendChild(script);
+
+    return () => {
+      document.getElementById("aiwc-jsonld")?.remove();
+    };
   }, []);
+
 
   return (
     <PageShell>

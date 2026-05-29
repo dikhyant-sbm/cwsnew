@@ -850,6 +850,40 @@ const AIWorkCollaborationPlatforms = () => {
             </div>
           </section>
 
+          {/* AUTHOR BIO */}
+          <section className="scroll-mt-28">
+            <div className="card-premium p-7 sm:p-8">
+              <div className="flex flex-col sm:flex-row gap-6 sm:items-start">
+                <span className="flex size-16 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary font-mono text-lg font-semibold tracking-[0.08em] ring-1 ring-primary/30">
+                  {author.initials}
+                </span>
+                <div>
+                  <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-subtle mb-2">
+                    About the author
+                  </p>
+                  <h3 className="display text-xl leading-tight">{author.name}</h3>
+                  <p className="text-[13.5px] text-primary mt-1">{author.role}</p>
+                  <p className="mt-4 text-body leading-relaxed">{author.bio}</p>
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    <Link
+                      to="/ai-industry-market-discovery-reports"
+                      className="inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] uppercase text-primary hover:gap-2.5 transition-all"
+                    >
+                      More reports <ArrowUpRight className="size-3.5" />
+                    </Link>
+                    <Link
+                      to="/request-audit"
+                      className="inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] uppercase text-body hover:text-foreground transition-colors"
+                    >
+                      Request an audit <ArrowUpRight className="size-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
           {/* CONTINUE READING */}
           <section className="scroll-mt-28">
             <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">

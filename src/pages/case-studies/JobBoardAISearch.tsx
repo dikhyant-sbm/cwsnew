@@ -421,12 +421,13 @@ const JobBoardAISearch = () => {
 
           {/* CHALLENGE */}
           <section id="challenge" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / The Challenge
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-2xl">
-              A reliable way to measure and strengthen AI visibility.
             </h2>
+            <p className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-2xl text-foreground">
+              A reliable way to measure and strengthen AI visibility.
+            </p>
+
             <p className="mt-6 text-body text-lg leading-relaxed">
               The team needed a repeatable measurement framework to track:
             </p>

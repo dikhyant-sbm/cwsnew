@@ -575,13 +575,14 @@ const AIWorkCollaborationPlatforms = () => {
 
           {/* WHAT CHANGED — BEFORE / AFTER */}
           <section id="shift" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / What Changed in the Market
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-3xl">
+            </h2>
+            <p className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-3xl text-foreground">
               The category is being reorganized around recommendation breadth,
               not product taxonomy.
-            </h2>
+            </p>
+
             <p className="mt-6 text-body text-lg leading-relaxed">
               Collaboration software used to split into clean product categories.
               AI systems are now compressing those categories — and buyers ask

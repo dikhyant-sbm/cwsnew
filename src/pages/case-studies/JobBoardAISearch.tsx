@@ -586,12 +586,13 @@ const JobBoardAISearch = () => {
           <section id="learn-more" className="scroll-mt-28">
             <div className="grid md:grid-cols-12 gap-10">
               <div className="md:col-span-5">
-                <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+                <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
                   / Learn More
-                </p>
-                <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
-                  Understanding AI search visibility.
                 </h2>
+                <p className="display text-3xl sm:text-4xl leading-tight tracking-tight text-foreground">
+                  Understanding AI search visibility.
+                </p>
+
                 <p className="mt-5 text-body leading-relaxed">
                   AI search experiences create answers by pulling information from many places
                   online and summarizing it into a single response.

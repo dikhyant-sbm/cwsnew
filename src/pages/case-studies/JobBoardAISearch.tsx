@@ -382,6 +382,7 @@ const JobBoardAISearch = () => {
           </section>
 
           {/* MARKET CONTEXT */}
+          <section id="market-context" className="scroll-mt-28">
             <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / Market Context
             </h2>
@@ -389,7 +390,6 @@ const JobBoardAISearch = () => {
               Brand discovery was moving to AI, without them.
             </p>
 
-            </h2>
             <div className="mt-8 space-y-5 text-body text-base sm:text-lg leading-relaxed">
               <p>
                 When it comes to hiring, trust issues surface fast and public conversations about

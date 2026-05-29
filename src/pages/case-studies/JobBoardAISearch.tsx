@@ -606,9 +606,10 @@ const JobBoardAISearch = () => {
                       value={`item-${i}`}
                       className="border-b border-border last:border-0"
                     >
-                      <AccordionTrigger className="text-left text-base sm:text-lg font-semibold py-5 hover:no-underline">
-                        {l.q}
+                      <AccordionTrigger className="text-left py-5 hover:no-underline">
+                        <h3 className="text-base sm:text-lg font-semibold">{l.q}</h3>
                       </AccordionTrigger>
+
                       <AccordionContent className="text-body leading-relaxed pb-5 pr-4">
                         {l.a}
                       </AccordionContent>

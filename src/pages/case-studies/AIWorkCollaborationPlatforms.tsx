@@ -518,13 +518,14 @@ const AIWorkCollaborationPlatforms = () => {
           {/* OPENING SUMMARY */}
           <section id="summary" className="scroll-mt-28">
 
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / Opening Summary
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-3xl">
+            </h2>
+            <p className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-3xl text-foreground">
               AI is compressing collaboration software into a much smaller
               recommendation environment.
-            </h2>
+            </p>
+
             <div className="mt-8 space-y-5 text-body text-base sm:text-lg leading-relaxed">
               <p>
                 Across prompts related to project management, team
@@ -547,12 +548,13 @@ const AIWorkCollaborationPlatforms = () => {
 
           {/* KEY FINDINGS */}
           <section id="findings" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / Key Findings
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
-              Five signals from the benchmark.
             </h2>
+            <p className="display text-3xl sm:text-4xl leading-tight tracking-tight text-foreground">
+              Five signals from the benchmark.
+            </p>
+
             <div className="mt-8 grid sm:grid-cols-2 gap-4">
               {keyFindings.map((f) => (
                 <article
@@ -573,13 +575,14 @@ const AIWorkCollaborationPlatforms = () => {
 
           {/* WHAT CHANGED — BEFORE / AFTER */}
           <section id="shift" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / What Changed in the Market
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-3xl">
+            </h2>
+            <p className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-3xl text-foreground">
               The category is being reorganized around recommendation breadth,
               not product taxonomy.
-            </h2>
+            </p>
+
             <p className="mt-6 text-body text-lg leading-relaxed">
               Collaboration software used to split into clean product categories.
               AI systems are now compressing those categories — and buyers ask
@@ -635,12 +638,13 @@ const AIWorkCollaborationPlatforms = () => {
 
           {/* BENCHMARK FOUND - LEADER CARDS */}
           <section id="benchmark" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / What the Benchmark Found
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
-              Recommendation leaders by workflow lens.
             </h2>
+            <p className="display text-3xl sm:text-4xl leading-tight tracking-tight text-foreground">
+              Recommendation leaders by workflow lens.
+            </p>
+
             <div className="mt-8 grid md:grid-cols-2 gap-5">
               {leaders.map((l) => {
                 const Icon = l.icon;
@@ -686,14 +690,15 @@ const AIWorkCollaborationPlatforms = () => {
                   <span className="inline-flex size-9 items-center justify-center rounded-lg bg-primary/10 border border-primary/30">
                     <AlertTriangle className="size-4 text-primary" />
                   </span>
-                  <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary">
+                  <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary">
                     / Why Visibility Is Not Enough
-                  </p>
+                  </h2>
                 </div>
-                <h2 className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-3xl">
+                <p className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-3xl text-foreground">
                   A brand can be visible in AI answers and still be weak at the
                   decision moment.
-                </h2>
+                </p>
+
                 <div className="mt-6 space-y-4 text-body text-base sm:text-lg leading-relaxed">
                   <p>
                     Several recognizable collaboration brands appeared inside
@@ -732,13 +737,14 @@ const AIWorkCollaborationPlatforms = () => {
 
           {/* CITATION LAYER */}
           <section id="citations" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / The Citation Layer
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-3xl">
+            </h2>
+            <p className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-3xl text-foreground">
               AI systems synthesize from the public evidence layer around the
               category.
-            </h2>
+            </p>
+
             <p className="mt-6 text-body text-lg leading-relaxed">
               The strongest performers shared consistent category framing,
               broad use-case coverage, recurring editorial inclusion, clear
@@ -768,12 +774,13 @@ const AIWorkCollaborationPlatforms = () => {
 
           {/* WHAT BRANDS NEED TO FIX */}
           <section id="fixes" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / What Brands Need to Fix
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
-              Three priorities for recommendation eligibility.
             </h2>
+            <p className="display text-3xl sm:text-4xl leading-tight tracking-tight text-foreground">
+              Three priorities for recommendation eligibility.
+            </p>
+
             <div className="mt-8 space-y-4">
               {fixes.map((f) => (
                 <article
@@ -798,12 +805,13 @@ const AIWorkCollaborationPlatforms = () => {
 
           {/* HOW CITEWORKS HELPS */}
           <section id="how-we-help" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / How CiteWorks Studio Helps
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
-              From benchmark insight to remediation.
             </h2>
+            <p className="display text-3xl sm:text-4xl leading-tight tracking-tight text-foreground">
+              From benchmark insight to remediation.
+            </p>
+
             <div className="mt-8 grid md:grid-cols-3 gap-4">
               {howWeHelp.map((h) => (
                 <div key={h.title} className="card-premium p-6">
@@ -819,10 +827,14 @@ const AIWorkCollaborationPlatforms = () => {
           <section id="takeaway" className="scroll-mt-28">
             <div className="relative rounded-3xl overflow-hidden border border-primary/30 bg-primary/[0.04] p-8 sm:p-12">
               <Quote className="size-8 text-primary/60 mb-5" />
-              <h2 className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight">
+              <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+                / Commercial Takeaway
+              </h2>
+              <p className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight text-foreground">
                 The emerging moat is not feature depth — it's recommendation
                 breadth, supported by citation architecture.
-              </h2>
+              </p>
+
               <div className="mt-6 space-y-4 text-body text-lg leading-relaxed">
                 <p>
                   The collaboration software market is no longer competing
@@ -935,13 +947,14 @@ const AIWorkCollaborationPlatforms = () => {
           <section id="faq" className="scroll-mt-28">
             <div className="flex items-center gap-2 mb-4">
               <HelpCircle className="size-4 text-primary" />
-              <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary">
+              <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary">
                 / FAQ
-              </p>
+              </h2>
             </div>
-            <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
+            <p className="display text-3xl sm:text-4xl leading-tight tracking-tight text-foreground">
               Frequently asked questions.
-            </h2>
+            </p>
+
             <Accordion type="single" collapsible className="mt-8">
               {faqs.map((f, i) => (
                 <AccordionItem

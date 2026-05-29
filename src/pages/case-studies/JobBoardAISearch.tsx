@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowLeft, Check, Quote, Sparkles, Target, Network, Search, BarChart3 } from "lucide-react";
 import { PageShell } from "@/components/landing/Shell";
@@ -95,9 +96,11 @@ const keyTakeaways = [
   "Targeting the community and editorial sources LLMs already cited lifted AI Overview brand mentions by 71%.",
   "A durable citation footprint put 2,791 keywords in Google's top 10 and influenced 100+ cited pages.",
 ];
-
 const JobBoardAISearch = () => {
+  const [activeSection, setActiveSection] = useState<string>(toc[0]?.id ?? "");
+
   useEffect(() => {
+
     document.title = "Job Board AI Search Case Study | CiteWorks Studio";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
@@ -135,7 +138,31 @@ const JobBoardAISearch = () => {
             acceptedAnswer: { "@type": "Answer", text: f.a },
           })),
         },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://cwsnew.lovable.app/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Case Studies",
+              item: "https://cwsnew.lovable.app/case-studies",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Job Board AI Search Case Study",
+              item: pageUrl,
+            },
+          ],
+        },
       ],
+
     };
     const script = document.createElement("script");
     script.type = "application/ld+json";
@@ -147,6 +174,27 @@ const JobBoardAISearch = () => {
       document.getElementById("jobboard-jsonld")?.remove();
     };
   }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !("IntersectionObserver" in window)) return;
+    const els = toc
+      .map((t) => document.getElementById(t.id))
+      .filter((el): el is HTMLElement => Boolean(el));
+    if (!els.length) return;
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]) setActiveSection(visible[0].target.id);
+      },
+      { rootMargin: "-30% 0px -60% 0px", threshold: [0, 0.25, 0.5, 1] }
+    );
+    els.forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
+
 
 
   return (
@@ -256,20 +304,29 @@ const JobBoardAISearch = () => {
             <p className="font-mono text-[12px] tracking-[0.18em] text-subtle uppercase mb-4">
               On this page
             </p>
-            <nav>
-              <ul className="space-y-2.5 text-sm">
-                {toc.map((t) => (
-                  <li key={t.id}>
-                    <a
-                      href={`#${t.id}`}
-                      className="text-body hover:text-primary transition-colors"
-                    >
-                      {t.label}
-                    </a>
-                  </li>
-                ))}
+            <nav aria-label="On this page">
+              <ul className="space-y-1.5 text-sm border-l border-border">
+                {toc.map((t) => {
+                  const isActive = activeSection === t.id;
+                  return (
+                    <li key={t.id}>
+                      <a
+                        href={`#${t.id}`}
+                        aria-current={isActive ? "true" : undefined}
+                        className={`block -ml-px border-l pl-4 py-1 transition-colors ${
+                          isActive
+                            ? "border-primary text-primary font-medium"
+                            : "border-transparent text-body hover:text-primary"
+                        }`}
+                      >
+                        {t.label}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </nav>
+
           </div>
         </aside>
 
@@ -301,12 +358,13 @@ const JobBoardAISearch = () => {
           {/* RESULTS */}
 
           <section id="results" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / Key Outcomes
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
-              Results at a glance.
             </h2>
+            <p className="display text-3xl sm:text-4xl leading-tight tracking-tight text-foreground">
+              Results at a glance.
+            </p>
+
             <p className="mt-4 text-body">
               Top metrics from a 5-month long campaign with 480 engagements:
             </p>
@@ -325,12 +383,13 @@ const JobBoardAISearch = () => {
 
           {/* MARKET CONTEXT */}
           <section id="market-context" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / Market Context
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-2xl">
-              Brand discovery was moving to AI, without them.
             </h2>
+            <p className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-2xl text-foreground">
+              Brand discovery was moving to AI, without them.
+            </p>
+
             <div className="mt-8 space-y-5 text-body text-base sm:text-lg leading-relaxed">
               <p>
                 When it comes to hiring, trust issues surface fast and public conversations about
@@ -362,12 +421,13 @@ const JobBoardAISearch = () => {
 
           {/* CHALLENGE */}
           <section id="challenge" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / The Challenge
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-2xl">
-              A reliable way to measure and strengthen AI visibility.
             </h2>
+            <p className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-2xl text-foreground">
+              A reliable way to measure and strengthen AI visibility.
+            </p>
+
             <p className="mt-6 text-body text-lg leading-relaxed">
               The team needed a repeatable measurement framework to track:
             </p>
@@ -388,12 +448,13 @@ const JobBoardAISearch = () => {
 
           {/* APPROACH */}
           <section id="approach" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / Our Approach
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
-              What we did.
             </h2>
+            <p className="display text-3xl sm:text-4xl leading-tight tracking-tight text-foreground">
+              What we did.
+            </p>
+
             <div className="mt-8 space-y-4">
               {approach.map((step) => {
                 const Icon = step.icon;
@@ -433,12 +494,13 @@ const JobBoardAISearch = () => {
 
           {/* OUTCOME */}
           <section id="outcome" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / The Outcome
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
-              Measurable, Compounding Results.
             </h2>
+            <p className="display text-3xl sm:text-4xl leading-tight tracking-tight text-foreground">
+              Measurable, Compounding Results.
+            </p>
+
             <div className="mt-6 space-y-4 text-body leading-relaxed">
               <p>
                 The campaign delivered results across both traditional search and AI-generated
@@ -478,12 +540,13 @@ const JobBoardAISearch = () => {
             <div className="relative glass-strong rounded-3xl border-gradient p-8 sm:p-10 overflow-hidden">
               <div className="absolute -top-32 -right-20 w-96 h-96 conic-ring opacity-40 pointer-events-none" />
               <div className="relative">
-                <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
-                  / Take the next step
-                </p>
-                <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight max-w-2xl">
-                  Want to Understand Your AI Citation Footprint?
+                <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+                  / Take the Next Step
                 </h2>
+                <p className="display text-3xl sm:text-4xl leading-tight tracking-tight max-w-2xl text-foreground">
+                  Want to Understand Your AI Citation Footprint?
+                </p>
+
                 <p className="mt-4 text-body text-lg max-w-2xl">
                   We start every engagement with a full audit.
                 </p>
@@ -523,12 +586,13 @@ const JobBoardAISearch = () => {
           <section id="learn-more" className="scroll-mt-28">
             <div className="grid md:grid-cols-12 gap-10">
               <div className="md:col-span-5">
-                <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+                <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
                   / Learn More
-                </p>
-                <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
-                  Understanding AI search visibility.
                 </h2>
+                <p className="display text-3xl sm:text-4xl leading-tight tracking-tight text-foreground">
+                  Understanding AI search visibility.
+                </p>
+
                 <p className="mt-5 text-body leading-relaxed">
                   AI search experiences create answers by pulling information from many places
                   online and summarizing it into a single response.
@@ -542,9 +606,10 @@ const JobBoardAISearch = () => {
                       value={`item-${i}`}
                       className="border-b border-border last:border-0"
                     >
-                      <AccordionTrigger className="text-left text-base sm:text-lg font-semibold py-5 hover:no-underline">
-                        {l.q}
+                      <AccordionTrigger className="text-left py-5 hover:no-underline">
+                        <h3 className="text-base sm:text-lg font-semibold">{l.q}</h3>
                       </AccordionTrigger>
+
                       <AccordionContent className="text-body leading-relaxed pb-5 pr-4">
                         {l.a}
                       </AccordionContent>

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowLeft,
@@ -13,10 +13,18 @@ import {
   Database,
   CheckCircle2,
   Sparkles,
+  HelpCircle,
 } from "lucide-react";
 import { PageShell } from "@/components/landing/Shell";
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import heroImage from "@/assets/ai-work-collab-hero.jpg";
+
 
 const reportMeta = [
   { label: "Report Type", value: "AI Industry Market Discovery" },

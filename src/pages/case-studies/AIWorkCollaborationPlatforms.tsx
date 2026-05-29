@@ -220,6 +220,8 @@ const faqs = [
 ];
 
 const AIWorkCollaborationPlatforms = () => {
+  const [activeSection, setActiveSection] = useState<string>(toc[0]?.id ?? "");
+
   useEffect(() => {
     document.title =
       "How AI Search Is Recommending AI Work Collaboration Platforms | CiteWorks Studio";

@@ -184,12 +184,6 @@ const author = {
   bio: "Mark Huntley analyzes how large language models surface, compare, and recommend brands across AI-generated answers. He specializes in citation architecture, embedding-level relevance, and translating LLM Authority Index benchmark data into remediation plans that move recommendation share.",
 };
 
-const heroStats = [
-  { v: "9", k: "platforms capture most AI shortlist slots" },
-  { v: "ClickUp", k: "strongest cross-cluster AI framing" },
-  { v: "Citations", k: "decide valid recommendations, not visibility" },
-];
-
 const keyTakeaways = [
   "AI compresses the category into a small recommendation set led by ClickUp, Asana, Notion, Slack, and Microsoft Teams.",
   "Being visible to AI is not enough — only citation-backed framing converts into valid recommendations.",
@@ -335,22 +329,6 @@ const AIWorkCollaborationPlatforms = () => {
 
               </div>
 
-              {/* KEY-STATS STRIP */}
-              <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {heroStats.map((s) => (
-                  <div
-                    key={s.k}
-                    className="rounded-2xl border border-border bg-card/50 px-4 py-3.5"
-                  >
-                    <p className="display text-xl leading-none text-gradient">
-                      {s.v}
-                    </p>
-                    <p className="mt-2 text-[13px] text-body leading-snug">
-                      {s.k}
-                    </p>
-                  </div>
-                ))}
-              </div>
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button
@@ -405,26 +383,8 @@ const AIWorkCollaborationPlatforms = () => {
                   </dl>
                 </div>
               </div>
-
-              {/* KEY TAKEAWAYS / TL;DR */}
-              <div className="card-premium mt-4 p-6 border-primary/30 bg-primary/[0.04]">
-                <div className="flex items-center gap-2 mb-4">
-                  <Sparkles className="size-4 text-primary" />
-                  <p className="font-mono text-[12px] tracking-[0.18em] text-primary uppercase">
-                    Key Takeaways
-                  </p>
-                </div>
-                <ul className="space-y-3">
-                  {keyTakeaways.map((t) => (
-                    <li key={t} className="flex gap-2.5 text-[13.5px] text-body leading-relaxed">
-                      <CheckCircle2 className="size-4 text-primary mt-0.5 shrink-0" />
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
             </aside>
+
           </div>
         </div>
       </section>
@@ -465,8 +425,32 @@ const AIWorkCollaborationPlatforms = () => {
         </aside>
 
         <div className="lg:col-span-9 space-y-24">
+          {/* KEY TAKEAWAYS / TL;DR */}
+          <section className="scroll-mt-28">
+            <div className="card-premium p-7 sm:p-8 border-primary/30 bg-primary/[0.04]">
+              <div className="flex items-center gap-2 mb-5">
+                <Sparkles className="size-4 text-primary" />
+                <p className="font-mono text-[12px] tracking-[0.18em] text-primary uppercase">
+                  Key Takeaways
+                </p>
+              </div>
+              <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+                {keyTakeaways.map((t) => (
+                  <li
+                    key={t}
+                    className="flex gap-3 text-[14.5px] text-body leading-relaxed"
+                  >
+                    <CheckCircle2 className="size-4 text-primary mt-1 shrink-0" />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
           {/* OPENING SUMMARY */}
           <section id="summary" className="scroll-mt-28">
+
             <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / Opening Summary
             </p>

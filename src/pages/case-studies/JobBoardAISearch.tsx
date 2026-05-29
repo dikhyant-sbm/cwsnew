@@ -83,6 +83,19 @@ const continueReading = [
   { title: "How AI Search Is Recommending Auto Care Brands", to: "/case-studies", excerpt: "A walkthrough of an enterprise category where retrieval-layer authority decides shortlist presence." },
 ];
 
+const author = {
+  name: "Mark Huntley",
+  initials: "MH",
+  role: "AI Search & Citation Analyst, CiteWorks Studio",
+  bio: "Mark Huntley analyzes how large language models surface, compare, and recommend brands across AI-generated answers. He specializes in citation architecture, embedding-level relevance, and translating AI visibility data into remediation plans that move recommendation share.",
+};
+
+const keyTakeaways = [
+  "Brand discovery was shifting to AI answers without the platform appearing — visibility, not awareness, was the gap.",
+  "Targeting the community and editorial sources LLMs already cited lifted AI Overview brand mentions by 71%.",
+  "A durable citation footprint put 2,791 keywords in Google's top 10 and influenced 100+ cited pages.",
+];
+
 const JobBoardAISearch = () => {
   useEffect(() => {
     document.title = "Job Board AI Search Case Study | CiteWorks Studio";
@@ -93,7 +106,48 @@ const JobBoardAISearch = () => {
         "How a job posting platform secured a place in AI's shortlist for employers — 100+ cited pages influenced, 2,791 keywords in Google's top 10, and a 71% lift in AI Overview brand mentions."
       );
     }
+
+    const pageUrl =
+      "https://cwsnew.lovable.app/case-studies/job-board-ai-search";
+    const ld = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          headline:
+            "How a Job Posting Platform Secured a Place in AI's Shortlist for Employers",
+          description:
+            "100+ cited pages influenced, 2,791 keywords in Google's top 10, and a 71% lift in AI Overview brand mentions.",
+          datePublished: "2026-05-26",
+          author: {
+            "@type": "Person",
+            name: author.name,
+            jobTitle: author.role,
+          },
+          publisher: { "@type": "Organization", name: "CiteWorks Studio" },
+          mainEntityOfPage: pageUrl,
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: learn.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        },
+      ],
+    };
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "jobboard-jsonld";
+    script.text = JSON.stringify(ld);
+    document.head.appendChild(script);
+
+    return () => {
+      document.getElementById("jobboard-jsonld")?.remove();
+    };
   }, []);
+
 
   return (
     <PageShell>
@@ -120,11 +174,26 @@ const JobBoardAISearch = () => {
               <p className="mt-6 text-lg sm:text-xl text-body leading-relaxed max-w-3xl">
                 How a Job Posting Platform Secured a Place in AI's Shortlist for Employers.
               </p>
-              <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-subtle">
-                <span>Updated May 26, 2026</span>
-                <span className="hidden sm:inline text-border">·</span>
-                <span>By Mark Huntley</span>
+              <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="flex size-10 items-center justify-center rounded-full bg-primary/15 text-primary font-mono text-[13px] font-semibold tracking-[0.08em] ring-1 ring-primary/30">
+                    {author.initials}
+                  </span>
+                  <span className="text-sm leading-tight">
+                    <span className="block text-foreground font-medium">
+                      By {author.name}
+                    </span>
+                    <span className="block text-body text-[13px]">
+                      {author.role}
+                    </span>
+                  </span>
+                </div>
+                <span className="hidden sm:block h-8 w-px bg-border" />
+                <span className="font-mono text-[12px] tracking-[0.04em] text-subtle uppercase">
+                  9 min read
+                </span>
               </div>
+
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button
                   asChild
@@ -206,7 +275,31 @@ const JobBoardAISearch = () => {
 
         {/* CONTENT */}
         <div className="lg:col-span-9 space-y-24">
+          {/* KEY TAKEAWAYS / TL;DR */}
+          <section className="scroll-mt-28">
+            <div className="card-premium p-7 sm:p-8 border-primary/30 bg-primary/[0.04]">
+              <div className="flex items-center gap-2 mb-5">
+                <Sparkles className="size-4 text-primary" />
+                <p className="font-mono text-[12px] tracking-[0.18em] text-primary uppercase">
+                  Key Takeaways
+                </p>
+              </div>
+              <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+                {keyTakeaways.map((t) => (
+                  <li
+                    key={t}
+                    className="flex gap-3 text-[14.5px] text-body leading-relaxed"
+                  >
+                    <Check className="size-4 text-primary mt-1 shrink-0" />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
           {/* RESULTS */}
+
           <section id="results" className="scroll-mt-28">
             <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / Key Outcomes

@@ -827,10 +827,14 @@ const AIWorkCollaborationPlatforms = () => {
           <section id="takeaway" className="scroll-mt-28">
             <div className="relative rounded-3xl overflow-hidden border border-primary/30 bg-primary/[0.04] p-8 sm:p-12">
               <Quote className="size-8 text-primary/60 mb-5" />
-              <h2 className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight">
+              <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+                / Commercial Takeaway
+              </h2>
+              <p className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight text-foreground">
                 The emerging moat is not feature depth — it's recommendation
                 breadth, supported by citation architecture.
-              </h2>
+              </p>
+
               <div className="mt-6 space-y-4 text-body text-lg leading-relaxed">
                 <p>
                   The collaboration software market is no longer competing

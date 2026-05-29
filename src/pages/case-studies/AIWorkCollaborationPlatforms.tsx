@@ -457,7 +457,6 @@ const AIWorkCollaborationPlatforms = () => {
           {/* OPENING SUMMARY */}
           <section id="summary" className="scroll-mt-28">
 
-          <section id="summary" className="scroll-mt-28">
             <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / Opening Summary
             </p>

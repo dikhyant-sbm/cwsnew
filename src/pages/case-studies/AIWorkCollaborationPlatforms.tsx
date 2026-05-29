@@ -312,6 +312,49 @@ const AIWorkCollaborationPlatforms = () => {
                 A directional read on how AI systems compare collaboration software
                 — and what's required to earn a place in the shortlist.
               </p>
+
+              {/* AUTHOR BYLINE + META */}
+              <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="flex size-10 items-center justify-center rounded-full bg-primary/15 text-primary font-mono text-[13px] font-semibold tracking-[0.08em] ring-1 ring-primary/30">
+                    {author.initials}
+                  </span>
+                  <span className="text-sm leading-tight">
+                    <span className="block text-foreground font-medium">
+                      By {author.name}
+                    </span>
+                    <span className="block text-body text-[13px]">
+                      {author.role}
+                    </span>
+                  </span>
+                </div>
+                <span className="hidden sm:block h-8 w-px bg-border" />
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[12px] tracking-[0.04em] text-subtle uppercase">
+                  <span>May 26, 2026</span>
+                  <span className="text-border">·</span>
+                  <span>11 min read</span>
+                  <span className="text-border">·</span>
+                  <span>Benchmark: LLM Authority Index</span>
+                </div>
+              </div>
+
+              {/* KEY-STATS STRIP */}
+              <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {heroStats.map((s) => (
+                  <div
+                    key={s.k}
+                    className="rounded-2xl border border-border bg-card/50 px-4 py-3.5"
+                  >
+                    <p className="display text-xl leading-none text-gradient">
+                      {s.v}
+                    </p>
+                    <p className="mt-2 text-[13px] text-body leading-snug">
+                      {s.k}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button
                   asChild

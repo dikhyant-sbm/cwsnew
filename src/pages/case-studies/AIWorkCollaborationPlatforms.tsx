@@ -689,6 +689,7 @@ const AIWorkCollaborationPlatforms = () => {
                 <div className="flex items-center gap-3 mb-5">
                   <span className="inline-flex size-9 items-center justify-center rounded-lg bg-primary/10 border border-primary/30">
                     <AlertTriangle className="size-4 text-primary" />
+                  </span>
                   <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary">
                     / Why Visibility Is Not Enough
                   </h2>
@@ -698,7 +699,6 @@ const AIWorkCollaborationPlatforms = () => {
                   decision moment.
                 </p>
 
-                </h2>
                 <div className="mt-6 space-y-4 text-body text-base sm:text-lg leading-relaxed">
                   <p>
                     Several recognizable collaboration brands appeared inside

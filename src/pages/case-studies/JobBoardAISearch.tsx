@@ -101,7 +101,6 @@ const JobBoardAISearch = () => {
 
   useEffect(() => {
 
-  useEffect(() => {
     document.title = "Job Board AI Search Case Study | CiteWorks Studio";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {

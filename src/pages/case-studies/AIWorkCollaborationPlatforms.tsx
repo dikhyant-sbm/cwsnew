@@ -638,12 +638,13 @@ const AIWorkCollaborationPlatforms = () => {
 
           {/* BENCHMARK FOUND - LEADER CARDS */}
           <section id="benchmark" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / What the Benchmark Found
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
-              Recommendation leaders by workflow lens.
             </h2>
+            <p className="display text-3xl sm:text-4xl leading-tight tracking-tight text-foreground">
+              Recommendation leaders by workflow lens.
+            </p>
+
             <div className="mt-8 grid md:grid-cols-2 gap-5">
               {leaders.map((l) => {
                 const Icon = l.icon;

@@ -454,20 +454,29 @@ const AIWorkCollaborationPlatforms = () => {
             <p className="font-mono text-[12px] tracking-[0.18em] text-subtle uppercase mb-4">
               On this report
             </p>
-            <nav>
-              <ul className="space-y-2.5 text-sm">
-                {toc.map((t) => (
-                  <li key={t.id}>
-                    <a
-                      href={`#${t.id}`}
-                      className="text-body hover:text-primary transition-colors"
-                    >
-                      {t.label}
-                    </a>
-                  </li>
-                ))}
+            <nav aria-label="On this report">
+              <ul className="space-y-1.5 text-sm border-l border-border">
+                {toc.map((t) => {
+                  const isActive = activeSection === t.id;
+                  return (
+                    <li key={t.id}>
+                      <a
+                        href={`#${t.id}`}
+                        aria-current={isActive ? "true" : undefined}
+                        className={`block -ml-px border-l pl-4 py-1 transition-colors ${
+                          isActive
+                            ? "border-primary text-primary font-medium"
+                            : "border-transparent text-body hover:text-primary"
+                        }`}
+                      >
+                        {t.label}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </nav>
+
 
             <div className="mt-8 p-5 rounded-2xl border border-primary/30 bg-primary/[0.04]">
               <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-primary mb-2">

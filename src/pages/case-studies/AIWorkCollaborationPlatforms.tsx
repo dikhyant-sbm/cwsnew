@@ -177,6 +177,44 @@ const continueReading = [
   },
 ];
 
+const author = {
+  name: "Mark Huntley",
+  initials: "MH",
+  role: "AI Search & Citation Analyst, CiteWorks Studio",
+  bio: "Mark Huntley analyzes how large language models surface, compare, and recommend brands across AI-generated answers. He specializes in citation architecture, embedding-level relevance, and translating LLM Authority Index benchmark data into remediation plans that move recommendation share.",
+};
+
+const heroStats = [
+  { v: "9", k: "platforms capture most AI shortlist slots" },
+  { v: "ClickUp", k: "strongest cross-cluster AI framing" },
+  { v: "Citations", k: "decide valid recommendations, not visibility" },
+];
+
+const keyTakeaways = [
+  "AI compresses the category into a small recommendation set led by ClickUp, Asana, Notion, Slack, and Microsoft Teams.",
+  "Being visible to AI is not enough — only citation-backed framing converts into valid recommendations.",
+  "Brands win by expanding workflow eligibility, improving semantic clarity, and strengthening their public evidence layer.",
+];
+
+const faqs = [
+  {
+    q: "Which work collaboration platforms does AI recommend most?",
+    a: "A small group of multi-functional platforms — ClickUp, Asana, Notion, Slack, Microsoft Teams, Jira, Monday.com, Trello, and Zoom — captures most AI-generated shortlist slots, with ClickUp leading cross-cluster framing and Asana winning on semantic legibility.",
+  },
+  {
+    q: "Why is AI visibility not enough to win recommendations?",
+    a: "AI systems only convert visibility into valid recommendations when citation-bearing sources — editorial comparisons, review environments, and community discussions — consistently support a brand's framing. Without that citation layer, a brand can appear without being recommended.",
+  },
+  {
+    q: "What should brands fix to improve AI recommendation share?",
+    a: "Expand recommendation eligibility across multiple workflows, improve semantic clarity so AI can classify and compare the brand, and strengthen the public evidence layer with citation-bearing comparisons and consistent third-party framing.",
+  },
+  {
+    q: "What data is this report based on?",
+    a: "This is a benchmark-based industry analysis powered by the LLM Authority Index, with market interpretation and remediation framing provided by CiteWorks Studio.",
+  },
+];
+
 const AIWorkCollaborationPlatforms = () => {
   useEffect(() => {
     document.title =
@@ -188,7 +226,55 @@ const AIWorkCollaborationPlatforms = () => {
         "Benchmark-based industry analysis of how AI systems recommend, compare, and frame work collaboration platforms — including ClickUp, Asana, Notion, Slack, Microsoft Teams, and more. Powered by LLM Authority Index."
       );
     }
+
+    const pageUrl =
+      "https://cwsnew.lovable.app/ai-industry-market-discovery-reports/ai-work-collaboration-platforms";
+    const ld = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          headline:
+            "How AI Search Is Recommending AI Work Collaboration Platforms",
+          description:
+            "Benchmark-based industry analysis of how AI systems recommend, compare, and frame work collaboration platforms — including ClickUp, Asana, Notion, Slack, and Microsoft Teams.",
+          datePublished: "2026-05-26",
+          author: {
+            "@type": "Person",
+            name: author.name,
+            jobTitle: author.role,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "CiteWorks Studio",
+          },
+          isBasedOn: {
+            "@type": "CreativeWork",
+            name: "LLM Authority Index",
+          },
+          mainEntityOfPage: pageUrl,
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        },
+      ],
+    };
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "aiwc-jsonld";
+    script.text = JSON.stringify(ld);
+    document.head.appendChild(script);
+
+    return () => {
+      document.getElementById("aiwc-jsonld")?.remove();
+    };
   }, []);
+
 
   return (
     <PageShell>
@@ -226,6 +312,49 @@ const AIWorkCollaborationPlatforms = () => {
                 A directional read on how AI systems compare collaboration software
                 — and what's required to earn a place in the shortlist.
               </p>
+
+              {/* AUTHOR BYLINE + META */}
+              <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="flex size-10 items-center justify-center rounded-full bg-primary/15 text-primary font-mono text-[13px] font-semibold tracking-[0.08em] ring-1 ring-primary/30">
+                    {author.initials}
+                  </span>
+                  <span className="text-sm leading-tight">
+                    <span className="block text-foreground font-medium">
+                      By {author.name}
+                    </span>
+                    <span className="block text-body text-[13px]">
+                      {author.role}
+                    </span>
+                  </span>
+                </div>
+                <span className="hidden sm:block h-8 w-px bg-border" />
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[12px] tracking-[0.04em] text-subtle uppercase">
+                  <span>May 26, 2026</span>
+                  <span className="text-border">·</span>
+                  <span>11 min read</span>
+                  <span className="text-border">·</span>
+                  <span>Benchmark: LLM Authority Index</span>
+                </div>
+              </div>
+
+              {/* KEY-STATS STRIP */}
+              <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {heroStats.map((s) => (
+                  <div
+                    key={s.k}
+                    className="rounded-2xl border border-border bg-card/50 px-4 py-3.5"
+                  >
+                    <p className="display text-xl leading-none text-gradient">
+                      {s.v}
+                    </p>
+                    <p className="mt-2 text-[13px] text-body leading-snug">
+                      {s.k}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button
                   asChild
@@ -279,6 +408,25 @@ const AIWorkCollaborationPlatforms = () => {
                   </dl>
                 </div>
               </div>
+
+              {/* KEY TAKEAWAYS / TL;DR */}
+              <div className="card-premium mt-4 p-6 border-primary/30 bg-primary/[0.04]">
+                <div className="flex items-center gap-2 mb-4">
+                  <Sparkles className="size-4 text-primary" />
+                  <p className="font-mono text-[12px] tracking-[0.18em] text-primary uppercase">
+                    Key Takeaways
+                  </p>
+                </div>
+                <ul className="space-y-3">
+                  {keyTakeaways.map((t) => (
+                    <li key={t} className="flex gap-2.5 text-[13.5px] text-body leading-relaxed">
+                      <CheckCircle2 className="size-4 text-primary mt-0.5 shrink-0" />
+                      <span>{t}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
             </aside>
           </div>
         </div>
@@ -701,6 +849,40 @@ const AIWorkCollaborationPlatforms = () => {
               </div>
             </div>
           </section>
+
+          {/* AUTHOR BIO */}
+          <section className="scroll-mt-28">
+            <div className="card-premium p-7 sm:p-8">
+              <div className="flex flex-col sm:flex-row gap-6 sm:items-start">
+                <span className="flex size-16 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary font-mono text-lg font-semibold tracking-[0.08em] ring-1 ring-primary/30">
+                  {author.initials}
+                </span>
+                <div>
+                  <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-subtle mb-2">
+                    About the author
+                  </p>
+                  <h3 className="display text-xl leading-tight">{author.name}</h3>
+                  <p className="text-[13.5px] text-primary mt-1">{author.role}</p>
+                  <p className="mt-4 text-body leading-relaxed">{author.bio}</p>
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    <Link
+                      to="/ai-industry-market-discovery-reports"
+                      className="inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] uppercase text-primary hover:gap-2.5 transition-all"
+                    >
+                      More reports <ArrowUpRight className="size-3.5" />
+                    </Link>
+                    <Link
+                      to="/request-audit"
+                      className="inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold tracking-[0.14em] uppercase text-body hover:text-foreground transition-colors"
+                    >
+                      Request an audit <ArrowUpRight className="size-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
 
           {/* CONTINUE READING */}
           <section className="scroll-mt-28">

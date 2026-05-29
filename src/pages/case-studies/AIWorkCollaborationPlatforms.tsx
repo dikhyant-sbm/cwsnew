@@ -689,14 +689,15 @@ const AIWorkCollaborationPlatforms = () => {
                 <div className="flex items-center gap-3 mb-5">
                   <span className="inline-flex size-9 items-center justify-center rounded-lg bg-primary/10 border border-primary/30">
                     <AlertTriangle className="size-4 text-primary" />
-                  </span>
-                  <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary">
+                  <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary">
                     / Why Visibility Is Not Enough
-                  </p>
+                  </h2>
                 </div>
-                <h2 className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-3xl">
+                <p className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-3xl text-foreground">
                   A brand can be visible in AI answers and still be weak at the
                   decision moment.
+                </p>
+
                 </h2>
                 <div className="mt-6 space-y-4 text-body text-base sm:text-lg leading-relaxed">
                   <p>

@@ -431,7 +431,32 @@ const AIWorkCollaborationPlatforms = () => {
         </aside>
 
         <div className="lg:col-span-9 space-y-24">
+          {/* KEY TAKEAWAYS / TL;DR */}
+          <section className="scroll-mt-28">
+            <div className="card-premium p-7 sm:p-8 border-primary/30 bg-primary/[0.04]">
+              <div className="flex items-center gap-2 mb-5">
+                <Sparkles className="size-4 text-primary" />
+                <p className="font-mono text-[12px] tracking-[0.18em] text-primary uppercase">
+                  Key Takeaways
+                </p>
+              </div>
+              <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+                {keyTakeaways.map((t) => (
+                  <li
+                    key={t}
+                    className="flex gap-3 text-[14.5px] text-body leading-relaxed"
+                  >
+                    <CheckCircle2 className="size-4 text-primary mt-1 shrink-0" />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
           {/* OPENING SUMMARY */}
+          <section id="summary" className="scroll-mt-28">
+
           <section id="summary" className="scroll-mt-28">
             <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / Opening Summary

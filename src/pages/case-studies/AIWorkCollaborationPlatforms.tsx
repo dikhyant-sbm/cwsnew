@@ -295,9 +295,6 @@ const AIWorkCollaborationPlatforms = () => {
       ],
     };
 
-        },
-      ],
-    };
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.id = "aiwc-jsonld";

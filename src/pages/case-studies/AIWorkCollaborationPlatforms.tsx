@@ -184,12 +184,6 @@ const author = {
   bio: "Mark Huntley analyzes how large language models surface, compare, and recommend brands across AI-generated answers. He specializes in citation architecture, embedding-level relevance, and translating LLM Authority Index benchmark data into remediation plans that move recommendation share.",
 };
 
-const heroStats = [
-  { v: "9", k: "platforms capture most AI shortlist slots" },
-  { v: "ClickUp", k: "strongest cross-cluster AI framing" },
-  { v: "Citations", k: "decide valid recommendations, not visibility" },
-];
-
 const keyTakeaways = [
   "AI compresses the category into a small recommendation set led by ClickUp, Asana, Notion, Slack, and Microsoft Teams.",
   "Being visible to AI is not enough — only citation-backed framing converts into valid recommendations.",

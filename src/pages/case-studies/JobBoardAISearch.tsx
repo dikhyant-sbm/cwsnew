@@ -83,6 +83,19 @@ const continueReading = [
   { title: "How AI Search Is Recommending Auto Care Brands", to: "/case-studies", excerpt: "A walkthrough of an enterprise category where retrieval-layer authority decides shortlist presence." },
 ];
 
+const author = {
+  name: "Mark Huntley",
+  initials: "MH",
+  role: "AI Search & Citation Analyst, CiteWorks Studio",
+  bio: "Mark Huntley analyzes how large language models surface, compare, and recommend brands across AI-generated answers. He specializes in citation architecture, embedding-level relevance, and translating AI visibility data into remediation plans that move recommendation share.",
+};
+
+const keyTakeaways = [
+  "Brand discovery was shifting to AI answers without the platform appearing — visibility, not awareness, was the gap.",
+  "Targeting the community and editorial sources LLMs already cited lifted AI Overview brand mentions by 71%.",
+  "A durable citation footprint put 2,791 keywords in Google's top 10 and influenced 100+ cited pages.",
+];
+
 const JobBoardAISearch = () => {
   useEffect(() => {
     document.title = "Job Board AI Search Case Study | CiteWorks Studio";

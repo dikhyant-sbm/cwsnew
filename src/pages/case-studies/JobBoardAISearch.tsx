@@ -106,7 +106,48 @@ const JobBoardAISearch = () => {
         "How a job posting platform secured a place in AI's shortlist for employers — 100+ cited pages influenced, 2,791 keywords in Google's top 10, and a 71% lift in AI Overview brand mentions."
       );
     }
+
+    const pageUrl =
+      "https://cwsnew.lovable.app/case-studies/job-board-ai-search";
+    const ld = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          headline:
+            "How a Job Posting Platform Secured a Place in AI's Shortlist for Employers",
+          description:
+            "100+ cited pages influenced, 2,791 keywords in Google's top 10, and a 71% lift in AI Overview brand mentions.",
+          datePublished: "2026-05-26",
+          author: {
+            "@type": "Person",
+            name: author.name,
+            jobTitle: author.role,
+          },
+          publisher: { "@type": "Organization", name: "CiteWorks Studio" },
+          mainEntityOfPage: pageUrl,
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: learn.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        },
+      ],
+    };
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "jobboard-jsonld";
+    script.text = JSON.stringify(ld);
+    document.head.appendChild(script);
+
+    return () => {
+      document.getElementById("jobboard-jsonld")?.remove();
+    };
   }, []);
+
 
   return (
     <PageShell>

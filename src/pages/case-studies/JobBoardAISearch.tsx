@@ -96,8 +96,11 @@ const keyTakeaways = [
   "Targeting the community and editorial sources LLMs already cited lifted AI Overview brand mentions by 71%.",
   "A durable citation footprint put 2,791 keywords in Google's top 10 and influenced 100+ cited pages.",
 ];
-
 const JobBoardAISearch = () => {
+  const [activeSection, setActiveSection] = useState<string>(toc[0]?.id ?? "");
+
+  useEffect(() => {
+
   useEffect(() => {
     document.title = "Job Board AI Search Case Study | CiteWorks Studio";
     const meta = document.querySelector('meta[name="description"]');

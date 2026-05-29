@@ -388,25 +388,7 @@ const AIWorkCollaborationPlatforms = () => {
                     ))}
                   </dl>
                 </div>
-              </div>
-
-              {/* KEY TAKEAWAYS / TL;DR */}
-              <div className="card-premium mt-4 p-6 border-primary/30 bg-primary/[0.04]">
-                <div className="flex items-center gap-2 mb-4">
-                  <Sparkles className="size-4 text-primary" />
-                  <p className="font-mono text-[12px] tracking-[0.18em] text-primary uppercase">
-                    Key Takeaways
-                  </p>
-                </div>
-                <ul className="space-y-3">
-                  {keyTakeaways.map((t) => (
-                    <li key={t} className="flex gap-2.5 text-[13.5px] text-body leading-relaxed">
-                      <CheckCircle2 className="size-4 text-primary mt-0.5 shrink-0" />
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            </aside>
 
             </aside>
           </div>

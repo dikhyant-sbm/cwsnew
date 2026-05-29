@@ -548,12 +548,13 @@ const AIWorkCollaborationPlatforms = () => {
 
           {/* KEY FINDINGS */}
           <section id="findings" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / Key Findings
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
-              Five signals from the benchmark.
             </h2>
+            <p className="display text-3xl sm:text-4xl leading-tight tracking-tight text-foreground">
+              Five signals from the benchmark.
+            </p>
+
             <div className="mt-8 grid sm:grid-cols-2 gap-4">
               {keyFindings.map((f) => (
                 <article

@@ -259,7 +259,9 @@ const AIWorkCollaborationPlatforms = () => {
             name: "LLM Authority Index",
           },
           mainEntityOfPage: pageUrl,
+        },
         {
+
           "@type": "FAQPage",
           mainEntity: faqs.map((f) => ({
             "@type": "Question",

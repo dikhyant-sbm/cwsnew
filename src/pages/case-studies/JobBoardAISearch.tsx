@@ -174,11 +174,26 @@ const JobBoardAISearch = () => {
               <p className="mt-6 text-lg sm:text-xl text-body leading-relaxed max-w-3xl">
                 How a Job Posting Platform Secured a Place in AI's Shortlist for Employers.
               </p>
-              <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-subtle">
-                <span>Updated May 26, 2026</span>
-                <span className="hidden sm:inline text-border">·</span>
-                <span>By Mark Huntley</span>
+              <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="flex size-10 items-center justify-center rounded-full bg-primary/15 text-primary font-mono text-[13px] font-semibold tracking-[0.08em] ring-1 ring-primary/30">
+                    {author.initials}
+                  </span>
+                  <span className="text-sm leading-tight">
+                    <span className="block text-foreground font-medium">
+                      By {author.name}
+                    </span>
+                    <span className="block text-body text-[13px]">
+                      {author.role}
+                    </span>
+                  </span>
+                </div>
+                <span className="hidden sm:block h-8 w-px bg-border" />
+                <span className="font-mono text-[12px] tracking-[0.04em] text-subtle uppercase">
+                  9 min read
+                </span>
               </div>
+
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button
                   asChild

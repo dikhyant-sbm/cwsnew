@@ -947,13 +947,14 @@ const AIWorkCollaborationPlatforms = () => {
           <section id="faq" className="scroll-mt-28">
             <div className="flex items-center gap-2 mb-4">
               <HelpCircle className="size-4 text-primary" />
-              <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary">
+              <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary">
                 / FAQ
-              </p>
+              </h2>
             </div>
-            <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
+            <p className="display text-3xl sm:text-4xl leading-tight tracking-tight text-foreground">
               Frequently asked questions.
-            </h2>
+            </p>
+
             <Accordion type="single" collapsible className="mt-8">
               {faqs.map((f, i) => (
                 <AccordionItem

@@ -35,7 +35,9 @@ const toc = [
   { id: "fixes", label: "What Brands Need to Fix" },
   { id: "how-we-help", label: "How CiteWorks Helps" },
   { id: "takeaway", label: "Commercial Takeaway" },
+  { id: "faq", label: "FAQ" },
 ];
+
 
 const keyFindings = [
   {

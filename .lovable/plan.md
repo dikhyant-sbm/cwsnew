@@ -1,74 +1,55 @@
+
 ## Goal
 
-Tighten the `/case-studies` hero, restructure the AI Market Strategy section around LLM Authority Index findings → remediation, and add per-section "view all" directory buttons so visitors can navigate cleanly between the three content types.
+Add author attribution to the AI Work Collaboration Platforms report and maximize above-the-fold value for SEO/GEO (how AI engines extract, attribute, and cite the piece), without bloating the hero height.
 
-Rename the types of reports:  
-1)  AI Market Strategy to AI Market Discovery Action Reports  
-2)  Client Implementation Case Studies (existing)  
-3) Company Reports (existing) to  AI Company Market Strategy Reports
+File touched: `src/pages/case-studies/AIWorkCollaborationPlatforms.tsx`
 
-## 1. Replace the hero with the three-pillar overview
+## 1. Author byline in the hero
 
-**Problem:** The current hero shows long marketing copy plus a separate "Three ways to understand AI discovery performance" overview section below it, which duplicates intent and confuses scanning.
+Under the H1 + subhead (inside the `lg:col-span-8` column), add a compact author/meta row:
 
-**Change:** Merge them. The hero becomes the single, definitive intro to the three content pillars.
+- Small circular avatar (initials "MH" in a tokenized circle — no image asset needed).
+- **By Mark Huntley** + a one-line role ("AI Search & Citation Analyst, CiteWorks Studio").
+- A separated meta line with: published date (May 26, 2026), an estimated read time ("11 min read"), and "Benchmark: LLM Authority Index".
+- Uses existing tokens (`text-body`, `font-mono`, `border-border`). Kept to a single row so it does not push content below the fold.
 
-- Keep the eyebrow, H1, and one short subhead (1–2 sentences max).
-- Remove the `HeroVisual` right-column panel and the long body copy.
-- Render the three pillars directly inside the hero as a 3-card grid (using the existing `overviewCards` data, refreshed copy):
-  1. **AI Market Strategy** — what AI is recommending in your category, and what to fix.
-  2. **Client Implementation Case Studies** — real CiteWorks engagements and measurable outcomes.
-  3. **AI Company Discovery Reports** — company-level readouts from LLM Authority Index data.
-- Each card gets two affordances: a deep link to its section anchor on this page, and an "Explore directory →" link to the full archive route.
-- Delete the standalone "Content Library / Three ways to understand…" section that follows the hero (now redundant).
+## 2. Above-the-fold value boosters (GEO/SEO)
 
-Keep the sticky anchor nav as-is for in-page jumps.
+These give AI engines and scanning readers immediate, extractable substance:
 
-## 2. Restructure the AI Market Strategy section
+1. **Key-stats strip** — a 3- or 4-item inline metric row directly under the byline (e.g. "9 platforms capture most shortlist slots", "ClickUp = top cross-cluster framing", "Citations decide valid recommendations"). Short, scannable, quote-friendly for LLMs.
+2. **"Key takeaways" / TL;DR card** — replace/augment the right `aside`'s lower area or add a compact bulleted answer box so the core answer to "how is AI recommending collaboration platforms?" is visible immediately. Self-contained sentences = better LLM citation.
+3. **Report Card aside** stays but is tightened so the takeaways + stats fit above the fold at the current viewport.
 
-**Positioning:** AI Market Strategy = LLM Authority Index benchmark summary → what it means for buyer discovery → what's likely causing the gap → what CiteWorks would prioritize fixing → actionable takeaways enterprise teams can implement.
+The hero stays compact by using dense, single-row layouts rather than stacked blocks.
 
-**New section layout (`#market-discovery`):**
+## 3. Author bio box at end of content
 
-1. **Intro block** — eyebrow + H2 + 2-sentence positioning ("Benchmark-led market intelligence, powered by LLM Authority Index, translated into the fixes that move recommendation share.").
-2. **The five-part anatomy of every AI Market Strategy report** — a 5-step rail or numbered grid so enterprise readers immediately see what's inside:
-  - 01 · Benchmark summary (LLM Authority Index findings for the category)
-  - 02 · Why it matters for buyer discovery
-  - 03 · Likely causes of the visibility / recommendation gap
-  - 04 · What CiteWorks Studio would prioritize fixing
-  - 05 · Actionable plays brands can implement to lift LLM visibility
-3. **Featured reports grid** — keep the two existing `marketCases` cards (tax relief, AI collaboration) with a "Market Strategy" badge.
-4. **Section CTAs** (replacing the single audit button):
-  - Primary: `View all AI Market Strategy reports` → `/case-studies/ai-market-strategy` (the directory route).
-  - Secondary: `Request an AI Visibility Audit` → `/request-audit`.
-5. Keep the existing "From Benchmark to Remediation" comparison block beneath it — it reinforces the anatomy.
+After the CTA / Benchmark Source section (before "Continue Reading"), add an author card:
 
-## 3. Add directory CTAs to the other two sections
+- Avatar (MH initials), **Mark Huntley**, role line.
+- 2–3 sentence bio establishing topical authority (analyzes AI recommendation behavior, citation architecture, and LLM Authority Index benchmarks).
+- Optional small links row ("More reports", "Request an audit").
+- Styled with `card-premium` to match the page.
 
-So each pillar has a clear "see everything" path.
+## 4. Structured data (JSON-LD) for SEO/GEO
 
-- **AI Company Discovery Reports (`#company-reports`)**: under the Slack card, add a CTA row with `View all AI Company Discovery Reports` → `/case-studies/ai-company-reports` (plus keep the existing audit CTA).
-- **Client Implementation Case Studies (`#client-results`)**: under the client cards grid, add `View all client case studies` → `/case-studies/client-results`.
+In the existing `useEffect`, inject (and clean up on unmount) JSON-LD script tags so crawlers/LLMs get explicit attribution and answerable Q&A:
 
-Routes themselves are out of scope for this change (they can 404 until the directory pages are built); the buttons just need to point to stable URLs.
-
-## 4. Copy polish for SEO / GEO / enterprise tone
-
-Across hero cards, section intros, and CTAs:
-
-- Lead each pillar with the noun phrase ("AI Market Strategy reports", "AI Company Discovery Reports", "Client implementation case studies") so the page is unambiguous for both crawlers and LLM retrieval.
-- Use consistent, plain-English verbs: *benchmark*, *diagnose*, *prioritize*, *remediate*, *implement*.
-- Update `<title>` and `<meta name="description">` to lead with the three content types and mention LLM Authority Index as the benchmark source.
-- Make sure every section's H2 and first sentence repeat the pillar name once for keyword clarity without being stuffed.
+- **Article** schema: headline, description, datePublished, author (`Person` = Mark Huntley), publisher (`Organization` = CiteWorks Studio), and `isBasedOn` / citation referencing LLM Authority Index.
+- **FAQPage** schema built from 3–4 question/answer pairs derived from the report (e.g. "Which collaboration platforms does AI recommend most?", "Why isn't visibility enough?"). This is high-leverage for GEO since LLMs lift Q&A directly.
 
 ## Technical notes
 
-- File touched: `src/pages/CaseStudies.tsx` only.
-- Refresh the `overviewCards` array (copy + add a `directoryHref` field) and reuse it inside the hero.
-- Remove the `HeroVisual` component and the now-redundant "Overview" section. Keep `Nav`, `Footer`, `StickyAuditCTA`, sticky anchor nav, Benchmark→Remediation, Methodology, and final CTA sections untouched structurally.
-- Add a small numbered list/grid component inline for the 5-part anatomy (no new file needed) using existing tokens (`card-premium`, `eyebrow`, `display`, `text-gradient`, `font-mono` rails).
-- Directory link targets used (placeholders, no route work in this pass):
-  - `/case-studies/ai-market-strategy`
-  - `/case-studies/ai-company-reports`
-  - `/case-studies/client-results`
-- No design system, no business logic, no backend changes.
+- All additions are presentational + a metadata `useEffect` extension; no new files, no backend, no design-system changes.
+- Author identity defined once as a small `author` constant near the other data arrays and reused in hero byline + bio box + JSON-LD.
+- JSON-LD added via dynamically created `<script type="application/ld+json">` elements appended to `document.head`, removed in the effect cleanup to avoid duplicates on route changes.
+- Read time / stats are static copy (no runtime calc needed).
+
+## What I recommend adding for best GEO/SEO (summary for you)
+
+- Author byline + bio + Person/Article schema → establishes E-E-A-T authorship signals.
+- Key-stats strip + TL;DR card → self-contained, quotable answers AI engines cite.
+- FAQPage schema → direct question/answer pairs LLMs and AI Overviews lift verbatim.
+- Read time + published date + benchmark source visible up top → trust + freshness signals.

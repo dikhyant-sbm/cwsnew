@@ -1,55 +1,41 @@
-
 ## Goal
 
-Add author attribution to the AI Work Collaboration Platforms report and maximize above-the-fold value for SEO/GEO (how AI engines extract, attribute, and cite the piece), without bloating the hero height.
+Make `src/pages/case-studies/AIWorkCollaborationPlatforms.tsx` cleanly semantic (H1 → H2 → H3), and add the highest-value GEO/SEO + UX improvements that are currently missing.
 
-File touched: `src/pages/case-studies/AIWorkCollaborationPlatforms.tsx`
+## What I found
 
-## 1. Author byline in the hero
+- **Heading hierarchy is already mostly correct.** One `<h1>` in the hero; every section listed in the left-sidebar TOC is an `<h2>`; cards/sub-items inside sections are `<h3>`. No fix needed beyond a small audit pass.
+- **Biggest gap:** A `faqs` array is defined and injected into FAQPage JSON-LD, but **there is no visible FAQ section on the page.** Google/AI engines strongly prefer FAQ schema that matches visible on-page content — schema-only FAQs are a risk and a missed UX/GEO win.
+- **No Breadcrumb structured data** even though the page sits under a clear path (Reports → AI Work Collaboration Platforms).
+- **TOC is static** — links don't highlight the section currently in view, so the long page is harder to navigate.
 
-Under the H1 + subhead (inside the `lg:col-span-8` column), add a compact author/meta row:
+## Changes
 
-- Small circular avatar (initials "MH" in a tokenized circle — no image asset needed).
-- **By Mark Huntley** + a one-line role ("AI Search & Citation Analyst, CiteWorks Studio").
-- A separated meta line with: published date (May 26, 2026), an estimated read time ("11 min read"), and "Benchmark: LLM Authority Index".
-- Uses existing tokens (`text-body`, `font-mono`, `border-border`). Kept to a single row so it does not push content below the fold.
+### 1. Heading hierarchy audit (semantic correctness)
+- Confirm and keep one `<h1>` (hero title).
+- Keep all TOC-mapped section titles as `<h2>` (Opening Summary, Key Findings, What Changed, etc.).
+- Keep nested card titles as `<h3>`. Verify no `<h3>` appears without an `<h2>` ancestor in its section.
 
-## 2. Above-the-fold value boosters (GEO/SEO)
+### 2. Add a visible FAQ section (GEO/SEO + UX)
+- Render the existing `faqs` array as an accordion (using the existing `ui/accordion` component) in a new `<section id="faq">` placed before "Continue Reading".
+- Section title as `<h2>`; each question as `<h3>` inside the accordion trigger so the visible content mirrors the FAQPage JSON-LD.
+- Add `{ id: "faq", label: "FAQ" }` to the `toc` array so it appears in the sidebar.
 
-These give AI engines and scanning readers immediate, extractable substance:
+### 3. Add Breadcrumb structured data
+- Extend the JSON-LD `@graph` with a `BreadcrumbList` (Home → AI Industry Market Discovery Reports → this report) for richer AI/search context. No visual change.
 
-1. **Key-stats strip** — a 3- or 4-item inline metric row directly under the byline (e.g. "9 platforms capture most shortlist slots", "ClickUp = top cross-cluster framing", "Citations decide valid recommendations"). Short, scannable, quote-friendly for LLMs.
-2. **"Key takeaways" / TL;DR card** — replace/augment the right `aside`'s lower area or add a compact bulleted answer box so the core answer to "how is AI recommending collaboration platforms?" is visible immediately. Self-contained sentences = better LLM citation.
-3. **Report Card aside** stays but is tightened so the takeaways + stats fit above the fold at the current viewport.
+### 4. Active-section highlighting in the TOC (UX)
+- Use an `IntersectionObserver` (same pattern as `src/components/landing/SectionNav.tsx`) so the current section's TOC link highlights as the user scrolls, with `aria-current` for accessibility.
 
-The hero stays compact by using dense, single-row layouts rather than stacked blocks.
-
-## 3. Author bio box at end of content
-
-After the CTA / Benchmark Source section (before "Continue Reading"), add an author card:
-
-- Avatar (MH initials), **Mark Huntley**, role line.
-- 2–3 sentence bio establishing topical authority (analyzes AI recommendation behavior, citation architecture, and LLM Authority Index benchmarks).
-- Optional small links row ("More reports", "Request an audit").
-- Styled with `card-premium` to match the page.
-
-## 4. Structured data (JSON-LD) for SEO/GEO
-
-In the existing `useEffect`, inject (and clean up on unmount) JSON-LD script tags so crawlers/LLMs get explicit attribution and answerable Q&A:
-
-- **Article** schema: headline, description, datePublished, author (`Person` = Mark Huntley), publisher (`Organization` = CiteWorks Studio), and `isBasedOn` / citation referencing LLM Authority Index.
-- **FAQPage** schema built from 3–4 question/answer pairs derived from the report (e.g. "Which collaboration platforms does AI recommend most?", "Why isn't visibility enough?"). This is high-leverage for GEO since LLMs lift Q&A directly.
+### 5. Small UX/SEO polish
+- Add `scroll-mt-28` to the new FAQ section (consistent anchor offset).
+- Ensure the hero card image keeps descriptive `alt` (already good).
 
 ## Technical notes
 
-- All additions are presentational + a metadata `useEffect` extension; no new files, no backend, no design-system changes.
-- Author identity defined once as a small `author` constant near the other data arrays and reused in hero byline + bio box + JSON-LD.
-- JSON-LD added via dynamically created `<script type="application/ld+json">` elements appended to `document.head`, removed in the effect cleanup to avoid duplicates on route changes.
-- Read time / stats are static copy (no runtime calc needed).
+- All work is contained to `src/pages/case-studies/AIWorkCollaborationPlatforms.tsx`, reusing existing `@/components/ui/accordion` and design tokens — no new colors or dependencies.
+- JSON-LD changes stay inside the existing `useEffect` that appends/cleans up the `aiwc-jsonld` script.
 
-## What I recommend adding for best GEO/SEO (summary for you)
+## Optional follow-up
 
-- Author byline + bio + Person/Article schema → establishes E-E-A-T authorship signals.
-- Key-stats strip + TL;DR card → self-contained, quotable answers AI engines cite.
-- FAQPage schema → direct question/answer pairs LLMs and AI Overviews lift verbatim.
-- Read time + published date + benchmark source visible up top → trust + freshness signals.
+The sibling report `src/pages/case-studies/JobBoardAISearch.tsx` shares this layout. If you want, I can apply the same visible-FAQ + breadcrumb + active-TOC pattern there for consistency — say the word and I'll include it.

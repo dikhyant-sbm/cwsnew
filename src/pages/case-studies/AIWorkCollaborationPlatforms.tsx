@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowLeft,
@@ -13,10 +13,18 @@ import {
   Database,
   CheckCircle2,
   Sparkles,
+  HelpCircle,
 } from "lucide-react";
 import { PageShell } from "@/components/landing/Shell";
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import heroImage from "@/assets/ai-work-collab-hero.jpg";
+
 
 const reportMeta = [
   { label: "Report Type", value: "AI Industry Market Discovery" },
@@ -35,7 +43,9 @@ const toc = [
   { id: "fixes", label: "What Brands Need to Fix" },
   { id: "how-we-help", label: "How CiteWorks Helps" },
   { id: "takeaway", label: "Commercial Takeaway" },
+  { id: "faq", label: "FAQ" },
 ];
+
 
 const keyFindings = [
   {
@@ -210,6 +220,8 @@ const faqs = [
 ];
 
 const AIWorkCollaborationPlatforms = () => {
+  const [activeSection, setActiveSection] = useState<string>(toc[0]?.id ?? "");
+
   useEffect(() => {
     document.title =
       "How AI Search Is Recommending AI Work Collaboration Platforms | CiteWorks Studio";
@@ -249,6 +261,7 @@ const AIWorkCollaborationPlatforms = () => {
           mainEntityOfPage: pageUrl,
         },
         {
+
           "@type": "FAQPage",
           mainEntity: faqs.map((f) => ({
             "@type": "Question",
@@ -256,8 +269,32 @@ const AIWorkCollaborationPlatforms = () => {
             acceptedAnswer: { "@type": "Answer", text: f.a },
           })),
         },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://cwsnew.lovable.app/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "AI Industry Market Discovery Reports",
+              item: "https://cwsnew.lovable.app/ai-industry-market-discovery-reports",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "AI Work Collaboration Platforms",
+              item: pageUrl,
+            },
+          ],
+        },
       ],
     };
+
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.id = "aiwc-jsonld";
@@ -268,6 +305,27 @@ const AIWorkCollaborationPlatforms = () => {
       document.getElementById("aiwc-jsonld")?.remove();
     };
   }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !("IntersectionObserver" in window)) return;
+    const els = toc
+      .map((t) => document.getElementById(t.id))
+      .filter((el): el is HTMLElement => Boolean(el));
+    if (!els.length) return;
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]) setActiveSection(visible[0].target.id);
+      },
+      { rootMargin: "-30% 0px -60% 0px", threshold: [0, 0.25, 0.5, 1] }
+    );
+    els.forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
+
 
 
   return (
@@ -396,20 +454,29 @@ const AIWorkCollaborationPlatforms = () => {
             <p className="font-mono text-[12px] tracking-[0.18em] text-subtle uppercase mb-4">
               On this report
             </p>
-            <nav>
-              <ul className="space-y-2.5 text-sm">
-                {toc.map((t) => (
-                  <li key={t.id}>
-                    <a
-                      href={`#${t.id}`}
-                      className="text-body hover:text-primary transition-colors"
-                    >
-                      {t.label}
-                    </a>
-                  </li>
-                ))}
+            <nav aria-label="On this report">
+              <ul className="space-y-1.5 text-sm border-l border-border">
+                {toc.map((t) => {
+                  const isActive = activeSection === t.id;
+                  return (
+                    <li key={t.id}>
+                      <a
+                        href={`#${t.id}`}
+                        aria-current={isActive ? "true" : undefined}
+                        className={`block -ml-px border-l pl-4 py-1 transition-colors ${
+                          isActive
+                            ? "border-primary text-primary font-medium"
+                            : "border-transparent text-body hover:text-primary"
+                        }`}
+                      >
+                        {t.label}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </nav>
+
 
             <div className="mt-8 p-5 rounded-2xl border border-primary/30 bg-primary/[0.04]">
               <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-primary mb-2">
@@ -862,6 +929,35 @@ const AIWorkCollaborationPlatforms = () => {
                 </div>
               </div>
             </div>
+          </section>
+
+          {/* FAQ */}
+          <section id="faq" className="scroll-mt-28">
+            <div className="flex items-center gap-2 mb-4">
+              <HelpCircle className="size-4 text-primary" />
+              <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary">
+                / FAQ
+              </p>
+            </div>
+            <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
+              Frequently asked questions.
+            </h2>
+            <Accordion type="single" collapsible className="mt-8">
+              {faqs.map((f, i) => (
+                <AccordionItem
+                  key={f.q}
+                  value={`faq-${i}`}
+                  className="border-border"
+                >
+                  <AccordionTrigger className="text-left">
+                    <h3 className="display text-lg leading-snug">{f.q}</h3>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-body text-[15px] leading-relaxed">
+                    {f.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </section>
 
 

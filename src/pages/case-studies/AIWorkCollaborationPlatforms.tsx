@@ -329,13 +329,10 @@ const AIWorkCollaborationPlatforms = () => {
                   </span>
                 </div>
                 <span className="hidden sm:block h-8 w-px bg-border" />
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[12px] tracking-[0.04em] text-subtle uppercase">
-                  <span>May 26, 2026</span>
-                  <span className="text-border">·</span>
-                  <span>11 min read</span>
-                  <span className="text-border">·</span>
-                  <span>Benchmark: LLM Authority Index</span>
-                </div>
+                <span className="font-mono text-[12px] tracking-[0.04em] text-subtle uppercase">
+                  11 min read
+                </span>
+
               </div>
 
               {/* KEY-STATS STRIP */}

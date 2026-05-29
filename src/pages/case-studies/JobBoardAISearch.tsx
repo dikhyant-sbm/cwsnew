@@ -494,12 +494,13 @@ const JobBoardAISearch = () => {
 
           {/* OUTCOME */}
           <section id="outcome" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / The Outcome
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
-              Measurable, Compounding Results.
             </h2>
+            <p className="display text-3xl sm:text-4xl leading-tight tracking-tight text-foreground">
+              Measurable, Compounding Results.
+            </p>
+
             <div className="mt-6 space-y-4 text-body leading-relaxed">
               <p>
                 The campaign delivered results across both traditional search and AI-generated

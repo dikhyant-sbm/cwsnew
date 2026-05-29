@@ -388,9 +388,9 @@ const AIWorkCollaborationPlatforms = () => {
                     ))}
                   </dl>
                 </div>
+              </div>
             </aside>
 
-            </aside>
           </div>
         </div>
       </section>

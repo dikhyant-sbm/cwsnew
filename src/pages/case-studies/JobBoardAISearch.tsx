@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowLeft, Check, Quote, Sparkles, Target, Network, Search, BarChart3 } from "lucide-react";
 import { PageShell } from "@/components/landing/Shell";

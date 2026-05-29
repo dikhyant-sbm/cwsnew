@@ -737,13 +737,14 @@ const AIWorkCollaborationPlatforms = () => {
 
           {/* CITATION LAYER */}
           <section id="citations" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / The Citation Layer
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-3xl">
+            </h2>
+            <p className="display text-3xl sm:text-4xl leading-[1.1] tracking-tight max-w-3xl text-foreground">
               AI systems synthesize from the public evidence layer around the
               category.
-            </h2>
+            </p>
+
             <p className="mt-6 text-body text-lg leading-relaxed">
               The strongest performers shared consistent category framing,
               broad use-case coverage, recurring editorial inclusion, clear

@@ -804,12 +804,13 @@ const AIWorkCollaborationPlatforms = () => {
           </section>
 
           {/* HOW CITEWORKS HELPS */}
-          <section id="how-we-help" className="scroll-mt-28">
-            <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
+            <h2 className="font-mono text-[12px] tracking-[0.18em] uppercase text-primary mb-4">
               / How CiteWorks Studio Helps
-            </p>
-            <h2 className="display text-3xl sm:text-4xl leading-tight tracking-tight">
+            </h2>
+            <p className="display text-3xl sm:text-4xl leading-tight tracking-tight text-foreground">
               From benchmark insight to remediation.
+            </p>
+
             </h2>
             <div className="mt-8 grid md:grid-cols-3 gap-4">
               {howWeHelp.map((h) => (

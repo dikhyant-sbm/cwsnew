@@ -138,7 +138,31 @@ const JobBoardAISearch = () => {
             acceptedAnswer: { "@type": "Answer", text: f.a },
           })),
         },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://cwsnew.lovable.app/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Case Studies",
+              item: "https://cwsnew.lovable.app/case-studies",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Job Board AI Search Case Study",
+              item: pageUrl,
+            },
+          ],
+        },
       ],
+
     };
     const script = document.createElement("script");
     script.type = "application/ld+json";

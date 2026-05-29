@@ -259,7 +259,6 @@ const AIWorkCollaborationPlatforms = () => {
             name: "LLM Authority Index",
           },
           mainEntityOfPage: pageUrl,
-        },
         {
           "@type": "FAQPage",
           mainEntity: faqs.map((f) => ({
@@ -267,6 +266,33 @@ const AIWorkCollaborationPlatforms = () => {
             name: f.q,
             acceptedAnswer: { "@type": "Answer", text: f.a },
           })),
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://cwsnew.lovable.app/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "AI Industry Market Discovery Reports",
+              item: "https://cwsnew.lovable.app/ai-industry-market-discovery-reports",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "AI Work Collaboration Platforms",
+              item: pageUrl,
+            },
+          ],
+        },
+      ],
+    };
+
         },
       ],
     };

@@ -177,6 +177,44 @@ const continueReading = [
   },
 ];
 
+const author = {
+  name: "Mark Huntley",
+  initials: "MH",
+  role: "AI Search & Citation Analyst, CiteWorks Studio",
+  bio: "Mark Huntley analyzes how large language models surface, compare, and recommend brands across AI-generated answers. He specializes in citation architecture, embedding-level relevance, and translating LLM Authority Index benchmark data into remediation plans that move recommendation share.",
+};
+
+const heroStats = [
+  { v: "9", k: "platforms capture most AI shortlist slots" },
+  { v: "ClickUp", k: "strongest cross-cluster AI framing" },
+  { v: "Citations", k: "decide valid recommendations, not visibility" },
+];
+
+const keyTakeaways = [
+  "AI compresses the category into a small recommendation set led by ClickUp, Asana, Notion, Slack, and Microsoft Teams.",
+  "Being visible to AI is not enough — only citation-backed framing converts into valid recommendations.",
+  "Brands win by expanding workflow eligibility, improving semantic clarity, and strengthening their public evidence layer.",
+];
+
+const faqs = [
+  {
+    q: "Which work collaboration platforms does AI recommend most?",
+    a: "A small group of multi-functional platforms — ClickUp, Asana, Notion, Slack, Microsoft Teams, Jira, Monday.com, Trello, and Zoom — captures most AI-generated shortlist slots, with ClickUp leading cross-cluster framing and Asana winning on semantic legibility.",
+  },
+  {
+    q: "Why is AI visibility not enough to win recommendations?",
+    a: "AI systems only convert visibility into valid recommendations when citation-bearing sources — editorial comparisons, review environments, and community discussions — consistently support a brand's framing. Without that citation layer, a brand can appear without being recommended.",
+  },
+  {
+    q: "What should brands fix to improve AI recommendation share?",
+    a: "Expand recommendation eligibility across multiple workflows, improve semantic clarity so AI can classify and compare the brand, and strengthen the public evidence layer with citation-bearing comparisons and consistent third-party framing.",
+  },
+  {
+    q: "What data is this report based on?",
+    a: "This is a benchmark-based industry analysis powered by the LLM Authority Index, with market interpretation and remediation framing provided by CiteWorks Studio.",
+  },
+];
+
 const AIWorkCollaborationPlatforms = () => {
   useEffect(() => {
     document.title =
